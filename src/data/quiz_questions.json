@@ -1,0 +1,607 @@
+{
+  "heritage-monuments": {
+    "title": "Heritage Monuments",
+    "description": "Test your knowledge about India's magnificent monuments and architectural marvels",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which monument is known as the 'Symbol of Love'?",
+        "options": ["Red Fort", "Taj Mahal", "Qutub Minar", "India Gate"],
+        "correct": 1,
+        "explanation": "The Taj Mahal in Agra is famously known as the 'Symbol of Love', built by Shah Jahan for his wife Mumtaz Mahal."
+      },
+      {
+        "id": 2,
+        "question": "In which city is the Red Fort (Lal Qila) located?",
+        "options": ["Mumbai", "Kolkata", "New Delhi", "Chennai"],
+        "correct": 2,
+        "explanation": "The Red Fort is located in Old Delhi, New Delhi, and served as the main residence of the Mughal emperors."
+      },
+      {
+        "id": 3,
+        "question": "Which fort is known as the 'Golden Fort'?",
+        "options": [
+          "Amber Fort",
+          "Jaisalmer Fort",
+          "Mehrangarh Fort",
+          "Chittorgarh Fort"
+        ],
+        "correct": 1,
+        "explanation": "Jaisalmer Fort is known as the 'Golden Fort' due to its golden sandstone construction that glows like gold in sunlight."
+      },
+      {
+        "id": 4,
+        "question": "The Khajuraho temples are famous for their:",
+        "options": [
+          "Buddhist sculptures",
+          "Erotic sculptures",
+          "Jain architecture",
+          "Modern art"
+        ],
+        "correct": 1,
+        "explanation": "The Khajuraho temples are renowned for their intricate erotic sculptures and are a UNESCO World Heritage Site."
+      },
+      {
+        "id": 5,
+        "question": "Which monument houses the tomb of Akbar?",
+        "options": ["Humayun's Tomb", "Sikandra", "Taj Mahal", "Red Fort"],
+        "correct": 1,
+        "explanation": "Sikandra in Agra houses the tomb of the Mughal Emperor Akbar the Great."
+      },
+      {
+        "id": 6,
+        "question": "The Gateway of India was built to commemorate the visit of which British monarchs?",
+        "options": [
+          "King George V and Queen Mary",
+          "Queen Victoria",
+          "King Edward VII",
+          "King George VI"
+        ],
+        "correct": 0,
+        "explanation": "The Gateway of India was built to commemorate the visit of King George V and Queen Mary to Mumbai in 1911."
+      },
+      {
+        "id": 7,
+        "question": "Which temple is carved entirely out of a single rock?",
+        "options": [
+          "Brihadeeswara Temple",
+          "Kailasa Temple at Ellora",
+          "Sun Temple at Konark",
+          "Meenakshi Temple"
+        ],
+        "correct": 1,
+        "explanation": "The Kailasa Temple at Ellora is the world's largest monolithic structure, carved entirely from a single rock."
+      },
+      {
+        "id": 8,
+        "question": "The Lotus Temple in Delhi belongs to which faith?",
+        "options": ["Hinduism", "Buddhism", "Baháʼí Faith", "Sikhism"],
+        "correct": 2,
+        "explanation": "The Lotus Temple is a Baháʼí House of Worship, known for its distinctive lotus flower-like design."
+      },
+      {
+        "id": 9,
+        "question": "Which is the tallest brick minaret in the world?",
+        "options": ["Qutub Minar", "Chand Minar", "Fateh Burj", "Kirti Stambh"],
+        "correct": 0,
+        "explanation": "Qutub Minar in Delhi is the tallest brick minaret in the world, standing at 72.5 meters."
+      },
+      {
+        "id": 10,
+        "question": "The Ajanta Caves are primarily famous for:",
+        "options": [
+          "Hindu sculptures",
+          "Buddhist paintings and sculptures",
+          "Jain architecture",
+          "Mughal art"
+        ],
+        "correct": 1,
+        "explanation": "The Ajanta Caves are renowned for their ancient Buddhist paintings and rock-cut sculptures dating from 2nd century BCE."
+      },
+      {
+        "id": 11,
+        "question": "Which monument is known as the 'Black Pagoda'?",
+        "options": [
+          "Brihadeeswara Temple",
+          "Sun Temple, Konark",
+          "Jagannath Temple",
+          "Lingaraja Temple"
+        ],
+        "correct": 1,
+        "explanation": "The Sun Temple at Konark is known as the 'Black Pagoda' due to its dark appearance from the sea."
+      },
+      {
+        "id": 12,
+        "question": "Hampi was the capital of which ancient empire?",
+        "options": [
+          "Maratha Empire",
+          "Vijayanagara Empire",
+          "Chola Empire",
+          "Mughal Empire"
+        ],
+        "correct": 1,
+        "explanation": "Hampi was the capital of the Vijayanagara Empire and is now a UNESCO World Heritage Site."
+      }
+    ]
+  },
+  "festivals": {
+    "title": "Indian Festivals",
+    "description": "Explore the vibrant world of Indian festivals and celebrations",
+    "questions": [
+      {
+        "id": 1,
+        "question": "During which festival do people celebrate the victory of light over darkness?",
+        "options": ["Holi", "Diwali", "Dussehra", "Karva Chauth"],
+        "correct": 1,
+        "explanation": "Diwali, the Festival of Lights, celebrates the victory of light over darkness and good over evil."
+      },
+      {
+        "id": 2,
+        "question": "Holi is primarily celebrated to mark the arrival of which season?",
+        "options": ["Winter", "Monsoon", "Spring", "Summer"],
+        "correct": 2,
+        "explanation": "Holi marks the arrival of spring and is celebrated with colors to welcome the new season."
+      },
+      {
+        "id": 3,
+        "question": "Which festival is known as the 'Festival of Harvest' in South India?",
+        "options": ["Onam", "Pongal", "Ugadi", "Vishu"],
+        "correct": 1,
+        "explanation": "Pongal is the harvest festival celebrated in Tamil Nadu to thank the Sun God for a good harvest."
+      },
+      {
+        "id": 4,
+        "question": "Ganesh Chaturthi celebrates the birth of which deity?",
+        "options": [
+          "Lord Vishnu",
+          "Lord Shiva",
+          "Lord Ganesha",
+          "Lord Krishna"
+        ],
+        "correct": 2,
+        "explanation": "Ganesh Chaturthi celebrates the birth of Lord Ganesha, the elephant-headed deity and remover of obstacles."
+      },
+      {
+        "id": 5,
+        "question": "Which festival involves the worship of the Moon?",
+        "options": ["Karva Chauth", "Teej", "Janmashtami", "Ram Navami"],
+        "correct": 0,
+        "explanation": "Karva Chauth involves married women fasting and worshipping the Moon for their husband's long life."
+      },
+      {
+        "id": 6,
+        "question": "Onam is the harvest festival of which Indian state?",
+        "options": ["Karnataka", "Tamil Nadu", "Kerala", "Andhra Pradesh"],
+        "correct": 2,
+        "explanation": "Onam is the harvest festival of Kerala, celebrating the return of the legendary King Mahabali."
+      },
+      {
+        "id": 7,
+        "question": "Which festival commemorates the victory of Lord Rama over Ravana?",
+        "options": ["Diwali", "Dussehra", "Ram Navami", "Hanuman Jayanti"],
+        "correct": 1,
+        "explanation": "Dussehra commemorates the victory of Lord Rama over the demon king Ravana, symbolizing good over evil."
+      },
+      {
+        "id": 8,
+        "question": "Baisakhi is primarily celebrated in which region of India?",
+        "options": ["Bengal", "Punjab", "Gujarat", "Maharashtra"],
+        "correct": 1,
+        "explanation": "Baisakhi is primarily celebrated in Punjab and marks the harvest season and the formation of the Khalsa."
+      },
+      {
+        "id": 9,
+        "question": "Which festival is celebrated by flying kites?",
+        "options": [
+          "Makar Sankranti",
+          "Basant Panchami",
+          "Gudi Padwa",
+          "Poila Boishakh"
+        ],
+        "correct": 0,
+        "explanation": "Makar Sankranti is celebrated by flying colorful kites, especially in Gujarat and other parts of India."
+      },
+      {
+        "id": 10,
+        "question": "Chhath Puja is dedicated to which celestial body?",
+        "options": ["Moon", "Sun", "Stars", "Earth"],
+        "correct": 1,
+        "explanation": "Chhath Puja is dedicated to the Sun God (Surya) and is mainly celebrated in Bihar and eastern Uttar Pradesh."
+      },
+      {
+        "id": 11,
+        "question": "Which festival marks the beginning of the Hindu New Year in many regions?",
+        "options": ["Diwali", "Gudi Padwa", "Holi", "Dussehra"],
+        "correct": 1,
+        "explanation": "Gudi Padwa marks the beginning of the Hindu New Year and spring season in Maharashtra and other regions."
+      },
+      {
+        "id": 12,
+        "question": "Durga Puja is most prominently celebrated in which Indian state?",
+        "options": ["Odisha", "Assam", "West Bengal", "Jharkhand"],
+        "correct": 2,
+        "explanation": "Durga Puja is most prominently celebrated in West Bengal, honoring Goddess Durga's victory over evil."
+      }
+    ]
+  },
+  "classical-arts": {
+    "title": "Classical Arts",
+    "description": "Challenge yourself on traditional dances, music, and art forms",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which classical dance form originated in Tamil Nadu?",
+        "options": ["Kathak", "Bharatanatyam", "Odissi", "Manipuri"],
+        "correct": 1,
+        "explanation": "Bharatanatyam originated in Tamil Nadu and is one of the oldest classical dance forms of India."
+      },
+      {
+        "id": 2,
+        "question": "Kathak dance form originated in which region of India?",
+        "options": ["South India", "East India", "North India", "West India"],
+        "correct": 2,
+        "explanation": "Kathak originated in North India, particularly in the states of Uttar Pradesh and Rajasthan."
+      },
+      {
+        "id": 3,
+        "question": "Which stringed instrument is known as the 'King of Instruments' in Indian classical music?",
+        "options": ["Veena", "Sitar", "Sarod", "Santoor"],
+        "correct": 1,
+        "explanation": "The Sitar is often called the 'King of Instruments' in Hindustani classical music."
+      },
+      {
+        "id": 4,
+        "question": "Odissi dance originated in which Indian state?",
+        "options": ["West Bengal", "Odisha", "Assam", "Jharkhand"],
+        "correct": 1,
+        "explanation": "Odissi dance originated in Odisha and is characterized by its graceful movements and expressions."
+      },
+      {
+        "id": 5,
+        "question": "Which percussion instrument is most commonly used in South Indian classical music?",
+        "options": ["Tabla", "Mridangam", "Dhol", "Pakhawaj"],
+        "correct": 1,
+        "explanation": "Mridangam is the primary percussion instrument used in Carnatic (South Indian) classical music."
+      },
+      {
+        "id": 6,
+        "question": "Kuchipudi dance form belongs to which Indian state?",
+        "options": ["Karnataka", "Kerala", "Andhra Pradesh", "Tamil Nadu"],
+        "correct": 2,
+        "explanation": "Kuchipudi is a classical dance form that originated in Andhra Pradesh, named after the village Kuchipudi."
+      },
+      {
+        "id": 7,
+        "question": "Which raga is traditionally performed in the early morning?",
+        "options": [
+          "Raga Yaman",
+          "Raga Bhairav",
+          "Raga Malkauns",
+          "Raga Darbari"
+        ],
+        "correct": 1,
+        "explanation": "Raga Bhairav is traditionally performed in the early morning and is considered very sacred."
+      },
+      {
+        "id": 8,
+        "question": "Mohiniyattam dance form originated in which state?",
+        "options": ["Tamil Nadu", "Karnataka", "Kerala", "Andhra Pradesh"],
+        "correct": 2,
+        "explanation": "Mohiniyattam is a classical dance form that originated in Kerala, performed by women."
+      },
+      {
+        "id": 9,
+        "question": "Which instrument is known as the 'Divine Instrument' in Indian classical music?",
+        "options": ["Flute", "Veena", "Sitar", "Sarangi"],
+        "correct": 1,
+        "explanation": "The Veena is often referred to as the 'Divine Instrument' and is considered the mother of all stringed instruments."
+      },
+      {
+        "id": 10,
+        "question": "Sattriya dance is associated with which Indian state?",
+        "options": ["Manipur", "Assam", "Meghalaya", "Tripura"],
+        "correct": 1,
+        "explanation": "Sattriya is a classical dance form from Assam, traditionally performed in monasteries."
+      },
+      {
+        "id": 11,
+        "question": "Which classical music tradition uses the term 'Alapana'?",
+        "options": ["Hindustani", "Carnatic", "Folk", "Devotional"],
+        "correct": 1,
+        "explanation": "Alapana is a form of musical improvisation in Carnatic (South Indian) classical music."
+      },
+      {
+        "id": 12,
+        "question": "The tabla consists of how many drums?",
+        "options": ["One", "Two", "Three", "Four"],
+        "correct": 1,
+        "explanation": "The tabla consists of two drums: the smaller 'tabla' or 'dayan' and the larger 'baya'."
+      }
+    ]
+  },
+  "ancient-history": {
+    "title": "Ancient History",
+    "description": "Journey through India's ancient civilizations and historical events",
+    "questions": [
+      {
+        "id": 1,
+        "question": "The Indus Valley Civilization flourished around which river?",
+        "options": ["Ganges", "Yamuna", "Indus", "Narmada"],
+        "correct": 2,
+        "explanation": "The Indus Valley Civilization flourished around the Indus River, covering parts of modern-day Pakistan and northwest India."
+      },
+      {
+        "id": 2,
+        "question": "Who was the founder of the Mauryan Empire?",
+        "options": ["Ashoka", "Chandragupta Maurya", "Bindusara", "Chanakya"],
+        "correct": 1,
+        "explanation": "Chandragupta Maurya founded the Mauryan Empire around 321 BCE with the help of Chanakya."
+      },
+      {
+        "id": 3,
+        "question": "Which ancient university was located in Bihar?",
+        "options": ["Takshashila", "Nalanda", "Vikramashila", "Vallabhi"],
+        "correct": 1,
+        "explanation": "Nalanda University was an ancient center of learning located in Bihar, attracting students from across Asia."
+      },
+      {
+        "id": 4,
+        "question": "The Gupta period is known as the:",
+        "options": ["Iron Age", "Bronze Age", "Golden Age", "Dark Age"],
+        "correct": 2,
+        "explanation": "The Gupta period (320-550 CE) is known as the Golden Age of India due to achievements in art, science, and literature."
+      },
+      {
+        "id": 5,
+        "question": "Which emperor is known for spreading Buddhism?",
+        "options": ["Chandragupta Maurya", "Ashoka", "Harsha", "Kanishka"],
+        "correct": 1,
+        "explanation": "Emperor Ashoka is famous for spreading Buddhism across and beyond India after the Kalinga War."
+      },
+      {
+        "id": 6,
+        "question": "The ancient text 'Arthashastra' was written by:",
+        "options": ["Valmiki", "Chanakya", "Kalidasa", "Panini"],
+        "correct": 1,
+        "explanation": "Arthashastra, a treatise on statecraft and economics, was written by Chanakya (Kautilya)."
+      },
+      {
+        "id": 7,
+        "question": "Which dynasty built the famous temples at Khajuraho?",
+        "options": ["Chola", "Chandela", "Pallava", "Chalukya"],
+        "correct": 1,
+        "explanation": "The Chandela dynasty built the famous temples at Khajuraho between 950 and 1050 CE."
+      },
+      {
+        "id": 8,
+        "question": "The Battle of Kalinga was fought by which emperor?",
+        "options": ["Chandragupta Maurya", "Bindusara", "Ashoka", "Harsha"],
+        "correct": 2,
+        "explanation": "The Battle of Kalinga was fought by Emperor Ashoka, which led to his conversion to Buddhism."
+      },
+      {
+        "id": 9,
+        "question": "Which ancient Indian mathematician invented the concept of zero?",
+        "options": ["Aryabhata", "Brahmagupta", "Bhaskara", "Varahamihira"],
+        "correct": 1,
+        "explanation": "Brahmagupta was the first to give rules for computing with zero and negative numbers."
+      },
+      {
+        "id": 10,
+        "question": "The Ajanta Caves were built during which period?",
+        "options": ["Mauryan", "Gupta", "Satavahana", "All of the above"],
+        "correct": 3,
+        "explanation": "The Ajanta Caves were built over several centuries, spanning the Mauryan, Satavahana, and Gupta periods."
+      },
+      {
+        "id": 11,
+        "question": "Who wrote the epic Mahabharata?",
+        "options": ["Valmiki", "Vyasa", "Kalidasa", "Tulsidas"],
+        "correct": 1,
+        "explanation": "The Mahabharata is traditionally attributed to sage Vyasa (Ved Vyasa)."
+      },
+      {
+        "id": 12,
+        "question": "The Chola dynasty was famous for their expertise in:",
+        "options": ["Architecture", "Naval power", "Trade", "All of the above"],
+        "correct": 3,
+        "explanation": "The Cholas were renowned for their temple architecture, powerful navy, and extensive trade networks."
+      }
+    ]
+  },
+  "regional-culture": {
+    "title": "Regional Culture",
+    "description": "Discover the diverse cultural traditions across Indian states",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which state is famous for its backwaters?",
+        "options": ["Goa", "Kerala", "Karnataka", "Tamil Nadu"],
+        "correct": 1,
+        "explanation": "Kerala is famous for its scenic backwaters, especially in Alleppey and Kumarakoram."
+      },
+      {
+        "id": 2,
+        "question": "Bihu is the traditional festival of which state?",
+        "options": ["West Bengal", "Assam", "Odisha", "Manipur"],
+        "correct": 1,
+        "explanation": "Bihu is the traditional New Year festival of Assam, celebrated three times a year."
+      },
+      {
+        "id": 3,
+        "question": "Which state is known as the 'Land of Five Rivers'?",
+        "options": ["Haryana", "Punjab", "Uttar Pradesh", "Rajasthan"],
+        "correct": 1,
+        "explanation": "Punjab is known as the 'Land of Five Rivers' - Sutlej, Beas, Ravi, Chenab, and Jhelum."
+      },
+      {
+        "id": 4,
+        "question": "Pongal is primarily celebrated in which state?",
+        "options": ["Karnataka", "Andhra Pradesh", "Tamil Nadu", "Kerala"],
+        "correct": 2,
+        "explanation": "Pongal is the harvest festival primarily celebrated in Tamil Nadu."
+      },
+      {
+        "id": 5,
+        "question": "Which state is famous for its tea gardens?",
+        "options": ["Kerala", "Assam", "Karnataka", "Himachal Pradesh"],
+        "correct": 1,
+        "explanation": "Assam is world-famous for its tea gardens and produces about half of India's tea."
+      },
+      {
+        "id": 6,
+        "question": "Giddha is a folk dance from which state?",
+        "options": ["Haryana", "Punjab", "Rajasthan", "Gujarat"],
+        "correct": 1,
+        "explanation": "Giddha is a traditional folk dance performed by women in Punjab."
+      },
+      {
+        "id": 7,
+        "question": "Which state is known for its handloom silk sarees called 'Kanjeevaram'?",
+        "options": ["Karnataka", "Kerala", "Tamil Nadu", "Andhra Pradesh"],
+        "correct": 2,
+        "explanation": "Kanjeevaram sarees are world-famous silk sarees from Kanchipuram in Tamil Nadu."
+      },
+      {
+        "id": 8,
+        "question": "Hornbill Festival is celebrated in which northeastern state?",
+        "options": ["Assam", "Manipur", "Nagaland", "Mizoram"],
+        "correct": 2,
+        "explanation": "The Hornbill Festival is celebrated in Nagaland and showcases the rich cultural heritage of Naga tribes."
+      },
+      {
+        "id": 9,
+        "question": "Which state is famous for its Blue Pottery?",
+        "options": ["Gujarat", "Rajasthan", "Punjab", "Haryana"],
+        "correct": 1,
+        "explanation": "Rajasthan, particularly Jaipur, is famous for its beautiful Blue Pottery craft."
+      },
+      {
+        "id": 10,
+        "question": "Lavani is a traditional dance form of which state?",
+        "options": ["Gujarat", "Rajasthan", "Maharashtra", "Madhya Pradesh"],
+        "correct": 2,
+        "explanation": "Lavani is a traditional dance form of Maharashtra, known for its powerful rhythm and quick tempo."
+      },
+      {
+        "id": 11,
+        "question": "Which state is known as 'God's Own Country'?",
+        "options": ["Kashmir", "Kerala", "Himachal Pradesh", "Uttarakhand"],
+        "correct": 1,
+        "explanation": "Kerala is popularly known as 'God's Own Country' due to its natural beauty and cultural richness."
+      },
+      {
+        "id": 12,
+        "question": "Phulkari embroidery is traditional to which region?",
+        "options": ["Gujarat", "Rajasthan", "Punjab", "Kashmir"],
+        "correct": 2,
+        "explanation": "Phulkari is a traditional embroidery technique from Punjab, literally meaning 'flower work'."
+      }
+    ]
+  },
+  "hidden-gems": {
+    "title": "Hidden Gems",
+    "description": "Explore lesser-known heritage sites and cultural treasures",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Mawlynnong village in Meghalaya is famous for being:",
+        "options": [
+          "The wettest place",
+          "The cleanest village",
+          "The coldest place",
+          "The oldest village"
+        ],
+        "correct": 1,
+        "explanation": "Mawlynnong in Meghalaya is known as 'Asia's Cleanest Village' and is famous for its living root bridges."
+      },
+      {
+        "id": 2,
+        "question": "The Magnetic Hill is located in which union territory?",
+        "options": [
+          "Jammu & Kashmir",
+          "Ladakh",
+          "Himachal Pradesh",
+          "Uttarakhand"
+        ],
+        "correct": 1,
+        "explanation": "Magnetic Hill is located in Ladakh, where vehicles appear to move uphill on their own due to an optical illusion."
+      },
+      {
+        "id": 3,
+        "question": "Bhangarh Fort, known for being haunted, is located in which state?",
+        "options": ["Uttar Pradesh", "Madhya Pradesh", "Rajasthan", "Haryana"],
+        "correct": 2,
+        "explanation": "Bhangarh Fort is located in Rajasthan and is famous for being one of India's most haunted places."
+      },
+      {
+        "id": 4,
+        "question": "The living root bridges are naturally found in which state?",
+        "options": ["Assam", "Meghalaya", "Arunachal Pradesh", "Sikkim"],
+        "correct": 1,
+        "explanation": "Living root bridges are naturally occurring bridges in Meghalaya, created by training rubber tree roots."
+      },
+      {
+        "id": 5,
+        "question": "Loktak Lake with floating islands is located in which state?",
+        "options": ["Assam", "Manipur", "Mizoram", "Tripura"],
+        "correct": 1,
+        "explanation": "Loktak Lake in Manipur is famous for its floating islands called 'phumdis'."
+      },
+      {
+        "id": 6,
+        "question": "The Chitrakote Falls, known as India's Niagara, is in which state?",
+        "options": ["Madhya Pradesh", "Chhattisgarh", "Jharkhand", "Odisha"],
+        "correct": 1,
+        "explanation": "Chitrakote Falls in Chhattisgarh is often called the 'Niagara of India' due to its horseshoe shape."
+      },
+      {
+        "id": 7,
+        "question": "Dzukou Valley, famous for its flowers, is located between which two states?",
+        "options": [
+          "Assam & Manipur",
+          "Nagaland & Manipur",
+          "Meghalaya & Assam",
+          "Mizoram & Tripura"
+        ],
+        "correct": 1,
+        "explanation": "Dzukou Valley lies on the border of Nagaland and Manipur, famous for its seasonal flowers."
+      },
+      {
+        "id": 8,
+        "question": "The Chandrashila Peak is famous for which temple?",
+        "options": ["Kedarnath", "Tungnath", "Badrinath", "Rudranath"],
+        "correct": 1,
+        "explanation": "Chandrashila Peak in Uttarakhand is famous for the Tungnath Temple, the highest Shiva temple."
+      },
+      {
+        "id": 9,
+        "question": "Marble Rocks (Bhedaghat) is located on which river?",
+        "options": ["Ganga", "Yamuna", "Narmada", "Tapti"],
+        "correct": 2,
+        "explanation": "The Marble Rocks at Bhedaghat in Madhya Pradesh are located on the Narmada River."
+      },
+      {
+        "id": 10,
+        "question": "The Rann of Kutch is famous for which natural phenomenon?",
+        "options": ["Aurora", "Mirage", "Salt desert", "Hot springs"],
+        "correct": 2,
+        "explanation": "The Rann of Kutch is famous for being a vast salt desert that transforms during the monsoon."
+      },
+      {
+        "id": 11,
+        "question": "Sandakphu, the highest peak of West Bengal, offers views of which mountain range?",
+        "options": ["Western Ghats", "Eastern Ghats", "Himalayas", "Aravalli"],
+        "correct": 2,
+        "explanation": "Sandakphu offers panoramic views of the Himalayan range including Everest and Kanchenjunga."
+      },
+      {
+        "id": 12,
+        "question": "The Unakoti sculptures are located in which northeastern state?",
+        "options": ["Assam", "Manipur", "Tripura", "Meghalaya"],
+        "correct": 2,
+        "explanation": "Unakoti in Tripura features ancient rock-cut sculptures and carvings dating back to the 7th-9th centuries."
+      }
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "title": "Ajanta Caves",
+    "description": "Rock-cut Buddhist cave monuments famous for their paintings and sculptures.",
+    "state": "Maharashtra",
+    "rating": 4.8,
+    "imageKey": "ajanta"
+  },
+  {
+    "id": 2,
+    "title": "Nagarjunakonda",
+    "description": "Buddhist heritage site in Andhra Pradesh with ancient stupas and archaeological remains showcasing Mauryan period.",
+    "state": "Andhra Pradesh",
+    "rating": 4.5,
+    "imageKey": "nagarjunakonda"
+  },
+  {
+    "id": 3,
+    "title": "Chandragiri Fort",
+    "description": "Historic Andhra Pradesh fort with 16th-century architecture offering panoramic views of the surrounding region.",
+    "state": "Andhra Pradesh",
+    "rating": 4.5,
+    "imageKey": "chandragiri"
+  },
+  {
+    "id": 4,
+    "title": "Red Fort",
+    "description": "A symbol of India's sovereignty, built in red sandstone by Emperor Shah Jahan.",
+    "state": "Delhi",
+    "rating": 4.7,
+    "imageKey": "redFort"
+  },
+  {
+    "id": 5,
+    "title": "Meenakshi Temple",
+    "description": "Ancient Hindu temple in Madurai known for its towering gopurams and intricate architectural details.",
+    "state": "Tamil Nadu",
+    "rating": 4.8,
+    "imageKey": "meenakshi"
+  },
+  {
+    "id": 6,
+    "title": "Qutub Minar",
+    "description": "The tallest brick minaret in the world, representing Indo-Islamic architecture.",
+    "state": "Delhi",
+    "rating": 4.8,
+    "imageKey": "qutubMinar"
+  },
+  {
+    "id": 7,
+    "title": "Charminar Museum & Mecca Mosque",
+    "description": "Historic mosque adjoining Charminar monument, showcasing Indo-Islamic religious architecture.",
+    "state": "Telangana",
+    "rating": 4.5,
+    "imageKey": "charminarMosque"
+  },
+  {
+    "id": 8,
+    "title": "Golconda Fort",
+    "description": "Ancient fortress near Hyderabad with remarkable architecture and historical significance spanning centuries.",
+    "state": "Telangana",
+    "rating": 4.8,
+    "imageKey": "golconda"
+  },
+  {
+    "id": 9,
+    "title": "Sanchi Stupa",
+    "description": "A Buddhist complex famous for its Great Stupa commissioned by Emperor Ashoka.",
+    "state": "Madhya Pradesh",
+    "rating": 4.5,
+    "imageKey": "sanchi"
+  },
+  {
+    "id": 10,
+    "title": "Gandikota Fort",
+    "description": "13th-century fort in Andhra Pradesh situated on the Pennar River with stunning ravine views.",
+    "state": "Andhra Pradesh",
+    "rating": 4.7,
+    "imageKey": "gandikota"
+  },
+  {
+    "id": 11,
+    "title": "Virupaksha Temple",
+    "description": "Ancient temple at Hampi ruins dedicated to Lord Shiva, showcasing Dravidian architecture.",
+    "state": "Karnataka",
+    "rating": 4.8,
+    "imageKey": "virupaksha"
+  },
+  {
+    "id": 12,
+    "title": "Tirupati Venkateswara Temple",
+    "description": "One of the world's most visited religious sites, dedicated to Lord Venkateswara with stunning architecture.",
+    "state": "Andhra Pradesh",
+    "rating": 4.9,
+    "imageKey": "tirupati"
+  },
+  {
+    "id": 13,
+    "title": "Srirangam Temple",
+    "description": "One of the oldest and largest temples in South India, dedicated to Lord Ranganatha with intricate carvings.",
+    "state": "Tamil Nadu",
+    "rating": 4.7,
+    "imageKey": "srirangam"
+  },
+  {
+    "id": 14,
+    "title": "Khajuraho Temples",
+    "description": "Group of Hindu and Jain temples famous for their intricate erotic sculptures.",
+    "state": "Madhya Pradesh",
+    "rating": 4.6,
+    "imageKey": "khajuraho"
+  },
+  {
+    "id": 15,
+    "title": "Warangal Fort",
+    "description": "Historic fort in Telangana with 12th-century architecture and ornate stone carved gates.",
+    "state": "Telangana",
+    "rating": 4.6,
+    "imageKey": "warangal"
+  },
+  {
+    "id": 16,
+    "title": "Ellora Caves",
+    "description": "34 rock-cut temples and monasteries dedicated to Buddhism, Hinduism, and Jainism.",
+    "state": "Maharashtra",
+    "rating": 4.9,
+    "imageKey": "ellora"
+  },
+  {
+    "id": 17,
+    "title": "Charminar",
+    "description": "Iconic mosque and monument of Hyderabad, built in 1591 with Indo-Islamic architecture.",
+    "state": "Telangana",
+    "rating": 4.6,
+    "imageKey": "charminar"
+  },
+  {
+    "id": 18,
+    "title": "Lepakshi Temple",
+    "description": "16th-century Hindu temple in Andhra Pradesh renowned for intricate stone carvings and artistic murals.",
+    "state": "Andhra Pradesh",
+    "rating": 4.6,
+    "imageKey": "lepakshi"
+  },
+  {
+    "id": 19,
+    "title": "Shore Temple",
+    "description": "Ancient rock-cut granite temple in Mahabalipuram built during Pallava dynasty overlooking the Bay of Bengal.",
+    "state": "Tamil Nadu",
+    "rating": 4.7,
+    "imageKey": "shoretemple"
+  },
+  {
+    "id": 20,
+    "title": "Hampi",
+    "description": "Ruins of the Vijayanagara Empire with magnificent temples, markets, and palaces.",
+    "state": "Karnataka",
+    "rating": 4.9,
+    "imageKey": "hampi"
+  },
+  {
+    "id": 21,
+    "title": "Taj Mahal",
+    "description": "An ivory-white marble mausoleum built by Mughal emperor Shah Jahan, symbolizing eternal love.",
+    "state": "Uttar Pradesh",
+    "rating": 5,
+    "imageKey": "tajMahal"
+  },
+  {
+    "id": 22,
+    "title": "Mysore Palace",
+    "description": "Royal palace with Indo-Saracenic architecture, showcasing the grandeur of the Wadiyar dynasty.",
+    "state": "Karnataka",
+    "rating": 4.8,
+    "imageKey": "mysore"
+  },
+  {
+    "id": 23,
+    "title": "Brihadeeswarar Temple",
+    "description": "UNESCO World Heritage site in Tamil Nadu with magnificent granite tower and Chola architecture.",
+    "state": "Tamil Nadu",
+    "rating": 4.9,
+    "imageKey": "brihadeeswarar"
+  },
+  {
+    "id": 24,
+    "title": "Konark Sun Temple",
+    "description": "13th-century temple shaped like a colossal chariot dedicated to the Sun God.",
+    "state": "Odisha",
+    "rating": 4.7,
+    "imageKey": "konark"
+  },
+  {
+    "id": 25,
+    "title": "Penusila Narasimha Temple",
+    "description": "Ancient temple in Andhra Pradesh featuring a monolithic Narasimha idol carved from granite rock.",
+    "state": "Andhra Pradesh",
+    "rating": 4.4,
+    "imageKey": "penusila"
+  }
+]

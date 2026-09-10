@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "title": "Garba",
+    "category": "Folk Dance",
+    "state": "Gujarat",
+    "rating": 4.7,
+    "description": "Circular group dance performed during Navratri with rhythmic footwork and drums.",
+    "imageKey": "garba"
+  },
+  {
+    "id": 2,
+    "title": "Banarasi Weaving",
+    "category": "Textile",
+    "state": "Uttar Pradesh",
+    "rating": 4.7,
+    "description": "Lavish brocade weaving from Varanasi producing silk sarees with gold and silver zari.",
+    "imageKey": "banarasi"
+  },
+  {
+    "id": 3,
+    "title": "Kathakali",
+    "category": "Theatre / Dance",
+    "state": "Kerala",
+    "rating": 4.7,
+    "description": "A dramatic dance-theatre form with elaborate makeup, masks and storytelling from Hindu epics.",
+    "imageKey": "kathakali"
+  },
+  {
+    "id": 4,
+    "title": "Ikat Weaving",
+    "category": "Textile",
+    "state": "Odisha/Andhra Pradesh/Assam",
+    "rating": 4.6,
+    "description": "A resist-dyeing technique producing characteristic blurred patterns in fabric.",
+    "imageKey": "ikat"
+  },
+  {
+    "id": 5,
+    "title": "Warli Painting",
+    "category": "Painting",
+    "state": "Maharashtra",
+    "rating": 4.5,
+    "description": "Monochrome tribal painting using simple geometric shapes to depict community life.",
+    "imageKey": "warli"
+  },
+  {
+    "id": 6,
+    "title": "Bharatanatyam",
+    "category": "Classical Dance",
+    "state": "Tamil Nadu",
+    "rating": 4.9,
+    "description": "A classical temple dance known for fixed upper torso, bent legs and intricate footwork, expressive hand gestures (mudras).",
+    "imageKey": "bharatanatyam"
+  },
+  {
+    "id": 7,
+    "title": "Lavani",
+    "category": "Folk Dance",
+    "state": "Maharashtra",
+    "rating": 4.3,
+    "description": "A performance dance combining powerful rhythm, song and dramatic storytelling.",
+    "imageKey": "lavani"
+  },
+  {
+    "id": 8,
+    "title": "Madhubani Painting",
+    "category": "Painting",
+    "state": "Bihar",
+    "rating": 4.7,
+    "description": "Intricate folk painting using bold lines and natural dyes, often depicting myths and nature.",
+    "imageKey": "madhubani"
+  },
+  {
+    "id": 9,
+    "title": "Pattachitra",
+    "category": "Painting",
+    "state": "Odisha/West Bengal",
+    "rating": 4.6,
+    "description": "Traditional scroll painting with mythological themes and fine details.",
+    "imageKey": "pattachitra"
+  },
+  {
+    "id": 10,
+    "title": "Kalaripayattu",
+    "category": "Martial Art",
+    "state": "Kerala",
+    "rating": 4.6,
+    "description": "One of the world’s oldest martial arts, combining strikes, kicks and weaponry.",
+    "imageKey": "kalaripayattu"
+  },
+  {
+    "id": 11,
+    "title": "Kuchipudi",
+    "category": "Classical Dance",
+    "state": "Andhra Pradesh",
+    "rating": 4.6,
+    "description": "Dance-drama with strong narrative elements and crisp footwork.",
+    "imageKey": "kuchipudi"
+  },
+  {
+    "id": 12,
+    "title": "Blue Pottery (Kota)",
+    "category": "Craft",
+    "state": "Rajasthan",
+    "rating": 4.4,
+    "description": "Distinctive tin-glazed pottery with vibrant blue hues and floral patterns.",
+    "imageKey": "bluepottery"
+  },
+  {
+    "id": 13,
+    "title": "Tanjore Painting",
+    "category": "Painting",
+    "state": "Tamil Nadu",
+    "rating": 4.6,
+    "description": "Richly decorated paintings often set with gold foil and gems depicting deities.",
+    "imageKey": "tanjore"
+  },
+  {
+    "id": 14,
+    "title": "Yakshagana",
+    "category": "Theatre / Dance",
+    "state": "Karnataka",
+    "rating": 4.4,
+    "description": "Vibrant folk theatre combining dance, music and colorful costumes.",
+    "imageKey": "yakshagana"
+  },
+  {
+    "id": 15,
+    "title": "Thang-Ta (Manipuri Martial Art)",
+    "category": "Martial Art",
+    "state": "Manipur",
+    "rating": 4.5,
+    "description": "Traditional Manipuri martial art with weapons and graceful combat forms.",
+    "imageKey": "thangta"
+  },
+  {
+    "id": 16,
+    "title": "Odissi",
+    "category": "Classical Dance",
+    "state": "Odisha",
+    "rating": 4.8,
+    "description": "Fluid, lyrical classical dance with sculptural poses inspired by temple architecture.",
+    "imageKey": "odissi"
+  },
+  {
+    "id": 17,
+    "title": "Ghoomar",
+    "category": "Folk Dance",
+    "state": "Rajasthan",
+    "rating": 4.4,
+    "description": "A graceful spinning folk dance performed by women wearing flowing skirts.",
+    "imageKey": "ghoomar"
+  },
+  {
+    "id": 18,
+    "title": "Dokra (Dhokra) Metalwork",
+    "category": "Metalwork",
+    "state": "West Bengal/Odisha",
+    "rating": 4.6,
+    "description": "Ancient lost-wax casting technique producing rustic bronze and brass sculptures.",
+    "imageKey": "dokra"
+  },
+  {
+    "id": 19,
+    "title": "Kathak",
+    "category": "Classical Dance",
+    "state": "North India",
+    "rating": 4.8,
+    "description": "Storytelling dance with rapid spins and expressive gestures, historically performed in royal courts.",
+    "imageKey": "kathak"
+  },
+  {
+    "id": 20,
+    "title": "Chikankari",
+    "category": "Embroidery",
+    "state": "Uttar Pradesh",
+    "rating": 4.5,
+    "description": "Delicate white-on-white shadow work embroidery originating from Lucknow.",
+    "imageKey": "chikankari"
+  },
+  {
+    "id": 21,
+    "title": "Chhau",
+    "category": "Folk / Martial Dance",
+    "state": "Odisha/West Bengal/Jharkhand",
+    "rating": 4.6,
+    "description": "Masked dance with martial elements, dramatic storytelling and vigorous movement.",
+    "imageKey": "chhau"
+  },
+  {
+    "id": 22,
+    "title": "Terracotta Art (Bankura)",
+    "category": "Sculpture",
+    "state": "West Bengal",
+    "rating": 4.5,
+    "description": "Vibrant terracotta horses and plaques used in traditional worship and decor.",
+    "imageKey": "terracotta"
+  },
+  {
+    "id": 23,
+    "title": "Kutch Embroidery",
+    "category": "Textile",
+    "state": "Gujarat",
+    "rating": 4.5,
+    "description": "Mirror-work and intricate embroidery from the Kutch region used in garments and decor.",
+    "imageKey": "kutch"
+  },
+  {
+    "id": 24,
+    "title": "Gond Painting",
+    "category": "Painting",
+    "state": "Madhya Pradesh",
+    "rating": 4.6,
+    "description": "Vibrant folk painting characterized by intricate patterns and nature motifs.",
+    "imageKey": "gond"
+  },
+  {
+    "id": 25,
+    "title": "Pashmina Weaving",
+    "category": "Textile",
+    "state": "Jammu & Kashmir",
+    "rating": 4.8,
+    "description": "Fine handspun wool shawls prized for softness and warmth.",
+    "imageKey": "pashmina"
+  },
+  {
+    "id": 26,
+    "title": "Manipuri",
+    "category": "Classical Dance",
+    "state": "Manipur",
+    "rating": 4.6,
+    "description": "A graceful, devotional dance form often depicting scenes from the life of Krishna.",
+    "imageKey": "manipuri"
+  },
+  {
+    "id": 27,
+    "title": "Mohiniyattam",
+    "category": "Classical Dance",
+    "state": "Kerala",
+    "rating": 4.5,
+    "description": "A lyrical and feminine dance form with gentle movements and swaying steps.",
+    "imageKey": "mohiniyattam"
+  },
+  {
+    "id": 28,
+    "title": "Bhangra",
+    "category": "Folk Dance",
+    "state": "Punjab",
+    "rating": 4.8,
+    "description": "Energetic harvest dance known worldwide for powerful rhythms and high energy.",
+    "imageKey": "bhangra"
+  },
+  {
+    "id": 29,
+    "title": "Stone Carving (Hampi)",
+    "category": "Sculpture",
+    "state": "Karnataka",
+    "rating": 4.7,
+    "description": "Intricate stone architecture and carvings from the Vijayanagara era in Hampi.",
+    "imageKey": "stonecarving"
+  },
+  {
+    "id": 30,
+    "title": "Sattriya",
+    "category": "Classical Dance",
+    "state": "Assam",
+    "rating": 4.5,
+    "description": "A devotional dance-theatre tradition with roots in Vaishnavite monasteries.",
+    "imageKey": "sattriya"
+  }
+]

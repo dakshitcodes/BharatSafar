@@ -1,0 +1,1315 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "Andhra Pradesh",
+      "code": "AP",
+      "capital": "Amaravati",
+      "statehood": "1956-11-01",
+      "region": "south",
+      "area_sq_km": 162975,
+      "population_2011": 49386799,
+      "literacy_rate": 67.02,
+      "languages": ["Telugu", "Urdu", "Hindi"],
+      "description": "Andhra Pradesh, known as the 'Rice Bowl of India', is a culturally vibrant state with deep historical roots, classical arts, temple architecture, diverse landscapes, and coastal beauty. It is home to ancient dynasties like the Satavahanas, Eastern Chalukyas, Kakatiyas, and Vijayanagara rulers. The state is known for classical arts like Kuchipudi, tribal cultures, rich textiles, beaches, and pilgrimage centers like Tirupati. Coastal traditions, folk arts, village fairs, and Buddhist heritage strongly reflect the state's cultural diversity.",
+      "heritage_count": 4,
+      "major_attractions": [
+        "Tirupati Temple",
+        "Charminar",
+        "Golconda Fort",
+        "Araku Valley",
+        "Borra Caves",
+        "Srisailam Temple",
+        "Gandikota (Grand Canyon of India)",
+        "Lepakshi Temple",
+        "Amaravati Stupa",
+        "Kondaveedu Fort",
+        "Papikondalu",
+        "Kuchipudi Village",
+        "Kothapatnam Beach",
+        "Vodarevu Beach",
+        "Ramayapatnam Beach",
+        "Motupalli Port Ancient Site",
+        "Chandavaram Buddhist Site",
+        "Sri Rajarajeswara Swamy Temple",
+        "Gundala Kona Waterfalls",
+        "Addanki Historical Town",
+        "Chirala Handloom Region"
+      ],
+      "famous_food": [
+        "Hyderabadi Biryani",
+        "Pesarattu",
+        "Andhra Pulao",
+        "Gongura Pickle",
+        "Ulavacharu",
+        "Royyala Iguru",
+        "Pootharekulu",
+        "Bobbatlu",
+        "Pulasa Fish",
+        "Chepala Pulusu",
+        "Kodi Kura",
+        "Ragi Sankati"
+      ],
+      "festivals": [
+        "Ugadi",
+        "Sankranti",
+        "Batukamma",
+        "Dussehra",
+        "Kanuma",
+        "Tirumala Brahmotsavam",
+        "Pushkaralu",
+        "Vinayaka Chavithi",
+        "Karthika Masam",
+        "Kondapalli Bommalu Festival"
+      ],
+      "specialties": [
+        "Spicy cuisine",
+        "Historical monuments",
+        "Rich cultural heritage",
+        "Traditional dance forms",
+        "Longest coastline in South India",
+        "Handloom heritage: Mangalagiri, Venkatagiri, Uppada",
+        "Kuchipudi classical dance",
+        "Buddhist heritage sites",
+        "Tribal cultures in Eastern Ghats",
+        "Coastal temple traditions"
+      ],
+      "local_places": {
+        "Ongole": [
+          "Kothapatnam Beach",
+          "Vodarevu Beach",
+          "Ramayapatnam Beach",
+          "Motupalli Port Ancient Site",
+          "Chandavaram Buddhist Site",
+          "Sri Rajarajeswara Swamy Temple",
+          "Gundala Kona Waterfalls",
+          "Addanki Historical Town",
+          "Chirala Handloom Region"
+        ],
+        "Visakhapatnam": [
+          "RK Beach",
+          "Rushikonda Beach",
+          "Yarada Beach",
+          "Kailasagiri",
+          "Simhachalam Temple",
+          "Bheemili Beach",
+          "Submarine Museum",
+          "Thotlakonda Buddhist Site"
+        ],
+        "Tirupati": [
+          "Sri Venkateswara Temple",
+          "Talakona Waterfalls",
+          "Silathoranam",
+          "Padmavathi Ammavari Temple",
+          "Akasaganga Teertham"
+        ],
+        "Rajahmundry": [
+          "Godavari River Boating",
+          "Papikondalu",
+          "Dowleswaram Barrage",
+          "Kotilingeshwara Temple",
+          "Maredumilli Forest"
+        ],
+        "Vijayawada": [
+          "Kanaka Durga Temple",
+          "Bhavani Island",
+          "Prakasam Barrage",
+          "Undavalli Caves"
+        ],
+        "Nellore": [
+          "Pulicat Lake",
+          "Nellapattu Bird Sanctuary",
+          "Mypadu Beach",
+          "Udayagiri Fort"
+        ],
+        "Srikakulam": [
+          "Arasavalli Sun Temple",
+          "Srikurmam Temple",
+          "Kalingapatnam Beach",
+          "Baruva Coastline"
+        ]
+      },
+      "folk_dances": [
+        "Kuchipudi",
+        "Veeranatyam",
+        "Bhamakalapam",
+        "Dappu Nrityam",
+        "Haridasu Keerthana",
+        "Lambadi Dance",
+        "Kolattam",
+        "Chindu Yakshaganam",
+        "Burrakatha"
+      ],
+      "traditions": [
+        "Harikatha storytelling",
+        "Annadanam in temples",
+        "Sankranti cattle decorations",
+        "Bommalata puppet traditions",
+        "Village jatara festivals",
+        "Kondapalli and Etikoppaka toys",
+        "Traditional Telugu weddings",
+        "Handloom weaving heritage",
+        "Agricultural rituals in coastal Andhra"
+      ],
+      "beaches": [
+        "Rushikonda Beach",
+        "RK Beach",
+        "Yarada Beach",
+        "Bheemili Beach",
+        "Kothapatnam Beach",
+        "Vodarevu Beach",
+        "Ramayapatnam Beach",
+        "Motupalli Beach (Ancient Port Region)",
+        "Suryalanka Beach",
+        "Mypadu Beach",
+        "Kalingapatnam Beach",
+        "Baruva Beach",
+        "Perupalem Beach",
+        "Appikonda Beach",
+        "Mangamuru Beach (near Ongole)",
+        "Punnaipalem Beach",
+        "Pentakota Beach"
+      ],
+      "tribes": [
+        "Kondadora",
+        "Lambadi (Banjara)",
+        "Koya",
+        "Savara",
+        "Yanadi",
+        "Gadaba",
+        "Khond",
+        "Jatapu",
+        "Manne Dora"
+      ],
+      "archaeological_sites": [
+        "Amaravati Stupa",
+        "Nagarjunakonda",
+        "Thotlakonda",
+        "Bavikonda",
+        "Chandavaram Buddhist Site",
+        "Guntupalli Caves",
+        "Salihundam",
+        "Undavalli Caves",
+        "Dharanikota Ancient City",
+        "Motupalli Ancient Port",
+        "Kondapalli Fort",
+        "Danthapuram Buddhist Site"
+      ],
+      "rivers": [
+        "Godavari",
+        "Krishna",
+        "Pennar",
+        "Vamsadhara",
+        "Nagavali",
+        "Swarnamukhi",
+        "Champavathi",
+        "Varaha River",
+        "Gosthani River"
+      ],
+      "wildlife_sanctuaries": [
+        "Sri Venkateswara Wildlife Sanctuary",
+        "Coringa Wildlife Sanctuary",
+        "Kolleru Bird Sanctuary",
+        "Rollapadu Wildlife Sanctuary",
+        "Gundla Brahmeswaram Sanctuary",
+        "Nellapattu Bird Sanctuary",
+        "Papikonda National Park",
+        "Seshachalam Biosphere Reserve",
+        "Maredumilli Eco Forest Region",
+        "Krishna Wildlife Sanctuary",
+        "Nagahill Sanctuary"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Arunachal Pradesh",
+      "code": "AR",
+      "capital": "Itanagar",
+      "statehood": "1987-02-20",
+      "region": "northeast",
+      "area_sq_km": 83743,
+      "population_2011": 1383727,
+      "literacy_rate": 65.38,
+      "languages": ["Hindi", "English"],
+      "description": "Land of the rising sun, renowned for its breathtaking landscapes, diverse tribal cultures, and the Tawang Monastery.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Tawang Monastery",
+        "Ziro Valley",
+        "Namdapha National Park",
+        "Bomdila",
+        "Sela Pass"
+      ],
+      "famous_food": ["Thukpa", "Momos", "Zan", "Lukter"],
+      "festivals": ["Hornbill Festival", "Losar", "Dree Festival", "Solung"],
+      "specialties": [
+        "Tribal culture",
+        "Scenic landscapes",
+        "Buddhist monasteries",
+        "Adventure tourism"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Assam",
+      "code": "AS",
+      "capital": "Dispur",
+      "statehood": "1950-01-26",
+      "region": "northeast",
+      "area_sq_km": 78438,
+      "population_2011": 31205576,
+      "literacy_rate": 72.19,
+      "languages": ["Assamese", "Bengali"],
+      "description": "Famous for its tea plantations, Kaziranga National Park with one-horned rhinoceros, Bihu dance, and traditional silk weaving.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Kaziranga National Park",
+        "Kamakhya Temple",
+        "Majuli Island",
+        "Sivasagar",
+        "Pobitora Wildlife Sanctuary"
+      ],
+      "famous_food": ["Assam Laksa", "Pithas", "Masor Tenga", "Duck Curry"],
+      "festivals": ["Bihu", "Durga Puja", "Kali Puja", "Poila Boishakh"],
+      "specialties": [
+        "Tea gardens",
+        "Wildlife sanctuaries",
+        "Traditional textiles",
+        "Cultural festivals"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bihar",
+      "code": "BR",
+      "capital": "Patna",
+      "statehood": "1950-01-26",
+      "region": "east",
+      "area_sq_km": 94163,
+      "population_2011": 104099452,
+      "literacy_rate": 61.8,
+      "languages": ["Hindi", "Maithili"],
+      "description": "Land of Buddha's enlightenment, known for historical significance including ancient Patliputra, Buddhist pilgrimage sites like Bodh Gaya.",
+      "heritage_count": 1,
+      "major_attractions": [
+        "Bodh Gaya",
+        "Nalanda University Ruins",
+        "Rajgir",
+        "Vaishali",
+        "Pawapuri"
+      ],
+      "famous_food": ["Litti Chokha", "Sattu Paratha", "Thekua", "Khaja"],
+      "festivals": ["Chhath Puja", "Diwali", "Holi", "Dussehra"],
+      "specialties": [
+        "Buddhist heritage",
+        "Ancient history",
+        "Educational legacy",
+        "Spiritual significance"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Chhattisgarh",
+      "code": "CG",
+      "capital": "Raipur",
+      "statehood": "2000-11-01",
+      "region": "central",
+      "area_sq_km": 135192,
+      "population_2011": 25545198,
+      "literacy_rate": 70.28,
+      "languages": ["Hindi", "Chhattisgarhi"],
+      "description": "Rich in tribal heritage and mineral resources, home to Chitrakote Waterfall, often called the 'Niagara of India'.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Chitrakote Falls",
+        "Bhoramdeo Temple",
+        "Kanger Valley National Park",
+        "Tirathgarh Falls",
+        "Bastar Palace"
+      ],
+      "famous_food": ["Poha", "Jalebi", "Fara", "Aamat"],
+      "festivals": ["Bastar Dussehra", "Hareli", "Karma", "Teej"],
+      "specialties": [
+        "Tribal culture",
+        "Waterfalls",
+        "Mineral wealth",
+        "Forest cover"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Goa",
+      "code": "GA",
+      "capital": "Panaji",
+      "statehood": "1987-05-30",
+      "region": "west",
+      "area_sq_km": 3702,
+      "population_2011": 1458545,
+      "literacy_rate": 88.7,
+      "languages": ["Konkani", "Portuguese"],
+      "description": "Famous for beautiful beaches, vibrant nightlife, unique blend of Indian and Portuguese cultures, and seafood cuisine.",
+      "heritage_count": 1,
+      "major_attractions": [
+        "Calangute Beach",
+        "Basilica of Bom Jesus",
+        "Fort Aguada",
+        "Dudhsagar Falls",
+        "Old Goa Churches"
+      ],
+      "famous_food": [
+        "Fish Curry Rice",
+        "Vindaloo",
+        "Bebinca",
+        "Prawn Balchao"
+      ],
+      "festivals": [
+        "Carnival",
+        "Shigmo",
+        "Feast of St. Francis Xavier",
+        "Christmas"
+      ],
+      "specialties": ["Beaches", "Portuguese heritage", "Seafood", "Tourism"]
+    },
+    {
+      "id": 7,
+      "name": "Gujarat",
+      "code": "GJ",
+      "capital": "Gandhinagar",
+      "statehood": "1960-05-01",
+      "region": "west",
+      "area_sq_km": 196024,
+      "population_2011": 60439692,
+      "literacy_rate": 78.03,
+      "languages": ["Gujarati"],
+      "description": "Renowned for industrial prowess, Rann of Kutch desert, vibrant festivals like Navratri, and Sabarmati Ashram associated with Mahatma Gandhi.",
+      "heritage_count": 4,
+      "major_attractions": [
+        "Somnath Temple",
+        "Gir National Park",
+        "Rann of Kutch",
+        "Dwarka",
+        "Sabarmati Ashram"
+      ],
+      "famous_food": ["Dhokla", "Khandvi", "Thepla", "Gujarati Thali"],
+      "festivals": ["Navratri", "Kite Festival", "Rann Utsav", "Janmashtami"],
+      "specialties": [
+        "Business hub",
+        "Vegetarian cuisine",
+        "Textile industry",
+        "Cultural festivals"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Haryana",
+      "code": "HR",
+      "capital": "Chandigarh",
+      "statehood": "1966-11-01",
+      "region": "north",
+      "area_sq_km": 44212,
+      "population_2011": 25351462,
+      "literacy_rate": 75.55,
+      "languages": ["Hindi", "Haryanvi"],
+      "description": "Known for agricultural productivity, being a hub for industries, and sharing Chandigarh as capital with Punjab.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Kurukshetra",
+        "Sultanpur Bird Sanctuary",
+        "Pinjore Gardens",
+        "Panipat Museum",
+        "Brahma Sarovar"
+      ],
+      "famous_food": ["Bajra Khichdi", "Churma", "Kadhi Pakora", "Methi Gajar"],
+      "festivals": ["Teej", "Karva Chauth", "Baisakhi", "Diwali"],
+      "specialties": [
+        "Agriculture",
+        "Industrial development",
+        "Wrestling tradition",
+        "Sports culture"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Himachal Pradesh",
+      "code": "HP",
+      "capital": "Shimla",
+      "statehood": "1971-01-25",
+      "region": "north",
+      "area_sq_km": 55673,
+      "population_2011": 6864602,
+      "literacy_rate": 82.8,
+      "languages": ["Hindi", "Pahari"],
+      "description": "Celebrated for picturesque hill stations, adventure tourism, serene landscapes, and the Dalai Lama's residence in Dharamshala.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Shimla",
+        "Manali",
+        "Dharamshala",
+        "Kullu Valley",
+        "Spiti Valley"
+      ],
+      "famous_food": ["Dham", "Chana Madra", "Rajma", "Siddu"],
+      "festivals": ["Dussehra", "Kullu Dussehra", "Winter Carnival", "Losar"],
+      "specialties": [
+        "Hill stations",
+        "Adventure sports",
+        "Apple orchards",
+        "Tibetan culture"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Jharkhand",
+      "code": "JH",
+      "capital": "Ranchi",
+      "statehood": "2000-11-15",
+      "region": "east",
+      "area_sq_km": 79716,
+      "population_2011": 32988134,
+      "literacy_rate": 66.41,
+      "languages": ["Hindi", "Santali"],
+      "description": "Rich in mineral resources, known for tribal culture, and home to Betla National Park and industrial cities.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Betla National Park",
+        "Hundru Falls",
+        "Ranchi Hill",
+        "Baidyanath Dham",
+        "Palamau Fort"
+      ],
+      "famous_food": ["Handia", "Pitha", "Rugra", "Chilka Roti"],
+      "festivals": ["Karma", "Sarhul", "Karam", "Tusu Parab"],
+      "specialties": [
+        "Mineral wealth",
+        "Tribal heritage",
+        "Wildlife",
+        "Industrial development"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Karnataka",
+      "code": "KA",
+      "capital": "Bengaluru",
+      "statehood": "1956-11-01",
+      "region": "south",
+      "area_sq_km": 191791,
+      "population_2011": 61095297,
+      "literacy_rate": 75.36,
+      "languages": ["Kannada"],
+      "description": "Silicon Valley of India, known for IT industry, historical sites like Hampi, Mysore Palace, and traditional dance forms.",
+      "heritage_count": 1,
+      "major_attractions": [
+        "Hampi",
+        "Mysore Palace",
+        "Coorg",
+        "Bandipur National Park",
+        "Gol Gumbaz"
+      ],
+      "famous_food": ["Dosa", "Mysore Pak", "Bisi Bele Bath", "Ragi Mudde"],
+      "festivals": ["Dussehra", "Karaga", "Ugadi", "Varamahalakshmi"],
+      "specialties": [
+        "IT hub",
+        "Coffee plantations",
+        "Historical architecture",
+        "Cultural diversity"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Kerala",
+      "code": "KL",
+      "capital": "Thiruvananthapuram",
+      "statehood": "1956-11-01",
+      "region": "south",
+      "area_sq_km": 38863,
+      "population_2011": 33406061,
+      "literacy_rate": 94.0,
+      "languages": ["Malayalam"],
+      "description": "God's Own Country, famous for backwaters, Ayurveda practices, lush greenery, and highest literacy rate in India.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Alleppey Backwaters",
+        "Munnar",
+        "Fort Kochi",
+        "Periyar Wildlife Sanctuary",
+        "Kovalam Beach"
+      ],
+      "famous_food": ["Kerala Sadya", "Fish Curry", "Appam", "Payasam"],
+      "festivals": ["Onam", "Vishu", "Thrissur Pooram", "Boat Race"],
+      "specialties": [
+        "Backwaters",
+        "Spice gardens",
+        "Ayurveda",
+        "High literacy"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Madhya Pradesh",
+      "code": "MP",
+      "capital": "Bhopal",
+      "statehood": "1956-11-01",
+      "region": "central",
+      "area_sq_km": 308252,
+      "population_2011": 72626809,
+      "literacy_rate": 69.32,
+      "languages": ["Hindi"],
+      "description": "Heart of India, home to Khajuraho temples with erotic sculptures, Sanchi Stupa, and numerous national parks.",
+      "heritage_count": 3,
+      "major_attractions": [
+        "Khajuraho Temples",
+        "Sanchi Stupa",
+        "Kanha National Park",
+        "Bandhavgarh National Park",
+        "Ujjain"
+      ],
+      "famous_food": ["Poha Jalebi", "Dal Bafla", "Gajak", "Malpua"],
+      "festivals": [
+        "Khajuraho Dance Festival",
+        "Ganga Aarti",
+        "Narmada Jayanti",
+        "Tansen Music Festival"
+      ],
+      "specialties": [
+        "Archaeological sites",
+        "Wildlife sanctuaries",
+        "Ancient temples",
+        "Cultural heritage"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Maharashtra",
+      "code": "MH",
+      "capital": "Mumbai",
+      "statehood": "1960-05-01",
+      "region": "west",
+      "area_sq_km": 307713,
+      "population_2011": 112374333,
+      "literacy_rate": 82.34,
+      "languages": ["Marathi"],
+      "description": "Financial and entertainment capital, home to Bollywood, historical landmarks like Gateway of India, and Ajanta-Ellora caves.",
+      "heritage_count": 5,
+      "major_attractions": [
+        "Gateway of India",
+        "Ajanta and Ellora Caves",
+        "Elephanta Caves",
+        "Mahabaleshwar",
+        "Shirdi"
+      ],
+      "famous_food": ["Vada Pav", "Misal Pav", "Puran Poli", "Bhel Puri"],
+      "festivals": ["Ganesh Chaturthi", "Gudi Padwa", "Navratri", "Diwali"],
+      "specialties": [
+        "Bollywood",
+        "Financial center",
+        "Cave architecture",
+        "Industrial hub"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Manipur",
+      "code": "MN",
+      "capital": "Imphal",
+      "statehood": "1972-01-21",
+      "region": "northeast",
+      "area_sq_km": 22327,
+      "population_2011": 2855794,
+      "literacy_rate": 76.94,
+      "languages": ["Manipuri"],
+      "description": "Celebrated for traditional Manipuri dance, Loktak Lake with floating islands, and vibrant festivals.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Loktak Lake",
+        "Kangla Fort",
+        "Keibul Lamjao National Park",
+        "Ima Keithel",
+        "Shree Govindajee Temple"
+      ],
+      "famous_food": ["Eromba", "Iromba", "Ngari", "Singju"],
+      "festivals": ["Lai Haraoba", "Yaoshang", "Kang", "Ningol Chakouba"],
+      "specialties": [
+        "Classical dance",
+        "Unique ecosystem",
+        "Handloom",
+        "Martial arts"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Meghalaya",
+      "code": "ML",
+      "capital": "Shillong",
+      "statehood": "1972-01-21",
+      "region": "northeast",
+      "area_sq_km": 22429,
+      "population_2011": 2966889,
+      "literacy_rate": 74.43,
+      "languages": ["Khasi", "Garo"],
+      "description": "Abode of clouds, known for Cherrapunji (wettest place), living root bridges, and scenic hills.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Cherrapunja",
+        "Living Root Bridges",
+        "Elephant Falls",
+        "Mawsynram",
+        "Don Bosco Museum"
+      ],
+      "famous_food": ["Jadoh", "Tungrymbai", "Nakham Bitchi", "Pumaloi"],
+      "festivals": ["Wangala", "Nongkrem", "Shad Suk Mynsiem", "Behdienkhlam"],
+      "specialties": [
+        "Rainfall",
+        "Natural bridges",
+        "Matrilineal society",
+        "Music culture"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Mizoram",
+      "code": "MZ",
+      "capital": "Aizawl",
+      "statehood": "1987-02-20",
+      "region": "northeast",
+      "area_sq_km": 21081,
+      "population_2011": 1097206,
+      "literacy_rate": 91.33,
+      "languages": ["Mizo"],
+      "description": "Land of the hill people, known for beautiful landscapes, rich tribal culture, and high literacy rate.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Aizawl",
+        "Durtlang Hills",
+        "Blue Mountain",
+        "Dampa Tiger Reserve",
+        "Mizoram State Museum"
+      ],
+      "famous_food": ["Bai", "Vawksa Rep", "Sawhchiar", "Koat Pitha"],
+      "festivals": ["Chapchar Kut", "Mim Kut", "Pawl Kut", "Christmas"],
+      "specialties": [
+        "High literacy",
+        "Peaceful society",
+        "Bamboo crafts",
+        "Traditional music"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Nagaland",
+      "code": "NL",
+      "capital": "Kohima",
+      "statehood": "1963-12-01",
+      "region": "northeast",
+      "area_sq_km": 16579,
+      "population_2011": 1978502,
+      "literacy_rate": 79.55,
+      "languages": ["English", "Nagamese"],
+      "description": "Land of festivals, known for Hornbill Festival celebrating tribal culture, war memorials, and handicrafts.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Kohima War Cemetery",
+        "Hornbill Festival",
+        "Dzukou Valley",
+        "Khonoma Village",
+        "Japfu Peak"
+      ],
+      "famous_food": ["Smoked Pork", "Axone", "Galho", "Bamboo Shoot Curry"],
+      "festivals": [
+        "Hornbill Festival",
+        "Aoling Festival",
+        "Sekrenyi",
+        "Tuluni"
+      ],
+      "specialties": [
+        "Tribal heritage",
+        "Handloom weaving",
+        "War history",
+        "Cultural diversity"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Odisha",
+      "code": "OD",
+      "capital": "Bhubaneswar",
+      "statehood": "1950-01-26",
+      "region": "east",
+      "area_sq_km": 155707,
+      "population_2011": 41974218,
+      "literacy_rate": 72.87,
+      "languages": ["Odia"],
+      "description": "Known for Konark Sun Temple, Jagannath Temple-Puri with annual Rath Yatra, and classical Odissi dance.",
+      "heritage_count": 1,
+      "major_attractions": [
+        "Konark Sun Temple",
+        "Jagannath Temple Puri",
+        "Chilika Lake",
+        "Lingaraj Temple",
+        "Udayagiri Caves"
+      ],
+      "famous_food": ["Dalma", "Pakhala", "Rasgulla", "Chhena Poda"],
+      "festivals": ["Rath Yatra", "Durga Puja", "Kali Puja", "Poila Boishakh"],
+      "specialties": [
+        "Temple architecture",
+        "Classical dance",
+        "Handicrafts",
+        "Maritime heritage"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Punjab",
+      "code": "PB",
+      "capital": "Chandigarh",
+      "statehood": "1966-11-01",
+      "region": "north",
+      "area_sq_km": 50362,
+      "population_2011": 27743338,
+      "literacy_rate": 75.84,
+      "languages": ["Punjabi"],
+      "description": "Land of five rivers, spiritual center with Golden Temple Amritsar, rich in culture, music, and agricultural prosperity.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Golden Temple",
+        "Jallianwala Bagh",
+        "Wagah Border",
+        "Anandpur Sahib",
+        "Harike Wetland"
+      ],
+      "famous_food": [
+        "Butter Chicken",
+        "Sarson ka Saag",
+        "Makki di Roti",
+        "Chole Bhature"
+      ],
+      "festivals": ["Baisakhi", "Diwali", "Gurpurab", "Karva Chauth"],
+      "specialties": ["Sikhism", "Agriculture", "Bhangra dance", "Hospitality"]
+    },
+    {
+      "id": 21,
+      "name": "Rajasthan",
+      "code": "RJ",
+      "capital": "Jaipur",
+      "statehood": "1949-03-30",
+      "region": "west",
+      "area_sq_km": 342239,
+      "population_2011": 68548437,
+      "literacy_rate": 66.11,
+      "languages": ["Hindi", "Rajasthani"],
+      "description": "Land of kings, largest state known for majestic forts, palaces, Thar Desert, and colorful culture.",
+      "heritage_count": 2,
+      "major_attractions": [
+        "Jaipur City Palace",
+        "Udaipur Lake Palace",
+        "Jaisalmer Fort",
+        "Amber Fort",
+        "Ranthambore National Park"
+      ],
+      "famous_food": [
+        "Dal Baati Churma",
+        "Gatte ki Sabzi",
+        "Laal Maas",
+        "Ghevar"
+      ],
+      "festivals": ["Desert Festival", "Pushkar Fair", "Teej", "Gangaur"],
+      "specialties": [
+        "Royal heritage",
+        "Desert tourism",
+        "Handicrafts",
+        "Folk music"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Sikkim",
+      "code": "SK",
+      "capital": "Gangtok",
+      "statehood": "1975-05-16",
+      "region": "northeast",
+      "area_sq_km": 7096,
+      "population_2011": 610577,
+      "literacy_rate": 81.42,
+      "languages": ["Nepali", "Sikkimese"],
+      "description": "Himalayan state known for Kanchenjunga views, Buddhist monasteries, organic farming, and eco-tourism.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Gangtok",
+        "Nathula Pass",
+        "Rumtek Monastery",
+        "Tsomgo Lake",
+        "Pelling"
+      ],
+      "famous_food": ["Momos", "Thukpa", "Gundruk", "Sel Roti"],
+      "festivals": ["Losar", "Dashain", "Buddha Purnima", "Tihar"],
+      "specialties": [
+        "Mountain views",
+        "Buddhist culture",
+        "Organic farming",
+        "Adventure tourism"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Tamil Nadu",
+      "code": "TN",
+      "capital": "Chennai",
+      "statehood": "1956-11-01",
+      "region": "south",
+      "area_sq_km": 130058,
+      "population_2011": 72147030,
+      "literacy_rate": 80.33,
+      "languages": ["Tamil"],
+      "description": "Land of temples, known for Dravidian architecture, classical Bharatanatyam dance, and rich literary heritage.",
+      "heritage_count": 2,
+      "major_attractions": [
+        "Meenakshi Temple Madurai",
+        "Mahabalipuram Monuments",
+        "Ooty Hill Station",
+        "Rameswaram",
+        "Kodaikanal"
+      ],
+      "famous_food": ["Dosa", "Sambar", "Rasam", "Payasam"],
+      "festivals": ["Pongal", "Tamil New Year", "Navaratri", "Diwali"],
+      "specialties": [
+        "Temple architecture",
+        "Classical arts",
+        "Film industry",
+        "Educational hub"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Telangana",
+      "code": "TS",
+      "capital": "Hyderabad",
+      "statehood": "2014-06-02",
+      "region": "south",
+      "area_sq_km": 112077,
+      "population_2011": 35193978,
+      "literacy_rate": 66.5,
+      "languages": ["Telugu", "Urdu"],
+      "description": "Youngest state known for IT industry, Charminar-Hyderabad landmark, and Ramoji Film City.",
+      "heritage_count": 1,
+      "major_attractions": [
+        "Charminar",
+        "Ramoji Film City",
+        "Golconda Fort",
+        "Warangal Fort",
+        "Thousand Pillar Temple"
+      ],
+      "famous_food": [
+        "Hyderabadi Biryani",
+        "Haleem",
+        "Qubani ka Meetha",
+        "Double ka Meetha"
+      ],
+      "festivals": ["Bonalu", "Bathukamma", "Ugadi", "Eid"],
+      "specialties": [
+        "IT hub",
+        "Islamic architecture",
+        "Pearls",
+        "Pharmaceutical industry"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Tripura",
+      "code": "TR",
+      "capital": "Agartala",
+      "statehood": "1972-01-21",
+      "region": "northeast",
+      "area_sq_km": 10491,
+      "population_2011": 3673917,
+      "literacy_rate": 87.22,
+      "languages": ["Bengali", "Tripuri"],
+      "description": "Known for Neermahal Palace on lake, Ujjayanta Palace, and rich tribal culture.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Neermahal Palace",
+        "Ujjayanta Palace",
+        "Sepahijala Wildlife Sanctuary",
+        "Unakoti",
+        "Jampui Hills"
+      ],
+      "famous_food": ["Mui Borok", "Wak", "Godok", "Chakhwi"],
+      "festivals": ["Kharchi Puja", "Garia Puja", "Ker Puja", "Durga Puja"],
+      "specialties": [
+        "Palace architecture",
+        "Tribal heritage",
+        "Handloom",
+        "Natural beauty"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Uttar Pradesh",
+      "code": "UP",
+      "capital": "Lucknow",
+      "statehood": "1950-01-26",
+      "region": "north",
+      "area_sq_km": 240928,
+      "population_2011": 199812341,
+      "literacy_rate": 67.68,
+      "languages": ["Hindi", "Urdu"],
+      "description": "Most populous state, home to Taj Mahal Agra, spiritual city Varanasi, and rich Mughal heritage.",
+      "heritage_count": 3,
+      "major_attractions": [
+        "Taj Mahal",
+        "Varanasi Ghats",
+        "Agra Fort",
+        "Fatehpur Sikri",
+        "Allahabad Sangam"
+      ],
+      "famous_food": ["Kebabs", "Biryani", "Chaat", "Petha"],
+      "festivals": ["Kumbh Mela", "Diwali", "Holi", "Dussehra"],
+      "specialties": [
+        "Mughal monuments",
+        "Spiritual significance",
+        "Cultural diversity",
+        "Political importance"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Uttarakhand",
+      "code": "UK",
+      "capital": "Dehradun",
+      "statehood": "2000-11-09",
+      "region": "north",
+      "area_sq_km": 53483,
+      "population_2011": 10086292,
+      "literacy_rate": 78.82,
+      "languages": ["Hindi", "Garhwali"],
+      "description": "Dev Bhoomi (Land of Gods), known for Haridwar Ganga Aarti, Char Dham pilgrimage, and hill stations.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Haridwar",
+        "Rishikesh",
+        "Nainital",
+        "Jim Corbett National Park",
+        "Badrinath"
+      ],
+      "famous_food": [
+        "Bal Mithai",
+        "Singodi",
+        "Aloo ke Gutke",
+        "Jhangora ki Kheer"
+      ],
+      "festivals": [
+        "Kumbh Mela",
+        "Makar Sankranti",
+        "Nanda Devi Raj Jat",
+        "Harela"
+      ],
+      "specialties": [
+        "Pilgrimage sites",
+        "Adventure sports",
+        "Yoga centers",
+        "Himalayan beauty"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "West Bengal",
+      "code": "WB",
+      "capital": "Kolkata",
+      "statehood": "1950-01-26",
+      "region": "east",
+      "area_sq_km": 88752,
+      "population_2011": 91276115,
+      "literacy_rate": 76.26,
+      "languages": ["Bengali"],
+      "description": "Cultural capital, known for literature, Durga Puja celebrations, Darjeeling tea, and Sundarbans mangroves.",
+      "heritage_count": 1,
+      "major_attractions": [
+        "Victoria Memorial",
+        "Darjeeling Tea Gardens",
+        "Sundarbans",
+        "Howrah Bridge",
+        "Kali Temple Kalighat"
+      ],
+      "famous_food": [
+        "Fish Curry Rice",
+        "Rosogolla",
+        "Sandesh",
+        "Machher Jhol"
+      ],
+      "festivals": [
+        "Durga Puja",
+        "Kali Puja",
+        "Poila Boishakh",
+        "Saraswati Puja"
+      ],
+      "specialties": [
+        "Literature",
+        "Cultural festivals",
+        "Sweets",
+        "Intellectual heritage"
+      ]
+    }
+  ],
+  "union_territories": [
+    {
+      "id": 29,
+      "name": "Andaman and Nicobar Islands",
+      "code": "AN",
+      "capital": "Port Blair",
+      "established": "1956-11-01",
+      "region": "island",
+      "area_sq_km": 8249,
+      "population_2011": 380581,
+      "literacy_rate": 86.63,
+      "languages": ["Hindi", "English"],
+      "description": "Tropical paradise known for Cellular Jail historical importance, pristine beaches, and marine life.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Cellular Jail",
+        "Radhanagar Beach",
+        "Ross Island",
+        "Baratang Island",
+        "Neil Island"
+      ],
+      "famous_food": [
+        "Fish Curry",
+        "Coconut-based dishes",
+        "Seafood",
+        "Tropical fruits"
+      ],
+      "festivals": [
+        "Island Tourism Festival",
+        "Monsoon Festival",
+        "Food Festival"
+      ],
+      "specialties": [
+        "Pristine beaches",
+        "Historical significance",
+        "Marine biodiversity",
+        "Water sports"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Chandigarh",
+      "code": "CH",
+      "capital": "Chandigarh",
+      "established": "1966-11-01",
+      "region": "north",
+      "area_sq_km": 114,
+      "population_2011": 1055450,
+      "literacy_rate": 86.05,
+      "languages": ["Hindi", "Punjabi"],
+      "description": "First planned city of India, known for modern architecture, Rock Garden, and urban planning.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Rock Garden",
+        "Sukhna Lake",
+        "Rose Garden",
+        "Capitol Complex",
+        "Sector 17 Plaza"
+      ],
+      "famous_food": [
+        "Chole Bhature",
+        "Butter Chicken",
+        "Rajma Chawal",
+        "Kulfi"
+      ],
+      "festivals": ["Rose Festival", "Mango Festival", "Chandigarh Carnival"],
+      "specialties": [
+        "Urban planning",
+        "Modern architecture",
+        "Quality of life",
+        "Administrative center"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Dadra and Nagar Haveli and Daman and Diu",
+      "code": "DN",
+      "capital": "Daman",
+      "established": "2020-01-26",
+      "region": "west",
+      "area_sq_km": 603,
+      "population_2011": 585764,
+      "literacy_rate": 77.65,
+      "languages": ["Gujarati", "Hindi"],
+      "description": "Former Portuguese territories known for beaches, churches, and colonial architecture.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Diu Fort",
+        "Jampore Beach",
+        "St. Paul's Church",
+        "Vasona Lion Safari",
+        "Daman Ganga River"
+      ],
+      "famous_food": ["Seafood", "Portuguese cuisine", "Bebinca", "Fish curry"],
+      "festivals": ["Christmas", "Diu Festival", "Navratri"],
+      "specialties": [
+        "Portuguese heritage",
+        "Coastal beauty",
+        "Peaceful environment",
+        "Tourism"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Delhi",
+      "code": "DL",
+      "capital": "New Delhi",
+      "established": "1950-01-26",
+      "region": "north",
+      "area_sq_km": 1484,
+      "population_2011": 16787941,
+      "literacy_rate": 86.21,
+      "languages": ["Hindi", "English"],
+      "description": "National capital, blend of ancient and modern, home to Red Fort, India Gate, and Parliament.",
+      "heritage_count": 3,
+      "major_attractions": [
+        "Red Fort",
+        "India Gate",
+        "Qutub Minar",
+        "Lotus Temple",
+        "Humayun's Tomb"
+      ],
+      "famous_food": ["Chole Bhature", "Paranthe Wali Gali", "Kebabs", "Chaat"],
+      "festivals": ["Diwali", "Dussehra", "Independence Day", "Republic Day"],
+      "specialties": [
+        "Political center",
+        "Historical monuments",
+        "Cultural diversity",
+        "Economic hub"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Jammu and Kashmir",
+      "code": "JK",
+      "capital": "Srinagar (Summer), Jammu (Winter)",
+      "established": "2019-10-31",
+      "region": "north",
+      "area_sq_km": 42241,
+      "population_2011": 12267032,
+      "literacy_rate": 67.16,
+      "languages": ["Kashmiri", "Dogri", "Hindi"],
+      "description": "Paradise on earth, known for stunning valleys, Dal Lake, houseboats, and Himalayan landscapes.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Dal Lake",
+        "Gulmarg",
+        "Pahalgam",
+        "Amarnath Cave",
+        "Vaishno Devi"
+      ],
+      "famous_food": ["Rogan Josh", "Kahwa", "Wazwan", "Modur Pulav"],
+      "festivals": ["Shivratri", "Eid", "Navratri", "Baisakhi"],
+      "specialties": [
+        "Natural beauty",
+        "Adventure tourism",
+        "Handicrafts",
+        "Spiritual significance"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Ladakh",
+      "code": "LA",
+      "capital": "Leh",
+      "established": "2019-10-31",
+      "region": "north",
+      "area_sq_km": 59146,
+      "population_2011": 274000,
+      "literacy_rate": 77.2,
+      "languages": ["Ladakhi", "Hindi"],
+      "description": "Land of high passes, known for Buddhist monasteries, high-altitude deserts, and adventure tourism.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Leh Palace",
+        "Pangong Lake",
+        "Nubra Valley",
+        "Magnetic Hill",
+        "Hemis Monastery"
+      ],
+      "famous_food": ["Thukpa", "Momos", "Chang", "Skyu"],
+      "festivals": ["Hemis Festival", "Losar", "Ladakh Festival"],
+      "specialties": [
+        "Buddhist culture",
+        "High altitude",
+        "Adventure sports",
+        "Unique landscape"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Lakshadweep",
+      "code": "LD",
+      "capital": "Kavaratti",
+      "established": "1956-11-01",
+      "region": "island",
+      "area_sq_km": 32,
+      "population_2011": 64473,
+      "literacy_rate": 91.85,
+      "languages": ["Malayalam"],
+      "description": "Coral island paradise known for lagoons, pristine beaches, and water sports.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "Kavaratti Island",
+        "Agatti Island",
+        "Bangaram Island",
+        "Marine Museum",
+        "Coral reefs"
+      ],
+      "famous_food": [
+        "Fish curry",
+        "Coconut-based dishes",
+        "Seafood",
+        "Tuna dishes"
+      ],
+      "festivals": ["Eid", "Milad-un-Nabi", "Island festivals"],
+      "specialties": [
+        "Coral islands",
+        "Marine life",
+        "Water sports",
+        "Eco-tourism"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Puducherry",
+      "code": "PY",
+      "capital": "Puducherry",
+      "established": "1963-07-01",
+      "region": "south",
+      "area_sq_km": 479,
+      "population_2011": 1247953,
+      "literacy_rate": 85.85,
+      "languages": ["Tamil", "French"],
+      "description": "Former French colony known for French Quarter, Auroville, and colonial architecture.",
+      "heritage_count": 0,
+      "major_attractions": [
+        "French Quarter",
+        "Auroville",
+        "Paradise Beach",
+        "Basilica of Sacred Heart",
+        "Promenade Beach"
+      ],
+      "famous_food": [
+        "French cuisine",
+        "Creole dishes",
+        "South Indian food",
+        "Seafood"
+      ],
+      "festivals": [
+        "French festivals",
+        "Pongal",
+        "Christmas",
+        "International Yoga Day"
+      ],
+      "specialties": [
+        "French heritage",
+        "Spiritual tourism",
+        "Colonial architecture",
+        "International community"
+      ]
+    }
+  ]
+}
