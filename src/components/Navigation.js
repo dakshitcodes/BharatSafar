@@ -5,8 +5,8 @@ function Navigation() {
   return (
     <nav className="navigation" aria-label="Primary Navigation">
       <div className="nav-container">
-        <NavLink to="/" className="nav-logo" aria-label="Bharatverse Home">
-          <h2>Bharatverse</h2>
+        <NavLink to="/" className="nav-logo" aria-label="BharatSafar Home">
+          <h2>BharatSafar</h2>
         </NavLink>
         <ul className="nav-menu" role="menubar">
           <li className="nav-item" role="none">

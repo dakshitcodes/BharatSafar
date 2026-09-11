@@ -142,9 +142,9 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
   ]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-ivory-100">
       {/* Hero */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -157,15 +157,16 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
         />
         {/* Overlay for readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-b from-charcoal-900/60 via-charcoal-900/30 to-charcoal-900/80 pointer-events-none"
           style={{ zIndex: 1 }}
         ></div>
         {/* Content */}
-        <div className="text-center px-4 relative" style={{ zIndex: 2 }}>
-          <h1 className="text-5xl md:text-6xl font-heritage font-bold text-white drop-shadow-lg mb-6">
+        <div className="text-center px-4 relative max-w-4xl mx-auto" style={{ zIndex: 2 }}>
+          <p className="bs-label text-gold-400 mb-4">India's Living Traditions</p>
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
             Indian Festivals
           </h1>
-          <p className="text-lg md:text-2xl max-w-3xl mx-auto text-white/90 drop-shadow-md font-medium">
+          <p className="text-lg md:text-xl text-white/80 font-sans leading-relaxed">
             Experience the vibrant colors, traditions, and celebrations of
             India’s diverse cultural heritage
           </p>
@@ -173,17 +174,17 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
       </div>
 
       {/* Filters */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex flex-wrap gap-4 mb-8 items-center justify-center">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="flex flex-wrap gap-4 mb-8 items-center justify-center bg-white rounded-2xl shadow-bs-sm border border-ivory-200 py-6 px-8">
           {/* Search */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <div className="relative flex-1 min-w-[200px] max-w-sm">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-600" size={18} />
             <input
               type="text"
               placeholder="Search festivals..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+              className="bs-input pl-10 w-full"
             />
           </div>
 
@@ -191,7 +192,7 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500"
+            className="bs-input max-w-[160px] cursor-pointer"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>
@@ -204,7 +205,7 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
           <select
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500"
+            className="bs-input max-w-[160px] cursor-pointer"
           >
             {states.map((s) => (
               <option key={s} value={s}>
@@ -217,7 +218,7 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
           <select
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500"
+            className="bs-input max-w-[160px] cursor-pointer"
           >
             {months.map((m) => (
               <option key={m} value={m}>
@@ -230,7 +231,7 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
           <select
             value={selectedRating}
             onChange={(e) => setSelectedRating(e.target.value)}
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500"
+            className="bs-input max-w-[140px] cursor-pointer"
           >
             <option value="all">All Ratings</option>
             <option value="4.5">4.5 & up</option>
@@ -242,7 +243,7 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500"
+            className="bs-input max-w-[160px] cursor-pointer"
           >
             <option value="popularity">Most Popular</option>
             <option value="name">Name</option>
@@ -258,14 +259,14 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bs-card group overflow-hidden"
             >
-              <div className="relative">
-                <img
-                  src={festival.images?.[0] || "/placeholder.jpg"}
-                  alt={festival.title}
-                  className="w-full h-48 object-cover"
-                />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={festival.images?.[0] || "/placeholder.jpg"}
+                    alt={festival.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 <button
                   onClick={() => addBookmark?.(festival)}
                   className="absolute top-4 right-4 bg-white/80 p-2 rounded-full hover:bg-white"
@@ -280,31 +281,31 @@ const FestivalsPage = ({ addBookmark, isBookmarked }) => {
                 </button>
               </div>
 
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{festival.title}</h3>
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+              <div className="p-6">
+                <h3 className="font-display text-xl font-bold text-charcoal-900 mb-2 group-hover:text-gold-700 transition-colors">{festival.title}</h3>
+                <p className="font-sans text-charcoal-500 text-sm mb-4 leading-relaxed line-clamp-2">
                   {festival.description}
                 </p>
 
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" /> {festival.date}
+                <div className="flex items-center justify-between text-xs font-sans text-charcoal-400 mb-4 pt-3 border-t border-ivory-200">
+                  <span className="flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5" /> {festival.date}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" /> {festival.duration}
+                  <span className="flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5" /> {festival.duration}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-yellow-400" />
-                    {festival.rating} ({festival.reviews_count})
+                  <span className="flex items-center gap-1 font-sans text-sm font-semibold text-charcoal-700">
+                    <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    {festival.rating} <span className="font-normal text-charcoal-400 text-xs">({festival.reviews_count})</span>
                   </span>
                   <button
                     onClick={() => setSelectedFestival(festival)}
-                    className="text-orange-600 hover:text-orange-700 text-sm font-medium"
+                    className="text-sm font-sans font-semibold text-gold-700 hover:text-gold-800 transition-colors"
                   >
-                    Learn More →
+                    Explore →
                   </button>
                 </div>
               </div>

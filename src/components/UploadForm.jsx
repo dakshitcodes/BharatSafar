@@ -383,9 +383,9 @@ const UploadForm = ({ user, onSubmit, onCancel }) => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="heritage-card p-8">
+      <div className="bs-card p-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-heritage font-bold heritage-text-gradient mb-4">
+          <h2 className="text-3xl font-display font-bold heritage-text-gradient mb-4">
             Share a Hidden Heritage Gem
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -398,7 +398,7 @@ const UploadForm = ({ user, onSubmit, onCancel }) => {
           {/* Basic Information */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold flex items-center space-x-2">
-              <Type size={24} className="text-saffron-600" />
+              <Type size={24} className="text-gold-700" />
               <span>Basic Information</span>
             </h3>
 
@@ -467,7 +467,7 @@ const UploadForm = ({ user, onSubmit, onCancel }) => {
           {/* Location Information */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold flex items-center space-x-2">
-              <MapPin size={24} className="text-saffron-600" />
+              <MapPin size={24} className="text-gold-700" />
               <span>Location Details</span>
             </h3>
 
@@ -546,7 +546,7 @@ const UploadForm = ({ user, onSubmit, onCancel }) => {
           {/* Image Upload */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold flex items-center space-x-2">
-              <Image size={24} className="text-saffron-600" />
+              <Image size={24} className="text-gold-700" />
               <span>Images (Required)</span>
             </h3>
 
@@ -614,7 +614,7 @@ const UploadForm = ({ user, onSubmit, onCancel }) => {
           {/* Additional Information */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold flex items-center space-x-2">
-              <Calendar size={24} className="text-saffron-600" />
+              <Calendar size={24} className="text-gold-700" />
               <span>Additional Details</span>
             </h3>
 
@@ -685,9 +685,9 @@ const UploadForm = ({ user, onSubmit, onCancel }) => {
                 name="isHidden"
                 checked={formData.isHidden}
                 onChange={handleInputChange}
-                className="rounded border-gray-300 text-saffron-600 focus:ring-saffron-500"
+                className="rounded border-gray-300 text-gold-700 focus:ring-gold-400"
               />
-              <label className="text-sm text-gray-700">
+              <label className="text-sm text-charcoal-700">
                 This is a hidden/lesser-known heritage site
               </label>
             </div>
@@ -707,7 +707,7 @@ const UploadForm = ({ user, onSubmit, onCancel }) => {
               <button
                 type="button"
                 onClick={onCancel}
-                className="px-8 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors flex-1 sm:flex-none"
+                className="px-8 py-3 border border-gray-300 rounded-xl text-charcoal-700 hover:bg-gray-50 transition-colors flex-1 sm:flex-none"
               >
                 Cancel
               </button>

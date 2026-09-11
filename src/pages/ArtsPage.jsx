@@ -122,7 +122,7 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
   }, [searchTerm, selectedCategory, selectedState, selectedRating, arts]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-ivory-100">
       {/* Hero */}
       <section className="relative h-[600px] w-full flex items-center justify-center overflow-hidden">
         <img
@@ -130,44 +130,38 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
           alt="Arts of India"
           className="absolute inset-0 w-full h-full object-cover object-center"
           draggable="false"
-          style={{ filter: "brightness(0.92)" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900/65 via-charcoal-900/30 to-charcoal-900/75 pointer-events-none"></div>
         <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4">
-          <h1
-            className="
-  text-6xl md:text-7xl font-heritage font-extrabold mb-4
-  bg-gradient-to-r from-pink-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-[0_3px_18px_rgba(0,0,0,0.85)] tracking-wide"
-          >
+          <p className="bs-label text-gold-400 mb-4">India's Living Expressions</p>
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Arts Of India
           </h1>
 
-          <p className="mt-4 max-w-3xl mx-auto text-2xl md:text-3xl text-white font-medium drop-shadow leading-relaxed">
-            Discover India's rich artistic heritage through classical dances,
-            <br />
-            folk arts, traditional crafts, and timeless cultural expressions.
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/80 font-sans leading-relaxed">
+            Discover India's rich artistic heritage through classical dances, folk arts, traditional crafts, and timeless cultural expressions.
           </p>
         </div>
       </section>
 
       {/* Filters */}
-      <main className="container mx-auto px-4 py-12">
-        <div className="heritage-card p-6 flex flex-wrap gap-4 justify-center mb-8">
-          <div className="relative w-full md:w-auto">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+      <main className="max-w-7xl mx-auto px-6 py-16">
+        <div className="flex flex-wrap gap-4 items-center justify-center bg-white rounded-2xl shadow-bs-sm border border-ivory-200 py-6 px-8 mb-12">
+          <div className="relative flex-1 min-w-[200px] max-w-sm">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-600" size={18} />
             <input
               type="text"
               placeholder="Search arts..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-pink-400 w-full md:w-64"
+              className="bs-input pl-10 w-full"
             />
           </div>
 
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-2 rounded border border-gray-300"
+            className="bs-input max-w-[180px] cursor-pointer"
           >
             {categories.map((c) => (
               <option key={c} value={c}>
@@ -179,7 +173,7 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
           <select
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
-            className="px-4 py-2 rounded border border-gray-300"
+            className="bs-input max-w-[180px] cursor-pointer"
           >
             {states.map((s) => (
               <option key={s} value={s}>
@@ -191,29 +185,29 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
           <select
             value={selectedRating}
             onChange={(e) => setSelectedRating(e.target.value)}
-            className="px-4 py-2 rounded border border-gray-300"
+            className="bs-input max-w-[160px] cursor-pointer"
           >
             <option value="all">All Ratings</option>
-            <option value="4.5">4.5 & above</option>
-            <option value="4.0">4.0 & above</option>
-            <option value="3.5">3.5 & above</option>
+            <option value="4.5">4.5 &amp; above</option>
+            <option value="4.0">4.0 &amp; above</option>
+            <option value="3.5">3.5 &amp; above</option>
           </select>
         </div>
 
         {/* Grid */}
         <section>
           {filteredArts.length === 0 ? (
-            <p className="text-center text-gray-600">
+            <p className="text-center font-sans text-charcoal-400 py-12 text-lg">
               No arts found. Try adjusting filters or search.
             </p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredArts.map((art) => (
                 <motion.article
                   key={art.id}
-                  className="heritage-card cursor-pointer group rounded-2xl overflow-hidden shadow-md"
+                  className="bs-card group overflow-hidden cursor-pointer"
                   onClick={() => setActiveArt(art)}
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ y: -4 }}
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
@@ -221,29 +215,31 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                       alt={art.title}
                       className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-2 left-2 bg-white bg-opacity-80 rounded-full px-3 py-1 text-xs flex items-center gap-1">
+                    <div className="absolute top-4 left-4 bs-badge-gold">
                       {art.category}
                     </div>
                     {art.video && (
-                      <div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Play size={48} color="white" />
+                      <div className="absolute inset-0 bg-charcoal-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal-900 shadow-bs-sm">
+                          <Play size={20} className="ml-1" />
+                        </div>
                       </div>
                     )}
                   </div>
-                  <div className="p-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="bg-pink-100 text-pink-700 text-xs px-2 py-0.5 rounded">
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-xs font-sans text-charcoal-500">
                         {art.state}
                       </span>
-                      <div className="flex items-center space-x-1 text-yellow-400">
-                        <Star size={14} />
-                        <span className="text-sm">{art.rating}</span>
+                      <div className="flex items-center space-x-1 font-sans text-sm font-semibold text-charcoal-700">
+                        <Star size={14} className="text-amber-400 fill-amber-400" />
+                        <span>{art.rating}</span>
                       </div>
                     </div>
-                    <h3 className="font-heritage font-semibold text-lg">
+                    <h3 className="font-display text-xl font-bold text-charcoal-900 mb-2 group-hover:text-gold-700 transition-colors">
                       {art.title}
                     </h3>
-                    <p className="text-gray-600 text-sm line-clamp-3 mt-1">
+                    <p className="font-sans text-charcoal-500 text-sm line-clamp-2 leading-relaxed">
                       {art.description}
                     </p>
                   </div>
@@ -264,7 +260,7 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
             >
               <button
                 onClick={() => setActiveArt(null)}
-                className="absolute top-2 right-4 text-xl text-gray-500 hover:text-gray-900"
+                className="absolute top-2 right-4 text-xl text-gray-500 hover:text-charcoal-900"
               >
                 &times;
               </button>
@@ -275,7 +271,7 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                   className="w-full h-64 object-cover rounded-lg mb-4"
                 />
               )}
-              <h2 className="text-3xl font-heritage mb-2">{activeArt.title}</h2>
+              <h2 className="text-3xl font-display mb-2">{activeArt.title}</h2>
               <div className="mb-4 flex gap-6">
                 <span className="bg-pink-100 text-pink-700 text-xs px-3 py-1 rounded">
                   {activeArt.state}
@@ -320,7 +316,7 @@ const ArtsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
 
         {/* CTA */}
         <section className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-20 text-center mt-16 rounded-xl">
-          <h2 className="text-4xl font-heritage mb-4">
+          <h2 className="text-4xl font-display mb-4">
             Learn Traditional Indian Arts
           </h2>
           <p className="max-w-2xl mx-auto mb-8">

@@ -187,10 +187,10 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
   };
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-ivory-100">
       {/* Hero Header */}
       <div
-        className="relative h-screen overflow-hidden flex items-center justify-center !bg-transparent"
+        className="relative h-[600px] overflow-hidden flex items-center justify-center !bg-transparent"
         style={{ background: "transparent" }}
       >
         {/* Background Video */}
@@ -206,46 +206,45 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
 
         {/* Dark Overlay for Better Text Readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-b from-charcoal-900/60 via-charcoal-900/30 to-charcoal-900/80 pointer-events-none"
           style={{ zIndex: 1 }}
         ></div>
 
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl font-heritage font-bold mb-6 text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.95)]">
-              Hidden Gems of India
+            <p className="bs-label text-gold-400 mb-4">India's Best Kept Secrets</p>
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 text-white leading-tight">
+              Hidden Gems
             </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white font-medium drop-shadow leading-relaxed">
-              Discover India's best-kept secrets, off-the-beaten-path treasures,
-              <br />
-              and lesser-known heritage sites waiting to be explored
+            <p className="text-lg md:text-xl text-white/80 font-sans leading-relaxed">
+              Discover India's best-kept secrets, off-the-beaten-path treasures, and lesser-known heritage sites waiting to be explored
             </p>
           </motion.div>
         </div>
       </div>
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Submit Your Gem CTA */}
-        <div className="mb-12 mt-12">
-          <div className="heritage-card p-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white">
+        <div className="mb-16">
+          <div className="bs-card p-8 border-l-4 border-l-gold-500">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div>
-                <h3 className="text-2xl font-heritage font-bold mb-2 text-black">
+                <h3 className="text-2xl font-display font-bold mb-2 text-charcoal-900">
                   Know a Hidden Gem? Share it!
                 </h3>
-                <p className="text-emerald-500">
+                <p className="text-charcoal-500 font-sans">
                   Help fellow travelers discover amazing places by submitting
-                  your hidden gems
+                  your hidden gems.
                 </p>
               </div>
               <button
                 onClick={() => setShowSubmissionForm(true)}
-                className="mt-4 md:mt-0 bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors flex items-center space-x-2"
+                className="bs-btn bs-btn-primary mt-4 md:mt-0 flex items-center space-x-2 whitespace-nowrap"
               >
-                <Upload size={20} />
+                <Upload size={18} />
                 <span>Submit Hidden Gem</span>
               </button>
             </div>
@@ -254,57 +253,55 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
 
         {/* Search and Filters */}
         <div className="mb-12">
-          <div className="heritage-card p-6">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 lg:space-x-6">
-              <div className="relative flex-1 max-w-md">
-                <Search
-                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  size={20}
-                />
-                <input
-                  type="text"
-                  placeholder="Search hidden gems..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none"
-                />
-              </div>
-
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none bg-white"
-              >
-                {categories.map((category) => (
-                  <option key={category.id} value={category.id}>
-                    {category.name} ({category.count})
-                  </option>
-                ))}
-              </select>
-
-              <select
-                value={selectedRegion}
-                onChange={(e) => setSelectedRegion(e.target.value)}
-                className="px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none bg-white"
-              >
-                {regions.map((region) => (
-                  <option key={region.id} value={region.id}>
-                    {region.name}
-                  </option>
-                ))}
-              </select>
-
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none bg-white"
-              >
-                <option value="recent">Recently Added</option>
-                <option value="rating">Highest Rated</option>
-                <option value="name">Alphabetical</option>
-                <option value="distance">Nearest First</option>
-              </select>
+          <div className="flex flex-wrap gap-4 items-center justify-center bg-white rounded-2xl shadow-bs-sm border border-ivory-200 py-6 px-8 mb-12">
+            <div className="relative flex-1 min-w-[200px] max-w-sm">
+              <Search
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-600"
+                size={18}
+              />
+              <input
+                type="text"
+                placeholder="Search hidden gems..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="bs-input pl-10 w-full"
+              />
             </div>
+
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="bs-input max-w-[180px] cursor-pointer"
+            >
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name} ({category.count})
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="bs-input max-w-[180px] cursor-pointer"
+            >
+              {regions.map((region) => (
+                <option key={region.id} value={region.id}>
+                  {region.name}
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bs-input max-w-[180px] cursor-pointer"
+            >
+              <option value="recent">Recently Added</option>
+              <option value="rating">Highest Rated</option>
+              <option value="name">Alphabetical</option>
+              <option value="distance">Nearest First</option>
+            </select>
           </div>
         </div>
 
@@ -317,7 +314,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="heritage-card cursor-pointer group"
+                className="bs-card group overflow-hidden cursor-pointer"
                 onClick={() => setSelectedGem(gem)}
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
@@ -350,7 +347,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                   </div>
 
                   <div className="absolute top-4 left-4">
-                    <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-800">
+                    <span className="bs-badge-gold">
                       {getCategoryIcon(gem.category)}
                     </span>
                   </div>
@@ -368,34 +365,34 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
 
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+                    <span className="text-xs font-sans text-charcoal-500">
                       {gem.state}
                     </span>
                     {gem.rating && (
-                      <div className="flex items-center space-x-1">
-                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="text-sm font-medium">
+                      <div className="flex items-center space-x-1 font-sans text-sm font-semibold text-charcoal-700">
+                        <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                        <span>
                           {gem.rating}
                         </span>
                       </div>
                     )}
                   </div>
 
-                  <h3 className="text-xl font-heritage font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                  <h3 className="font-display text-xl font-bold text-charcoal-900 mb-3 group-hover:text-gold-700 transition-colors">
                     {gem.title}
                   </h3>
 
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  <p className="font-sans text-charcoal-500 text-sm mb-4 line-clamp-3 leading-relaxed">
                     {gem.description}
                   </p>
 
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <div className="flex items-center space-x-1">
+                  <div className="flex items-center justify-between text-xs font-sans text-charcoal-400 pt-3 border-t border-ivory-200">
+                    <div className="flex items-center space-x-1.5">
                       <MapPin size={14} />
                       <span>{gem.distance || "Distance unknown"}</span>
                     </div>
 
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center space-x-1.5">
                       <Eye size={14} />
                       <span>{gem.visits || 0} views</span>
                     </div>
@@ -430,7 +427,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                 </button>
 
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <h2 className="text-3xl font-heritage font-bold mb-2">
+                  <h2 className="text-3xl font-display font-bold mb-2">
                     {selectedGem.title}
                   </h2>
                   <div className="flex items-center space-x-4">
@@ -451,7 +448,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                     <h3 className="text-xl font-semibold mb-4">
                       About This Hidden Gem
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-6">
+                    <p className="text-charcoal-700 leading-relaxed mb-6">
                       {selectedGem.description}
                     </p>
 
@@ -460,7 +457,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                         <h3 className="text-xl font-semibold mb-4">
                           Cultural Significance
                         </h3>
-                        <p className="text-gray-700 leading-relaxed mb-6">
+                        <p className="text-charcoal-700 leading-relaxed mb-6">
                           {selectedGem.cultural_significance}
                         </p>
                       </>
@@ -471,7 +468,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                         <h3 className="text-xl font-semibold mb-4">
                           Best Time to Visit
                         </h3>
-                        <p className="text-gray-700">
+                        <p className="text-charcoal-700">
                           {selectedGem.best_time_visit}
                         </p>
                       </>
@@ -500,7 +497,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                         <span className="text-emerald-500 mt-1 font-bold">
                           •
                         </span>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-charcoal-700 text-sm">
                           {selectedGem.local_tips ||
                             "Carry water and snacks as facilities may be limited."}
                         </p>
@@ -509,7 +506,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                         <span className="text-emerald-500 mt-1 font-bold">
                           •
                         </span>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-charcoal-700 text-sm">
                           {selectedGem.accessibility ||
                             "Suitable for moderate fitness levels."}
                         </p>
@@ -518,7 +515,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                         <span className="text-emerald-500 mt-1 font-bold">
                           •
                         </span>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-charcoal-700 text-sm">
                           {selectedGem.connectivity ||
                             "Limited mobile network - inform someone about your visit."}
                         </p>
@@ -537,7 +534,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
                                 key={index}
                                 className="bg-gray-50 p-3 rounded-lg"
                               >
-                                <span className="text-gray-800 text-sm">
+                                <span className="text-charcoal-800 text-sm">
                                   {attraction}
                                 </span>
                               </div>
@@ -583,7 +580,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
             animate={{ opacity: 1 }}
             className="text-center py-16"
           >
-            <h3 className="text-2xl font-heritage font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-display font-bold text-charcoal-900 mb-4">
               No Hidden Gems Found
             </h3>
             <p className="text-gray-600 max-w-md mx-auto mb-8">
@@ -611,7 +608,7 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
           >
             <div className="p-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-heritage font-bold">
+                <h2 className="text-2xl font-display font-bold">
                   Submit a Hidden Gem
                 </h2>
                 <button
@@ -644,8 +641,8 @@ const HiddenGemsPage = ({ onPageChange, addBookmark, isBookmarked }) => {
 
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-heritage font-bold mb-6">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
             Become a Hidden Gem Explorer
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

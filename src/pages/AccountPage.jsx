@@ -160,7 +160,7 @@ const AccountPage = () => {
     const dataUri =
       "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
 
-    const exportFileDefaultName = `bharatverse-data-${profileData.full_name
+    const exportFileDefaultName = `bharatsafar-data-${profileData.full_name
       .replace(/\s+/g, "-")
       .toLowerCase()}.json`;
 
@@ -175,13 +175,13 @@ const AccountPage = () => {
   // Not signed in
   if (!isLoaded || !isSignedIn) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center">
+      <div className="min-h-screen bg-ivory-50 flex items-center justify-center">
         <div className="text-center">
           <div className="text-6xl mb-4">🔐</div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-charcoal-900 mb-4">
             Please Log In
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-charcoal-500 mb-8">
             You need to be logged in to view your account.
           </p>
         </div>
@@ -192,24 +192,24 @@ const AccountPage = () => {
   // Loading
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center">
+      <div className="min-h-screen bg-ivory-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin text-4xl mb-4">⚙️</div>
-          <p className="text-gray-600">Loading your profile...</p>
+          <p className="text-charcoal-600">Loading your profile...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 py-8">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-ivory-100 py-8">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Profile Header */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
             {/* Avatar */}
             <div className="relative">
-              <div className="w-32 h-32 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl">
+              <div className="w-32 h-32 bg-charcoal-900 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl">
                 {profileData.avatar_url ? (
                   <img
                     src={profileData.avatar_url}
@@ -222,7 +222,7 @@ const AccountPage = () => {
               </div>
 
               {isEditing && (
-                <button className="absolute bottom-0 right-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors">
+                <button className="absolute bottom-0 right-0 w-10 h-10 bg-gold-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gold-600 transition-colors">
                   <Camera size={18} />
                 </button>
               )}
@@ -246,7 +246,7 @@ const AccountPage = () => {
                         full_name: e.target.value,
                       })
                     }
-                    className="text-3xl font-bold bg-transparent border-b-2 border-orange-500 outline-none w-full"
+                    className="text-3xl font-bold bg-transparent border-b-2 border-gold-400 outline-none w-full"
                   />
                   <textarea
                     value={profileData.bio}
@@ -254,20 +254,20 @@ const AccountPage = () => {
                       setProfileData({ ...profileData, bio: e.target.value })
                     }
                     placeholder="Tell us about your heritage interests..."
-                    className="w-full p-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full p-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-gold-400"
                     rows="2"
                   />
                 </div>
               ) : (
                 <>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                  <h1 className="text-3xl font-bold text-charcoal-900 mb-2">
                     {profileData.full_name || clerkUser?.firstName || "User"}
                   </h1>
-                  <p className="text-lg text-gray-600 mb-2">
+                  <p className="text-lg text-charcoal-500 mb-2">
                     {clerkUser?.emailAddresses[0]?.emailAddress}
                   </p>
                   {profileData.bio && (
-                    <p className="text-gray-700 mb-4">{profileData.bio}</p>
+                    <p className="text-charcoal-700 mb-4">{profileData.bio}</p>
                   )}
                 </>
               )}
@@ -279,13 +279,13 @@ const AccountPage = () => {
                 <>
                   <button
                     onClick={handleProfileUpdate}
-                    className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-lg hover:shadow-lg transition"
+                    className="px-6 py-3 bs-btn-primary"
                   >
                     Save Changes
                   </button>
                   <button
                     onClick={() => setIsEditing(false)}
-                    className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition"
+                    className="px-6 py-3 border border-gray-300 rounded-lg text-charcoal-700 hover:bg-gray-50 transition"
                   >
                     Cancel
                   </button>
@@ -294,7 +294,7 @@ const AccountPage = () => {
                 <>
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-lg hover:shadow-lg transition flex items-center justify-center space-x-2"
+                    className="px-6 py-3 bs-btn-primary flex items-center gap-2"
                   >
                     <Edit3 size={18} />
                     <span>Edit Profile</span>
@@ -308,13 +308,13 @@ const AccountPage = () => {
         {/* Stats Overview */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-            <div className="text-3xl font-bold text-orange-600 mb-2">
+            <div className="text-3xl font-bold text-gold-700 mb-2">
               {stats.totalPoints}
             </div>
-            <div className="text-gray-600 text-sm">Total Points</div>
+            <div className="text-charcoal-500 text-sm">Total Points</div>
             <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
               <div
-                className="bg-gradient-to-r from-orange-500 to-red-600 h-2 rounded-full transition-all duration-300"
+                className="bg-gold-500 h-2 rounded-full transition-all duration-300"
                 style={{
                   width: `${((1000 - stats.nextLevelPoints) / 1000) * 100}%`,
                 }}
@@ -323,24 +323,24 @@ const AccountPage = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">
+            <div className="text-3xl font-bold text-gold-700 mb-2">
               {bookmarks.length}
             </div>
-            <div className="text-gray-600 text-sm">Bookmarks</div>
+            <div className="text-charcoal-500 text-sm">Bookmarks</div>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-            <div className="text-3xl font-bold text-green-600 mb-2">
+            <div className="text-3xl font-bold text-gold-700 mb-2">
               {quizStats?.total_quizzes || 0}
             </div>
-            <div className="text-gray-600 text-sm">Quizzes Taken</div>
+            <div className="text-charcoal-500 text-sm">Quizzes Taken</div>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">
+            <div className="text-3xl font-bold text-gold-700 mb-2">
               {badges.length}
             </div>
-            <div className="text-gray-600 text-sm">Badges Earned</div>
+            <div className="text-charcoal-500 text-sm">Badges Earned</div>
           </div>
         </div>
 
@@ -354,8 +354,8 @@ const AccountPage = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`py-4 px-4 border-b-2 font-medium text-sm transition-colors flex items-center space-x-2 whitespace-nowrap ${
                     activeTab === tab.id
-                      ? "border-orange-500 text-orange-600"
-                      : "border-transparent text-gray-500 hover:text-gray-700"
+                      ? "border-gold-400 text-gold-700"
+                      : "border-transparent text-charcoal-500 hover:text-charcoal-800"
                   }`}
                 >
                   <tab.icon size={18} />
@@ -376,56 +376,56 @@ const AccountPage = () => {
                     Your Heritage Journey
                   </h3>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl">
-                      <h4 className="font-semibold mb-3 text-blue-800">
+                    <div className="bg-ivory-50 p-6 rounded-xl border border-ivory-300">
+                      <h4 className="font-semibold mb-3 text-charcoal-900 font-semibold">
                         Quiz Performance
                       </h4>
                       <div className="space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-blue-600">Average Score:</span>
-                          <span className="font-semibold text-blue-800">
+                          <span className="text-charcoal-700">Average Score:</span>
+                          <span className="font-semibold text-charcoal-900 font-semibold">
                             {quizStats?.average_score || 0}%
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-blue-600">
+                          <span className="text-charcoal-700">
                             Quizzes Completed:
                           </span>
-                          <span className="font-semibold text-blue-800">
+                          <span className="font-semibold text-charcoal-900 font-semibold">
                             {quizStats?.total_quizzes || 0}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-blue-600">Highest Score:</span>
-                          <span className="font-semibold text-blue-800">
+                          <span className="text-charcoal-700">Highest Score:</span>
+                          <span className="font-semibold text-charcoal-900 font-semibold">
                             {quizStats?.highest_score || 0}%
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl">
-                      <h4 className="font-semibold mb-3 text-green-800">
+                    <div className="bg-ivory-50 p-6 rounded-xl border border-ivory-300">
+                      <h4 className="font-semibold mb-3 text-charcoal-900 font-semibold">
                         Your Stats
                       </h4>
                       <div className="space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-green-600">Bookmarks:</span>
-                          <span className="font-semibold text-green-800">
+                          <span className="text-charcoal-700">Bookmarks:</span>
+                          <span className="font-semibold text-charcoal-900 font-semibold">
                             {bookmarks.length}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-green-600">
+                          <span className="text-charcoal-700">
                             Heritage Level:
                           </span>
-                          <span className="font-semibold text-green-800">
+                          <span className="font-semibold text-charcoal-900 font-semibold">
                             {stats.level}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-green-600">Badges:</span>
-                          <span className="font-semibold text-green-800">
+                          <span className="text-charcoal-700">Badges:</span>
+                          <span className="font-semibold text-charcoal-900 font-semibold">
                             {badges.length}
                           </span>
                         </div>
@@ -466,10 +466,10 @@ const AccountPage = () => {
                           <h4 className="font-semibold mb-1 line-clamp-1">
                             {bookmark.title}
                           </h4>
-                          <p className="text-sm text-gray-600 mb-2">
+                          <p className="text-sm text-charcoal-500 mb-2">
                             {bookmark.location}
                           </p>
-                          <p className="text-xs text-gray-500 line-clamp-2">
+                          <p className="text-xs text-charcoal-500 line-clamp-2">
                             {bookmark.description}
                           </p>
                         </div>
@@ -479,10 +479,10 @@ const AccountPage = () => {
                 ) : (
                   <div className="text-center py-12">
                     <Heart size={48} className="text-gray-300 mx-auto mb-4" />
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h4 className="text-lg font-semibold text-charcoal-900 mb-2">
                       No Bookmarks Yet
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-charcoal-600">
                       Start exploring heritage sites and save your favorites!
                     </p>
                   </div>
@@ -510,7 +510,7 @@ const AccountPage = () => {
                             <h4 className="font-semibold mb-2 text-yellow-800">
                               {badge.badge_name}
                             </h4>
-                            <p className="text-sm text-gray-600 mb-3">
+                            <p className="text-sm text-charcoal-600 mb-3">
                               {badge.description}
                             </p>
                             <span className="inline-flex items-center px-3 py-1 bg-yellow-200 text-yellow-800 rounded-full text-xs font-medium">
@@ -524,10 +524,10 @@ const AccountPage = () => {
                 ) : (
                   <div className="text-center py-12">
                     <Trophy size={48} className="text-gray-300 mx-auto mb-4" />
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h4 className="text-lg font-semibold text-charcoal-900 mb-2">
                       No Badges Yet
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-charcoal-600">
                       Complete quizzes to earn badges!
                     </p>
                   </div>
@@ -547,13 +547,13 @@ const AccountPage = () => {
                     {quizHistory.slice(0, 10).map((quiz, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200"
+                        className="flex items-center justify-between p-4 bg-ivory-50 rounded-lg border border-ivory-300"
                       >
                         <div>
-                          <h5 className="font-medium text-gray-900">
+                          <h5 className="font-medium text-charcoal-900">
                             {quiz.quiz_type || "Heritage Quiz"}
                           </h5>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-charcoal-600">
                             {new Date(quiz.completed_at).toLocaleDateString()}
                           </p>
                         </div>
@@ -561,7 +561,7 @@ const AccountPage = () => {
                           <div
                             className={`text-lg font-bold ${
                               quiz.percentage >= 80
-                                ? "text-green-600"
+                                ? "text-charcoal-700"
                                 : quiz.percentage >= 60
                                 ? "text-yellow-600"
                                 : "text-red-600"
@@ -569,7 +569,7 @@ const AccountPage = () => {
                           >
                             {Math.round(quiz.percentage)}%
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-charcoal-500">
                             {quiz.score}/{quiz.total_questions}
                           </div>
                         </div>
@@ -582,10 +582,10 @@ const AccountPage = () => {
                       size={48}
                       className="text-gray-300 mx-auto mb-4"
                     />
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h4 className="text-lg font-semibold text-charcoal-900 mb-2">
                       No Quiz History
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-charcoal-600">
                       Take your first quiz to start tracking your progress!
                     </p>
                   </div>
@@ -616,17 +616,17 @@ const AccountPage = () => {
                 <div>
                   <h4 className="font-semibold mb-4">Account Information</h4>
                   <div className="bg-gray-50 p-4 rounded-lg space-y-2">
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-charcoal-600">
                       <strong>Email:</strong>{" "}
                       {clerkUser?.emailAddresses[0]?.emailAddress}
                     </p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-charcoal-600">
                       <strong>Member Since:</strong>{" "}
                       {userData?.created_at
                         ? new Date(userData.created_at).toLocaleDateString()
                         : "N/A"}
                     </p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-charcoal-600">
                       <strong>Total Points:</strong> {stats.totalPoints}
                     </p>
                   </div>

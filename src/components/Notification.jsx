@@ -49,12 +49,12 @@ const Notification = ({
 
         <div className="flex-1 min-w-0">
           {title && (
-            <h4 className="text-sm font-semibold text-gray-900 mb-1">
+            <h4 className="text-sm font-semibold text-charcoal-900 mb-1">
               {title}
             </h4>
           )}
 
-          <p className="text-sm text-gray-700">{message}</p>
+          <p className="text-sm text-charcoal-700">{message}</p>
         </div>
 
         {onClose && (

@@ -102,7 +102,7 @@ const AudioPlayer = ({ src, title, description, autoPlay = false }) => {
           <Volume2 className="text-white" size={24} />
         </div>
         <div className="flex-1">
-          <h3 className="font-semibold text-gray-900">{title}</h3>
+          <h3 className="font-semibold text-charcoal-900">{title}</h3>
           <p className="text-sm text-gray-600">{description}</p>
         </div>
       </div>
@@ -126,7 +126,7 @@ const AudioPlayer = ({ src, title, description, autoPlay = false }) => {
         <div className="flex items-center space-x-2">
           <button
             onClick={() => skip(-10)}
-            className="p-2 text-gray-600 hover:text-saffron-600 transition-colors"
+            className="p-2 text-gray-600 hover:text-gold-700 transition-colors"
           >
             <SkipBack size={20} />
           </button>
@@ -140,7 +140,7 @@ const AudioPlayer = ({ src, title, description, autoPlay = false }) => {
 
           <button
             onClick={() => skip(10)}
-            className="p-2 text-gray-600 hover:text-saffron-600 transition-colors"
+            className="p-2 text-gray-600 hover:text-gold-700 transition-colors"
           >
             <SkipForward size={20} />
           </button>
@@ -149,7 +149,7 @@ const AudioPlayer = ({ src, title, description, autoPlay = false }) => {
         <div className="flex items-center space-x-2">
           <button
             onClick={toggleMute}
-            className="p-2 text-gray-600 hover:text-saffron-600 transition-colors"
+            className="p-2 text-gray-600 hover:text-gold-700 transition-colors"
           >
             {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
           </button>

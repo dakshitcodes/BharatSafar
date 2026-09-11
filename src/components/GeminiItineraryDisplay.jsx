@@ -117,7 +117,7 @@ const GeminiItineraryDisplay = ({ itinerary, formData }) => {
                       </span>
                     )}
                     {activity.duration && (
-                      <span className="text-xs bg-gray-200 text-gray-800 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-gray-200 text-charcoal-800 px-2 py-1 rounded-full">
                         ⏱️ {activity.duration}
                       </span>
                     )}

@@ -30,7 +30,7 @@ const ChatPage = ({ user }) => {
     {
       id: 1,
       sender: "bot",
-      text: "Namaste! Welcome to BharatVerse AI Heritage Guide! I'm here to help you discover India's incredible cultural heritage. Ask me about monuments, festivals, traditions, history, or anything related to Indian culture!",
+      text: "Namaste! Welcome to BharatSafar AI Guide! I'm here to help you discover India's incredible cultural heritage. Ask me about monuments, festivals, traditions, history, or anything related to Indian culture!",
       timestamp: new Date().toISOString(),
       type: "greeting",
     },
@@ -164,7 +164,7 @@ const ChatPage = ({ user }) => {
     const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
-    const prompt = `You are BharatVerse AI Heritage Guide, an expert on Indian culture, heritage, monuments, festivals, arts, history, and traditions. 
+    const prompt = `You are BharatSafar AI Guide, an expert on Indian culture, heritage, monuments, festivals, arts, history, and traditions. 
 
 User question: ${message}
 
@@ -351,7 +351,7 @@ If the question is not related to Indian heritage, politely redirect the convers
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-6xl md:text-7xl font-heritage font-extrabold tracking-wider bg-gradient-to-r from-orange-400 via-yellow-300 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] mb-2 select-none"
+              className="text-6xl md:text-7xl font-display font-extrabold tracking-wider bg-gradient-to-r from-orange-400 via-yellow-300 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] mb-2 select-none"
             >
               Namaste
             </motion.h1>
@@ -368,12 +368,12 @@ If the question is not related to Indian heritage, politely redirect the convers
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Quick Questions */}
         <div className="mb-8">
           <div className="flex items-center justify-center mb-4">
-            <Lightbulb className="mr-2 text-saffron-600" size={24} />
-            <h2 className="text-xl font-semibold text-gray-800">
+            <Lightbulb className="mr-2 text-gold-700" size={24} />
+            <h2 className="text-xl font-semibold text-charcoal-800">
               Quick Questions to Get Started
             </h2>
           </div>
@@ -399,7 +399,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                       <IconComponent className="text-white" size={26} />
                     </div>
                     <div className="text-left">
-                      <p className="font-bold text-lg text-gray-900 group-hover:text-orange-600 transition-colors mb-1">
+                      <p className="font-bold text-lg text-charcoal-900 group-hover:text-gold-700 transition-colors mb-1">
                         {question.text}
                       </p>
                       <span className="text-xs font-medium text-gray-600 bg-gray-100 px-2 py-1 rounded-full">
@@ -414,7 +414,7 @@ If the question is not related to Indian heritage, politely redirect the convers
         </div>
 
         {/* Chat Container */}
-        <div className="heritage-card max-w-4xl mx-auto h-[600px] flex flex-col relative overflow-hidden">
+        <div className="bs-card max-w-4xl mx-auto h-[600px] flex flex-col relative overflow-hidden">
           {/* OM SYMBOL WATERMARK - VISIBLE VERSION */}
 
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -530,7 +530,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                       className={`px-6 py-4 max-w-md rounded-3xl shadow-lg ${
                         message.sender === "user"
                           ? "bg-gradient-to-r from-saffron-500 to-orange-500 text-white rounded-tr-none"
-                          : "bg-white/90 backdrop-blur-md text-gray-800 border border-gray-200 rounded-tl-none"
+                          : "bg-white/90 backdrop-blur-md text-charcoal-800 border border-gray-200 rounded-tl-none"
                       }`}
                     >
                       <motion.div
@@ -561,7 +561,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                       {message.suggestions && (
                         <div className="mt-4 space-y-2">
                           <div className="flex items-center space-x-2">
-                            <Sparkles className="text-saffron-500" size={14} />
+                            <Sparkles className="text-gold-600" size={14} />
                             <p className="text-xs text-gray-500">
                               You might also ask:
                             </p>
@@ -621,7 +621,7 @@ If the question is not related to Indian heritage, politely redirect the convers
             {messages.length === 1 && (
               <div className="mb-4">
                 <div className="flex items-center space-x-2 mb-2">
-                  <MessageCircle className="text-saffron-500" size={16} />
+                  <MessageCircle className="text-gold-600" size={16} />
                   <p className="text-sm text-gray-600">Try starting with:</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -660,7 +660,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask me about Indian heritage, monuments, festivals, arts, or traditions..."
-                  className="w-full resize-none px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:ring-2 focus:ring-saffron-500 focus:border-transparent outline-none max-h-32"
+                  className="w-full resize-none px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none max-h-32"
                   rows="1"
                   style={{
                     height: "auto",
@@ -714,8 +714,8 @@ If the question is not related to Indian heritage, politely redirect the convers
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-heritage font-bold mb-4 bg-gradient-to-r from-orange-600 via-red-500 to-pink-600 bg-clip-text text-transparent">
-              Why Choose BharatVerse AI?
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 bg-gradient-to-r from-orange-600 via-red-500 to-pink-600 bg-clip-text text-transparent">
+              Why Choose BharatSafar AI?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Experience India's heritage like never before with our intelligent
@@ -748,7 +748,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                   <Lightbulb className="text-white" size={32} />
                 </motion.div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-2xl font-bold text-charcoal-900 mb-3 group-hover:text-blue-600 transition-colors">
                   Smart Suggestions
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -787,7 +787,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                   <MapPin className="text-white" size={32} />
                 </motion.div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
+                <h3 className="text-2xl font-bold text-charcoal-900 mb-3 group-hover:text-green-600 transition-colors">
                   Location Aware
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -825,7 +825,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                   <Book className="text-white" size={32} />
                 </motion.div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
+                <h3 className="text-2xl font-bold text-charcoal-900 mb-3 group-hover:text-purple-600 transition-colors">
                   Expert Knowledge
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-4">

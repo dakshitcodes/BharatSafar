@@ -487,7 +487,7 @@ const UploadPage = () => {
         return (
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 Title *
               </label>
               <input
@@ -495,19 +495,19 @@ const UploadPage = () => {
                 value={formData.title}
                 onChange={(e) => handleInputChange("title", e.target.value)}
                 placeholder="Name of the heritage site or tradition"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 Category *
               </label>
               <select
                 value={formData.category}
                 onChange={(e) => handleInputChange("category", e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                 required
               >
                 <option value="">Select category</option>
@@ -520,7 +520,7 @@ const UploadPage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 Description *
               </label>
               <textarea
@@ -529,7 +529,7 @@ const UploadPage = () => {
                   handleInputChange("description", e.target.value)
                 }
                 placeholder="Detailed description of the heritage site"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none h-32 resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none h-32 resize-none"
                 required
               />
               <p className="text-sm text-gray-500 mt-1">
@@ -547,7 +547,7 @@ const UploadPage = () => {
                 }
                 className="rounded border-gray-300"
               />
-              <label htmlFor="hidden" className="text-sm text-gray-700">
+              <label htmlFor="hidden" className="text-sm text-charcoal-700">
                 This is a hidden/lesser-known heritage site
               </label>
             </div>
@@ -559,13 +559,13 @@ const UploadPage = () => {
           <div className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-charcoal-700 mb-2">
                   State *
                 </label>
                 <select
                   value={formData.state}
                   onChange={(e) => handleInputChange("state", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                   required
                 >
                   <option value="">Select state</option>
@@ -578,7 +578,7 @@ const UploadPage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-charcoal-700 mb-2">
                   City/District *
                 </label>
                 <input
@@ -586,7 +586,7 @@ const UploadPage = () => {
                   value={formData.city}
                   onChange={(e) => handleInputChange("city", e.target.value)}
                   placeholder="Nearest city or district"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                   required
                 />
               </div>
@@ -594,7 +594,7 @@ const UploadPage = () => {
 
             <div className="grid md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-charcoal-700 mb-2">
                   Latitude
                 </label>
                 <input
@@ -604,13 +604,13 @@ const UploadPage = () => {
                     handleInputChange("coordinates.lat", e.target.value)
                   }
                   placeholder="Latitude"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                   step="any"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-charcoal-700 mb-2">
                   Longitude
                 </label>
                 <input
@@ -620,7 +620,7 @@ const UploadPage = () => {
                     handleInputChange("coordinates.lng", e.target.value)
                   }
                   placeholder="Longitude"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                   step="any"
                 />
               </div>
@@ -637,7 +637,7 @@ const UploadPage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 How to Reach
               </label>
               <textarea
@@ -646,7 +646,7 @@ const UploadPage = () => {
                   handleInputChange("howToReach", e.target.value)
                 }
                 placeholder="Detailed directions on how to reach this place"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none h-24 resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none h-24 resize-none"
               />
             </div>
           </div>
@@ -656,14 +656,14 @@ const UploadPage = () => {
         return (
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-4">
+              <label className="block text-sm font-medium text-charcoal-700 mb-4">
                 Photos * (Max 8 images, 10MB each)
               </label>
 
               <div
                 className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer ${
                   dragActive
-                    ? "border-orange-500 bg-orange-50"
+                    ? "border-gold-400 bg-orange-50"
                     : "border-gray-300 hover:border-orange-400"
                 }`}
                 onDragEnter={(e) => {
@@ -721,7 +721,7 @@ const UploadPage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-4">
+              <label className="block text-sm font-medium text-charcoal-700 mb-4">
                 Audio Story (Optional)
               </label>
               <div className="bg-gray-50 rounded-xl p-6 text-center">
@@ -757,7 +757,7 @@ const UploadPage = () => {
                     ) : (
                       <button
                         onClick={startAudioRecording}
-                        className="px-6 py-3 rounded-xl font-semibold bg-orange-500 text-white hover:bg-orange-600 transition-colors"
+                        className="px-6 py-3 rounded-xl font-semibold bg-gold-500 text-white hover:bg-gold-600 transition-colors"
                       >
                         Start Recording
                       </button>
@@ -778,7 +778,7 @@ const UploadPage = () => {
         return (
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 Cultural Significance *
               </label>
               <textarea
@@ -787,14 +787,14 @@ const UploadPage = () => {
                   handleInputChange("culturalSignificance", e.target.value)
                 }
                 placeholder="Explain the cultural, historical, or spiritual importance"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none h-32 resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none h-32 resize-none"
                 required
               />
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-charcoal-700 mb-2">
                   When did you visit?
                 </label>
                 <input
@@ -803,12 +803,12 @@ const UploadPage = () => {
                   onChange={(e) =>
                     handleInputChange("visitDate", e.target.value)
                   }
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-charcoal-700 mb-2">
                   Best time to visit
                 </label>
                 <input
@@ -818,25 +818,25 @@ const UploadPage = () => {
                     handleInputChange("bestTimeToVisit", e.target.value)
                   }
                   placeholder="e.g., October to March"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 Local Tips & Advice
               </label>
               <textarea
                 value={formData.localTips}
                 onChange={(e) => handleInputChange("localTips", e.target.value)}
                 placeholder="Share helpful tips for other visitors"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none h-24 resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none h-24 resize-none"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 Tags
               </label>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -848,7 +848,7 @@ const UploadPage = () => {
                     <span>{tag}</span>
                     <button
                       onClick={() => removeTag(tag)}
-                      className="text-orange-600 hover:text-orange-800"
+                      className="text-gold-700 hover:text-orange-800"
                     >
                       ×
                     </button>
@@ -864,7 +864,7 @@ const UploadPage = () => {
                     <button
                       key={tag}
                       onClick={() => addTag(tag)}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-orange-100 hover:text-orange-800 transition-colors"
+                      className="px-3 py-1 bg-gray-100 text-charcoal-700 rounded-full text-sm hover:bg-orange-100 hover:text-orange-800 transition-colors"
                     >
                       + {tag}
                     </button>
@@ -879,7 +879,7 @@ const UploadPage = () => {
           <div className="space-y-8">
             <div className="text-center">
               <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-charcoal-900 mb-2">
                 Review Your Submission
               </h3>
               <p className="text-gray-600">
@@ -889,7 +889,7 @@ const UploadPage = () => {
 
             <div className="bg-gray-50 rounded-xl p-6 space-y-4">
               <div>
-                <h4 className="font-semibold text-gray-900">
+                <h4 className="font-semibold text-charcoal-900">
                   {formData.title}
                 </h4>
                 <p className="text-gray-600">
@@ -898,7 +898,7 @@ const UploadPage = () => {
               </div>
 
               <div>
-                <p className="text-gray-700">{formData.description}</p>
+                <p className="text-charcoal-700">{formData.description}</p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -956,7 +956,7 @@ const UploadPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 py-8">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="max-w-7xl mx-auto px-6 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
             Share a Hidden Heritage Gem
@@ -975,7 +975,7 @@ const UploadPage = () => {
                   <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${
                       currentStep >= step.id
-                        ? "bg-orange-500 text-white"
+                        ? "bg-gold-500 text-white"
                         : "bg-gray-200 text-gray-500"
                     }`}
                   >
@@ -989,7 +989,7 @@ const UploadPage = () => {
                     <div
                       className={`font-semibold text-sm ${
                         currentStep >= step.id
-                          ? "text-orange-600"
+                          ? "text-gold-700"
                           : "text-gray-500"
                       }`}
                     >
@@ -1001,7 +1001,7 @@ const UploadPage = () => {
                 {index < steps.length - 1 && (
                   <div
                     className={`flex-1 h-1 mx-4 transition-all duration-300 ${
-                      currentStep > step.id ? "bg-orange-500" : "bg-gray-200"
+                      currentStep > step.id ? "bg-gold-500" : "bg-gray-200"
                     }`}
                   />
                 )}
@@ -1029,7 +1029,7 @@ const UploadPage = () => {
             {currentStep > 1 && (
               <button
                 onClick={prevStep}
-                className="px-6 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
+                className="px-6 py-3 border border-gray-300 rounded-xl text-charcoal-700 hover:bg-gray-50 transition-colors"
               >
                 ← Previous
               </button>
@@ -1040,7 +1040,7 @@ const UploadPage = () => {
             {currentStep < steps.length ? (
               <button
                 onClick={nextStep}
-                className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-xl hover:shadow-lg transition"
+                className="bs-btn-primary"
               >
                 Continue →
               </button>
@@ -1048,7 +1048,7 @@ const UploadPage = () => {
               <button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-xl hover:shadow-lg transition disabled:opacity-50"
+                className="bs-btn-primary disabled:opacity-50"
               >
                 {isSubmitting ? "Submitting..." : "Submit for Review"}
               </button>

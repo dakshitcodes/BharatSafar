@@ -7,7 +7,7 @@ const ChatBot = ({ isOpen, onClose }) => {
     {
       id: 1,
       sender: "bot",
-      text: "Namaste! Welcome to BharatVerse! I'm your AI heritage guide. Ask me about Indian monuments, festivals, culture, or anything related to our incredible heritage!",
+      text: "Namaste! Welcome to BharatSafar! I'm your AI heritage guide. Ask me about Indian monuments, festivals, culture, or anything related to our incredible heritage!",
       timestamp: new Date().toISOString(),
     },
   ]);
@@ -28,7 +28,7 @@ const ChatBot = ({ isOpen, onClose }) => {
     const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
 
-    const prompt = `You are BharatVerse AI Heritage Guide, an expert on Indian culture, heritage, monuments, festivals, arts, history, and traditions. 
+    const prompt = `You are BharatSafar AI Guide, an expert on Indian culture, heritage, monuments, festivals, arts, history, and traditions. 
 
 User question: ${message}
 
@@ -171,7 +171,7 @@ If the question is not related to Indian heritage, politely redirect to Indian c
               <Bot className="text-white" size={24} />
             </div>
             <div>
-              <h3 className="font-bold text-lg">BharatVerse AI Guide</h3>
+              <h3 className="font-bold text-lg">BharatSafar AI Guide</h3>
               <p className="text-sm text-white/80">Your heritage companion</p>
             </div>
           </div>
@@ -200,7 +200,7 @@ If the question is not related to Indian heritage, politely redirect to Indian c
               >
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${message.sender === "user"
-                      ? "bg-saffron-500 text-white"
+                      ? "bg-gold-500 text-white"
                       : "bg-gray-300 text-gray-600"
                     }`}
                 >
@@ -256,7 +256,7 @@ If the question is not related to Indian heritage, politely redirect to Indian c
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask me about Indian heritage, monuments, festivals..."
-              className="flex-1 resize-none px-4 py-2 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-saffron-500 focus:border-transparent outline-none max-h-20"
+              className="flex-1 resize-none px-4 py-2 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none max-h-20"
               rows="1"
             />
 

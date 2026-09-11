@@ -65,7 +65,7 @@ const ItineraryPlanner = () => {
               <span className="text-sm font-semibold text-white">AI-Powered Planning</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heritage font-bold mb-4 text-white drop-shadow-[0_10px_40px_rgba(0,0,0,0.9)]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-4 text-white drop-shadow-[0_10px_40px_rgba(0,0,0,0.9)]">
               Plan Your Indian Journey
             </h1>
 
@@ -87,7 +87,7 @@ const ItineraryPlanner = () => {
             {/* Card */}
             <div className="relative bg-white/95 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
               <div className="flex items-center space-x-3 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-gold-600 rounded-2xl flex items-center justify-center shadow-lg">
                   <MapPin className="text-white" size={28} />
                 </div>
                 <div>
@@ -145,8 +145,8 @@ const ItineraryPlanner = () => {
                       onClick={handleNewItinerary}
                       className="mt-12 mx-auto block group relative"
                     >
-                      <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                      <div className="relative bg-white hover:bg-gray-50 text-orange-600 hover:text-orange-700 font-bold py-4 px-10 rounded-2xl transition duration-300 flex items-center space-x-2">
+                      <div className="absolute -inset-1 bg-gold-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition duration-300"></div>
+                      <div className="relative bg-white hover:bg-gray-50 text-gold-700 hover:text-gold-700 font-bold py-4 px-10 rounded-2xl transition duration-300 flex items-center space-x-2">
                         <RotateCcw size={20} />
                         <span>Plan Another Itinerary</span>
                         <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

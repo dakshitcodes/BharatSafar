@@ -39,7 +39,7 @@ const GlobalMusicPlayer = () => {
       <div className="fixed top-24 right-6 z-50 select-none">
         <button
           onClick={togglePlay}
-          className="w-14 h-14 rounded-full bg-gradient-to-r from-red-600 to-orange-600 text-white shadow-2xl flex items-center justify-center hover:from-red-700 hover:to-orange-700 transition-all duration-300 hover:scale-110 border-2 border-white/20 backdrop-blur-sm"
+          className="w-14 h-14 rounded-full bg-charcoal-900 text-white shadow-2xl flex items-center justify-center hover:bg-charcoal-800 transition-all duration-300 hover:scale-110 border-2 border-gold-500/30 backdrop-blur-sm"
           aria-label={
             isPlaying ? "Pause background music" : "Play background music"
           }

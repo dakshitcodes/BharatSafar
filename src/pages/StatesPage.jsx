@@ -256,7 +256,7 @@ const StatesPage = ({ onPageChange }) => {
     };
     return region
       ? colors[region]
-      : "bg-gray-100 text-gray-800 border-gray-200";
+      : "bg-gray-100 text-charcoal-800 border-gray-200";
   };
 
   const formatPopulation = (population) => {
@@ -277,11 +277,11 @@ const StatesPage = ({ onPageChange }) => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-ivory-100">
       {/* Hero Section */}
 
       <div
-        className="relative h-screen overflow-hidden flex items-center justify-center !bg-transparent"
+        className="relative h-[600px] overflow-hidden flex items-center justify-center !bg-transparent"
         style={{ background: "transparent" }}
       >
         {/* Background Video */}
@@ -297,13 +297,13 @@ const StatesPage = ({ onPageChange }) => {
 
         {/* Dark Overlay for Better Text Readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-b from-charcoal-900/60 via-charcoal-900/30 to-charcoal-900/80 pointer-events-none"
           style={{ zIndex: 1 }}
         ></div>
 
         {/* page content */}
         <div
-          className="container mx-auto px-4 text-center relative"
+          className="max-w-7xl mx-auto px-6 text-center relative max-w-5xl"
           style={{ zIndex: 2 }}
         >
           <motion.div
@@ -311,29 +311,30 @@ const StatesPage = ({ onPageChange }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl font-heritage font-bold mb-6 text-white drop-shadow-lg">
+            <p className="bs-label text-gold-400 mb-4">Incredible Regions</p>
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 text-white leading-tight">
               Discover India
             </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white leading-relaxed mb-8 drop-shadow-md font-medium">
+            <p className="text-lg md:text-xl max-w-3xl mx-auto text-white/80 font-sans leading-relaxed mb-8">
               Explore 28 vibrant states and 8 union territories, each with
               unique heritage, culture, and traditions that make India truly
-              incredible
+              incredible.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <div className="bg-white/25 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 hover:bg-white/35 transition-all">
-                <span className="font-bold text-white">28</span>
+              <div className="bg-charcoal-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-charcoal-900/80 transition-all">
+                <span className="font-bold text-gold-400">28</span>
                 <span className="text-white/90"> States</span>
               </div>
-              <div className="bg-white/25 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 hover:bg-white/35 transition-all">
-                <span className="font-bold text-white">8</span>
+              <div className="bg-charcoal-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-charcoal-900/80 transition-all">
+                <span className="font-bold text-gold-400">8</span>
                 <span className="text-white/90"> Union Territories</span>
               </div>
-              <div className="bg-white/25 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 hover:bg-white/35 transition-all">
-                <span className="font-bold text-white">40+</span>
+              <div className="bg-charcoal-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-charcoal-900/80 transition-all">
+                <span className="font-bold text-gold-400">40+</span>
                 <span className="text-white/90"> Heritage Sites</span>
               </div>
-              <div className="bg-white/25 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 hover:bg-white/35 transition-all">
-                <span className="font-bold text-white">1000+</span>
+              <div className="bg-charcoal-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-charcoal-900/80 transition-all">
+                <span className="font-bold text-gold-400">1000+</span>
                 <span className="text-white/90"> Languages</span>
               </div>
             </div>
@@ -343,73 +344,70 @@ const StatesPage = ({ onPageChange }) => {
 
       {/* huh */}
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Search & Filters */}
         <div className="mb-12">
-          <div className="heritage-card p-8 shadow-lg">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0 lg:space-x-6">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  size={20}
-                />
-                <input
-                  type="text"
-                  placeholder="Search states, capitals, languages..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500 outline-none transition-all duration-200 text-lg"
-                />
-              </div>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0 lg:space-x-6 bg-white rounded-2xl shadow-bs-sm border border-ivory-200 py-6 px-8">
+            {/* Search */}
+            <div className="relative flex-1 min-w-[250px] max-w-md">
+              <Search
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gold-600"
+                size={18}
+              />
+              <input
+                type="text"
+                placeholder="Search states, capitals, languages..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="bs-input pl-11 w-full"
+              />
+            </div>
 
-              {/* Region Filter */}
-              <select
-                value={selectedRegion}
-                onChange={(e) => setSelectedRegion(e.target.value)}
-                className="px-4 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500 outline-none bg-white text-lg min-w-[200px]"
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="bs-input max-w-[220px] cursor-pointer"
+            >
+              {regions.map((region) => (
+                <option key={region.id} value={region.id}>
+                  {region.name} ({region.count})
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bs-input max-w-[200px] cursor-pointer"
+            >
+              <option value="name">Sort by Name</option>
+              <option value="heritage_count">Sort by Heritage Sites</option>
+              <option value="literacy">Sort by Literacy Rate</option>
+              <option value="area">Sort by Area</option>
+              <option value="population">Sort by Population</option>
+            </select>
+
+            <div className="flex items-center space-x-2 bg-ivory-50 rounded-xl p-1.5 border border-ivory-200">
+              <button
+                onClick={() => setViewMode("grid")}
+                className={`p-2 rounded-lg transition-all duration-200 ${
+                  viewMode === "grid"
+                    ? "bg-white shadow-sm text-gold-700"
+                    : "hover:bg-ivory-100 text-charcoal-400"
+                }`}
               >
-                {regions.map((region) => (
-                  <option key={region.id} value={region.id}>
-                    {region.name} ({region.count})
-                  </option>
-                ))}
-              </select>
-
-              {/* Sort */}
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500 outline-none bg-white text-lg min-w-[200px]"
+                <Grid size={18} />
+              </button>
+              <button
+                onClick={() => setViewMode("list")}
+                className={`p-2 rounded-lg transition-all duration-200 ${
+                  viewMode === "list"
+                    ? "bg-white shadow-sm text-gold-700"
+                    : "hover:bg-ivory-100 text-charcoal-400"
+                }`}
               >
-                <option value="name">Sort by Name</option>
-                <option value="heritage_count">Sort by Heritage Sites</option>
-                <option value="literacy">Sort by Literacy Rate</option>
-                <option value="area">Sort by Area</option>
-                <option value="population">Sort by Population</option>
-              </select>
-
-              {/* View Mode */}
-              <div className="flex items-center space-x-2 bg-gray-100 rounded-2xl p-2">
-                <button
-                  onClick={() => setViewMode("grid")}
-                  className={`p-3 rounded-lg transition-all duration-200 ${viewMode === "grid"
-                      ? "bg-white shadow-md text-saffron-600"
-                      : "hover:bg-gray-200 text-gray-600"
-                    }`}
-                >
-                  <Grid size={20} />
-                </button>
-                <button
-                  onClick={() => setViewMode("list")}
-                  className={`p-3 rounded-lg transition-all duration-200 ${viewMode === "list"
-                      ? "bg-white shadow-md text-saffron-600"
-                      : "hover:bg-gray-200 text-gray-600"
-                    }`}
-                >
-                  <List size={20} />
-                </button>
-              </div>
+                <List size={18} />
+              </button>
             </div>
           </div>
         </div>
@@ -419,7 +417,7 @@ const StatesPage = ({ onPageChange }) => {
           <div>
             <p className="text-gray-600 text-lg">
               Showing{" "}
-              <span className="font-bold text-saffron-600">
+              <span className="font-bold text-gold-700">
                 {filteredStates.length}
               </span>{" "}
               {filteredStates.length === 1 ? "place" : "places"}
@@ -427,7 +425,7 @@ const StatesPage = ({ onPageChange }) => {
                 <span>
                   {" "}
                   in{" "}
-                  <span className="font-semibold text-heritage-red-600">
+                  <span className="font-semibold text-terracotta-500">
                     {regions.find((r) => r.id === selectedRegion)?.name}
                   </span>
                 </span>
@@ -438,7 +436,7 @@ const StatesPage = ({ onPageChange }) => {
           {filteredStates.length > 0 && (
             <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
-                <TrendingUp size={16} className="text-saffron-600" />
+                <TrendingUp size={16} className="text-gold-700" />
                 <span>
                   <span className="font-semibold">
                     {filteredStates.reduce(
@@ -450,7 +448,7 @@ const StatesPage = ({ onPageChange }) => {
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <Users size={16} className="text-heritage-red-600" />
+                <Users size={16} className="text-terracotta-500" />
                 <span>
                   <span className="font-semibold">
                     {formatPopulation(
@@ -492,7 +490,7 @@ const StatesPage = ({ onPageChange }) => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="heritage-card cursor-pointer group hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                      className="bs-card cursor-pointer group hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
                       onClick={() => setSelectedState(place)}
                     >
                       {/* State Image */}
@@ -524,7 +522,7 @@ const StatesPage = ({ onPageChange }) => {
                               {place.code}
                             </span>
                             {place.heritage_count > 0 && (
-                              <div className="flex items-center space-x-1 text-xs text-saffron-600">
+                              <div className="flex items-center space-x-1 text-xs text-gold-700">
                                 <Star size={12} />
                                 <span className="font-semibold">
                                   {place.heritage_count} UNESCO
@@ -535,7 +533,7 @@ const StatesPage = ({ onPageChange }) => {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-xl font-heritage font-bold text-gray-900 mb-2 group-hover:text-saffron-600 transition-colors line-clamp-1">
+                        <h3 className="text-xl font-display font-bold text-charcoal-900 mb-2 group-hover:text-gold-700 transition-colors line-clamp-1">
                           {place.name}
                         </h3>
 
@@ -589,7 +587,7 @@ const StatesPage = ({ onPageChange }) => {
                           </span>
                           <ChevronRight
                             size={16}
-                            className="text-gray-400 group-hover:text-saffron-600 group-hover:translate-x-1 transition-all duration-200"
+                            className="text-gray-400 group-hover:text-gold-700 group-hover:translate-x-1 transition-all duration-200"
                           />
                         </div>
                       </div>
@@ -610,7 +608,7 @@ const StatesPage = ({ onPageChange }) => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.02 }}
-                      className="heritage-card cursor-pointer group hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                      className="bs-card cursor-pointer group hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
                       onClick={() => setSelectedState(place)}
                     >
                       <div className="flex">
@@ -635,7 +633,7 @@ const StatesPage = ({ onPageChange }) => {
                           <div className="flex items-start justify-between">
                             <div className="flex-1">
                               <div className="flex items-center space-x-3 mb-2">
-                                <h3 className="text-2xl font-heritage font-bold text-gray-900 group-hover:text-saffron-600 transition-colors">
+                                <h3 className="text-2xl font-display font-bold text-charcoal-900 group-hover:text-gold-700 transition-colors">
                                   {place.name}
                                 </h3>
                                 <span
@@ -646,7 +644,7 @@ const StatesPage = ({ onPageChange }) => {
                                   {place.code}
                                 </span>
                                 {place.heritage_count > 0 && (
-                                  <div className="flex items-center space-x-1 text-xs text-saffron-600">
+                                  <div className="flex items-center space-x-1 text-xs text-gold-700">
                                     <Star size={12} />
                                     <span className="font-semibold">
                                       {place.heritage_count} UNESCO
@@ -662,7 +660,7 @@ const StatesPage = ({ onPageChange }) => {
                                   <MapPin size={14} />
                                   <span>
                                     Capital:{" "}
-                                    <span className="font-medium text-gray-700">
+                                    <span className="font-medium text-charcoal-700">
                                       {place.capital}
                                     </span>
                                   </span>
@@ -671,7 +669,7 @@ const StatesPage = ({ onPageChange }) => {
                                   <Users size={14} />
                                   <span>
                                     Population:{" "}
-                                    <span className="font-medium text-gray-700">
+                                    <span className="font-medium text-charcoal-700">
                                       {formatPopulation(place.population_2011)}
                                     </span>
                                   </span>
@@ -700,7 +698,7 @@ const StatesPage = ({ onPageChange }) => {
                             </div>
                             <ChevronRight
                               size={20}
-                              className="text-gray-400 group-hover:text-saffron-600 group-hover:translate-x-1 transition-all duration-200 flex-shrink-0 mt-2"
+                              className="text-gray-400 group-hover:text-gold-700 group-hover:translate-x-1 transition-all duration-200 flex-shrink-0 mt-2"
                             />
                           </div>
                         </div>
@@ -721,7 +719,7 @@ const StatesPage = ({ onPageChange }) => {
             className="text-center py-20"
           >
             <div className="text-8xl mb-6">🔍</div>
-            <h3 className="text-3xl font-heritage font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-display font-bold text-charcoal-900 mb-4">
               No Places Found
             </h3>
             <p className="text-gray-600 max-w-md mx-auto text-lg">
@@ -733,7 +731,7 @@ const StatesPage = ({ onPageChange }) => {
                 setSearchTerm("");
                 setSelectedRegion("all");
               }}
-              className="mt-6 px-6 py-3 bg-saffron-600 text-white rounded-2xl hover:bg-saffron-700 transition-colors"
+              className="mt-6 px-6 py-3 bg-gold-600 text-white rounded-2xl hover:bg-saffron-700 transition-colors"
             >
               Clear Filters
             </button>
@@ -789,7 +787,7 @@ const StatesPage = ({ onPageChange }) => {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-end justify-between">
                     <div>
-                      <h2 className="text-4xl font-heritage font-bold text-white mb-2">
+                      <h2 className="text-4xl font-display font-bold text-white mb-2">
                         {selectedState.name}
                       </h2>
                       <p className="text-white/90 text-lg">
@@ -803,7 +801,7 @@ const StatesPage = ({ onPageChange }) => {
                         {selectedState.code}
                       </span>
                       {selectedState.heritage_count > 0 && (
-                        <div className="flex items-center space-x-1 text-xs bg-saffron-600 text-white px-2 py-1 rounded-full">
+                        <div className="flex items-center space-x-1 text-xs bg-gold-600 text-white px-2 py-1 rounded-full">
                           <Award size={12} />
                           <span className="font-semibold">
                             {selectedState.heritage_count} UNESCO Site
@@ -820,7 +818,7 @@ const StatesPage = ({ onPageChange }) => {
               <div className="p-8">
                 {/* Description */}
                 <div className="mb-8">
-                  <p className="text-gray-700 text-lg leading-relaxed">
+                  <p className="text-charcoal-700 text-lg leading-relaxed">
                     {selectedState.description}
                   </p>
                 </div>
@@ -880,14 +878,14 @@ const StatesPage = ({ onPageChange }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Languages */}
                   <div>
-                    <h3 className="text-xl font-heritage font-bold text-gray-900 mb-4">
+                    <h3 className="text-xl font-display font-bold text-charcoal-900 mb-4">
                       Languages
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedState.languages?.map((lang, idx) => (
                         <span
                           key={idx}
-                          className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
+                          className="bg-gray-100 text-charcoal-800 px-3 py-1 rounded-full text-sm"
                         >
                           {lang}
                         </span>
@@ -897,7 +895,7 @@ const StatesPage = ({ onPageChange }) => {
 
                   {/* Major Attractions */}
                   <div>
-                    <h3 className="text-xl font-heritage font-bold text-gray-900 mb-4">
+                    <h3 className="text-xl font-display font-bold text-charcoal-900 mb-4">
                       Major Attractions
                     </h3>
                     <ul className="space-y-2">
@@ -905,8 +903,8 @@ const StatesPage = ({ onPageChange }) => {
                         ?.slice(0, 5)
                         .map((attraction, idx) => (
                           <li key={idx} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-saffron-600 rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-700">{attraction}</span>
+                            <div className="w-2 h-2 bg-gold-600 rounded-full flex-shrink-0"></div>
+                            <span className="text-charcoal-700">{attraction}</span>
                           </li>
                         ))}
                     </ul>
@@ -914,7 +912,7 @@ const StatesPage = ({ onPageChange }) => {
 
                   {/* Famous Food */}
                   <div>
-                    <h3 className="text-xl font-heritage font-bold text-gray-900 mb-4">
+                    <h3 className="text-xl font-display font-bold text-charcoal-900 mb-4">
                       Famous Cuisine
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -931,7 +929,7 @@ const StatesPage = ({ onPageChange }) => {
 
                   {/* Festivals */}
                   <div>
-                    <h3 className="text-xl font-heritage font-bold text-gray-900 mb-4">
+                    <h3 className="text-xl font-display font-bold text-charcoal-900 mb-4">
                       Festivals
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -949,7 +947,7 @@ const StatesPage = ({ onPageChange }) => {
 
                 {/* Specialties */}
                 <div className="mt-8">
-                  <h3 className="text-xl font-heritage font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-display font-bold text-charcoal-900 mb-4">
                     Specialties
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -968,7 +966,7 @@ const StatesPage = ({ onPageChange }) => {
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
                   <button
                     onClick={() => setSelectedState(null)}
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-xl font-semibold transition-colors"
+                    className="bg-gray-200 hover:bg-gray-300 text-charcoal-800 px-6 py-3 rounded-xl font-semibold transition-colors"
                   >
                     Close
                   </button>
@@ -980,26 +978,26 @@ const StatesPage = ({ onPageChange }) => {
       </AnimatePresence>
 
       {/* Call to Action */}
-      <section className="relative py-20 text-white overflow-hidden z-10">
-        <div className="absolute inset-0 -z-10 w-full h-full">
+      <section className="relative py-20 text-white overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
           <img
             src={statesBg}
             alt="CTA background"
-            className="object-cover w-full h-full brightness-100"
+            className="object-cover w-full h-full"
             draggable="false"
           />
-          {/* Optional overlay for readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-charcoal-900/70"></div>
         </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-heritage font-bold mb-8">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">
               Ready to Explore India's Rich Heritage?
             </h2>
             <p className="text-xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
@@ -1010,13 +1008,13 @@ const StatesPage = ({ onPageChange }) => {
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => onPageChange && onPageChange("heritage")}
-                className="bg-white text-heritage-red-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="bg-white text-terracotta-500 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Explore Heritage Sites
               </button>
               <button
                 onClick={() => onPageChange && onPageChange("culture")}
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-heritage-red-600 transition-all duration-200"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-terracotta-500 transition-all duration-200"
               >
                 Discover Culture
               </button>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, User, Crown, MapPin } from "lucide-react";
+import { Menu, X, User, Search, ChevronDown } from "lucide-react";
 import {
   useUser,
   SignInButton,
@@ -10,6 +10,8 @@ import { createOrUpdateUser } from "../services/userService";
 
 const Header = ({ currentPage, onPageChange, searchQuery, onSearchChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const { user: clerkUser, isLoaded, isSignedIn } = useUser();
 
   useEffect(() => {
@@ -18,141 +20,278 @@ const Header = ({ currentPage, onPageChange, searchQuery, onSearchChange }) => {
     }
   }, [isLoaded, isSignedIn, clerkUser]);
 
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close menu on page change
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
+  }, [currentPage]);
+
   const navLinks = [
     { id: "home", label: "Home" },
-    { id: "states", label: "States" },
-    { id: "heritage", label: "Heritage" },
-    { id: "festivals", label: "Festivals" },
-    { id: "arts", label: "Arts" },
-    { id: "gems", label: "Hidden Gems" },
+    {
+      id: "explore",
+      label: "Explore",
+      dropdown: [
+        { id: "states", label: "States of India" },
+        { id: "heritage", label: "Heritage Sites" },
+        { id: "gems", label: "Hidden Gems" },
+        { id: "map", label: "Interactive Map" },
+      ],
+    },
+    {
+      id: "culture",
+      label: "Culture",
+      dropdown: [
+        { id: "festivals", label: "Festivals" },
+        { id: "arts", label: "Arts & Crafts" },
+        { id: "riti-riwaj", label: "Rituals & Customs" },
+        { id: "storytelling", label: "Storytelling" },
+      ],
+    },
+    {
+      id: "plan",
+      label: "Plan Your Trip",
+      dropdown: [
+        { id: "itinerary", label: "Itinerary Planner" },
+        { id: "360tour", label: "360° Virtual Tours" },
+        { id: "salahkar", label: "AI Recommendations" },
+      ],
+    },
     { id: "quiz", label: "Quiz" },
     { id: "chat", label: "AI Guide" },
-    { id: "map", label: "Map" },
-    { id: "itinerary", label: "Plan Itinerary", icon: "MapPin" },
   ];
+
+  const handleNavClick = (id) => {
+    onPageChange(id);
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const isActive = (link) => {
+    if (link.dropdown) {
+      return link.dropdown.some((item) => item.id === currentPage);
+    }
+    return currentPage === link.id;
+  };
 
   return (
     <>
-      <div className="h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-orange-400 fixed top-0 w-full z-50" />
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent fixed top-1 w-full z-50 opacity-60" />
-      <div className="fixed top-1.5 w-full z-40 h-0.5 bg-gradient-to-r from-transparent via-amber-300/50 to-transparent" />
-
-      <header className="fixed top-0 w-full z-40 bg-gradient-to-r from-white via-amber-50/90 to-white backdrop-blur-xl border-b-2 border-amber-200 shadow-xl">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-50/30 to-transparent opacity-50 pointer-events-none" />
-        <div className="flex items-center justify-between h-20 px-6 relative">
-          <div className="flex-shrink-0 flex items-center min-w-0 pl-2">
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-ivory-100/95 backdrop-blur-2xl shadow-bs-md border-b border-ivory-300/50"
+            : "bg-ivory-100/80 backdrop-blur-xl border-b border-ivory-300/30"
+        }`}
+        role="banner"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-18 py-3">
+            {/* Logo / Wordmark */}
             <button
-              onClick={() => {
-                onPageChange("home");
-                setIsMenuOpen(false);
-              }}
-              className="flex items-center space-x-2 group focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded-xl"
-              aria-label="Bharatverse Home"
+              onClick={() => handleNavClick("home")}
+              className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg"
+              aria-label="BharatSafar — Go to homepage"
             >
-
-              <div className="flex flex-col items-start">
-                <h1 className="text-2xl font-anton font-bold text-orange-600 tracking-widest transition-colors duration-300 uppercase">
-                  BharatVerse
-                </h1>
-                <p className="text-xs text-amber-700 font-semibold tracking-wide -mt-1 opacity-90">
-                  Discover India's Heritage
-                </p>
+              {/* Wordmark (Aesthetic Name) */}
+              <div className="flex flex-col items-start leading-none">
+                <span className="font-display font-bold text-2xl text-charcoal-900 tracking-tight group-hover:text-gold-700 transition-colors duration-300">
+                  Bharat<span className="text-gold-600">Safar</span>
+                </span>
+                <span className="text-[11px] text-charcoal-400 font-sans font-medium tracking-widest uppercase mt-1">
+                  Discover India
+                </span>
               </div>
             </button>
-          </div>
 
-          <nav className="hidden xl:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-1 bg-gradient-to-r from-amber-50 via-white to-amber-50 rounded-2xl p-2 backdrop-blur-sm border border-amber-200/50 shadow-lg">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
               {navLinks.map((link) => (
-                <button
+                <div
                   key={link.id}
-                  onClick={() => {
-                    onPageChange(link.id);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-1 border ${currentPage === link.id
-                    ? "bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white shadow-lg transform scale-105 border-amber-300"
-                    : "text-amber-800 hover:text-amber-900 hover:bg-gradient-to-r hover:from-amber-100 hover:to-orange-100 hover:shadow-md border-transparent hover:border-amber-200 hover:scale-102"
-                    }`}
-                  aria-current={currentPage === link.id ? "page" : undefined}
+                  className="relative"
+                  onMouseEnter={() => link.dropdown && setActiveDropdown(link.id)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  {link.label}
-                </button>
-              ))}
-            </div>
-          </nav>
+                  {link.dropdown ? (
+                    <button
+                      className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-sans font-medium transition-all duration-200 ${
+                        isActive(link)
+                          ? "text-gold-700 bg-gold-50"
+                          : "text-charcoal-700 hover:text-charcoal-900 hover:bg-ivory-200"
+                      }`}
+                      aria-expanded={activeDropdown === link.id}
+                      aria-haspopup="true"
+                    >
+                      {link.label}
+                      <ChevronDown
+                        size={14}
+                        className={`transition-transform duration-200 ${activeDropdown === link.id ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleNavClick(link.id)}
+                      className={`px-3 py-2 rounded-lg text-sm font-sans font-medium transition-all duration-200 ${
+                        isActive(link)
+                          ? "text-gold-700 bg-gold-50"
+                          : "text-charcoal-700 hover:text-charcoal-900 hover:bg-ivory-200"
+                      }`}
+                      aria-current={currentPage === link.id ? "page" : undefined}
+                    >
+                      {link.label}
+                    </button>
+                  )}
 
-          <div className="flex items-center space-x-3 flex-shrink-0 pl-2">
-            {isSignedIn && clerkUser ? (
-              <div className="flex items-center space-x-2 min-w-0">
-                <button
-                  onClick={() => onPageChange("account")}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-xl text-amber-800 hover:bg-gradient-to-r hover:from-amber-100 hover:to-orange-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 border border-transparent hover:border-amber-200 hover:shadow-md max-w-[160px] min-w-0"
-                  title="Go to Account"
-                >
-                  <User size={18} />
-                  <span className="hidden sm:inline font-semibold text-sm truncate max-w-[90px] min-w-0">
-                    {clerkUser.firstName ||
-                      clerkUser.emailAddresses[0]?.emailAddress ||
-                      "Account"}
-                  </span>
-                </button>
-                <UserButton afterSignOutUrl="/" />
-              </div>
-            ) : (
-              <div className="flex items-center space-x-3">
-                {isLoaded && (
-                  <>
+                  {/* Dropdown Menu */}
+                  {link.dropdown && activeDropdown === link.id && (
+                    <div
+                      className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-bs-lg border border-ivory-300/60 py-2 min-w-[200px] z-50"
+                      role="menu"
+                    >
+                      {link.dropdown.map((item) => (
+                        <button
+                          key={item.id}
+                          onClick={() => handleNavClick(item.id)}
+                          className={`w-full text-left px-4 py-2.5 text-sm font-sans transition-colors duration-150 ${
+                            currentPage === item.id
+                              ? "text-gold-700 bg-gold-50 font-semibold"
+                              : "text-charcoal-700 hover:text-charcoal-900 hover:bg-ivory-100"
+                          }`}
+                          role="menuitem"
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            {/* Right Actions */}
+            <div className="flex items-center gap-3">
+              {/* Auth */}
+              {isSignedIn && clerkUser ? (
+                <div className="hidden sm:flex items-center gap-2">
+                  <button
+                    onClick={() => onPageChange("account")}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-charcoal-700 hover:text-charcoal-900 hover:bg-ivory-200 transition-all duration-200 text-sm font-sans font-medium"
+                    title="My Account"
+                  >
+                    <User size={16} />
+                    <span className="hidden sm:inline max-w-[90px] truncate">
+                      {clerkUser.firstName || "Account"}
+                    </span>
+                  </button>
+                  <UserButton afterSignOutUrl="/" />
+                </div>
+              ) : (
+                isLoaded && (
+                  <div className="hidden sm:flex items-center gap-2">
                     <SignInButton>
-                      <button className="px-4 py-2 text-sm font-bold text-amber-800 hover:text-amber-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded-xl hover:bg-gradient-to-r hover:from-amber-100 hover:to-orange-100 border border-transparent hover:border-amber-200 hover:shadow-md">
-                        Login
+                      <button className="px-4 py-2 text-sm font-sans font-semibold text-charcoal-700 hover:text-charcoal-900 rounded-lg hover:bg-ivory-200 transition-all duration-200">
+                        Sign In
                       </button>
                     </SignInButton>
                     <SignUpButton>
-                      <button className="px-5 py-2 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-amber-700 hover:via-orange-700 hover:to-red-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transform hover:scale-105 border border-amber-400">
-                        Sign Up
+                      <button className="bs-btn-primary text-sm px-4 py-2">
+                        Get Started
                       </button>
                     </SignUpButton>
-                  </>
-                )}
-              </div>
-            )}
+                  </div>
+                )
+              )}
 
-            <button
-              onClick={() => {
-                setIsMenuOpen(!isMenuOpen);
-              }}
-              className="xl:hidden p-3 rounded-xl text-amber-700 hover:text-amber-800 hover:bg-gradient-to-r hover:from-amber-100 hover:to-orange-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 border border-transparent hover:border-amber-200 hover:shadow-md"
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            >
-              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+              {/* Mobile menu toggle */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden p-2.5 rounded-lg text-charcoal-700 hover:text-charcoal-900 hover:bg-ivory-200 transition-all duration-200"
+                aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMenuOpen}
+              >
+                {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
 
+        {/* Mobile Menu Drawer */}
         {isMenuOpen && (
-          <div className="xl:hidden bg-gradient-to-r from-amber-50/95 via-white/95 to-amber-50/95 backdrop-blur-xl border-t border-amber-200/60 shadow-lg">
-            <div className="max-w-7xl mx-auto px-2 py-6">
-              <div className="grid grid-cols-2 gap-2">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.id}
-                    onClick={() => {
-                      onPageChange(link.id);
-                      setIsMenuOpen(false);
-                    }}
-                    className={`px-3 py-3 rounded-2xl text-sm font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-1 border ${currentPage === link.id
-                      ? "bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white shadow-lg border-amber-300"
-                      : "text-amber-800 hover:text-amber-900 hover:bg-gradient-to-r hover:from-amber-100 hover:to-orange-100 border-amber-200 hover:border-amber-300 hover:shadow-md"
+          <div className="lg:hidden border-t border-ivory-300/50 bg-white/98 backdrop-blur-xl">
+            <nav className="max-w-7xl mx-auto px-6 py-6 space-y-1" aria-label="Mobile navigation">
+              {navLinks.map((link) => (
+                <div key={link.id}>
+                  {link.dropdown ? (
+                    <>
+                      <div className="px-3 py-2 text-xs font-sans font-semibold text-charcoal-400 uppercase tracking-widest mt-4 first:mt-0">
+                        {link.label}
+                      </div>
+                      {link.dropdown.map((item) => (
+                        <button
+                          key={item.id}
+                          onClick={() => handleNavClick(item.id)}
+                          className={`w-full text-left px-4 py-3 rounded-xl text-sm font-sans font-medium transition-all duration-200 ${
+                            currentPage === item.id
+                              ? "text-gold-700 bg-gold-50 font-semibold"
+                              : "text-charcoal-700 hover:text-charcoal-900 hover:bg-ivory-100"
+                          }`}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </>
+                  ) : (
+                    <button
+                      onClick={() => handleNavClick(link.id)}
+                      className={`w-full text-left px-4 py-3 rounded-xl text-sm font-sans font-medium transition-all duration-200 ${
+                        currentPage === link.id
+                          ? "text-gold-700 bg-gold-50 font-semibold"
+                          : "text-charcoal-700 hover:text-charcoal-900 hover:bg-ivory-100"
                       }`}
-                    aria-current={currentPage === link.id ? "page" : undefined}
-                  >
-                    {link.icon === "MapPin" && <MapPin size={14} />}
-                    {link.label}
-                  </button>
-                ))}
+                      aria-current={currentPage === link.id ? "page" : undefined}
+                    >
+                      {link.label}
+                    </button>
+                  )}
+                </div>
+              ))}
+
+              {/* Mobile Auth */}
+              <div className="pt-4 mt-4 border-t border-ivory-300">
+                {isSignedIn && clerkUser ? (
+                  <div className="flex items-center gap-3 px-3">
+                    <UserButton afterSignOutUrl="/" />
+                    <button
+                      onClick={() => handleNavClick("account")}
+                      className="text-sm font-sans font-medium text-charcoal-700"
+                    >
+                      {clerkUser.firstName || clerkUser.emailAddresses[0]?.emailAddress || "My Account"}
+                    </button>
+                  </div>
+                ) : (
+                  isLoaded && (
+                    <div className="flex flex-col gap-2">
+                      <SignInButton>
+                        <button className="w-full py-3 text-center text-sm font-sans font-semibold text-charcoal-700 border border-ivory-300 rounded-xl hover:bg-ivory-100 transition-all">
+                          Sign In
+                        </button>
+                      </SignInButton>
+                      <SignUpButton>
+                        <button className="w-full bs-btn-primary py-3">
+                          Get Started — It's Free
+                        </button>
+                      </SignUpButton>
+                    </div>
+                  )
+                )}
               </div>
-            </div>
+            </nav>
           </div>
         )}
       </header>

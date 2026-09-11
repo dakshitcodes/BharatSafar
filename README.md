@@ -1,8 +1,8 @@
-# BharatVerse
+# BharatSafar
 
 ### AI-Powered Cultural Discovery Platform for India 🇮🇳
 
-**BharatVerse** is a production-grade, AI-enabled cultural exploration platform that combines **interactive geospatial visualization**, **intelligent recommendation systems**, and **multilingual AI storytelling** to make India’s heritage accessible, personalized, and immersive at scale.
+**BharatSafar** is a production-grade, AI-enabled cultural exploration platform that combines **interactive geospatial visualization**, **intelligent recommendation systems**, and **multilingual AI storytelling** to make India’s heritage accessible, personalized, and immersive at scale.
 
 The platform was designed with **real-world usability, scalability, and inclusivity** in mind and showcases strong full-stack + AI engineering practices.
 
@@ -12,7 +12,7 @@ The platform was designed with **real-world usability, scalability, and inclusiv
 
 **Garv Bahl — Core Developer (AI, ML & Backend Systems)**
 
-I led the design and implementation of BharatVerse’s **intelligence layer**, focusing on personalization, AI storytelling, and scalable backend architecture.
+I led the design and implementation of BharatSafar’s **intelligence layer**, focusing on personalization, AI storytelling, and scalable backend architecture.
 
 ### Key Responsibilities
 
@@ -158,8 +158,8 @@ Designed for:
 ##  Local Setup
 
 ```bash
-git clone https://github.com/your-username/BharatVerse.git
-cd BharatVerse
+git clone https://github.com/your-username/BharatSafar.git
+cd BharatSafar
 npm install
 npm run dev
 ```

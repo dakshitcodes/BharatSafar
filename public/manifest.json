@@ -1,16 +1,16 @@
 {
-  "name": "BharatVerse - Discover India's Heritage",
-  "short_name": "BharatVerse",
-  "description": "Explore India's cultural heritage through immersive experiences",
-  "theme_color": "#f97316",
-  "background_color": "#ffffff",
+  "name": "BharatSafar — Discover India Differently",
+  "short_name": "BharatSafar",
+  "description": "Explore India's incredible cultural heritage through immersive experiences and interactive storytelling.",
+  "theme_color": "#C9A84C",
+  "background_color": "#FAF7F2",
   "display": "standalone",
   "start_url": "/",
   "scope": "/",
   "icons": [
     {
-      "src": "/vite.svg",
-      "sizes": "192x192",
+      "src": "/favicon.svg",
+      "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }

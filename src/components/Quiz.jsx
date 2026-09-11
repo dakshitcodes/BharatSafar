@@ -219,7 +219,7 @@ const Quiz = ({
 
   if (!questions || questions.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-6">
+      <div className="min-h-screen flex items-center justify-center bg-ivory-100 p-6">
         <div className="text-center">
           <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <XCircle className="text-red-600" size={40} />
@@ -227,13 +227,13 @@ const Quiz = ({
           <h2 className="text-3xl font-bold text-red-600 mb-4">
             Quiz Not Available
           </h2>
-          <p className="text-gray-600 mb-6 max-w-md mx-auto">
+          <p className="text-charcoal-600 mb-6 max-w-md mx-auto">
             Sorry, this quiz is currently not available. Please try another
             category.
           </p>
           <button
             onClick={goBack}
-            className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-lg flex items-center space-x-2 mx-auto hover:shadow-lg transition"
+            className="px-6 py-3 bs-btn-primary flex items-center gap-2 mx-auto"
           >
             <ArrowLeft size={20} />
             <span>Go Back</span>
@@ -294,13 +294,13 @@ const Quiz = ({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-6"
+        className="min-h-screen bg-ivory-100 p-6"
       >
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <button
               onClick={goBack}
-              className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 mb-6 transition-colors"
+              className="flex items-center space-x-2 text-charcoal-600 hover:text-charcoal-900 mb-6 transition-colors"
             >
               <ArrowLeft size={20} />
               <span>Back to Categories</span>
@@ -316,52 +316,52 @@ const Quiz = ({
               <Trophy className="text-white" size={40} />
             </div>
 
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl font-bold font-display text-charcoal-900 mb-4">
               {category?.title || "Heritage Quiz"}
             </h2>
 
-            <p className="text-gray-600 mb-8 max-w-md mx-auto text-lg">
+            <p className="text-charcoal-600 mb-8 max-w-md mx-auto text-lg">
               {category?.description ||
                 "Test your knowledge about Indian heritage, monuments, festivals, and culture."}
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 max-w-lg mx-auto border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 max-w-lg mx-auto border border-ivory-200">
             <h3 className="font-bold mb-6 text-xl flex items-center justify-center space-x-2">
-              <Target className="text-orange-600" size={20} />
+              <Target className="text-gold-700" size={20} />
               <span>Quiz Details</span>
             </h3>
             <div className="grid grid-cols-2 gap-6 text-center">
-              <div className="bg-blue-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-blue-600 mb-1">
+              <div className="bg-ivory-50 p-4 rounded-xl border border-ivory-200">
+                <div className="text-2xl font-bold text-gold-700 mb-1">
                   {questions.length}
                 </div>
-                <div className="text-sm text-blue-800">Questions</div>
+                <div className="text-sm text-charcoal-600">Questions</div>
               </div>
-              <div className="bg-orange-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-orange-600 mb-1">
+              <div className="bg-ivory-50 p-4 rounded-xl border border-ivory-200">
+                <div className="text-2xl font-bold text-gold-700 mb-1">
                   30s
                 </div>
-                <div className="text-sm text-orange-800">Per Question</div>
+                <div className="text-sm text-charcoal-600">Per Question</div>
               </div>
-              <div className="bg-green-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-green-600 mb-1">
+              <div className="bg-ivory-50 p-4 rounded-xl border border-ivory-200">
+                <div className="text-2xl font-bold text-gold-700 mb-1">
                   {category?.estimatedTime || "15 min"}
                 </div>
-                <div className="text-sm text-green-800">Duration</div>
+                <div className="text-sm text-charcoal-600">Duration</div>
               </div>
-              <div className="bg-purple-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-purple-600 mb-1">
+              <div className="bg-ivory-50 p-4 rounded-xl border border-ivory-200">
+                <div className="text-2xl font-bold text-gold-700 mb-1">
                   {category?.difficulty || "Mixed"}
                 </div>
-                <div className="text-sm text-purple-800">Difficulty</div>
+                <div className="text-sm text-charcoal-600">Difficulty</div>
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-6 mb-8 max-w-md mx-auto">
+          <div className="bg-ivory-50 rounded-xl p-6 border border-ivory-200 mb-8 max-w-md mx-auto">
             <h3 className="font-semibold mb-4">Instructions:</h3>
-            <div className="space-y-2 text-sm text-gray-600 text-left">
+            <div className="space-y-2 text-sm text-charcoal-600 text-left">
               <p>⏱️ Each question has a 30-second time limit</p>
               <p>📝 Select your answer before time runs out</p>
               <p>🏆 Earn badges based on your performance</p>
@@ -373,7 +373,7 @@ const Quiz = ({
           <div className="text-center">
             <button
               onClick={startQuiz}
-              className="text-lg px-10 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+              className="text-lg px-10 py-4 bs-btn-primary text-base px-10 py-4"
             >
               Start Quiz 🚀
             </button>
@@ -386,42 +386,42 @@ const Quiz = ({
   const currentQ = questions[currentQuestion];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-6">
+    <div className="min-h-screen bg-ivory-100 p-6">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <button
             onClick={goBack}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors"
+            className="flex items-center space-x-2 text-charcoal-600 hover:text-charcoal-900 transition-colors"
           >
             <ArrowLeft size={20} />
             <span>Back</span>
           </button>
 
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-500">{category?.title}</span>
+            <span className="text-sm text-charcoal-500">{category?.title}</span>
           </div>
         </div>
 
         <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
-          <div className="text-lg font-semibold text-gray-800">
+          <div className="text-lg font-semibold text-charcoal-800">
             Question {currentQuestion + 1} of {questions.length}
           </div>
 
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
-              <Clock size={18} className="text-gray-500" />
+              <Clock size={18} className="text-charcoal-500" />
               <span
                 className={`font-mono text-lg font-bold ${
                   timeLeft <= 10
                     ? "text-red-600 animate-pulse"
-                    : "text-gray-700"
+                    : "text-charcoal-700"
                 }`}
               >
                 {timeLeft}s
               </span>
             </div>
 
-            <div className="text-lg font-semibold text-gray-700">
+            <div className="text-lg font-semibold text-charcoal-700">
               Score: {score}/{currentQuestion + (showResult ? 1 : 0)}
             </div>
           </div>
@@ -443,9 +443,9 @@ const Quiz = ({
           key={currentQuestion}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-100"
+          className="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-ivory-200"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-relaxed">
+          <h3 className="text-2xl md:text-3xl font-bold text-charcoal-900 mb-8 leading-relaxed">
             {currentQ.question}
           </h3>
 
@@ -473,7 +473,7 @@ const Quiz = ({
                   "bg-orange-100 border-orange-500 text-orange-900 shadow-md";
               } else {
                 buttonClass +=
-                  "bg-gray-50 border-gray-200 text-gray-700 hover:border-orange-300 hover:bg-orange-50";
+                  "bg-gray-50 border-gray-200 text-charcoal-700 hover:border-orange-300 hover:bg-orange-50";
               }
 
               return (
@@ -500,7 +500,7 @@ const Quiz = ({
                         <div className="w-4 h-4 bg-orange-500 rounded-full" />
                       )}
                       {!showResult && selectedOption !== index && (
-                        <span className="text-gray-500">
+                        <span className="text-charcoal-500">
                           {String.fromCharCode(65 + index)}
                         </span>
                       )}

@@ -5,19 +5,19 @@ export function useAuth() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("bharatverseUser");
+    const storedUser = localStorage.getItem("bharatsafarUser");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
   }, []);
 
   const login = (userData) => {
-    localStorage.setItem("bharatverseUser", JSON.stringify(userData));
+    localStorage.setItem("bharatsafarUser", JSON.stringify(userData));
     setUser(userData);
   };
 
   const logout = () => {
-    localStorage.removeItem("bharatverseUser");
+    localStorage.removeItem("bharatsafarUser");
     setUser(null);
   };
 

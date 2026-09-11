@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 
 export function useBookmarks() {
   const [bookmarks, setBookmarks] = useLocalStorage(
-    "bharatverse_bookmarks",
+    "bharatsafar_bookmarks",
     []
   );
 

@@ -38,7 +38,7 @@ const ItineraryDisplay = ({ itinerary, formData, user }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gradient-to-b from-orange-50 to-white rounded-lg">
+    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg border border-ivory-200">
       <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-transparent">
         Your Itinerary
       </h2>
@@ -47,12 +47,12 @@ const ItineraryDisplay = ({ itinerary, formData, user }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
           <h3 className="text-2xl font-bold text-yellow-600 mb-4">Total Cost</h3>
-          <p className="text-4xl font-bold text-gray-800">₹{itinerary.totalCost.toLocaleString('en-IN')}</p>
+          <p className="text-4xl font-bold text-charcoal-800">₹{itinerary.totalCost.toLocaleString('en-IN')}</p>
           <p className="text-sm text-gray-600 mt-2">For {itinerary.totalDuration} days</p>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-lg font-bold text-gray-800 mb-4">Cost Breakdown</h3>
+          <h3 className="text-lg font-bold text-charcoal-800 mb-4">Cost Breakdown</h3>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
               <span>Accommodation:</span>
@@ -80,7 +80,7 @@ const ItineraryDisplay = ({ itinerary, formData, user }) => {
 
       {/* Daily Schedule */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h3 className="text-2xl font-bold text-gray-800 mb-4">Daily Schedule</h3>
+        <h3 className="text-2xl font-bold text-charcoal-800 mb-4">Daily Schedule</h3>
         <div className="space-y-3">
           {itinerary.schedule.map((day) => (
             <div
@@ -95,8 +95,8 @@ const ItineraryDisplay = ({ itinerary, formData, user }) => {
             >
               <div className="flex justify-between items-start">
                 <div>
-                  <p className="font-bold text-gray-800">Day {day.day}</p>
-                  <p className="text-gray-700 font-medium">{day.activity}</p>
+                  <p className="font-bold text-charcoal-800">Day {day.day}</p>
+                  <p className="text-charcoal-700 font-medium">{day.activity}</p>
                   {day.description && <p className="text-sm text-gray-600 mt-1">{day.description}</p>}
                 </div>
                 <span className="text-sm font-semibold text-gray-600 bg-white px-2 py-1 rounded">₹{day.cost}</span>
@@ -108,12 +108,12 @@ const ItineraryDisplay = ({ itinerary, formData, user }) => {
 
       {/* Recommendations */}
       <div className="bg-orange-50 p-6 rounded-lg shadow-md border border-orange-200 mb-8">
-        <h3 className="text-2xl font-bold text-gray-800 mb-4">Travel Tips & Recommendations</h3>
+        <h3 className="text-2xl font-bold text-charcoal-800 mb-4">Travel Tips & Recommendations</h3>
         <ul className="space-y-2">
           {itinerary.recommendations.map((rec, index) => (
             <li key={index} className="flex items-start">
               <span className="text-yellow-600 font-bold mr-3">✓</span>
-              <span className="text-gray-700">{rec}</span>
+              <span className="text-charcoal-700">{rec}</span>
             </li>
           ))}
         </ul>

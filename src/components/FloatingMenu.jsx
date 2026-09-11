@@ -12,20 +12,20 @@ const FloatingMenu = ({ onPageChange }) => {
       icon: "🙏",
       description: "Indian Customs & Rituals",
       page: "riti-riwaj",
-      color: "from-purple-500 via-pink-500 to-red-500",
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      borderColor: "border-purple-200",
-      shadowColor: "shadow-purple-500/20",
+      color: "from-gold-600 to-terracotta-600",
+      bgColor: "bg-ivory-50",
+      borderColor: "border-ivory-200",
+      shadowColor: "shadow-charcoal-900/10",
     },
     {
       name: "Storytelling",
       icon: "📖",
       description: "Cultural Stories & Legends",
       page: "storytelling",
-      color: "from-blue-500 via-cyan-500 to-teal-500",
-      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
-      borderColor: "border-blue-200",
-      shadowColor: "shadow-blue-500/20",
+      color: "from-charcoal-700 to-charcoal-900",
+      bgColor: "bg-ivory-50",
+      borderColor: "border-ivory-200",
+      shadowColor: "shadow-charcoal-900/10",
     },
   ];
 
@@ -239,7 +239,7 @@ const FloatingMenu = ({ onPageChange }) => {
                 onClick={() => setIsOpen(false)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full text-sm text-gray-600 hover:text-gray-900 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="w-full text-sm text-gray-600 hover:text-charcoal-900 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
                 Close Menu
               </motion.button>

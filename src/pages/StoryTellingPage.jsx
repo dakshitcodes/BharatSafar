@@ -868,7 +868,7 @@ const StoryTellingPage = ({ onBack }) => {
         </motion.button>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-8 md:py-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-8 md:py-12">
         {/* --- Content Container --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -7,49 +7,34 @@ import {
   MapPin,
   Calendar,
   Sparkles,
-  TrendingUp,
   Landmark,
   Music,
-  Shield,
   Gem,
-  Building,
   Globe,
   Cpu,
   Trophy,
-  RotateCcw,
-  MousePointer,
-  Move3D,
-  Eye,
   Award,
   Heart,
+  ChevronRight,
+  Compass,
+  BookOpen,
   Camera,
+  Wind,
+  Waves,
+  Mountain,
 } from "lucide-react";
-import ctaBg from "../assets/cta-bg.webp"; // Use your desired image and correct path
-import PanoViewer from "../components/PanoViewer";
-import SearchWidget from "../components/SearchWidget";
+import ctaBg from "../assets/cta-bg.webp";
 import diwaliImg from "../assets/diwali.jpeg";
 import kathakImg from "../assets/kathak.jpg";
 import rootBridgeImg from "../assets/hidden-gems/root-bridges.jpg";
 import goldenTempleImg from "../assets/punjab.jpeg";
 import redFortImg from "../assets/redfort.jpg";
 import tajMahalImg from "../assets/tajmahal.jpg";
+import heroBgVideo from "../assets/home2.mp4";
 
-import heroBgVideo from "../assets/home2.mp4"; // Adjust path & filename
 const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
-  const [searchSuggestions, setSearchSuggestions] = useState([]);
-  const [isSearching, setIsSearching] = useState(false);
-  const [stats, setStats] = useState({
-    sites: 0,
-    festivals: 0,
-    arts: 0,
-    users: 0,
-  });
-
-  // 360 degree viewer state
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const panoramaRef = useRef(null);
+  const [stats, setStats] = useState({ sites: 0, festivals: 0, arts: 0, users: 0 });
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   // Featured heritage sites
   const featuredSites = [
@@ -59,31 +44,21 @@ const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
       state: "Uttar Pradesh",
       image: tajMahalImg,
       rating: 4.9,
-      visitors: "6M+ visitors",
-      description:
-        "The epitome of love, this ivory-white marble mausoleum stands as India's most iconic monument.",
-      category: "UNESCO World Heritage Site",
-      highlights: [
-        "Mughal Architecture",
-        "Marble Inlay Work",
-        "Charbagh Garden",
-      ],
-      yearBuilt: "1632-1653",
-      architect: "Ustad Ahmad Lahauri",
+      visitors: "6M+ visitors/year",
+      description: "The epitome of Mughal craftsmanship — an ivory-white marble mausoleum that stands as a testament to eternal love.",
+      category: "UNESCO World Heritage",
+      yearBuilt: "1632–1653",
     },
     {
       id: 2,
-      title: "Red Fort (Lal Qila)",
-      state: "Delhi",
+      title: "Red Fort",
+      state: "New Delhi",
       image: redFortImg,
       rating: 4.7,
-      visitors: "3M+ visitors",
-      description:
-        "The majestic fortress that served as the residence of Mughal emperors for over 200 years.",
-      category: "UNESCO World Heritage Site",
-      highlights: ["Red Sandstone", "Diwan-i-Aam", "Peacock Throne"],
-      yearBuilt: "1639-1648",
-      architect: "Ustad Ahmad Lahauri",
+      visitors: "3M+ visitors/year",
+      description: "The majestic red sandstone fortress that was the seat of Mughal power for over two centuries.",
+      category: "UNESCO World Heritage",
+      yearBuilt: "1639–1648",
     },
     {
       id: 3,
@@ -91,127 +66,65 @@ const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
       state: "Punjab",
       image: goldenTempleImg,
       rating: 4.9,
-      visitors: "5M+ visitors",
-      description:
-        "The holiest shrine of Sikhism, gleaming in gold with its sacred pool reflecting divine beauty.",
-      category: "Religious Site",
-      highlights: ["Golden Dome", "Sacred Pool", "Langar (Community Kitchen)"],
+      visitors: "5M+ visitors/year",
+      description: "Harmandir Sahib — the holiest shrine of Sikhism, its gilded reflection shimmering in the sacred Amrit Sarovar.",
+      category: "Sacred Site",
       yearBuilt: "1577",
-      architect: "Guru Arjan Dev",
     },
   ];
 
-  // Trending topics with Lucide icons
-  const trendingTopics = [
-    {
-      icon: Landmark,
-      name: "Ancient Temples",
-      count: "2.5K searches",
-      color: "text-orange-600",
-    },
-    {
-      icon: Calendar,
-      name: "Diwali Celebrations",
-      count: "1.8K searches",
-      color: "text-purple-600",
-    },
-    {
-      icon: Music,
-      name: "Bharatanatyam",
-      count: "1.2K searches",
-      color: "text-blue-600",
-    },
-    {
-      icon: Shield,
-      name: "Rajput Forts",
-      count: "980 searches",
-      color: "text-red-600",
-    },
-    {
-      icon: Gem,
-      name: "Hidden Gems",
-      count: "750 searches",
-      color: "text-emerald-600",
-    },
-    {
-      icon: Building,
-      name: "Temple Architecture",
-      count: "640 searches",
-      color: "text-indigo-600",
-    },
+  const experiences = [
+    { icon: Landmark, label: "Heritage Sites", desc: "150+ monuments", page: "heritage", color: "bg-amber-50 text-amber-700" },
+    { icon: Calendar, label: "Festivals", desc: "200+ celebrations", page: "festivals", color: "bg-rose-50 text-rose-700" },
+    { icon: Music, label: "Arts & Crafts", desc: "180+ traditions", page: "arts", color: "bg-violet-50 text-violet-700" },
+    { icon: Gem, label: "Hidden Gems", desc: "Undiscovered places", page: "gems", color: "bg-emerald-50 text-emerald-700" },
+    { icon: Globe, label: "360° Tours", desc: "Virtual immersion", page: "360tour", color: "bg-sky-50 text-sky-700" },
+    { icon: Cpu, label: "AI Heritage Guide", desc: "Ask anything", page: "chat", color: "bg-indigo-50 text-indigo-700" },
+    { icon: Trophy, label: "Quiz & Learn", desc: "Test your knowledge", page: "quiz", color: "bg-orange-50 text-gold-700" },
+    { icon: MapPin, label: "India Map", desc: "Explore by region", page: "map", color: "bg-teal-50 text-teal-700" },
   ];
 
-  // Quick discoveries
   const quickDiscoveries = [
     {
       title: "Festival of Lights",
-      subtitle: "Diwali Celebrations Across India",
+      subtitle: "Diwali — India's most luminous celebration",
       image: diwaliImg,
       action: () => onPageChange("festivals"),
-      icon: Calendar,
     },
     {
-      title: "Classical Dance Forms",
-      subtitle: "8 Sacred Dance Traditions",
+      title: "Classical Dance",
+      subtitle: "Eight sacred dance traditions of India",
       image: kathakImg,
       action: () => onPageChange("arts"),
-      icon: Music,
     },
     {
-      title: "Our Hidden Gem Places",
-      subtitle: "Lesser-Known Beautiful & Amazing Places",
+      title: "Hidden Gems",
+      subtitle: "Places most travelers never discover",
       image: rootBridgeImg,
       action: () => onPageChange("gems"),
-      icon: Landmark,
     },
   ];
 
-  // 360 degree viewer handlers
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setDragStart({ x: e.clientX, y: e.clientY });
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-
-    const deltaX = e.clientX - dragStart.x;
-    const deltaY = e.clientY - dragStart.y;
-
-    setRotation((prev) => ({
-      x: Math.max(-90, Math.min(90, prev.x - deltaY * 0.5)),
-      y: prev.y + deltaX * 0.5,
-    }));
-
-    setDragStart({ x: e.clientX, y: e.clientY });
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  // Touch handlers for mobile
-  const handleTouchStart = (e) => {
-    const touch = e.touches[0];
-    setIsDragging(true);
-    setDragStart({ x: touch.clientX, y: touch.clientY });
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-
-    const touch = e.touches[0];
-    const deltaX = touch.clientX - dragStart.x;
-    const deltaY = touch.clientY - dragStart.y;
-
-    setRotation((prev) => ({
-      x: Math.max(-90, Math.min(90, prev.x - deltaY * 0.5)),
-      y: prev.y + deltaX * 0.5,
-    }));
-
-    setDragStart({ x: touch.clientX, y: touch.clientY });
-  };
+  const testimonials = [
+    {
+      quote: "BharatSafar completely transformed how I experience India's culture. The 360° tours felt like I was truly there.",
+      name: "Priya Sharma",
+      location: "Mumbai",
+      rating: 5,
+    },
+    {
+      quote: "The AI heritage guide answered questions I didn't even know I had. Incredibly detailed and culturally nuanced.",
+      name: "Arjun Mehta",
+      location: "Bangalore",
+      rating: 5,
+    },
+    {
+      quote: "Finally, a platform that treats India's heritage with the depth and reverence it deserves.",
+      name: "Kavitha Nair",
+      location: "Kerala",
+      rating: 5,
+    },
+  ];
 
   // Animate stats on mount
   useEffect(() => {
@@ -220,619 +133,515 @@ const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
       const step = (currentTime) => {
         if (!startTime) startTime = currentTime;
         const progress = Math.min((currentTime - startTime) / duration, 1);
-        const value = Math.floor(progress * (end - start) + start);
-        setter(value);
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
+        setter(Math.floor(progress * (end - start) + start));
+        if (progress < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
     };
-
-    setTimeout(() => {
-      animateValue(0, 150, 2000, (val) =>
-        setStats((prev) => ({ ...prev, sites: val }))
-      );
-      animateValue(0, 200, 2200, (val) =>
-        setStats((prev) => ({ ...prev, festivals: val }))
-      );
-      animateValue(0, 180, 2400, (val) =>
-        setStats((prev) => ({ ...prev, arts: val }))
-      );
-      animateValue(0, 50000, 2600, (val) =>
-        setStats((prev) => ({ ...prev, users: val }))
-      );
+    const timer = setTimeout(() => {
+      animateValue(0, 150, 2000, (v) => setStats((p) => ({ ...p, sites: v })));
+      animateValue(0, 200, 2200, (v) => setStats((p) => ({ ...p, festivals: v })));
+      animateValue(0, 180, 2400, (v) => setStats((p) => ({ ...p, arts: v })));
+      animateValue(0, 50000, 2600, (v) => setStats((p) => ({ ...p, users: v })));
     }, 500);
+    return () => clearTimeout(timer);
   }, []);
 
-  // Search functionality simulated
-  const handleSearch = (query) => {
-    setIsSearching(true);
-    setTimeout(() => {
-      onPageChange("heritage");
-      setIsSearching(false);
-    }, 1000);
-  };
-
-  // Handle panorama hotspot clicks (placeholder)
-  const handleHotspotClick = (hotspot) => {
-    console.log("Hotspot clicked:", hotspot);
-  };
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with background */}
-      <section className="relative h-[80vh] overflow-hidden flex items-center justify-center">
+    <div className="min-h-screen bg-ivory-100">
+      {/* ═══════════════════════════════════════════════
+          HERO — Cinematic video background
+      ═══════════════════════════════════════════════ */}
+      <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden flex items-center justify-center">
         {/* Video Background */}
         <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay muted loop playsInline
+          className="absolute inset-0 w-full h-full object-cover scale-105"
+          aria-hidden="true"
         >
           <source src={heroBgVideo} type="video/mp4" />
         </video>
 
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/20" />
-        <div className="relative z-10 max-w-6xl mx-auto h-full flex flex-col justify-center px-4">
-          <div className="flex flex-col items-center text-center space-y-6">
-            <h1 className="text-white text-6xl md:text-8xl font-heritage font-bold heritage-text-glow leading-tight">
-              BharatVerse
-            </h1>
-            <p className="text-white text-xl md:text-2xl max-w-4xl opacity-90 leading-relaxed">
-              Discover India's incredible cultural heritage through immersive
-              360° experiences, AI-powered guides, and interactive storytelling
-            </p>
+        {/* Layered Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900/60 via-charcoal-900/30 to-charcoal-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/40 via-transparent to-charcoal-900/20" />
 
-            <p className="text-yellow-300 text-lg md:text-xl font-medium mt-6">
-              Where Ancient Wisdom Meets Modern Technology
-            </p>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          {/* Eyebrow label */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+            <div className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
+            <span className="text-xs font-sans font-semibold text-white/90 tracking-widest uppercase">
+              Premium Cultural Experience
+            </span>
+          </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6 w-full max-w-4xl mx-auto pt-5">
-              <button
-                onClick={() => onPageChange("360tour")} // <-- Updated
-                className="btn-heritage text-lg px-8 py-4 flex items-center space-x-3 hover:scale-105 transition-transform duration-300 w-full sm:w-auto justify-center"
-              >
-                <Play size={24} />
-                <span>Start 360° Heritage Tour</span>
-              </button>
+          {/* Main Headline */}
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+            Discover India
+            <span className="block italic text-gold-300 font-semibold">
+              Differently.
+            </span>
+          </h1>
 
-              <button
-                onClick={() => onPageChange("chat")}
-                className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/30 transition-all duration-300 flex items-center space-x-3 w-full sm:w-auto justify-center"
-              >
-                Ask Heritage AI Guide
-              </button>
+          {/* Supporting text */}
+          <p className="font-sans text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-10">
+            Immersive 360° tours, AI-powered heritage guides, and curated journeys through 5,000 years of civilization.
+          </p>
 
-              <button
-                onClick={() => onPageChange("quiz")}
-                className="bg-gold-500/20 backdrop-blur-sm border-2 border-gold-400/40 text-yellow-200 px-8 py-4 rounded-2xl font-semibold hover:bg-gold-500/30 transition-all duration-300 flex items-center space-x-3 w-full sm:w-auto justify-center"
-              >
-                Test Your Knowledge
-              </button>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={() => onPageChange("states")}
+              className="bs-btn bs-btn-lg group"
+              style={{
+                background: "linear-gradient(135deg, #D4AF50 0%, #C9A84C 100%)",
+                color: "#1C1917",
+                boxShadow: "0 4px 20px rgba(201, 168, 76, 0.4)",
+              }}
+            >
+              Start Exploring
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+            <button
+              onClick={() => onPageChange("360tour")}
+              className="bs-btn bs-btn-lg bs-btn-outline-white group"
+            >
+              <Play size={18} />
+              360° Virtual Tour
+            </button>
+          </div>
+        </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full text-center max-w-4xl mx-auto mt-12 pt-10">
-              {[
-                {
-                  number: stats.sites,
-                  label: "Heritage Sites",
-                  icon: Landmark,
-                  suffix: "+",
-                },
-                {
-                  number: stats.festivals,
-                  label: "Festivals",
-                  icon: Calendar,
-                  suffix: "+",
-                },
-                {
-                  number: stats.arts,
-                  label: "Art Forms",
-                  icon: Music,
-                  suffix: "+",
-                },
-                {
-                  number: (stats.users / 1000).toFixed(0),
-                  label: "Explorers",
-                  icon: Users,
-                  suffix: "K+",
-                },
-              ].map((stat, idx) => {
-                const IconComponent = stat.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="text-center transform hover:scale-105 transition-transform duration-300"
-                  >
-                    <div className="flex items-center justify-center mb-2">
-                      <IconComponent className="text-white mr-2" size={24} />
-                      <div className="text-4xl font-bold font-heritage heritage-text-glow text-white">
-                        {stat.number}
-                        {stat.suffix}
-                      </div>
-                    </div>
-                    <div className="text-white/80 font-medium">
-                      {stat.label}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+        {/* Stats strip — bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0 bg-charcoal-900/70 backdrop-blur-md border-t border-white/10">
+          <div className="max-w-5xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { number: stats.sites, suffix: "+", label: "Heritage Sites" },
+              { number: stats.festivals, suffix: "+", label: "Festivals" },
+              { number: stats.arts, suffix: "+", label: "Art Forms" },
+              { number: (stats.users / 1000).toFixed(0), suffix: "K+", label: "Explorers" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="font-display text-2xl md:text-3xl font-bold text-gold-400">
+                  {stat.number}{stat.suffix}
+                </div>
+                <div className="font-sans text-xs text-white/60 mt-0.5 tracking-wide">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Real 360° Experience Section */}
-      {/* Real 360° AirPano Taj Mahal Experience */}
-      <section className="py-20 bg-gradient-to-br from-saffron-50 to-gold-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heritage font-bold heritage-text-gradient mb-6 flex items-center justify-center">
-              Experience Taj Mahal in Real 360°
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Immerse yourself in the breathtaking beauty of the Taj Mahal with
-              our interactive 360° panoramic view from AirPano
-            </p>
-          </div>
-
-          <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-lg mx-auto max-w-7xl">
-            <iframe
-              src="https://www.airpano.com/embed.php?3D=taj-mahal-india-2"
-              title="360° Taj Mahal by AirPano"
-              width="100%"
-              height="600"
-              frameBorder="0"
-              marginHeight="0"
-              marginWidth="0"
-              scrolling="no"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
-        <div className="flex justify-center my-12">
-          <button
-            onClick={() => onPageChange("360tour")}
-            className="btn-heritage px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 inline-flex items-center"
-          >
-            <span>View More 360° Tours</span>
-            <ArrowRight className="ml-2" size={20} />
-          </button>
-        </div>
-      </section>
-
-      {/* Enhanced Featured Heritage Sites */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-16">
+      {/* ═══════════════════════════════════════════════
+          EXPERIENCES GRID — 8 featured categories
+      ═══════════════════════════════════════════════ */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
             <div>
-              <h2 className="text-4xl md:text-5xl font-heritage font-bold heritage-text-gradient mb-4 flex items-center">
-                <Award className="mr-4 text-saffron-600" size={48} />
-                Featured Heritage Sites
+              <p className="bs-label text-gold-600 mb-3">What BharatSafar Offers</p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-charcoal-900 leading-tight">
+                Every facet of<br />
+                <span className="italic font-semibold text-gold-700">India's culture.</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl">
-                Discover India's most magnificent monuments through immersive
-                virtual experiences
-              </p>
             </div>
-            <div className="hidden md:flex items-center space-x-2 bg-gradient-to-r from-saffron-100 to-heritage-red-100 px-4 py-2 rounded-full">
-              <TrendingUp className="text-saffron-600" size={20} />
-              <span className="text-saffron-800 font-medium text-sm">
-                Most Visited This Week
-              </span>
-            </div>
+            <p className="font-sans text-charcoal-500 max-w-xs leading-relaxed text-sm">
+              From ancient temples to living traditions — explore India's heritage your way.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          {/* Experiences Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {experiences.map((exp, i) => {
+              const Icon = exp.icon;
+              return (
+                <button
+                  key={i}
+                  onClick={() => onPageChange(exp.page)}
+                  className="group p-5 rounded-2xl border border-ivory-300 bg-ivory-50 hover:bg-white hover:border-gold-300 hover:shadow-bs-md transition-all duration-300 text-left"
+                >
+                  <div className={`w-10 h-10 rounded-xl ${exp.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200`}>
+                    <Icon size={20} />
+                  </div>
+                  <div className="font-sans font-semibold text-charcoal-800 text-sm mb-1 group-hover:text-gold-700 transition-colors">
+                    {exp.label}
+                  </div>
+                  <div className="font-sans text-xs text-charcoal-400">{exp.desc}</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
+          FEATURED HERITAGE — Editorial card layout
+      ═══════════════════════════════════════════════ */}
+      <section className="py-24 bg-ivory-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div>
+              <p className="bs-label text-gold-600 mb-3">Iconic Destinations</p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-charcoal-900">
+                Featured<br />
+                <span className="italic font-semibold text-charcoal-600">Heritage Sites</span>
+              </h2>
+            </div>
+            <button
+              onClick={() => onPageChange("heritage")}
+              className="flex items-center gap-2 text-sm font-sans font-semibold text-gold-700 hover:text-gold-800 transition-colors group"
+            >
+              View all sites
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+
+          {/* Cards — asymmetric editorial layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {featuredSites.map((site, index) => (
               <div
                 key={site.id}
-                className="heritage-card relative group cursor-default transform hover:scale-[1.02] transition-all duration-500 overflow-hidden"
-                aria-label={`Explore featured heritage site: ${site.title}`}
+                className={`group bs-card cursor-pointer ${index === 0 ? "lg:col-span-2 lg:row-span-1" : ""}`}
+                onMouseEnter={() => setHoveredCard(site.id)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Enhanced Badge */}
-                <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-saffron-500 to-heritage-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-1 shadow-lg">
-                  <Star size={14} />
-                  <span>Featured</span>
-                </div>
-
-                {/* Enhanced Bookmark Button */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    addBookmark({ ...site, type: "heritage" });
-                  }}
-                  className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg"
-                  aria-label="Add to favorites"
-                >
-                  <Heart
-                    size={18}
-                    className="text-gray-600 hover:text-red-500 transition-colors"
-                  />
-                </button>
-
-                {/* Enhanced Image Section */}
-                <div className="aspect-[4/3] overflow-hidden relative">
+                {/* Image */}
+                <div className={`overflow-hidden relative ${index === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
                   <img
                     src={site.image}
                     alt={site.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Hover Overlay with Quick Info */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex items-center space-x-2 text-sm bg-black/50 rounded-lg px-3 py-2 backdrop-blur-sm">
-                      <Calendar size={14} />
-                      <span>Built: {site.yearBuilt}</span>
-                    </div>
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 bs-badge-gold text-xs">
+                    {site.category}
                   </div>
+
+                  {/* Bookmark */}
+                  {addBookmark && (
+                    <button
+                      onClick={(e) => { e.stopPropagation(); addBookmark({ ...site, type: "heritage" }); }}
+                      className="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 shadow-sm opacity-0 group-hover:opacity-100"
+                      aria-label={`Save ${site.title}`}
+                    >
+                      <Heart size={14} className="text-charcoal-600 hover:text-terracotta-500 transition-colors" />
+                    </button>
+                  )}
                 </div>
 
-                {/* Enhanced Content Section */}
+                {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center space-x-2">
-                      <MapPin size={14} className="text-saffron-600" />
-                      <span className="text-sm font-medium text-saffron-600 bg-saffron-50 px-3 py-1 rounded-full">
-                        {site.state}
-                      </span>
+                    <div className="flex items-center gap-1.5 text-charcoal-400">
+                      <MapPin size={13} />
+                      <span className="font-sans text-xs font-medium">{site.state}</span>
                     </div>
-                    <div className="flex items-center space-x-1 bg-yellow-50 px-2 py-1 rounded-full">
-                      <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-bold text-yellow-700">
-                        {site.rating}
-                      </span>
+                    <div className="flex items-center gap-1 bg-amber-50 px-2 py-0.5 rounded-full">
+                      <Star size={12} className="text-amber-500 fill-amber-500" />
+                      <span className="font-sans text-xs font-bold text-amber-700">{site.rating}</span>
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-heritage font-bold text-gray-900 mb-2 group-hover:text-saffron-600 transition-colors">
+                  <h3 className="font-display text-xl font-bold text-charcoal-900 mb-2 group-hover:text-gold-700 transition-colors">
                     {site.title}
                   </h3>
-
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
+                  <p className="font-sans text-sm text-charcoal-500 leading-relaxed mb-4 line-clamp-2">
                     {site.description}
                   </p>
 
-                  {/* Enhanced Highlights */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {site.highlights.slice(0, 3).map((highlight, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium border border-gray-200"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Enhanced Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex items-center space-x-1 text-gray-600">
-                        <Users size={14} />
-                        <span className="text-sm font-medium">
-                          {site.visitors}
-                        </span>
-                      </div>
-                      <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-                      <span className="text-xs text-gray-500">
-                        {site.category}
-                      </span>
-                    </div>
-
-                    <button className="text-saffron-600 hover:text-saffron-700 font-semibold flex items-center space-x-1 group/btn">
-                      <span className="text-sm">Explore</span>
-                      <ArrowRight
-                        size={14}
-                        className="group-hover/btn:translate-x-1 transition-transform"
-                      />
+                  <div className="flex items-center justify-between pt-4 border-t border-ivory-200">
+                    <span className="font-sans text-xs text-charcoal-400">Built {site.yearBuilt}</span>
+                    <button className="flex items-center gap-1 text-xs font-sans font-semibold text-gold-700 hover:text-gold-800 group/btn transition-colors">
+                      Explore
+                      <ChevronRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
                     </button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center">
+      {/* ═══════════════════════════════════════════════
+          360° EXPERIENCE — Premium iframe section
+      ═══════════════════════════════════════════════ */}
+      <section className="py-24 bg-charcoal-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="bs-label text-gold-500 mb-4">Immersive Experience</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+              Step Inside the Taj Mahal
+            </h2>
+            <p className="font-sans text-charcoal-300 max-w-xl mx-auto text-base leading-relaxed">
+              Explore one of the world's greatest monuments in real 360° — powered by AirPano.
+            </p>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-bs-xl border border-charcoal-700 mx-auto max-w-5xl">
+            <iframe
+              src="https://www.airpano.com/embed.php?3D=taj-mahal-india-2"
+              title="360° Taj Mahal virtual tour by AirPano"
+              width="100%"
+              height="540"
+              frameBorder="0"
+              allowFullScreen
+              className="block"
+            />
+          </div>
+
+          <div className="flex justify-center mt-10">
             <button
-              onClick={() => onPageChange("heritage")}
-              className="btn-heritage text-lg px-8 py-4 flex items-center space-x-2 mx-auto"
+              onClick={() => onPageChange("360tour")}
+              className="bs-btn bs-btn-lg group"
+              style={{ background: "linear-gradient(135deg, #D4AF50 0%, #C9A84C 100%)", color: "#1C1917" }}
             >
-              <Landmark size={20} />
-              <span>View All Heritage Sites ({stats.sites}+)</span>
+              Explore All 360° Tours
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
       </section>
 
-      {/* Trending Discoveries with Lucide Icons */}
-      <section className="py-20 bg-gradient-to-br from-heritage-red-50 to-saffron-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heritage font-bold heritage-text-gradient mb-6 flex items-center justify-center">
-              Trending Discoveries
+      {/* ═══════════════════════════════════════════════
+          QUICK DISCOVERIES — Editorial cards
+      ═══════════════════════════════════════════════ */}
+      <section className="py-24 bg-ivory-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="bs-label text-gold-600 mb-3">Curated for You</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-charcoal-900">
+              Begin Your Journey
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See what fellow heritage enthusiasts are exploring right now
-            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
-            {trendingTopics.map((topic, index) => {
-              const IconComponent = topic.icon;
-              return (
-                <div
-                  key={index}
-                  className="heritage-card text-center py-10 px-6 rounded-2xl cursor-pointer hover:shadow-xl transition-all duration-300 group"
-                  onClick={() => handleSearch(topic.name)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleSearch(topic.name);
-                  }}
-                  aria-label={`Search for ${topic.name}`}
-                >
-                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent
-                      size={36}
-                      className={`mx-auto ${topic.color} animate-float`}
-                      style={{ animationDelay: `${index * 0.2}s` }}
-                    />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {quickDiscoveries.map((item, i) => (
+              <div
+                key={i}
+                onClick={item.action}
+                className="group bs-card cursor-pointer overflow-hidden"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && item.action()}
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-600"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/70 via-charcoal-900/20 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="font-display text-xl font-bold text-white mb-1">{item.title}</h3>
+                    <p className="font-sans text-sm text-white/75">{item.subtitle}</p>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm group-hover:text-saffron-600 transition-colors">
-                    {topic.name}
-                  </h3>
-                  <p className="text-xs text-gray-600">{topic.count}</p>
                 </div>
-              );
-            })}
+                <div className="p-5">
+                  <button className="flex items-center gap-1.5 text-sm font-sans font-semibold text-gold-700 hover:text-gold-800 group/btn transition-colors">
+                    Discover More
+                    <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Enhanced Quick Discoveries */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {quickDiscoveries.map((discovery, index) => {
-              const IconComponent = discovery.icon;
-              return (
-                <div
-                  key={index}
-                  className="heritage-card overflow-hidden cursor-pointer group hover:shadow-2xl transition-all duration-500"
-                  onClick={discovery.action}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") discovery.action();
-                  }}
-                  aria-label={`Discover ${discovery.title}`}
-                >
-                  <div className="aspect-[16/9] overflow-hidden relative">
-                    <img
-                      src={discovery.image}
-                      alt={discovery.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        <IconComponent size={20} className="text-saffron-600" />
+      {/* ═══════════════════════════════════════════════
+          PLATFORM FEATURES — Why BharatSafar
+      ═══════════════════════════════════════════════ */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left — Editorial text */}
+            <div>
+              <p className="bs-label text-gold-600 mb-4">Why BharatSafar</p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-charcoal-900 leading-tight mb-6">
+                Heritage, as it
+                <span className="block italic font-semibold text-gold-700">was meant to be.</span>
+              </h2>
+              <p className="font-sans text-charcoal-500 leading-relaxed mb-8 max-w-lg">
+                We believe India's culture deserves more than a Wikipedia page. BharatSafar brings together cutting-edge technology and deep cultural knowledge to create experiences that are immersive, personal, and unforgettable.
+              </p>
+              <div className="space-y-5">
+                {[
+                  {
+                    icon: Globe,
+                    title: "360° Virtual Tours",
+                    desc: "Explore monuments with interactive panoramic views and expert narration.",
+                  },
+                  {
+                    icon: Cpu,
+                    title: "AI Heritage Guide",
+                    desc: "Get instant, deeply researched answers about history, culture, and traditions.",
+                  },
+                  {
+                    icon: Compass,
+                    title: "Personalized Journeys",
+                    desc: "AI-powered itineraries tailored to your interests, time, and travel style.",
+                  },
+                ].map((f, i) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={i} className="flex items-start gap-4 group">
+                      <div className="w-10 h-10 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-100 transition-colors">
+                        <Icon size={18} className="text-gold-700" />
+                      </div>
+                      <div>
+                        <div className="font-sans font-semibold text-charcoal-800 mb-1">{f.title}</div>
+                        <div className="font-sans text-sm text-charcoal-500 leading-relaxed">{f.desc}</div>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-heritage font-bold text-gray-900 mb-2 group-hover:text-saffron-600 transition-colors">
-                      {discovery.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">
-                      {discovery.subtitle}
-                    </p>
-                    <button className="text-saffron-600 hover:text-saffron-700 font-medium flex items-center space-x-1 group/btn">
-                      <span>Discover More</span>
-                      <ArrowRight
-                        size={16}
-                        className="group-hover/btn:translate-x-1 transition-transform"
-                      />
-                    </button>
-                  </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right — Stats cards */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { num: "150+", label: "Heritage Sites", sub: "Across all 28 states", color: "border-amber-200 bg-amber-50" },
+                { num: "50K+", label: "Explorers", sub: "Trust BharatSafar", color: "border-emerald-200 bg-emerald-50" },
+                { num: "4.9★", label: "Average Rating", sub: "From verified reviews", color: "border-violet-200 bg-violet-50" },
+                { num: "200+", label: "Festivals", sub: "Documented & curated", color: "border-rose-200 bg-rose-50" },
+              ].map((s, i) => (
+                <div key={i} className={`rounded-2xl border p-6 ${s.color}`}>
+                  <div className="font-display text-3xl font-bold text-charcoal-900 mb-1">{s.num}</div>
+                  <div className="font-sans font-semibold text-charcoal-700 text-sm">{s.label}</div>
+                  <div className="font-sans text-xs text-charcoal-400 mt-1">{s.sub}</div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Showcase with Lucide Icons */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heritage font-bold heritage-text-gradient mb-6">
-              Experience Heritage Like Never Before
+      {/* ═══════════════════════════════════════════════
+          TESTIMONIALS
+      ═══════════════════════════════════════════════ */}
+      <section className="py-24 bg-ivory-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="bs-label text-gold-600 mb-3">Traveler Stories</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-charcoal-900">
+              What explorers say
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Cutting-edge technology meets ancient wisdom in our immersive
-              cultural platform
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Globe,
-                title: "360° Virtual Tours",
-                description:
-                  "Immerse yourself in breathtaking panoramic views of sacred sites with interactive hotspots and guided narration.",
-                features: [
-                  "Interactive Hotspots",
-                  "Audio Narration",
-                  "Historical Context",
-                ],
-                color: "text-blue-600",
-              },
-              {
-                icon: Cpu,
-                title: "AI Heritage Guide",
-                description:
-                  "Get instant answers about history, architecture, and cultural significance from our intelligent multilingual guide.",
-                features: [
-                  "Voice Recognition",
-                  "Cultural Insights",
-                  "Multilingual Support",
-                ],
-                color: "text-purple-600",
-              },
-              {
-                icon: Trophy,
-                title: "Interactive Quizzes",
-                description:
-                  "Test your knowledge with engaging quizzes and earn badges for your cultural expertise and achievements.",
-                features: [
-                  "Adaptive Difficulty",
-                  "Achievement System",
-                  "Leaderboards",
-                ],
-                color: "text-green-600",
-              },
-            ].map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="heritage-card text-center py-10 px-6 group hover:shadow-2xl transition-all duration-500"
-                >
-                  <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent
-                      size={60}
-                      className={`mx-auto ${feature.color} animate-float`}
-                      style={{ animationDelay: `${index * 0.3}s` }}
-                    />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bs-card-editorial p-8 bg-white rounded-2xl shadow-bs-sm border border-ivory-200">
+                {/* Stars */}
+                <div className="flex gap-1 mb-5">
+                  {Array(t.rating).fill(0).map((_, si) => (
+                    <Star key={si} size={14} className="text-amber-400 fill-amber-400" />
+                  ))}
+                </div>
+                <blockquote className="font-sans text-charcoal-600 leading-relaxed mb-6 italic">
+                  "{t.quote}"
+                </blockquote>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-gold-100 flex items-center justify-center">
+                    <span className="font-display font-bold text-gold-700 text-sm">{t.name[0]}</span>
                   </div>
-                  <h3 className="text-xl font-heritage font-bold mb-4 group-hover:text-saffron-600 transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {feature.description}
-                  </p>
-
-                  {/* Feature List */}
-                  <div className="space-y-2">
-                    {feature.features.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center space-x-2"
-                      >
-                        <Sparkles size={14} className="text-saffron-500" />
-                        <span className="text-sm text-gray-700 font-medium">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
+                  <div>
+                    <div className="font-sans font-semibold text-charcoal-800 text-sm">{t.name}</div>
+                    <div className="font-sans text-xs text-charcoal-400">{t.location}</div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="relative h-[550px] flex items-center justify-center text-white overflow-hidden z-10">
-        {/* Background image and overlay */}
-        <div className="absolute inset-0 -z-10 w-full h-full">
+      {/* ═══════════════════════════════════════════════
+          FINAL CTA — "Your India is Waiting"
+      ═══════════════════════════════════════════════ */}
+      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
           <img
             src={ctaBg}
-            alt="CTA background"
-            className="object-cover w-full h-full brightness-70"
-            draggable="false"
+            alt="India heritage landscape"
+            className="w-full h-full object-cover"
           />
-          {/* Optional overlay for readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-charcoal-900/75" />
         </div>
 
-        {/* Animated spinning circles, preserved from your original */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full animate-spin-slow"></div>
-          <div
-            className="absolute bottom-10 right-10 w-24 h-24 border-2 border-white rounded-full animate-spin-slow"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-white rounded-full animate-spin-slow"
-            style={{ animationDelay: "2s" }}
-          ></div>
+        {/* Decorative circles */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full animate-spin-slow" />
+          <div className="absolute bottom-10 right-16 w-28 h-28 border border-white rounded-full animate-spin-slow" style={{ animationDelay: "2s" }} />
         </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-heritage font-bold mb-8">
-            Begin Your Heritage Journey Today
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+          <p className="bs-label text-gold-400 mb-5">The Journey Begins Here</p>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
+            Your India is
+            <span className="italic text-gold-300"> waiting.</span>
           </h2>
-          <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
-            Join millions of culture enthusiasts exploring India's incredible
-            heritage through our immersive digital experiences.
+          <p className="font-sans text-white/75 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            Join thousands of explorers discovering the incredible depth of India's heritage, culture, and traditions.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => onPageChange("states")}
-              className="bg-white text-heritage-red-600 px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center space-x-3 shadow-xl"
+              className="bs-btn bs-btn-lg group"
+              style={{ background: "linear-gradient(135deg, #D4AF50 0%, #C9A84C 100%)", color: "#1C1917" }}
             >
-              <MapPin size={24} />
-              <span>Explore by States</span>
+              Start Exploring
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button
-              onClick={() => onPageChange("festivals")}
-              className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all duration-300 flex items-center space-x-3"
+              onClick={() => onPageChange("chat")}
+              className="bs-btn bs-btn-lg bs-btn-outline-white"
             >
-              <Calendar size={24} />
-              <span>Discover Festivals</span>
+              Ask AI Guide
             </button>
           </div>
-
-          <blockquote className="max-w-3xl mx-auto italic opacity-90 mb-4 text-lg">
-            "BharatVerse opened my eyes to the incredible depth of Indian
-            culture. The 360° tours made me feel like I was actually walking
-            through the Taj Mahal!"
-          </blockquote>
-          <cite className="text-sm opacity-80">
-            — Priya S., Cultural Enthusiast
-          </cite>
         </div>
       </section>
-      {/* Newsletter Signup */}
+
+      {/* ═══════════════════════════════════════════════
+          NEWSLETTER (shown to non-signed-in users)
+      ═══════════════════════════════════════════════ */}
       {!user && (
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-4xl md:text-5xl font-heritage font-bold text-gray-900 mb-6">
-                Stay Updated on Indian Heritage
-              </h3>
-              <p className="text-xl text-gray-600 mb-10">
-                Get weekly updates on new heritage sites, festivals, and
-                cultural discoveries
-              </p>
-              <form
-                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  aria-label="Email address"
-                  required
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-saffron-500 focus:border-transparent outline-none"
-                />
-                <button type="submit" className="btn-heritage px-8 py-3">
-                  Subscribe
-                </button>
-              </form>
-              <p className="text-xs text-gray-500 mt-4">
-                No spam. Unsubscribe anytime. We respect your privacy.
-              </p>
-            </div>
+        <section className="py-20 bg-white border-t border-ivory-200">
+          <div className="max-w-xl mx-auto px-6 text-center">
+            <p className="bs-label text-gold-600 mb-3">Stay Connected</p>
+            <h3 className="font-display text-3xl font-bold text-charcoal-900 mb-4">
+              India's stories, in your inbox.
+            </h3>
+            <p className="font-sans text-charcoal-500 mb-8 text-sm leading-relaxed">
+              Weekly heritage discoveries, festival guides, and hidden gem reveals.
+            </p>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                placeholder="Your email address"
+                aria-label="Email address for newsletter"
+                required
+                className="bs-input flex-1 min-w-0"
+              />
+              <button type="submit" className="bs-btn-primary bs-btn px-6 py-3 whitespace-nowrap">
+                Subscribe
+              </button>
+            </form>
+            <p className="font-sans text-xs text-charcoal-400 mt-4">
+              No spam. Unsubscribe anytime.
+            </p>
           </div>
         </section>
       )}

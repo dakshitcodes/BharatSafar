@@ -94,12 +94,12 @@ const SearchWidget = ({ onSearch, suggestions = [], isLoading = false }) => {
           onKeyDown={handleKeyDown}
           onFocus={() => query.length > 2 && setShowSuggestions(true)}
           placeholder="Search heritage sites, festivals, arts, or ask questions..."
-          className="w-full pl-11 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500 outline-none transition-all duration-200 shadow-lg"
+          className="w-full pl-11 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-gold-400 focus:border-gold-400 outline-none transition-all duration-200 shadow-lg"
         />
 
         {isLoading && (
           <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
-            <div className="animate-spin rounded-full h-5 w-5 border-2 border-saffron-500 border-t-transparent"></div>
+            <div className="animate-spin rounded-full h-5 w-5 border-2 border-gold-400 border-t-transparent"></div>
           </div>
         )}
       </div>
@@ -138,7 +138,7 @@ const SearchWidget = ({ onSearch, suggestions = [], isLoading = false }) => {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <div className="text-lg font-semibold text-gray-900 mb-1">
+                  <div className="text-lg font-semibold text-charcoal-900 mb-1">
                     {highlightMatch(suggestion.title, query)}
                   </div>
 
@@ -193,7 +193,7 @@ const SearchWidget = ({ onSearch, suggestions = [], isLoading = false }) => {
           <button
             key={index}
             onClick={() => handleSearch(category.query)}
-            className="px-4 py-2 text-sm bg-white border border-gray-300 rounded-full hover:border-saffron-500 hover:text-saffron-600 transition-colors"
+            className="px-4 py-2 text-sm bg-white border border-gray-300 rounded-full hover:border-gold-400 hover:text-gold-700 transition-colors"
           >
             {category.label}
           </button>

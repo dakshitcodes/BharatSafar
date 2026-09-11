@@ -105,7 +105,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* State Selection */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-charcoal-700 mb-2">
             Select State
           </label>
           <select
@@ -127,7 +127,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
         {/* Cultural Sites Selection */}
         {availableSites.length > 0 && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-charcoal-700 mb-2">
               Select Cultural Sites (choose one or more)
             </label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -141,7 +141,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
                     className="mt-1 mr-3 rounded"
                   />
                   <label htmlFor={`site-${site.id}`} className="cursor-pointer flex-1">
-                    <p className="font-medium text-gray-800">{site.name}</p>
+                    <p className="font-medium text-charcoal-800">{site.name}</p>
                     <p className="text-xs text-gray-600">{site.city} • {site.duration} days</p>
                     <p className="text-xs text-gray-500 mt-1">{site.description}</p>
                     <span className="inline-block mt-2 px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">
@@ -157,7 +157,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
 
         {/* Month Selection */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-charcoal-700 mb-2">
             Select Month
           </label>
           <select
@@ -178,7 +178,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
 
         {/* Duration Selection */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-charcoal-700 mb-2">
             Trip Duration (Days)
           </label>
           <select
@@ -199,7 +199,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
 
         {/* Transport Mode Selection */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-charcoal-700 mb-2">
             Mode of Transport
           </label>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -220,7 +220,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
                   onChange={handleInputChange}
                   className="hidden"
                 />
-                <span className="text-sm font-medium text-gray-800">{mode.name}</span>
+                <span className="text-sm font-medium text-charcoal-800">{mode.name}</span>
               </label>
             ))}
           </div>
@@ -229,7 +229,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
 
         {/* Accommodation Selection */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-charcoal-700 mb-2">
             Accommodation Type
           </label>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -251,7 +251,7 @@ const ItineraryForm = ({ onItineraryGenerated }) => {
                   className="hidden"
                 />
                 <div className="text-left">
-                  <p className="font-medium text-gray-800">{type}</p>
+                  <p className="font-medium text-charcoal-800">{type}</p>
                   <p className="text-xs text-gray-600">₹{details.costPerNight}/night</p>
                 </div>
               </label>

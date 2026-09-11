@@ -58,8 +58,8 @@ const TourPage360 = ({ onPageChange }) => {
         "Experience the vibrant beaches, colonial architecture, and laid-back atmosphere of India's favorite coastal destination.",
       embedUrl: "https://www.airpano.com/embed.php?3D=goa-north-1",
       icon: Waves,
-      color: "from-orange-500 to-red-500",
-      textColor: "text-orange-700",
+      color: "from-gold-600 to-terracotta-600",
+      textColor: "text-gold-700",
       bgColor: "bg-orange-50",
       category: "Beach Destination",
       highlights: [
@@ -84,7 +84,7 @@ const TourPage360 = ({ onPageChange }) => {
       category: "UNESCO World Heritage",
       highlights: ["Buland Darwaza", "Jama Masjid", "Panch Mahal"],
       bestTime: "October - March",
-      titleFont: "font-heritage text-4xl font-bold",
+      titleFont: "font-display text-4xl font-bold",
     },
     {
       id: 4,
@@ -110,7 +110,7 @@ const TourPage360 = ({ onPageChange }) => {
         "Witness the eternal city on the banks of Ganges, where spirituality, tradition, and life converge in timeless harmony.",
       embedUrl: "https://www.airpano.com/embed.php?3D=india_varanasi",
       icon: Sparkles,
-      color: "from-purple-500 to-indigo-600",
+      color: "from-charcoal-600 to-charcoal-900",
       textColor: "text-purple-700",
       bgColor: "bg-purple-50",
       category: "Sacred City",
@@ -147,7 +147,7 @@ const TourPage360 = ({ onPageChange }) => {
       embedUrl: "https://www.airpano.com/embed.php?3D=delhi-india",
       icon: Building,
       color: "from-gray-500 to-slate-600",
-      textColor: "text-gray-700",
+      textColor: "text-charcoal-700",
       bgColor: "bg-gray-50",
       category: "Capital City",
       highlights: ["Red Fort", "India Gate", "Modern Architecture"],
@@ -190,7 +190,7 @@ const TourPage360 = ({ onPageChange }) => {
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/30"></div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -198,7 +198,7 @@ const TourPage360 = ({ onPageChange }) => {
           >
             <div className="flex items-center justify-center mb-8">
               <RotateCcw className="mr-4 animate-spin-slow" size={60} />
-              <h1 className="text-6xl md:text-8xl font-heritage font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl font-display font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 360° Virtual Tours
               </h1>
             </div>
@@ -253,11 +253,11 @@ const TourPage360 = ({ onPageChange }) => {
 
       {/* Navigation Bar */}
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-lg">
-        <div className="container mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={() => onPageChange("home")}
-              className="flex items-center space-x-2 text-gray-600 hover:text-saffron-600 transition-colors"
+              className="flex items-center space-x-2 text-gray-600 hover:text-gold-700 transition-colors"
             >
               <ChevronLeft size={20} />
               <span>Back to Home</span>
@@ -272,7 +272,7 @@ const TourPage360 = ({ onPageChange }) => {
                     onClick={() => setActiveLocation(index)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${activeLocation === index
                         ? `bg-gradient-to-r ${location.color} text-white shadow-lg scale-105`
-                        : "text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+                        : "text-gray-600 hover:text-charcoal-800 hover:bg-gray-100"
                       }`}
                   >
                     <IconComponent size={16} />
@@ -286,7 +286,7 @@ const TourPage360 = ({ onPageChange }) => {
       </div>
 
       {/* 360° Tour Sections */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         <AnimatePresence mode="wait">
           {locations.map((location, index) => {
             const IconComponent = location.icon;
@@ -333,15 +333,15 @@ const TourPage360 = ({ onPageChange }) => {
                         {location.subtitle}
                       </h3>
 
-                      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                      <p className="text-charcoal-700 text-lg leading-relaxed mb-8">
                         {location.description}
                       </p>
 
                       {/* Location Details */}
                       <div className="grid grid-cols-2 gap-6">
                         <div>
-                          <h4 className="font-bold text-gray-800 mb-3 flex items-center">
-                            <Star className="mr-2 text-saffron-500" size={18} />
+                          <h4 className="font-bold text-charcoal-800 mb-3 flex items-center">
+                            <Star className="mr-2 text-gold-600" size={18} />
                             Highlights
                           </h4>
                           <ul className="space-y-2">
@@ -352,7 +352,7 @@ const TourPage360 = ({ onPageChange }) => {
                               >
                                 <ArrowRight
                                   size={14}
-                                  className="mr-2 text-saffron-500"
+                                  className="mr-2 text-gold-600"
                                 />
                                 {highlight}
                               </li>
@@ -361,9 +361,9 @@ const TourPage360 = ({ onPageChange }) => {
                         </div>
 
                         <div>
-                          <h4 className="font-bold text-gray-800 mb-3 flex items-center">
+                          <h4 className="font-bold text-charcoal-800 mb-3 flex items-center">
                             <Clock
-                              className="mr-2 text-saffron-500"
+                              className="mr-2 text-gold-600"
                               size={18}
                             />
                             Best Time to Visit
@@ -395,7 +395,7 @@ const TourPage360 = ({ onPageChange }) => {
                           <RotateCcw className="text-white" size={20} />
                         </div>
                         <div>
-                          <h3 className="text-2xl font-bold text-gray-800">
+                          <h3 className="text-2xl font-bold text-charcoal-800">
                             360° Virtual Experience
                           </h3>
                           <p className="text-gray-600">
@@ -409,7 +409,7 @@ const TourPage360 = ({ onPageChange }) => {
                           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                           <span>Live</span>
                         </div>
-                        <button className="p-2 text-gray-600 hover:text-gray-800 transition-colors">
+                        <button className="p-2 text-gray-600 hover:text-charcoal-800 transition-colors">
                           <Maximize size={20} />
                         </button>
                       </div>
@@ -421,7 +421,7 @@ const TourPage360 = ({ onPageChange }) => {
                       <div className="absolute inset-0 bg-gray-100 flex items-center justify-center z-10">
                         <div className="text-center">
                           <RotateCcw
-                            className="animate-spin text-saffron-500 mx-auto mb-4"
+                            className="animate-spin text-gold-600 mx-auto mb-4"
                             size={48}
                           />
                           <p className="text-gray-600">
@@ -479,8 +479,8 @@ const TourPage360 = ({ onPageChange }) => {
 
       {/* Call to Action */}
       <section className="py-20 text-white bg-gradient-to-br from-slate-900 via-purple-900 to-black">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl font-heritage font-bold mb-8">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-5xl font-display font-bold mb-8">
             Ready for More Adventures?
           </h2>
           <p className="text-xl mb-12 max-w-3xl mx-auto opacity-90">

@@ -72,7 +72,7 @@ const ReviewSystem = ({ itemId, itemType, reviews = [], onSubmitReview }) => {
       {/* Rating Summary */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-2xl font-heritage font-bold text-gray-900">
+          <h3 className="text-2xl font-display font-bold text-charcoal-900">
             Reviews & Ratings
           </h3>
 
@@ -87,7 +87,7 @@ const ReviewSystem = ({ itemId, itemType, reviews = [], onSubmitReview }) => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Overall Rating */}
           <div className="text-center">
-            <div className="text-5xl font-bold text-gray-900 mb-2">
+            <div className="text-5xl font-bold text-charcoal-900 mb-2">
               {averageRating.toFixed(1)}
             </div>
 
@@ -141,7 +141,7 @@ const ReviewSystem = ({ itemId, itemType, reviews = [], onSubmitReview }) => {
           <form onSubmit={submitReview} className="space-y-6">
             {/* Rating */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-charcoal-700 mb-2">
                 Your Rating *
               </label>
               <div className="flex space-x-1">
@@ -257,7 +257,7 @@ const ReviewSystem = ({ itemId, itemType, reviews = [], onSubmitReview }) => {
               <button
                 type="button"
                 onClick={() => setShowReviewForm(false)}
-                className="px-8 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
+                className="px-8 py-3 border border-gray-300 rounded-xl text-charcoal-700 hover:bg-gray-50 transition-colors"
               >
                 Cancel
               </button>
@@ -280,7 +280,7 @@ const ReviewSystem = ({ itemId, itemType, reviews = [], onSubmitReview }) => {
                 </div>
 
                 <div>
-                  <div className="font-semibold text-gray-900">
+                  <div className="font-semibold text-charcoal-900">
                     {review.author}
                   </div>
                   <div className="text-sm text-gray-500">
@@ -305,12 +305,12 @@ const ReviewSystem = ({ itemId, itemType, reviews = [], onSubmitReview }) => {
             </div>
 
             {review.title && (
-              <h5 className="font-semibold text-gray-900 mb-2">
+              <h5 className="font-semibold text-charcoal-900 mb-2">
                 {review.title}
               </h5>
             )}
 
-            <p className="text-gray-700 mb-4 leading-relaxed">
+            <p className="text-charcoal-700 mb-4 leading-relaxed">
               {review.content}
             </p>
 
@@ -331,7 +331,7 @@ const ReviewSystem = ({ itemId, itemType, reviews = [], onSubmitReview }) => {
               </div>
 
               <div className="flex items-center space-x-3">
-                <button className="hover:text-gray-700 transition-colors">
+                <button className="hover:text-charcoal-700 transition-colors">
                   Helpful ({review.helpful || 0})
                 </button>
 

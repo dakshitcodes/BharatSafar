@@ -258,7 +258,7 @@ function App() {
 
   if (!isLoaded) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50">
+      <div className="min-h-screen flex items-center justify-center bg-ivory-100">
         <LoadingSpinner size="lg" />
       </div>
     );
@@ -266,7 +266,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50">
+      <div className="min-h-screen bg-ivory-100">
         <GlobalMusicPlayer />
         {/* Hide Header on Salahkar & Story pages */}
         {currentPage !== "salahkar" && currentPage !== "storytelling" && (
@@ -303,7 +303,7 @@ function App() {
           }}
         />
         {currentPage !== "salahkar" && currentPage !== "storytelling" && (
-          <Footer />
+          <Footer onPageChange={handlePageChange} />
         )}
 
         {/* ✨ DIVINE AMBER SALAHKAR BUTTON - The Click Magnet ✨ */}

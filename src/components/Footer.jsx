@@ -1,137 +1,167 @@
 import React from "react";
 import {
-  FaFacebook,
   FaInstagram,
   FaTwitter,
   FaYoutube,
   FaLinkedin,
-  FaWhatsapp,
 } from "react-icons/fa";
+import { MapPin, Mail, ArrowRight } from "lucide-react";
 
-// At the top of Footer.jsx
-import imgBg from "./img.jpg";
-import qrCode from "./qr-code.png"; // Update to match your file name
+const Footer = ({ onPageChange }) => {
+  const currentYear = new Date().getFullYear();
 
-const SocialIcons = () => (
-  <div className="flex space-x-4 mt-4">
-    <a href="https://facebook.com" aria-label="Facebook">
-      <FaFacebook className="w-7 h-7 hover:text-blue-500" />
-    </a>
-    <a href="https://instagram.com" aria-label="Instagram">
-      <FaInstagram className="w-7 h-7 hover:text-pink-500" />
-    </a>
-    <a href="https://twitter.com" aria-label="Twitter">
-      <FaTwitter className="w-7 h-7 hover:text-blue-400" />
-    </a>
-    <a href="https://youtube.com" aria-label="YouTube">
-      <FaYoutube className="w-7 h-7 hover:text-red-600" />
-    </a>
-    <a href="https://linkedin.com" aria-label="LinkedIn">
-      <FaLinkedin className="w-7 h-7 hover:text-blue-700" />
-    </a>
-  </div>
-);
+  const exploreLinks = [
+    { label: "States of India", page: "states" },
+    { label: "Heritage Sites", page: "heritage" },
+    { label: "Hidden Gems", page: "gems" },
+    { label: "Interactive Map", page: "map" },
+    { label: "360° Virtual Tours", page: "360tour" },
+  ];
 
-const Newsletter = () => (
-  <div>
-    <h2 className="text-2xl font-extrabold mb-2 text-white">Newsletter</h2>
-    <p className="text-white/90 mb-4 text-base">
-      Sign up for exciting news, learn more about our events and get great
-      travel ideas.
-    </p>
+  const cultureLinks = [
+    { label: "Festivals", page: "festivals" },
+    { label: "Arts & Crafts", page: "arts" },
+    { label: "Rituals & Customs", page: "riti-riwaj" },
+    { label: "Storytelling", page: "storytelling" },
+    { label: "Quiz & Learn", page: "quiz" },
+  ];
 
-    <button className="bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-full font-bold text-lg transition-colors">
-      Subscribe now
-    </button>
-  </div>
-);
+  const planLinks = [
+    { label: "Itinerary Planner", page: "itinerary" },
+    { label: "AI Recommendations", page: "salahkar" },
+    { label: "AI Heritage Guide", page: "chat" },
+    { label: "Upload Your Gem", page: "upload" },
+  ];
 
-const Footer = () => {
+  const socialLinks = [
+    { icon: FaInstagram, href: "https://instagram.com/bharatsafar", label: "Instagram", hoverColor: "hover:text-pink-400" },
+    { icon: FaTwitter, href: "https://twitter.com/bharatsafar", label: "Twitter / X", hoverColor: "hover:text-sky-400" },
+    { icon: FaYoutube, href: "https://youtube.com/bharatsafar", label: "YouTube", hoverColor: "hover:text-red-500" },
+    { icon: FaLinkedin, href: "https://linkedin.com/company/bharatsafar", label: "LinkedIn", hoverColor: "hover:text-blue-400" },
+  ];
+
+  const FooterLinkGroup = ({ title, links }) => (
+    <div>
+      <h3 className="text-xs font-sans font-semibold text-charcoal-400 uppercase tracking-widest mb-5">
+        {title}
+      </h3>
+      <ul className="space-y-3">
+        {links.map((link) => (
+          <li key={link.page}>
+            <button
+              onClick={() => onPageChange && onPageChange(link.page)}
+              className="text-sm font-sans text-charcoal-200 hover:text-gold-400 transition-colors duration-200 text-left"
+            >
+              {link.label}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
   return (
-    <footer className="relative text-white mt-20 z-0">
-      <div className="absolute inset-0 -z-10 w-full h-full">
-        <img
-          src={imgBg}
-          alt="Footer background"
-          className="object-cover w-full h-full"
-          draggable="false"
-          style={{ opacity: 0.7 }} // you can change the opacity as needed
-        />
-        {/* Optional overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+    <footer className="bg-charcoal-900 text-white mt-0" role="contentinfo">
+      {/* Gold accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-60" />
 
-      <div className="container mx-auto px-4 py-12 bg-transparent">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Social & branding */}
-          <div>
-            <h1 className="text-4xl font-anton font-bold mb-4 uppercase tracking-widest text-orange-600">BharatVerse</h1>
-            <p className="text-white/85 mb-6">
-              Discover India's incredible cultural heritage through immersive
-              experiences and interactive storytelling.
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
+            {/* Wordmark (Aesthetic Name) */}
+            <div className="flex flex-col items-start leading-none mb-6">
+              <div className="font-display font-bold text-2xl text-white tracking-tight">
+                Bharat<span className="text-gold-400">Safar</span>
+              </div>
+              <div className="text-[11px] text-charcoal-400 font-sans font-medium tracking-widest uppercase mt-1">
+                Discover India Differently
+              </div>
+            </div>
+
+            <p className="text-sm font-sans text-charcoal-300 leading-relaxed mb-6 max-w-sm">
+              A premium platform for discovering India's incredible cultural heritage
+              through immersive experiences, AI-powered guides, and interactive storytelling.
             </p>
-            <h2 className="font-bold text-xl text-white">Follow us</h2>
-            <SocialIcons />
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-4 mb-8">
+              {socialLinks.map(({ icon: Icon, href, label, hoverColor }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className={`w-9 h-9 rounded-lg bg-charcoal-800 flex items-center justify-center text-charcoal-300 ${hoverColor} hover:bg-charcoal-700 transition-all duration-200`}
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
+
+            {/* Newsletter mini */}
+            <div>
+              <p className="text-xs font-sans font-semibold text-charcoal-400 uppercase tracking-widest mb-3">
+                Stay Updated
+              </p>
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="flex gap-2"
+              >
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  aria-label="Email address for newsletter"
+                  className="flex-1 bg-charcoal-800 border border-charcoal-700 rounded-lg px-3 py-2.5 text-sm font-sans text-charcoal-100 placeholder-charcoal-500 focus:outline-none focus:border-gold-500 transition-colors min-w-0"
+                />
+                <button
+                  type="submit"
+                  className="bg-gold-600 hover:bg-gold-500 text-charcoal-900 px-3 py-2.5 rounded-lg transition-colors duration-200 flex-shrink-0"
+                  aria-label="Subscribe to newsletter"
+                >
+                  <ArrowRight size={16} />
+                </button>
+              </form>
+            </div>
           </div>
-          {/* Quick Links */}
-          <div>
-            <h2 className="text-2xl font-extrabold mb-4 text-white">
-              Quick Links
-            </h2>
-            <ul className="space-y-3 text-lg">
-              <li>
-                <a href="#" className="hover:underline">
-                  Heritage Sites
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Festivals
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Traditional Arts
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Hidden Gems
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Content Hub
-                </a>
-              </li>
-            </ul>
-          </div>
-          {/* Newsletter */}
-          <div>
-            <Newsletter />
-          </div>
-          {/* QR code scan/contact */}
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="text-2xl font-extrabold mb-2 text-white">
-              Scan to chat
-            </h2>
-            <img
-              src={qrCode}
-              alt="Scan QR"
-              className="w-28 h-28 bg-white rounded"
-            />
-          </div>
+
+          {/* Explore Links */}
+          <FooterLinkGroup title="Explore" links={exploreLinks} />
+
+          {/* Culture Links */}
+          <FooterLinkGroup title="Culture" links={cultureLinks} />
+
+          {/* Plan Links */}
+          <FooterLinkGroup title="Plan & Experience" links={planLinks} />
         </div>
-        {/* Footer bottom bar */}
-        <div className="border-t border-white/30 mt-10 pt-5 flex flex-col items-center text-center text-white/85 text-base font-semibold gap-2">
-          <span>
-            <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> |{" "}
-            <a href="#">Contact Us</a>
-          </span>
-          <span>©️ 2025 BharatVerse. Made with ❤️ by Netaji Ninjas.</span>
+
+        {/* Location */}
+        <div className="flex items-center gap-2 text-charcoal-500 text-sm mb-8">
+          <MapPin size={14} />
+          <span className="font-sans">Made in India, for the world.</span>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-charcoal-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm font-sans text-charcoal-500">
+            © {currentYear} BharatSafar. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-sm font-sans text-charcoal-500 hover:text-gold-400 transition-colors duration-200">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-sm font-sans text-charcoal-500 hover:text-gold-400 transition-colors duration-200">
+              Terms of Use
+            </a>
+            <a href="#" className="text-sm font-sans text-charcoal-500 hover:text-gold-400 transition-colors duration-200">
+              Contact
+            </a>
+          </div>
         </div>
       </div>
-      {/* <WhatsAppButton /> */}
     </footer>
   );
 };

@@ -100,107 +100,95 @@ const HeritagePage = () => {
     <>
       {/* Fullscreen Image Banner */}
       <div className="relative h-[600px] w-full flex items-center justify-center overflow-hidden">
-        {/* background */}
         <img
           src={HeritageBg}
           alt="Heritage of India"
           className="absolute inset-0 w-full h-full object-cover"
           draggable="false"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900/65 via-charcoal-900/30 to-charcoal-900/75" />
 
-        <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 space-y-8">
-          {/* Header - large and visible */}
+        <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 space-y-6">
           <header className="text-center">
-            <h1 className=" text-6xl md:text-8xl  font-heritage font-bold mb-4 text-transparent bg-gradient-to-r from-orange-400 via-orange-200 to-yellow-400 bg-clip-text drop-shadow-[0_3px_18px_rgba(0,0,0,0.6)] tracking-wide">
+            <p className="bs-label text-gold-400 mb-4">India's Living History</p>
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4 leading-tight tracking-tight">
               Heritage of India
             </h1>
-            <p className="text-2xl md:text-2xl max-w-2xl mx-auto text-white/90 font-semibold drop-shadow-md mb-6">
-              Discover the timeless monuments and cultural treasures of India
-              that showcase its glorious history and traditions.
+            <p className="font-sans text-lg md:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed">
+              Discover the timeless monuments and cultural treasures that showcase India's glorious history.
             </p>
           </header>
         </div>
       </div>
 
       {/* Filters */}
+      <main className="max-w-7xl mx-auto px-6 py-12">
+        <div className="mb-12">
+          <div className="flex flex-wrap gap-4 items-center justify-center bg-white rounded-2xl shadow-bs-sm border border-ivory-200 py-6 px-8 mb-12">
+            <div className="flex items-center gap-2 text-gold-700 mr-4">
+              <Filter size={18} />
+              <span className="font-display font-semibold text-lg text-charcoal-800">Filters</span>
+            </div>
 
-      <div
-        className="w-full flex flex-col md:flex-row items-center justify-center gap-6
-  rounded-2xl bg-white/80 border border-white/30 shadow-lg px-8 py-7 mt-10"
-      >
-        <div className="flex items-center gap-8 text-lg font-bold text-orange-700">
-          <Filter className="w-6 h-6" />
-          <span className="font-bold text-xl text-orange-800">Filters:</span>
+            {/* State Filter */}
+            <select
+              value={stateFilter}
+              onChange={(e) => setStateFilter(e.target.value)}
+              className="bs-input max-w-[200px] cursor-pointer"
+            >
+              {states.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </select>
+            {/* Rating Filter */}
+            <select
+              value={ratingFilter}
+              onChange={(e) => setRatingFilter(e.target.value)}
+              className="bs-input max-w-[200px] cursor-pointer"
+            >
+              <option value="All">All Ratings</option>
+              <option value="4.5">4.5 &amp; above</option>
+              <option value="4.7">4.7 &amp; above</option>
+              <option value="4.9">4.9 only</option>
+            </select>
+          </div>
         </div>
-
-        {/* State Filter */}
-        <select
-          value={stateFilter}
-          onChange={(e) => setStateFilter(e.target.value)}
-          className="px-6 py-3 rounded-lg border-none focus:ring-2 focus:ring-orange-400 shadow focus:outline-none"
-        >
-          {states.map((state) => (
-            <option key={state} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
-        {/* Rating Filter */}
-        <select
-          value={ratingFilter}
-          onChange={(e) => setRatingFilter(e.target.value)}
-          className="px-4 py-2 rounded-lg border-none focus:ring-2 focus:ring-orange-400 shadow focus:outline-none"
-        >
-          <option value="All">All Ratings</option>
-          <option value="4.5">4.5 & above</option>
-          <option value="4.7">4.7 & above</option>
-          <option value="4.9">4.9 only</option>
-        </select>
-      </div>
-
-      {/* Main content BELOW the image banner */}
-      <main className="container mx-auto px-4 py-24">
-        {/* ...other content below */}
-        {/* Sites Grid */}
         <section
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           aria-label="List of heritage sites"
         >
           {filteredSites.length === 0 ? (
-            <div className="col-span-full text-center text-gray-500 font-semibold py-10">
-              No heritage sites match your filters.
+            <div className="col-span-full text-center py-16">
+              <p className="font-sans text-charcoal-400 text-lg">No heritage sites match your filters.</p>
             </div>
           ) : (
             filteredSites.map((site) => (
               <article
                 key={site.id}
-                className="heritage-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bs-card group overflow-hidden"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={site.images[0]}
                     alt={site.title}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-saffron-700 bg-saffron-100 px-3 py-1 rounded-full">
-                      {site.state}
-                    </span>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                      <span className="text-sm font-semibold">
-                        {site.rating.toFixed(1)}
-                      </span>
+                    <span className="bs-badge-gold text-xs">{site.state}</span>
+                    <div className="flex items-center gap-1">
+                      <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                      <span className="font-sans text-sm font-semibold text-charcoal-700">{site.rating.toFixed(1)}</span>
                     </div>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                  <h2 className="font-display text-xl font-bold text-charcoal-900 mb-2 group-hover:text-gold-700 transition-colors">
                     {site.title}
                   </h2>
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                  <p className="font-sans text-charcoal-500 text-sm leading-relaxed line-clamp-3">
                     {site.description}
                   </p>
                 </div>

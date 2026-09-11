@@ -60,10 +60,10 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
       questions:
         quizQuestionsData["heritage-monuments"]?.questions?.length || 0,
       icon: Landmark,
-      color: "from-orange-500 to-red-500",
+      color: "from-gold-600 to-terracotta-500",
       estimatedTime: "10 min",
-      bgColor: "bg-orange-50",
-      iconColor: "text-orange-600",
+      bgColor: "bg-ivory-50",
+      iconColor: "text-gold-700",
     },
     {
       id: "festivals",
@@ -73,10 +73,10 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
       difficulty: "Easy",
       questions: quizQuestionsData["festivals"]?.questions?.length || 0,
       icon: Calendar,
-      color: "from-purple-500 to-pink-500",
+      color: "from-charcoal-700 to-charcoal-900",
       estimatedTime: "8 min",
-      bgColor: "bg-purple-50",
-      iconColor: "text-purple-600",
+      bgColor: "bg-ivory-50",
+      iconColor: "text-charcoal-600",
     },
     {
       id: "classical-arts",
@@ -86,10 +86,10 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
       difficulty: "Hard",
       questions: quizQuestionsData["classical-arts"]?.questions?.length || 0,
       icon: Music,
-      color: "from-blue-500 to-indigo-500",
+      color: "from-charcoal-600 to-charcoal-800",
       estimatedTime: "12 min",
-      bgColor: "bg-blue-50",
-      iconColor: "text-blue-600",
+      bgColor: "bg-ivory-50",
+      iconColor: "text-charcoal-600",
     },
     {
       id: "ancient-history",
@@ -99,10 +99,10 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
       difficulty: "Hard",
       questions: quizQuestionsData["ancient-history"]?.questions?.length || 0,
       icon: Scroll,
-      color: "from-green-500 to-teal-500",
+      color: "from-forest-500 to-forest-700",
       estimatedTime: "15 min",
-      bgColor: "bg-green-50",
-      iconColor: "text-green-600",
+      bgColor: "bg-ivory-50",
+      iconColor: "text-charcoal-600",
     },
     {
       id: "regional-culture",
@@ -112,10 +112,10 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
       difficulty: "Medium",
       questions: quizQuestionsData["regional-culture"]?.questions?.length || 0,
       icon: Globe,
-      color: "from-yellow-500 to-orange-500",
+      color: "from-gold-600 to-gold-800",
       estimatedTime: "11 min",
-      bgColor: "bg-yellow-50",
-      iconColor: "text-yellow-600",
+      bgColor: "bg-ivory-50",
+      iconColor: "text-gold-700",
     },
     {
       id: "hidden-gems",
@@ -279,7 +279,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
       name: "Heritage Master",
       description: "Score 80%+ on Heritage quiz",
       icon: Medal,
-      color: "text-orange-600",
+      color: "text-gold-700",
       unlocked: userStats.badges.includes("Heritage Master"),
     },
     {
@@ -404,7 +404,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
   return (
     <>
       {!selectedQuiz && (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+        <div className="min-h-screen bg-ivory-100">
           {/* Hero Header */}
           {/* Hero Header */}
           <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white py-16 md:py-20 relative overflow-hidden">
@@ -418,7 +418,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
               </div>
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 {/* Left: text */}
                 <motion.div
@@ -428,7 +428,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
                 >
                   <div className="flex items-center mb-4">
                     <GraduationCap size={50} className="text-yellow-300 mr-3" />
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-heritage font-bold leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
                       Heritage Quiz
                     </h1>
                   </div>
@@ -468,8 +468,8 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
                     </div>
 
                     {/* small overlay card */}
-                    <div className="absolute -bottom-6 left-6 bg-white text-gray-800 rounded-2xl shadow-lg px-4 py-3 flex items-center space-x-3">
-                      <MapPin className="text-saffron-600" size={20} />
+                    <div className="absolute -bottom-6 left-6 bg-white text-charcoal-800 rounded-2xl shadow-lg px-4 py-3 flex items-center space-x-3">
+                      <MapPin className="text-gold-700" size={20} />
                       <div>
                         <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
                           Discover India
@@ -489,7 +489,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
 
           {/* Quiz History */}
           {userStats.quizHistory.length > 0 && (
-            <div className="container mx-auto px-4 py-12 mb-16">
+            <div className="max-w-7xl mx-auto px-6 py-12 mb-16">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-6">
                 Your Recent Quizzes
               </h2>
@@ -503,7 +503,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
                     className="bg-white rounded-xl p-4 flex items-center justify-between hover:shadow-md transition-shadow"
                   >
                     <div>
-                      <h4 className="font-semibold text-gray-800">
+                      <h4 className="font-semibold text-charcoal-800">
                         {quiz.quiz_type}
                       </h4>
                       <p className="text-sm text-gray-600">
@@ -526,10 +526,10 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
           )}
 
           {/* Quiz Categories Section */}
-          <div className="container mx-auto px-4 py-12 mb-16">
+          <div className="max-w-7xl mx-auto px-6 py-12 mb-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4 flex items-center justify-center">
-                <Target className="mr-3 text-orange-600" size={40} />
+                <Target className="mr-3 text-gold-700" size={40} />
                 Choose Your Challenge
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto">
@@ -600,7 +600,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
                           </span>
                         </div>
                       </div>
-                      <button className="w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-2xl group-hover:scale-105 transition-transform duration-300 flex items-center justify-center space-x-2">
+                      <button className="w-full px-6 py-3 bs-btn-primary flex items-center gap-2">
                         <span>Start Quiz</span>
                         <ChevronRight
                           size={18}
@@ -615,10 +615,10 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
           </div>
 
           {/* Achievements Section */}
-          <div className="container mx-auto px-4 py-12 mb-16">
+          <div className="max-w-7xl mx-auto px-6 py-12 mb-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4 flex items-center justify-center">
-                <Medal className="mr-3 text-orange-600" size={40} />
+                <Medal className="mr-3 text-gold-700" size={40} />
                 Achievements & Badges
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -681,7 +681,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
           <div className="text-center mb-16">
             <button
               onClick={() => setShowLeaderboard(!showLeaderboard)}
-              className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-2xl flex items-center space-x-2 mx-auto text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+              className="bs-btn-primary bs-btn-lg flex items-center gap-2 mx-auto"
             >
               <Trophy size={24} className="animate-pulse" />
               <span>{showLeaderboard ? "Hide" : "Show"} Leaderboard</span>
@@ -697,7 +697,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
                 exit={{ opacity: 0, height: 0 }}
                 className="mb-16"
               >
-                <div className="container mx-auto px-4">
+                <div className="max-w-7xl mx-auto px-6">
                   <div className="bg-white rounded-2xl p-8 shadow-2xl">
                     <div className="text-center mb-8">
                       <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4 flex items-center justify-center">
@@ -745,7 +745,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
                                 <div
                                   className={`font-semibold text-lg ${player.isCurrentUser
                                       ? "text-blue-800"
-                                      : "text-gray-900"
+                                      : "text-charcoal-900"
                                     }`}
                                 >
                                   {player.name}
@@ -776,7 +776,7 @@ const QuizPage = ({ onPageChange, isSignedIn }) => {
           </AnimatePresence>
 
           {/* Study Materials */}
-          <div className="container mx-auto px-4 mb-16">
+          <div className="max-w-7xl mx-auto px-6 mb-16">
             <div className="rounded-2xl p-8 bg-gradient-to-r from-green-500 to-teal-500 text-white shadow-2xl">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>

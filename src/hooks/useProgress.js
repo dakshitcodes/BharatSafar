@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 export function useProgress() {
-  const [progress, setProgress] = useLocalStorage("bharatverse_progress", {
+  const [progress, setProgress] = useLocalStorage("bharatsafar_progress", {
     sitesVisited: [],
     quizzesTaken: [],
     averageScore: 0,

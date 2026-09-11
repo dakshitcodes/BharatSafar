@@ -165,7 +165,7 @@ const HeritageDetailPage = ({
               {/* Info Section */}
               <div>
                 <div className="flex items-center space-x-4 mb-4">
-                  <span className="bg-saffron-500 px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-gold-500 px-4 py-2 rounded-full text-sm font-semibold">
                     {item.category}
                   </span>
                   <div className="flex items-center space-x-1">
@@ -180,7 +180,7 @@ const HeritageDetailPage = ({
                   </div>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl font-heritage font-bold mb-4 heritage-text-glow">
+                <h1 className="text-5xl md:text-7xl font-display font-bold mb-4 heritage-text-glow">
                   {item.title}
                 </h1>
 
@@ -289,15 +289,15 @@ const HeritageDetailPage = ({
         className="bg-white shadow-lg sticky top-16 z-10"
         aria-label="Content tabs"
       >
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="flex space-x-1 overflow-x-auto">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center space-x-2 px-6 py-4 font-semibold whitespace-nowrap transition-colors ${activeTab === tab.id
-                    ? "text-saffron-600 border-b-2 border-saffron-600"
-                    : "text-gray-600 hover:text-saffron-600"
+                    ? "text-gold-700 border-b-2 border-saffron-600"
+                    : "text-gray-600 hover:text-gold-700"
                   }`}
                 aria-current={activeTab === tab.id ? "page" : undefined}
               >
@@ -310,18 +310,18 @@ const HeritageDetailPage = ({
       </nav>
 
       {/* Tab Content */}
-      <section className="container mx-auto px-4 py-12" aria-live="polite">
+      <section className="max-w-7xl mx-auto px-6 py-12" aria-live="polite">
         {activeTab === "overview" && (
           <div className="max-w-4xl mx-auto space-y-12">
             {/* Quick Facts */}
-            <div className="heritage-card p-8">
-              <h3 className="text-2xl font-heritage font-bold mb-6">
+            <div className="bs-card p-8">
+              <h3 className="text-2xl font-display font-bold mb-6">
                 Quick Facts
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <Calendar
-                    className="w-12 h-12 text-saffron-600 mx-auto mb-3"
+                    className="w-12 h-12 text-gold-700 mx-auto mb-3"
                     aria-hidden="true"
                   />
                   <h4 className="font-semibold mb-2">Era</h4>
@@ -329,7 +329,7 @@ const HeritageDetailPage = ({
                 </div>
                 <div className="text-center">
                   <Award
-                    className="w-12 h-12 text-saffron-600 mx-auto mb-3"
+                    className="w-12 h-12 text-gold-700 mx-auto mb-3"
                     aria-hidden="true"
                   />
                   <h4 className="font-semibold mb-2">Architecture</h4>
@@ -337,7 +337,7 @@ const HeritageDetailPage = ({
                 </div>
                 <div className="text-center">
                   <Users
-                    className="w-12 h-12 text-saffron-600 mx-auto mb-3"
+                    className="w-12 h-12 text-gold-700 mx-auto mb-3"
                     aria-hidden="true"
                   />
                   <h4 className="font-semibold mb-2">Annual Visitors</h4>
@@ -348,11 +348,11 @@ const HeritageDetailPage = ({
 
             {/* Significance */}
             {item.significance && (
-              <div className="heritage-card p-8">
-                <h3 className="text-2xl font-heritage font-bold mb-6">
+              <div className="bs-card p-8">
+                <h3 className="text-2xl font-display font-bold mb-6">
                   Cultural Significance
                 </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-charcoal-700 text-lg leading-relaxed">
                   {item.significance}
                 </p>
               </div>
@@ -360,8 +360,8 @@ const HeritageDetailPage = ({
 
             {/* Audio Story */}
             {item.audiobook && (
-              <div className="heritage-card p-8">
-                <h3 className="text-2xl font-heritage font-bold mb-6">
+              <div className="bs-card p-8">
+                <h3 className="text-2xl font-display font-bold mb-6">
                   Audio Story
                 </h3>
                 <AudioPlayer
@@ -377,15 +377,15 @@ const HeritageDetailPage = ({
         {activeTab === "history" && (
           <div className="max-w-4xl mx-auto">
             {item.timeline && (
-              <div className="heritage-card p-8">
-                <h3 className="text-2xl font-heritage font-bold mb-8">
+              <div className="bs-card p-8">
+                <h3 className="text-2xl font-display font-bold mb-8">
                   Historical Timeline
                 </h3>
                 <div className="space-y-6">
                   {item.timeline.map((event, index) => (
                     <div key={index} className="flex items-start space-x-4">
-                      <div className="w-16 h-16 bg-saffron-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-saffron-600 font-bold">
+                      <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-gold-700 font-bold">
                           {event.year}
                         </span>
                       </div>
@@ -393,7 +393,7 @@ const HeritageDetailPage = ({
                         <h4 className="font-semibold text-lg mb-2">
                           {event.year}
                         </h4>
-                        <p className="text-gray-700">{event.event}</p>
+                        <p className="text-charcoal-700">{event.event}</p>
                       </div>
                     </div>
                   ))}
@@ -405,8 +405,8 @@ const HeritageDetailPage = ({
 
         {activeTab === "architecture" && (
           <div className="max-w-4xl mx-auto">
-            <div className="heritage-card p-8">
-              <h3 className="text-2xl font-heritage font-bold mb-8">
+            <div className="bs-card p-8">
+              <h3 className="text-2xl font-display font-bold mb-8">
                 Architectural Features
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
@@ -416,19 +416,19 @@ const HeritageDetailPage = ({
                   </h4>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-saffron-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
                       <span>Central dome with finial</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-saffron-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
                       <span>Four minarets at corners</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-saffron-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
                       <span>Intricate marble inlay work</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-saffron-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
                       <span>Charbagh garden layout</span>
                     </li>
                   </ul>
@@ -463,52 +463,52 @@ const HeritageDetailPage = ({
         {activeTab === "visit" && (
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="heritage-card p-8">
-                <h3 className="text-2xl font-heritage font-bold mb-6">
+              <div className="bs-card p-8">
+                <h3 className="text-2xl font-display font-bold mb-6">
                   Visiting Information
                 </h3>
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold mb-2">Opening Hours</h4>
-                    <p className="text-gray-700">
+                    <p className="text-charcoal-700">
                       6:00 AM - 7:00 PM (Closed on Fridays)
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">Best Time to Visit</h4>
-                    <p className="text-gray-700">
+                    <p className="text-charcoal-700">
                       Early morning or late afternoon for best lighting
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">Entry Fee</h4>
-                    <p className="text-gray-700">
+                    <p className="text-charcoal-700">
                       ₹50 for Indians, ₹1300 for foreigners
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="heritage-card p-8">
-                <h3 className="text-2xl font-heritage font-bold mb-6">
+              <div className="bs-card p-8">
+                <h3 className="text-2xl font-display font-bold mb-6">
                   How to Reach
                 </h3>
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold mb-2">By Air</h4>
-                    <p className="text-gray-700">
+                    <p className="text-charcoal-700">
                       Agra Airport (6 km) or Delhi (200 km)
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">By Train</h4>
-                    <p className="text-gray-700">
+                    <p className="text-charcoal-700">
                       Agra Cantt or Agra Fort railway stations
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">By Road</h4>
-                    <p className="text-gray-700">
+                    <p className="text-charcoal-700">
                       NH2 from Delhi (200 km, 3 hours drive)
                     </p>
                   </div>
@@ -518,8 +518,8 @@ const HeritageDetailPage = ({
 
             {/* Nearby Attractions */}
             {item.nearby_poi && (
-              <div className="heritage-card p-8">
-                <h3 className="text-2xl font-heritage font-bold mb-6">
+              <div className="bs-card p-8">
+                <h3 className="text-2xl font-display font-bold mb-6">
                   Nearby Attractions
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">

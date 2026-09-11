@@ -134,9 +134,9 @@ export const USER_ROLES = {
 
 // Application Settings
 export const APP_CONFIG = {
-  NAME: "BharatVerse",
+  NAME: "BharatSafar",
   VERSION: "1.0.0",
-  DESCRIPTION: "Digital Heritage & Culture Portal of India",
+  DESCRIPTION: "Premium Cultural Exploration Platform of India",
   KEYWORDS: ["heritage", "culture", "india", "monuments", "festivals", "arts"],
   DEFAULT_LANGUAGE: "en",
   SUPPORTED_LANGUAGES: ["en", "hi"],
@@ -161,11 +161,11 @@ export const COLORS = {
 
 // Social Media Links
 export const SOCIAL_LINKS = {
-  FACEBOOK: "https://facebook.com/bharatverse",
-  TWITTER: "https://twitter.com/bharatverse",
-  INSTAGRAM: "https://instagram.com/bharatverse",
-  YOUTUBE: "https://youtube.com/bharatverse",
-  LINKEDIN: "https://linkedin.com/company/bharatverse",
+  FACEBOOK: "https://facebook.com/bharatsafar",
+  TWITTER: "https://twitter.com/bharatsafar",
+  INSTAGRAM: "https://instagram.com/bharatsafar",
+  YOUTUBE: "https://youtube.com/bharatsafar",
+  LINKEDIN: "https://linkedin.com/company/bharatsafar",
 };
 
 // External API Keys (Use environment variables in production)

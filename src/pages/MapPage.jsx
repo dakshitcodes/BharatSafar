@@ -1053,7 +1053,7 @@ const MapPage = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between gap-4 mb-4">
               <div>
-                <h1 className="text-2xl font-bold text-gray-800">
+                <h1 className="text-2xl font-bold text-charcoal-800">
                   India Heritage & Hidden Gems Map
                 </h1>
                 <p className="text-sm text-gray-600">
@@ -1065,7 +1065,7 @@ const MapPage = () => {
                 onClick={() => setIsRouteMode(!isRouteMode)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${isRouteMode
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  : "bg-gray-200 text-charcoal-700 hover:bg-gray-300"
                   }`}
               >
                 <Route size={18} />
@@ -1172,7 +1172,7 @@ const MapPage = () => {
                         <h3 className="font-bold text-lg mb-1">{site.title}</h3>
                         <p className="text-sm text-gray-600 mb-2">{site.state}</p>
                       </div>
-                      <p className="text-sm text-gray-700 mb-3">{site.description}</p>
+                      <p className="text-sm text-charcoal-700 mb-3">{site.description}</p>
 
                       <div className="space-y-2 mb-4 text-sm">
                         <div className="flex justify-between">
@@ -1243,7 +1243,7 @@ const MapPage = () => {
                       <h3 className="font-bold text-lg mb-1">{site.title}</h3>
                       <p className="text-sm text-gray-600 mb-2">{site.state}</p>
                     </div>
-                    <p className="text-sm text-gray-700 mb-3">
+                    <p className="text-sm text-charcoal-700 mb-3">
                       {site.description}
                     </p>
 
@@ -1286,10 +1286,10 @@ const MapPage = () => {
 
         {/* Legend */}
         <div className="absolute bottom-6 left-6 bg-white rounded-lg shadow-md border border-gray-200 p-4 z-[500] max-h-80 overflow-y-auto">
-          <h3 className="font-bold text-sm mb-3 text-gray-800">Legend</h3>
+          <h3 className="font-bold text-sm mb-3 text-charcoal-800">Legend</h3>
           <div className="space-y-2">
             <div>
-              <p className="text-xs font-semibold text-gray-700 mb-2">Types:</p>
+              <p className="text-xs font-semibold text-charcoal-700 mb-2">Types:</p>
               <div className="space-y-1 text-xs">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">💎</span>
@@ -1306,7 +1306,7 @@ const MapPage = () => {
               </div>
             </div>
             <div className="border-t border-gray-200 pt-2">
-              <p className="text-xs font-semibold text-gray-700 mb-2">Regions:</p>
+              <p className="text-xs font-semibold text-charcoal-700 mb-2">Regions:</p>
               <div className="space-y-1">
                 {regions.slice(1).map((region) => (
                   <div
@@ -1317,7 +1317,7 @@ const MapPage = () => {
                       className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: region.color }}
                     />
-                    <span className="text-gray-700">{region.name}</span>
+                    <span className="text-charcoal-700">{region.name}</span>
                   </div>
                 ))}
               </div>
@@ -1332,7 +1332,7 @@ const MapPage = () => {
               mapRef.current &&
               mapRef.current.setZoom(mapRef.current.getZoom() + 1)
             }
-            className="w-10 h-10 flex items-center justify-center font-bold text-gray-700 hover:bg-gray-100 rounded-t-lg"
+            className="w-10 h-10 flex items-center justify-center font-bold text-charcoal-700 hover:bg-gray-100 rounded-t-lg"
           >
             +
           </button>
@@ -1342,7 +1342,7 @@ const MapPage = () => {
               mapRef.current &&
               mapRef.current.setZoom(mapRef.current.getZoom() - 1)
             }
-            className="w-10 h-10 flex items-center justify-center font-bold text-gray-700 hover:bg-gray-100 rounded-b-lg"
+            className="w-10 h-10 flex items-center justify-center font-bold text-charcoal-700 hover:bg-gray-100 rounded-b-lg"
           >
             −
           </button>
@@ -1353,10 +1353,10 @@ const MapPage = () => {
           <div className="absolute top-20 right-6 bottom-6 w-96 bg-white rounded-lg shadow-lg border border-gray-200 flex flex-col z-[500]">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <h2 className="font-bold text-gray-800">Route Planner</h2>
+              <h2 className="font-bold text-charcoal-800">Route Planner</h2>
               <button
                 onClick={() => setIsRouteMode(false)}
-                className="text-gray-500 hover:text-gray-700 p-1"
+                className="text-gray-500 hover:text-charcoal-700 p-1"
               >
                 <X size={18} />
               </button>
@@ -1403,7 +1403,7 @@ const MapPage = () => {
                               <span
                                 className={`font-medium text-sm ${site.id === "live-location"
                                   ? "text-green-700"
-                                  : "text-gray-800"
+                                  : "text-charcoal-800"
                                   }`}
                               >
                                 {site.title}
