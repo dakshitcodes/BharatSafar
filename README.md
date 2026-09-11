@@ -8,11 +8,6 @@ The platform was designed with **real-world usability, scalability, and inclusiv
 
 ---
 
-## 👤 Role & Ownership (What I Built)
-
-
-I led the design and implementation of BharatSafar’s **intelligence layer**, focusing on personalization, AI storytelling, and scalable backend architecture.
-
 ### Key Responsibilities
 
 * Designed and built the **Salahkar Recommender System**
