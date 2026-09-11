@@ -10,7 +10,6 @@ The platform was designed with **real-world usability, scalability, and inclusiv
 
 ## 👤 Role & Ownership (What I Built)
 
-**Garv Bahl — Core Developer (AI, ML & Backend Systems)**
 
 I led the design and implementation of BharatSafar’s **intelligence layer**, focusing on personalization, AI storytelling, and scalable backend architecture.
 
