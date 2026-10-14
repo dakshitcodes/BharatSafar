@@ -1,6 +1,20 @@
 export const groundTruthData = {
   rubric: {
-    version: "2.0-independent",
+    // RESEARCH INTEGRITY NOTE (2026-10-14):
+    // These relevance labels are PROVISIONAL GROUND TRUTH established by one annotator
+    // (the project developer) using the written rubric below. They have NOT been
+    // independently validated by a second annotator. They should be described in the
+    // paper as "provisional single-annotator labels using a written rubric" — not as
+    // "independently expert-validated" labels.
+    // A second-annotator inter-rater review is recommended before the final paper
+    // submission. Until then, evaluation scores must be interpreted accordingly.
+    version: "1.0-provisional",
+    annotationProtocol: {
+      annotators: ["Primary developer (single annotator)"],
+      method: "Single-annotator grading using the written rubric below and the provisional monthly values in the benchmark. Supporting evidence has not been recorded for each label; no inter-annotator agreement measure has been computed.",
+      reviewStatus: "Unvalidated — second-annotator review pending",
+      lastUpdated: "2026-10-14"
+    },
     scale: [
       {
         grade: 3,
@@ -24,7 +38,7 @@ export const groundTruthData = {
       }
     ],
     relevanceThreshold: 2,
-    evaluationRule: "Labels reflect sourced seasonal evidence (weather, hydrological flow, seasonal aesthetics) independent of safety ratings and official closure orders, which are evaluated separately via the Closure-Conflict Rate."
+    evaluationRule: "Labels were assigned from the provisional monthly values in the benchmark, independently of method scores. Supporting evidence for each destination-month grade is not yet documented. Closure conflicts are measured separately against the supplied disruption records."
   },
   ratings: {
     "dest-wf-01": {

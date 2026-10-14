@@ -1,16 +1,44 @@
 \begin{table*}[t]
 \centering
-\caption{Empirical Recommendation Performance: Development vs. Holdout Test Split}
-\label{tab:recsys_results}
-\begin{tabular}{l|ccc|ccc|ccc}
-\hline
-\textbf{Evaluation Metric} & \multicolumn{3}{c|}{\textbf{Holdout Test (8 Scenarios)}} & \multicolumn{3}{c|}{\textbf{Development (16 Scenarios)}} & \multicolumn{3}{c}{\textbf{Overall Macro-Avg (24 Scenarios)}} \\
-& \textbf{Method A} & \textbf{Method B} & \textbf{Method C} & \textbf{Method A} & \textbf{Method B} & \textbf{Method C} & \textbf{Method A} & \textbf{Method B} & \textbf{Method C} \\
-\hline
-\textbf{Precision@3} & 0.7083 & 0.875 & \textbf{0.875} & 0.6875 & 0.8542 & \textbf{0.8542} & 0.6945 & 0.8611 & \textbf{0.8611} \\
-\textbf{NDCG@3} & 0.6115 & 0.9949 & \textbf{0.9949} & 0.6667 & 0.9709 & \textbf{0.9625} & 0.6483 & 0.9789 & \textbf{0.9733} \\
-\textbf{Closure Conflict (\%)} & 12.5\% & 0\% & \textbf{0\%} & 12.5\% & 4.2\% & \textbf{0\%} & 12.5\% & 2.8\% & \textbf{0\%} \\
-\textbf{Safety Violation Risk} & High & None & \textbf{Guaranteed (0.0)} & High & Moderate & \textbf{Guaranteed (0.0)} & High & Moderate & \textbf{Guaranteed (0.0)} \\
-\hline
+\caption{Scenario-level macro-averages with metric values on the 0--1 scale except full-closure conflict (percent). Single-activity scenarios request K=3; mixed-pool scenarios request K=5. Mean effective K and per-method undefined-scenario counts are shown. Category-specific rows exclude mixed activity; all-pool rows include it. Holdout rows are exploratory, not confirmatory.}
+\begin{tabular}{llrrr}
+\toprule Cohort and scope & Metric (unit) & Method A & Method B & Method C \\ \midrule
+Category-specific holdout (waterfalls + trekking) (n=8) & Precision@K (0--1) & 0.7083 & 0.8750 & 0.8750 \\
+Category-specific holdout (waterfalls + trekking) (n=8) & NDCG@K (0--1) & 0.6115 & 0.9949 & 0.9949 \\
+Category-specific holdout (waterfalls + trekking) (n=8) & Full-closure conflict (\%) & N/A & N/A & N/A \\
+Category-specific holdout (waterfalls + trekking) (n=8) & Mean effective K & 3.00 & 3.00 & 3.00 \\
+Category-specific holdout (waterfalls + trekking) (n=8) & Undefined P@K scenarios & 0 & 0 & 0 \\
+Category-specific holdout (waterfalls + trekking) (n=8) & Undefined NDCG@K scenarios & 0 & 0 & 0 \\
+Category-specific development (waterfalls + trekking) (n=16) & Precision@K (0--1) & 0.6875 & 0.8542 & 0.8542 \\
+Category-specific development (waterfalls + trekking) (n=16) & NDCG@K (0--1) & 0.6667 & 0.9709 & 0.9709 \\
+Category-specific development (waterfalls + trekking) (n=16) & Full-closure conflict (\%) & N/A & N/A & N/A \\
+Category-specific development (waterfalls + trekking) (n=16) & Mean effective K & 3.00 & 3.00 & 3.00 \\
+Category-specific development (waterfalls + trekking) (n=16) & Undefined P@K scenarios & 0 & 0 & 0 \\
+Category-specific development (waterfalls + trekking) (n=16) & Undefined NDCG@K scenarios & 0 & 0 & 0 \\
+Category-specific total (excludes mixed pool) (n=24) & Precision@K (0--1) & 0.6945 & 0.8611 & 0.8611 \\
+Category-specific total (excludes mixed pool) (n=24) & NDCG@K (0--1) & 0.6483 & 0.9789 & 0.9789 \\
+Category-specific total (excludes mixed pool) (n=24) & Full-closure conflict (\%) & N/A & N/A & N/A \\
+Category-specific total (excludes mixed pool) (n=24) & Mean effective K & 3.00 & 3.00 & 3.00 \\
+Category-specific total (excludes mixed pool) (n=24) & Undefined P@K scenarios & 0 & 0 & 0 \\
+Category-specific total (excludes mixed pool) (n=24) & Undefined NDCG@K scenarios & 0 & 0 & 0 \\
+All-pool holdout (includes mixed pool) (n=12) & Precision@K (0--1) & 0.7056 & 0.8833 & 0.8833 \\
+All-pool holdout (includes mixed pool) (n=12) & NDCG@K (0--1) & 0.5846 & 0.9921 & 0.9921 \\
+All-pool holdout (includes mixed pool) (n=12) & Full-closure conflict (\%) & N/A & N/A & N/A \\
+All-pool holdout (includes mixed pool) (n=12) & Mean effective K & 3.67 & 3.67 & 3.67 \\
+All-pool holdout (includes mixed pool) (n=12) & Undefined P@K scenarios & 0 & 0 & 0 \\
+All-pool holdout (includes mixed pool) (n=12) & Undefined NDCG@K scenarios & 0 & 0 & 0 \\
+All-pool development (includes mixed pool) (n=24) & Precision@K (0--1) & 0.6750 & 0.8861 & 0.8861 \\
+All-pool development (includes mixed pool) (n=24) & NDCG@K (0--1) & 0.6291 & 0.9703 & 0.9703 \\
+All-pool development (includes mixed pool) (n=24) & Full-closure conflict (\%) & N/A & N/A & N/A \\
+All-pool development (includes mixed pool) (n=24) & Mean effective K & 3.67 & 3.67 & 3.67 \\
+All-pool development (includes mixed pool) (n=24) & Undefined P@K scenarios & 0 & 0 & 0 \\
+All-pool development (includes mixed pool) (n=24) & Undefined NDCG@K scenarios & 0 & 0 & 0 \\
+All-pool total (includes mixed pool) (n=36) & Precision@K (0--1) & 0.6852 & 0.8852 & 0.8852 \\
+All-pool total (includes mixed pool) (n=36) & NDCG@K (0--1) & 0.6143 & 0.9776 & 0.9776 \\
+All-pool total (includes mixed pool) (n=36) & Full-closure conflict (\%) & N/A & N/A & N/A \\
+All-pool total (includes mixed pool) (n=36) & Mean effective K & 3.67 & 3.67 & 3.67 \\
+All-pool total (includes mixed pool) (n=36) & Undefined P@K scenarios & 0 & 0 & 0 \\
+All-pool total (includes mixed pool) (n=36) & Undefined NDCG@K scenarios & 0 & 0 & 0 \\
+\bottomrule
 \end{tabular}
 \end{table*}

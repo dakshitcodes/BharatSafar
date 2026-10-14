@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Book, X, ChevronRight, Sparkles } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { Book, X, ChevronRight, Sparkles, FlaskConical } from "lucide-react";
 
 const FloatingMenu = ({ onPageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ const FloatingMenu = ({ onPageChange }) => {
     },
     {
       name: "Research Lab",
-      icon: "🔬",
+      icon: <FlaskConical className="w-5 h-5" />,
       description: "IEEE Paper & Benchmark",
       page: "research",
       color: "from-emerald-600 to-teal-700",

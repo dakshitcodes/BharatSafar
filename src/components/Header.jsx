@@ -8,7 +8,7 @@ import {
 } from "@clerk/clerk-react";
 import { createOrUpdateUser } from "../services/userService";
 
-const Header = ({ currentPage, onPageChange, searchQuery, onSearchChange }) => {
+const Header = ({ currentPage, onPageChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -64,7 +64,7 @@ const Header = ({ currentPage, onPageChange, searchQuery, onSearchChange }) => {
         { id: "research", label: "Research Benchmark Lab" },
       ],
     },
-    { id: "research", label: "Research Lab 🔬" },
+    { id: "research", label: "Research Lab" },
     { id: "quiz", label: "Quiz" },
     { id: "chat", label: "AI Guide" },
   ];
