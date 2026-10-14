@@ -36,6 +36,7 @@ import ItineraryPlanner from "./pages/ItineraryPlanner";
 
 //changes
 import RitualExplorerPage from "./pages/RitualExplorerPage";
+import ResearchLabPage from "./pages/ResearchLabPage";
 
 import { createOrUpdateUser } from "./services/userService";
 
@@ -249,6 +250,9 @@ function App() {
             onBack={() => handlePageChange("home")}
           />
         );
+      case "research":
+      case "research-lab":
+        return <ResearchLabPage {...pageProps} onPageChange={handlePageChange} />;
       // YHA TK
 
       default:

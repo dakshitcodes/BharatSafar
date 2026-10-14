@@ -27,6 +27,16 @@ const FloatingMenu = ({ onPageChange }) => {
       borderColor: "border-ivory-200",
       shadowColor: "shadow-charcoal-900/10",
     },
+    {
+      name: "Research Lab",
+      icon: "🔬",
+      description: "IEEE Paper & Benchmark",
+      page: "research",
+      color: "from-emerald-600 to-teal-700",
+      bgColor: "bg-ivory-50",
+      borderColor: "border-ivory-200",
+      shadowColor: "shadow-charcoal-900/10",
+    },
   ];
 
   const handleMenuClick = (page) => {

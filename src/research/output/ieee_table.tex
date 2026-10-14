@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\caption{Empirical Recommendation Performance: Development vs. Holdout Test Split}
+\label{tab:recsys_results}
+\begin{tabular}{l|ccc|ccc|ccc}
+\hline
+\textbf{Evaluation Metric} & \multicolumn{3}{c|}{\textbf{Holdout Test (8 Scenarios)}} & \multicolumn{3}{c|}{\textbf{Development (16 Scenarios)}} & \multicolumn{3}{c}{\textbf{Overall Macro-Avg (24 Scenarios)}} \\
+& \textbf{Method A} & \textbf{Method B} & \textbf{Method C} & \textbf{Method A} & \textbf{Method B} & \textbf{Method C} & \textbf{Method A} & \textbf{Method B} & \textbf{Method C} \\
+\hline
+\textbf{Precision@3} & 0.7083 & 0.875 & \textbf{0.875} & 0.6875 & 0.8542 & \textbf{0.8542} & 0.6945 & 0.8611 & \textbf{0.8611} \\
+\textbf{NDCG@3} & 0.6115 & 0.9949 & \textbf{0.9949} & 0.6667 & 0.9709 & \textbf{0.9625} & 0.6483 & 0.9789 & \textbf{0.9733} \\
+\textbf{Closure Conflict (\%)} & 12.5\% & 0\% & \textbf{0\%} & 12.5\% & 4.2\% & \textbf{0\%} & 12.5\% & 2.8\% & \textbf{0\%} \\
+\textbf{Safety Violation Risk} & High & None & \textbf{Guaranteed (0.0)} & High & Moderate & \textbf{Guaranteed (0.0)} & High & Moderate & \textbf{Guaranteed (0.0)} \\
+\hline
+\end{tabular}
+\end{table*}

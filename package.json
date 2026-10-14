@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:research": "node scripts/run_research_benchmark.js"
   },
  "dependencies": {
     "@clerk/clerk-react": "^5.55.0",

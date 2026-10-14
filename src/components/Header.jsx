@@ -61,8 +61,10 @@ const Header = ({ currentPage, onPageChange, searchQuery, onSearchChange }) => {
         { id: "itinerary", label: "Itinerary Planner" },
         { id: "360tour", label: "360° Virtual Tours" },
         { id: "salahkar", label: "AI Recommendations" },
+        { id: "research", label: "Research Benchmark Lab" },
       ],
     },
+    { id: "research", label: "Research Lab 🔬" },
     { id: "quiz", label: "Quiz" },
     { id: "chat", label: "AI Guide" },
   ];
