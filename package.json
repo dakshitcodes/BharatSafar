@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test:research": "node --test tests/research/research.test.js && node scripts/run_research_benchmark.js"
   },
- "dependencies": {
+  "dependencies": {
     "@clerk/clerk-react": "^5.55.0",
     "@google/generative-ai": "^0.24.1",
     "@gradio/client": "^2.0.0",

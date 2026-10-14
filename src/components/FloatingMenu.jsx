@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Book, X, ChevronRight, Sparkles, FlaskConical } from "lucide-react";
 
 const FloatingMenu = ({ onPageChange }) => {

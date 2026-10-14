@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   FlaskConical,
   ShieldCheck,

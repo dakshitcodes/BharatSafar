@@ -260,14 +260,6 @@ function App() {
     }
   };
 
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-ivory-100">
-        <LoadingSpinner size="lg" />
-      </div>
-    );
-  }
-
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-ivory-100">
