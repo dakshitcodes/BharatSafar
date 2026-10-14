@@ -14,6 +14,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Goa Forest Dept / South Western Railway",
     primaryAttraction: "Four-tiered majestic cascade across railway viaduct",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "India Meteorological Department (IMD) - Climatological Normals 1981-2010 (Panaji & Mormugao Stations)",
+      climateSourceUrl: "https://imdpune.gov.in/library/public/1981-2010%20CLIM%20NORMALS%20%28STATISTICAL%29.pdf",
+      popularitySource: "Aggregated Public Tourism Listings (Google Reviews & TripAdvisor)",
+      regulatorySource: "South Western Railway (Hubballi Division) & Goa Tourism Official Portal",
+      regulatorySourceUrl: "https://goa-tourism.com/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: 26, rainfallMm: 3, flowLevel: "Moderate", trailCondition: "Open & Dry", scenicIndex: 0.65 },
       2: { avgTempC: 27, rainfallMm: 2, flowLevel: "Low-Moderate", trailCondition: "Open & Dry", scenicIndex: 0.55 },
@@ -44,6 +53,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Karnataka Tourism / Jog Management Authority",
     primaryAttraction: "Second-highest plunge waterfall in India (Raja, Roarer, Rocket, Rani)",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "IMD Climatological Normals 1981-2010 (Shivamogga & Agumbe Meteorological Observatories)",
+      climateSourceUrl: "https://imdpune.gov.in/library/public/1981-2010%20CLIM%20NORMALS%20%28STATISTICAL%29.pdf",
+      popularitySource: "Karnataka State Tourism Development Corporation (KSTDC) & Google Reviews",
+      regulatorySource: "Jog Falls Management Authority / District Administration Shivamogga",
+      regulatorySourceUrl: "https://shivamogga.nic.in/en/tourist-place/jog-falls/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: 24, rainfallMm: 1, flowLevel: "Very Low", trailCondition: "Dry & Steps Open", scenicIndex: 0.35 },
       2: { avgTempC: 26, rainfallMm: 1, flowLevel: "Trickle", trailCondition: "Dry & Steps Open", scenicIndex: 0.25 },
@@ -74,6 +92,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1546587348-d12660c30c50?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Kerala Forest & Wildlife Dept / KSDMA",
     primaryAttraction: "Curved 80-foot wide curtain cascade, 'Niagara of South India'",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "IMD Climatological Normals 1981-2010 (Vellanikkara & Thrissur Observatories)",
+      climateSourceUrl: "https://imdpune.gov.in/library/public/1981-2010%20CLIM%20NORMALS%20%28STATISTICAL%29.pdf",
+      popularitySource: "Kerala Department of Tourism Official Destination Statistics",
+      regulatorySource: "Kerala State Disaster Management Authority (KSDMA) & Vazhachal Forest Division",
+      regulatorySourceUrl: "https://sdma.kerala.gov.in/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: 27, rainfallMm: 10, flowLevel: "Moderate", trailCondition: "Open & Forest Clear", scenicIndex: 0.70 },
       2: { avgTempC: 28, rainfallMm: 18, flowLevel: "Moderate", trailCondition: "Open & Warm", scenicIndex: 0.65 },
@@ -104,6 +131,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Meghalaya Tourism / Sohra Civil Sub-Division",
     primaryAttraction: "India's tallest plunge waterfall (340m) into emerald turquoise pool",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "IMD Cherrapunji Meteorological Observatory (Precipitation Normals)",
+      climateSourceUrl: "https://imdpune.gov.in/library/public/1981-2010%20CLIM%20NORMALS%20%28STATISTICAL%29.pdf",
+      popularitySource: "Meghalaya Tourism Development Corporation (MTDC)",
+      regulatorySource: "Sohra Civil Sub-Division / MTDC Tourist Safety Advisories",
+      regulatorySourceUrl: "https://www.meghalayatourism.in/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: 12, rainfallMm: 15, flowLevel: "Thin Stream", trailCondition: "Crystal Clear View", scenicIndex: 0.70 },
       2: { avgTempC: 14, rainfallMm: 45, flowLevel: "Thin Stream", trailCondition: "Clear View", scenicIndex: 0.68 },
@@ -134,6 +170,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Dharmapuri District Administration",
     primaryAttraction: "Smoking rocks, carbonatite canyons, circular coracle boat rides",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "IMD Climatological Normals (Dharmapuri / Salem Regional Stations)",
+      climateSourceUrl: "https://imdpune.gov.in/library/public/1981-2010%20CLIM%20NORMALS%20%28STATISTICAL%29.pdf",
+      popularitySource: "Tamil Nadu Tourism Development Corporation (TTDC)",
+      regulatorySource: "Dharmapuri District Collectorate Disaster Management Wing",
+      regulatorySourceUrl: "https://dharmapuri.nic.in/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: 25, rainfallMm: 5, flowLevel: "Gentle River", trailCondition: "Full Coracle Boating Open", scenicIndex: 0.85 },
       2: { avgTempC: 28, rainfallMm: 8, flowLevel: "Low-Moderate", trailCondition: "Boating Open", scenicIndex: 0.80 },
@@ -164,6 +209,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Uttarakhand Forest Dept / SDRF",
     primaryAttraction: "Summit ridge with 360-degree snow peaks (Swargarohini, Bandarpoonch)",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "IMD Dehradun / Uttarkashi High Altitude Meteorological Station",
+      climateSourceUrl: "https://mausam.imd.gov.in/dehradun/",
+      popularitySource: "Aggregated Himalayan Trekker Registries (Indiahikes & TrekTheHimalayas)",
+      regulatorySource: "Uttarakhand State Disaster Management Authority (USDMA) & Forest Dept",
+      regulatorySourceUrl: "https://usdma.uk.gov.in/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: -4, rainfallMm: 95, flowLevel: "Heavy Powder Snow", trailCondition: "Prime Snow Trek (Crampons required)", scenicIndex: 0.98 },
       2: { avgTempC: -2, rainfallMm: 110, flowLevel: "Deep Snowpack", trailCondition: "Prime Snow Trek", scenicIndex: 0.96 },
@@ -194,6 +248,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Uttarakhand Forest Dept (Nanda Devi National Park)",
     primaryAttraction: "UNESCO World Heritage alpine valley carpeted with 500+ endemic wildflowers",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "Nanda Devi Biosphere Reserve & IMD Joshimath Station Records",
+      climateSourceUrl: "https://forest.uk.gov.in/",
+      popularitySource: "UNESCO World Heritage Listing & National Park Visitor Records",
+      regulatorySource: "Uttarakhand Forest Department (Chamoli Wildlife Division)",
+      regulatorySourceUrl: "https://whc.unesco.org/en/list/335/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: -12, rainfallMm: 140, flowLevel: "15ft Snowpack", trailCondition: "BURIED & INACCESSIBLE (LEGAL CLOSURE)", scenicIndex: 0.05 },
       2: { avgTempC: -10, rainfallMm: 130, flowLevel: "Heavy Snowpack", trailCondition: "BURIED & INACCESSIBLE (LEGAL CLOSURE)", scenicIndex: 0.05 },
@@ -224,6 +287,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "Himachal Pradesh Forest Dept / Kangra Police",
     primaryAttraction: "Panoramic ridge overlooking Dhauladhar snow wall and Kangra Valley",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "IMD Dharamshala Station Meteorological Climatological Normals",
+      climateSourceUrl: "https://imdpune.gov.in/library/public/1981-2010%20CLIM%20NORMALS%20%28STATISTICAL%29.pdf",
+      popularitySource: "Himachal Pradesh Tourism Development Corporation (HPTDC)",
+      regulatorySource: "Kangra District Administration & Dharamshala Police Guidelines",
+      regulatorySourceUrl: "https://hpkangra.nic.in/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: 1, rainfallMm: 85, flowLevel: "Snow on Ridge", trailCondition: "Cold / Icy Patches / Caution", scenicIndex: 0.75 },
       2: { avgTempC: 4, rainfallMm: 95, flowLevel: "Snow Patches", trailCondition: "Melting Ice / Moderate Difficulty", scenicIndex: 0.78 },
@@ -254,6 +326,15 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
     regulatoryAuthority: "South Wayanad Forest Development Agency (VSS)",
     primaryAttraction: "Heart-shaped perennial high-altitude lake (Hridaya Saras)",
+    provenance: {
+      verificationStatus: "unverified",
+      climateDataSource: "IMD Ambalavayal Observatory / Wayanad Weather Normal Records",
+      climateSourceUrl: "https://imdpune.gov.in/library/public/1981-2010%20CLIM%20NORMALS%20%28STATISTICAL%29.pdf",
+      popularitySource: "Wayanad District Tourism Promotion Council (DTPC)",
+      regulatorySource: "South Wayanad Forest Division / Meppadi Vana Samrakshana Samithi (VSS)",
+      regulatorySourceUrl: "https://forest.kerala.gov.in/",
+      retrievalDate: "2026-10-14"
+    },
     monthlyData: {
       1: { avgTempC: 19, rainfallMm: 8, flowLevel: "Pleasant Mist", trailCondition: "Optimal Trail Condition", scenicIndex: 0.94 },
       2: { avgTempC: 21, rainfallMm: 12, flowLevel: "Clear Skies", trailCondition: "Optimal Trail Condition", scenicIndex: 0.90 },

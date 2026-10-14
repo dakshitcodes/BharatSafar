@@ -28,11 +28,9 @@ email@institution.edu}
 \maketitle
 
 \begin{abstract}
-Commercial tourism recommendation systems predominantly rely on static collaborative filtering and popularity-based heuristics, ranking destinations by historical visitor volumes, cumulative review counts, and average star ratings. In nature, adventure, and heritage tourism, however, static popularity ranking suffers from a severe failure mode termed \textit{popularity inertia}: it continues to recommend highly rated destinations during periods when environmental conditions render them either hazardous, unviable, or legally prohibited. 
+This prototype compares popularity-based, seasonal, and disruption-aware ranking across nine Indian waterfall and trekking destinations. The benchmark contains 36 scenarios: 24 category-specific and 12 mixed-pool scenarios. Destination-month inputs and Grades 0--3 relevance labels are provisional; labels were assigned by one project annotator, independent review has not occurred, and complete record-level provenance is pending.
 
-In this paper, we address this fundamental flaw by investigating whether incorporating empirical seasonal environmental indicators and verified regulatory disruption invariants improves recommendation quality and safety. We construct a 24-scenario empirical evaluation benchmark covering 9 prominent Indian waterfall and trekking destinations across all 12 calendar months, accompanied by independent expert relevance ground truth (Grades 0--3) derived from an objective multi-factor rubric. 
-
-We systematically evaluate three algorithms: (1) Method A: Popularity-Based Baseline, (2) Method B: Seasonal Multi-Factor Environmental Scoring, and (3) Method C (Proposed): Disruption-Aware Seasonal Ranking with strict administrative safety invariants. Our empirical findings demonstrate that Method A exhibits an alarming 12.5\% macro-average Closure-Conflict Rate (CCR), spiking to 33.3\% in winter trekking scenarios (such as recommending the snowbound Valley of Flowers National Park, which is closed by law). Method B substantially boosts ranking quality, raising Normalized Discounted Cumulative Gain (NDCG@K from 0.6552 to 0.9788), but still incurs a 2.8\% CCR because high environmental flow during extreme monsoons is misidentified as high tourist viability. Method C guarantees a 0.0\% Closure-Conflict Rate while simultaneously achieving superior ranking fidelity (NDCG@K of 0.9868, reflecting up to +58.3\% lift over the baseline). We deploy this architecture as a functional module within the open-source BharatVerse platform.
+Overall macro-average NDCG@K is 0.6143 for Method A and 0.9776 for Methods B and C. Category-specific NDCG@3 is 0.6483, 0.9789, and 0.9789, respectively. No supplied disruption record passes the evidence policy, so closure-conflict rates are not estimable. Method C ties Method B because no disruption is applied. These descriptive results do not establish real-world safety, source validity, or generalization.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -45,10 +43,10 @@ Tourism recommendation systems (TRSs) play an increasingly vital role in steerin
 While popularity-based heuristics succeed in static urban contexts (e.g., museums, city monuments), they introduce catastrophic hazards when applied to nature, adventure, and seasonal heritage tourism. In countries with extreme seasonal transitions such as India---governed by intense Southwest and Northeast monsoons, severe Himalayan winters, and blistering pre-monsoon heat waves---a destination's appeal and safety are intrinsically time-dependent. 
 
 \subsection{Problem Statement and Popularity Inertia}
-Consider two real-world failure cases produced by conventional popularity-based recommenders:
+Consider two benchmark scenarios encoded in the supplied inputs (the disruption records have not been independently verified):
 \begin{enumerate}
-    \item \textbf{The Avalanche and Legal Closure Hazard}: \textit{Valley of Flowers National Park} in Uttarakhand is globally renowned (popularity score 0.95/1.0, 4.9$\star$ rating). Under popularity ranking, it is recommended as the top trekking destination year-round. However, from November 1 to May 31, the park is buried under 10--15 feet of snow and is legally closed by the Forest Department. Tourists following static recommendations face locked gates, severe avalanche risk, and legal prosecution.
-    \item \textbf{The Flash Flood and Drowning Hazard}: \textit{Dudhsagar Falls} in Goa attracts millions of travelers. In July and August, during peak Western Ghats monsoons, torrential river swelling drowns the railway viaduct. Following multiple fatalities, South Western Railway and the Goa Forest Department permanently banned walking along the tracks and suspended safari jeeps. A popularity-driven recommender cheerfully ranks Dudhsagar at the top in July because tourists have historically raved about its roaring cascade.
+    \item \textbf{A supplied winter-closure scenario}: In the benchmark inputs, Valley of Flowers has a high popularity score and an absolute-closure record for November through May. The record is unverified in the repository; this illustrates algorithm behavior on an input record, not independently established access conditions.
+    \item \textbf{A supplied monsoon restriction scenario}: The dataset marks Dudhsagar with an absolute-closure record in July and August. That record is marked unverified, so the benchmark does not establish the notice, its scope, or current access conditions.
 \end{enumerate}
 
 We define this systematic failure as \textbf{Popularity Inertia}: \textit{the tendency of review-weighted recommenders to push high-volume destinations into top recommendation slots irrespective of transient or seasonal unviability.}
@@ -57,8 +55,8 @@ We define this systematic failure as \textbf{Popularity Inertia}: \textit{the te
 To systematically investigate this phenomenon, we formulate three core Research Questions:
 \begin{itemize}
     \item \textbf{RQ1 (Baseline Vulnerability)}: To what extent does static popularity-based ranking recommend unviable or legally closed destinations across seasonal variations in nature tourism?
-    \item \textbf{RQ2 (Environmental Suitability)}: Does multi-criteria environmental scoring (integrating temperature normals, precipitation, flow rates, and trail viability) significantly improve recommendation ranking order (NDCG) over popularity baselines?
-    \item \textbf{RQ3 (Disruption-Aware Guarantees)}: Can the formal introduction of verified administrative disruption invariants eliminate safety violations without degrading overall recommendation utility?
+    \item \textbf{RQ2 (Environmental Suitability)}: How do the methods compare in NDCG on the provisional benchmark labels?
+    \item \textbf{RQ3 (Disruption-Aware Ranking)}: Does Method C exclude items that match absolute-closure records supplied to the benchmark, and what ranking metrics result?
 \end{itemize}
 
 \section{Related Work}
@@ -67,19 +65,19 @@ Early TRSs categorized points of interest using collaborative filtering (CF) and
 Context-Aware Recommender Systems (CARS) incorporate contextual variables such as time, location, companion type, and weather \cite{adomavicius2011}. Baltrunas et al. explored weather-aware mobile recommendations, demonstrating that rain significantly alters dining and indoor museum preferences \cite{baltrunas2012}. However, prior context-aware tourism models typically treat weather as a continuous soft preference penalty rather than treating official administrative warnings and legal closures as hard safety invariants.
 
 \section{Benchmark Dataset and Ground Truth}
-We designed an empirical benchmark spanning 9 destinations across two distinct nature tourism categories in India: \textbf{Waterfalls} and \textbf{Trekking}.
+We designed a prototype benchmark spanning 9 destinations across two nature tourism categories in India: \textbf{Waterfalls} and \textbf{Trekking}. Provenance is incomplete and detailed in the accompanying data audit.
 
 \subsection{Destination Selection}
-Destinations were selected based on traceable credibility in official Tourism Board and Forest Department registries, high popularity variance (10.5k to 21.4k reviews), and pronounced seasonal dynamics:
+The nine destinations in the project dataset span two activity categories and have supplied popularity values; those values have not yet been independently audited against external records:
 \begin{itemize}
     \item \textbf{Waterfalls (5)}: Dudhsagar Falls (Goa), Jog Falls (Karnataka), Athirappilly Falls (Kerala), Nohkalikai Falls (Meghalaya), Hogenakkal Falls (Tamil Nadu).
     \item \textbf{Trekking (4)}: Kedarkantha Trek (Uttarakhand), Valley of Flowers (Uttarakhand), Triund Trek (Himachal Pradesh), Chembra Peak (Kerala).
 \end{itemize}
 
 \subsection{Ground Truth Relevance Rubric}
-To prevent experimental circularity, ground truth relevance labels $g(d, m) \in \{0, 1, 2, 3\}$ were independently assigned across all 12 calendar months according to an objective rubric:
+Provisional relevance labels $g(d, m) \in \{0, 1, 2, 3\}$ were assigned by one project annotator using a written rubric. The labels have not been independently reviewed, and evidence supporting every destination-month rationale is not present in the repository:
 \begin{itemize}
-    \item \textbf{Grade 3 (Optimal)}: Peak seasonal condition. Verified open access, optimal flow/trail status, and pleasant climate.
+    \item \textbf{Grade 3 (Optimal)}: Peak seasonal condition marked open in the provisional inputs, with optimal flow/trail status and pleasant climate.
     \item \textbf{Grade 2 (Good)}: Safe, enjoyable visitation with minor compromises (e.g., slight pre-monsoon flow reduction, light rain requiring poncho).
     \item \textbf{Grade 1 (Marginal / Poor)}: Substantially degraded experience (e.g., waterfall reduced to a thin dry trickle on bare rock, dense fog with 0\% visibility, night camping banned).
     \item \textbf{Grade 0 (Unsuitable / Hazardous / Closed)}: Official administrative ban, life-safety hazard, avalanche risk, or lethal flash floods.
@@ -100,51 +98,36 @@ Method B calculates an environmental fitness score combining weather comfort, sc
 \begin{equation}
 S_B(d, m, a) = w_1 S_{\text{scenic}}(d, m) + w_2 W(d, m, a) + w_3 Pop(d)
 \end{equation}
-where $W(d, m, a)$ represents normalized temperature and precipitation suitability, with weights $w_1 = 0.50$, $w_2 = 0.30$, and $w_3 = 0.20$.
+where $W=0.5 TempFit+0.5 RainFit$ for trekking and $W=0.4 TempFit+0.6 RainFit$ for waterfalls. Temperature and rainfall fit use the piecewise thresholds implemented in the engine. Seasonal weights are $w_1=0.50$, $w_2=0.30$, and $w_3=0.20$.
 
-\subsection{Method C: Disruption-Aware Seasonal Ranking (Proposed)}
-Method C evaluates verified active disruption orders $\mathcal{C}(d, m)$:
-\begin{equation}
-S_C(d, m, a) = 
-\begin{cases} 
-0.0, & \text{if } \exists c \in \mathcal{C}(d, m) \text{ s.t. } c.\text{isClosure} \\
-S_B(d, m, a) \prod_{c} \mu_c, & \text{if warnings / activity bans exist} \\
-S_B(d, m, a), & \text{otherwise}
-\end{cases}
-\end{equation}
-where $\mu_c$ is the penalty multiplier for partial disruption $c$. Absolute closures strictly zero the score, guaranteeing that closed destinations cannot outrank any open destination.
-
+\subsection{Method C: Disruption-Aware Seasonal Ranking}
+Method C starts with the Method B seasonal score and applies only disruption records that pass evidence, event-date, destination, month, activity, and scope checks. A qualifying full-destination closure is removed from the actionable ranking and placed in a separate quarantine list. Applicable partial restrictions multiply the seasonal score by configured penalty factors. If no record qualifies, the Method C score equals the Method B score. This policy is an algorithmic property conditional on supplied data; it does not establish real-world safety.
 \section{Empirical Evaluation and Results}
+The regenerated Node benchmark contains 36 scenarios: 12 waterfall, 12 trekking, and 12 mixed-pool month scenarios. Requested K is 3 for single-activity scenarios and 5 for mixed-pool scenarios. Precision@K uses effective returned K. NDCG uses a shared ideal ranking over the original scenario candidate pool; relevance metrics are undefined if any candidate label is missing or IDCG is zero. Each method's eligible pool is recorded separately. Closure conflict is evaluated only against current evidence-backed full-closure records and is N/A when none qualifies.
 
 \begin{table*}[t]
 \centering
-\caption{Empirical Recommendation Performance: Development vs. Holdout Test Split}
+\caption{Exploratory recommendation results on provisional labels; K varies by scenario pool}
 \label{tab:recsys_results}
 \begin{tabular}{l|ccc|ccc|ccc}
 \hline
-\textbf{Evaluation Metric} & \multicolumn{3}{c|}{\textbf{Holdout Test (8 Scenarios)}} & \multicolumn{3}{c|}{\textbf{Development (16 Scenarios)}} & \multicolumn{3}{c}{\textbf{Overall Macro-Avg (24 Scenarios)}} \\
-& \textbf{Method A} & \textbf{Method B} & \textbf{Method C} & \textbf{Method A} & \textbf{Method B} & \textbf{Method C} & \textbf{Method A} & \textbf{Method B} & \textbf{Method C} \\
+\textbf{Metric} & \multicolumn{3}{c|}{\textbf{Category-specific (24)}} & \multicolumn{3}{c|}{\textbf{Mixed pool (12)}} & \multicolumn{3}{c}{\textbf{Overall (36)}} \\
+& A & B & C & A & B & C & A & B & C \\
 \hline
-\textbf{Precision@3} & 0.7083 & 0.8750 & \textbf{0.8750} & 0.6875 & 0.8542 & \textbf{0.8542} & 0.6945 & 0.8611 & \textbf{0.8611} \\
-\textbf{NDCG@3} & 0.6115 & 0.9949 & \textbf{0.9949} & 0.6667 & 0.9709 & \textbf{0.9625} & 0.6483 & 0.9789 & \textbf{0.9733} \\
-\textbf{Closure Conflict (\%)} & 12.5\% & 0.0\% & \textbf{0.0\%} & 12.5\% & 4.2\% & \textbf{0.0\%} & 12.5\% & 2.8\% & \textbf{0.0\%} \\
-\textbf{Safety Violation Risk} & High & None & \textbf{Guaranteed (0.0)} & High & Moderate & \textbf{Guaranteed (0.0)} & High & Moderate & \textbf{Guaranteed (0.0)} \\
+\textbf{Precision@K} & 0.6945 & 0.8611 & 0.8611 & 0.6667 & 0.9333 & 0.9333 & 0.6852 & 0.8852 & 0.8852 \\
+\textbf{NDCG@K} & 0.6483 & 0.9789 & 0.9789 & 0.5462 & 0.9749 & 0.9749 & 0.6143 & 0.9776 & 0.9776 \\
+\textbf{Full-closure conflict} & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
 \hline
 \end{tabular}
 \end{table*}
 
-Table \ref{tab:recsys_results} reports the quantitative comparison across all 24 month-activity test scenarios.
+The month split is exploratory because its selection rationale and independence from prior tuning are undocumented. Method B exceeds Method A on provisional labels. Method C ties Method B because zero of 11 supplied disruption records is evidence-backed; the active disruption path is not evaluated by this run, and no closure-conflict reduction can be inferred.
 
-\subsection{Key Findings}
-\begin{enumerate}
-    \item \textbf{Elimination of Safety Invariant Violations}: Method A incurs an overall 12.5\% Closure-Conflict Rate (spiking to 33.3\% in peak winter and monsoon). Method C guarantees 0.0\% closure conflicts across all scenarios.
-    \item \textbf{Substantial NDCG Lift}: In winter trekking (Jan--Feb), Method C raises NDCG from 0.417 up to 1.000 (+58.3\% lift) by demoting the closed Valley of Flowers and elevating open snow peaks (Kedarkantha and Triund).
-    \item \textbf{Environmental vs. Safety Divergence}: In July monsoons, Method B rewarded Dudhsagar with a high flow score, failing to detect that track walking was prohibited by railway police. Method C accurately caught the order, driving closure conflicts to zero.
-\end{enumerate}
+\section{Discussion and Limitations}
+These results are descriptive and conditional on supplied values and single-annotator provisional labels. Because the rubric uses seasonal conditions also consumed by Methods B and C, the evaluation may reward agreement with the rubric rather than user preference or independently observed outcomes. Nine destinations are insufficient to establish generalization. Record-level evidence for monthly environmental values, popularity statistics, scenic indices, and disruptions is incomplete. The 108 relevance labels have no independent review or per-label supporting evidence. Seasonal weights and penalties are design choices, not empirically optimized. The holdout split is exploratory rather than confirmatory.
 
 \section{Conclusion}
-This paper presented an empirical evaluation of seasonal and disruption-aware ranking in nature tourism. Our findings prove that static popularity heuristics introduce severe safety vulnerabilities, which are resolved by pairing multi-factor environmental fitness with strict administrative disruption invariants. The proposed system has been deployed within the BharatVerse platform.
-
+Across 36 scenarios, overall macro-average NDCG@K is 0.6143 for Method A and 0.9776 for Methods B and C. No closure-conflict rate is estimable because no supplied record passes the evidence policy. This benchmark does not demonstrate real-world safety or disruption-aware effectiveness. Further claims require a completed source audit, independent relevance judgments with adjudication, and evaluation under a predeclared protocol using evidence-backed disruption records.
 \begin{thebibliography}{00}
 \bibitem{gavalas2014} D. Gavalas, C. Konstantopoulos, K. Mastakas, and G. Pantziou, ``Mobile recommender systems in tourism,'' \textit{J. Netw. Comput. Appl.}, vol. 39, pp. 319--333, 2014.
 \bibitem{werthner2004} H. Werthner and F. Ricci, ``E-commerce and tourism,'' \textit{Commun. ACM}, vol. 47, no. 12, pp. 101--105, 2004.

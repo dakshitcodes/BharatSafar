@@ -1,0 +1,109 @@
+destination_id,destination_name,activity,month,initial_grade,reviewer_1_id,reviewer_1_grade,reviewer_2_id,reviewer_2_grade,evidence_url,evidence_date,rationale,adjudicated_grade,review_status,evidence_status,evidence_missing_reason
+dest-wf-01,Dudhsagar Falls,waterfalls,1,2,,,,,,,Moderate flow; pleasant dry Western Ghats weather.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,2,2,,,,,,,Moderate-low flow; clear sunny days.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,3,1,,,,,,,Flow diminishes; warm daytime temperatures.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,4,1,,,,,,,Low flow; high coastal humidity.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,5,1,,,,,,,Pre-monsoon low flow trickle.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,6,2,,,,,,,Monsoon arrives; flow surges noticeably.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,7,3,,,,,,,Spectacular roaring torrent; peak water volume across 4 tiers.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,8,3,,,,,,,Peak monsoon discharge; majestic water curtain.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,9,3,,,,,,,Heavy post-monsoon cascade; lush green surroundings.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,10,3,,,,,,,Optimal waterfall viewing; high flow with clear skies.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,11,3,,,,,,,Robust scenic cascade; pleasant cool breezes.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-01,Dudhsagar Falls,waterfalls,12,2,,,,,,,Moderate-high flow; pleasant winter temperatures.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,1,1,,,,,,,Dam upstream restricts flow; reduced cascade.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,2,1,,,,,,,Thin trickle across rock face.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,3,0,,,,,,,Dry rock face; river dammed upstream at Linganamakki.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,4,0,,,,,,,Almost completely dry cataracts; hot conditions.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,5,0,,,,,,,Pre-monsoon drought in Sharavathi catchment.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,6,2,,,,,,,Dam releases begin; cataracts regain volume.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,7,3,,,,,,,Massive roaring discharge; clouds of mist.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,8,3,,,,,,,"Peak roar; all 4 cascades (Raja, Roarer, Rocket, Rani) in full force.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,9,3,,,,,,,Majestic cascades; green gorge; clearing weather.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,10,2,,,,,,,Good flow; clear sunny days for panoramic photography.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,11,2,,,,,,,Moderate flow; pleasant weather.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-02,Jog Falls,waterfalls,12,1,,,,,,,Flow declining as dry winter sets in.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,1,2,,,,,,,Pleasant weather; steady wide curtain flow.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,2,2,,,,,,,Moderate flow; pleasant morning mist.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,3,1,,,,,,,Warm 32°C; water volume reduced.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,4,1,,,,,,,Warm and humid; lower river level.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,5,2,,,,,,,Pre-monsoon showers recharge Chalakudy river.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,6,3,,,,,,,Monsoon surge; impressive broad curtain of water.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,7,3,,,,,,,Massive water volume; thunderous tropical rainforest cascade.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,8,3,,,,,,,Enormous water curtain; lush Western Ghats forest.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,9,3,,,,,,,Post-monsoon emerald forest; massive scenic waterfall.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,10,3,,,,,,,Optimal water volume; comfortable breeze; green canopy.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,11,3,,,,,,,Clear sunny days; robust river flow.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-03,Athirappilly Falls,waterfalls,12,2,,,,,,,Comfortable weather; steady scenic flow.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,1,2,,,,,,,Clear skies; turquoise pool visible; modest stream.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,2,2,,,,,,,Clear skies; pleasant cool breeze.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,3,2,,,,,,,Spring showers; flow picks up.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,4,3,,,,,,,Strong plunge; rich green plateaus.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,5,3,,,,,,,Heavy plunge into canyon pool.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,6,2,,,,,,,"Enormous volume, but persistent fog pockets.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,7,2,,,,,,,Roaring waterfall; heavy cloud cover.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,8,3,,,,,,,Thunderous cascade; intermittent cloud clearings.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,9,3,,,,,,,Robust plunge; cloud cover lifting; deep emerald pool.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,10,3,,,,,,,Optimal: crystal clear view of turquoise pool beneath plunge.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,11,3,,,,,,,"Optimal: crisp air, vibrant turquoise waters.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-04,Nohkalikai Falls,waterfalls,12,2,,,,,,,Clear sunny skies; slender scenic stream.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,1,3,,,,,,,"Gentle river rapids, great canyon scenery, mild sun.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,2,3,,,,,,,"Pleasant weather, serene cataracts.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,3,2,,,,,,,"Warm, lower river level.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,4,1,,,,,,,Hot 38°C; low water discharge.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,5,1,,,,,,,Hot summer; diminished cascade.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,6,2,,,,,,,Pre-monsoon replenishment; rising river volume.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,7,2,,,,,,,High Kaveri discharge; dramatic smoking rocks.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,8,2,,,,,,,High discharge cataracts across rock channels.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,9,3,,,,,,,"High flow, green riverbanks, pleasant air.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,10,3,,,,,,,Robust canyon rapids; cool autumn breezes.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,11,3,,,,,,,Optimal river discharge; pleasant temperatures.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-wf-05,Hogenakkal Falls,waterfalls,12,3,,,,,,,Prime tourist month; gentle rapids.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,1,3,,,,,,,Premier winter snow trek; crisp clear skies; snow-covered pine trails.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,2,3,,,,,,,Thick powder snow; frozen Juda Ka Talab lake.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,3,2,,,,,,,Snow melting; pleasant climbing days.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,4,2,,,,,,,Alpine flora emerging; clear trails.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,5,2,,,,,,,Pleasant weather; clear summit visibility.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,6,2,,,,,,,Warm; pre-monsoon cloudiness.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,7,1,,,,,,,Wet ascent; muddy trail; cloudy views.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,8,1,,,,,,,Monsoon showers; slippery paths.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,9,2,,,,,,,Trails drying; crisp mountain air.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,10,3,,,,,,,Golden alpine meadows; crystal clear 360° Himalayan vista.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,11,3,,,,,,,Crisp autumn; first winter snowfall flurries.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-01,Kedarkantha Trek,trekking,12,3,,,,,,,Early winter wonderland snow trek.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,1,0,,,,,,,Buried under 15ft snow; no wildflowers; sub-zero freeze.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,2,0,,,,,,,Deep snowpack; completely dormant vegetation.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,3,0,,,,,,,Frozen alpine zone; no flowers.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,4,0,,,,,,,Early snowmelt; barren mud; no flowers.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,5,0,,,,,,,Patchy snow and bare rocks; budding has not begun.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,6,2,,,,,,,Early sprouting alpine wildflowers; budding season.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,7,3,,,,,,,Valley carpeted in vibrant wildflower blooms; peak botanical spectacle.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,8,3,,,,,,,Maximum floral diversity; rare Brahma Kamal in bloom.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,9,3,,,,,,,Golden autumn foliage; late bloom; clear skies.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,10,2,,,,,,,Late season; frost arriving; flowers receding.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,11,0,,,,,,,Winter freeze; flowers withered; early snowfall.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-02,Valley of Flowers Trek,trekking,12,0,,,,,,,Buried under deep winter snow.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,1,2,,,,,,,Winter snow hike; sub-zero temperatures requiring warm gear.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,2,2,,,,,,,Melting snow; clear afternoon views.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,3,3,,,,,,,"Blooming red rhododendrons, pleasant weather, open ridge.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,4,3,,,,,,,"Mild temperatures, clear panoramic skies.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,5,3,,,,,,,Cool mountain refuge; dry trails.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,6,2,,,,,,,"Warm, pre-monsoon cloudiness.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,7,1,,,,,,,Heavy rains; slippery rocky path; misty views.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,8,1,,,,,,,Monsoon showers; slippery boulders.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,9,2,,,,,,,Rains receding; crisp air returning.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,10,3,,,,,,,Crystal clear Dhauladhar snow wall visibility; pleasant crisp days.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,11,3,,,,,,,Clear sunny autumn hiking.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-03,Triund Trek,trekking,12,2,,,,,,,Cold winter trek; fresh snow at ridge.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,1,3,,,,,,,Cool mountain mist; pleasant breeze; beautiful heart lake.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,2,3,,,,,,,Clear blue skies over Wayanad hills.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,3,1,,,,,,,Dry grassland; warm daytime sun.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,4,1,,,,,,,Hot; humid; dry shola vegetation.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,5,2,,,,,,,Early showers turn hills lush green.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,6,2,,,,,,,Lush green slopes; misty views; rain showers.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,7,2,,,,,,,Lush emerald hills; atmospheric mist over heart lake.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,8,2,,,,,,,Vibrant green rolling hills; cool mist.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,9,3,,,,,,,Lush green rolling hills; clear skies.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,10,3,,,,,,,Post-monsoon emerald hills; mist-clad lake.,,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,11,3,,,,,,,"Mild cool weather, excellent walking conditions.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.
+dest-trk-04,Chembra Peak Trek,trekking,12,3,,,,,,,"Crisp morning dew, prime trekking season.",,PENDING_INDEPENDENT_REVIEW,MISSING,Direct source and reviewer evidence have not been recorded.

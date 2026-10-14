@@ -1,142 +1,301 @@
-/**
- * Quantitative Evaluation Suite for BharatVerse Recommender Benchmark
- * 
- * Implements:
- * - Precision@K
- * - Discounted Cumulative Gain (DCG@K)
- * - Ideal Discounted Cumulative Gain (IDCG@K)
- * - Normalized Discounted Cumulative Gain (NDCG@K)
- * - Closure Conflict Rate (CCR@K)
- * - Data Coverage
- */
-
+/** Evaluation metrics for the seasonal tourism ranking benchmark. */
 import { groundTruthData } from "../data/groundTruthData.js";
 import { disruptionsData } from "../data/disruptionsData.js";
+import {
+  DISRUPTION_POLICY,
+  getActivityApplicability,
+  getApplicableVerifiedDisruptions,
+  isVerifiedFullClosure,
+} from "../data/disruptionPolicy.js";
 
-/**
- * Retrieves the ground-truth relevance grade (0-3) for a destination-month pair
- */
-export function getGroundTruthGrade(destinationId, month) {
-  const destEntry = groundTruthData.ratings[destinationId];
-  if (!destEntry) return 0;
-  const monthData = destEntry.monthlyGrades[String(month)];
-  return monthData ? monthData.grade : 0;
+export function getGroundTruthGrade(destinationId, month, labels = groundTruthData) {
+  const monthly = labels?.ratings?.[destinationId]?.monthlyGrades?.[String(month)];
+  return Number.isInteger(monthly?.grade) && monthly.grade >= 0 && monthly.grade <= 3
+    ? monthly.grade
+    : null;
 }
 
-/**
- * Retrieves the ground-truth rationale
- */
-export function getGroundTruthRationale(destinationId, month) {
-  const destEntry = groundTruthData.ratings[destinationId];
-  if (!destEntry) return "";
-  const monthData = destEntry.monthlyGrades[String(month)];
-  return monthData ? monthData.rationale : "";
+export function getGroundTruthRationale(destinationId, month, labels = groundTruthData) {
+  return labels?.ratings?.[destinationId]?.monthlyGrades?.[String(month)]?.rationale ?? "";
 }
 
-/**
- * Checks whether a destination has an active absolute verified closure in that month
- */
-export function hasVerifiedClosure(destinationId, month) {
-  const monthNum = Number(month);
-  return disruptionsData.some(
-    (d) =>
-      d.destinationId === destinationId &&
-      d.applicableMonths.includes(monthNum) &&
-      d.isAbsoluteClosure
+export function hasVerifiedClosure(
+  destinationId,
+  month,
+  disruptions = disruptionsData,
+  asOfDate = DISRUPTION_POLICY.asOfDate
+) {
+  return disruptions.some(
+    (record) =>
+      record.destinationId === destinationId &&
+      Array.isArray(record.applicableMonths) &&
+      record.applicableMonths.includes(Number(month)) &&
+      isVerifiedFullClosure(record, asOfDate)
   );
 }
 
-/**
- * Computes Precision@K
- * P@K = (Number of recommended items in top-K with grade >= threshold) / K
- */
-export function calculatePrecisionAtK(rankedList, month, k = 5, threshold = 2) {
-  if (!rankedList || rankedList.length === 0) return 0;
-  const effectiveK = Math.min(k, rankedList.length);
+export function calculatePrecisionAtK(
+  rankedList,
+  month,
+  k = 3,
+  threshold = 2,
+  labels = groundTruthData,
+  allCandidates = rankedList
+) {
+  if ((allCandidates ?? []).some((item) => getGroundTruthGrade(item.id, month, labels) === null)) return null;
+  const effectiveK = Math.min(k, rankedList?.length ?? 0);
+  if (effectiveK === 0) return null;
   const topK = rankedList.slice(0, effectiveK);
+  const grades = topK.map((item) => getGroundTruthGrade(item.id, month, labels));
+  if (grades.some((grade) => grade === null)) return null;
+  return Number((grades.filter((grade) => grade >= threshold).length / effectiveK).toFixed(4));
+}
 
-  const relevantCount = topK.filter((item) => {
-    const grade = getGroundTruthGrade(item.id, month);
-    return grade >= threshold;
+export function calculateDCG(rankedList, month, k = 3, labels = groundTruthData) {
+  const effectiveK = Math.min(k, rankedList?.length ?? 0);
+  if (effectiveK === 0) return 0;
+  const grades = rankedList
+    .slice(0, effectiveK)
+    .map((item) => getGroundTruthGrade(item.id, month, labels));
+  if (grades.some((grade) => grade === null)) return null;
+  return grades.reduce(
+    (sum, grade, index) => sum + (Math.pow(2, grade) - 1) / Math.log2(index + 2),
+    0
+  );
+}
+
+export function calculateIDCG(candidates, month, k = 3, labels = groundTruthData) {
+  if (!candidates?.length) return 0;
+  const grades = candidates.map((item) => getGroundTruthGrade(item.id, month, labels));
+  if (grades.some((grade) => grade === null)) return null;
+  const ideal = [...candidates].sort(
+    (a, b) => getGroundTruthGrade(b.id, month, labels) - getGroundTruthGrade(a.id, month, labels)
+  );
+  return calculateDCG(ideal, month, k, labels);
+}
+
+/** NDCG is undefined if any required label is missing or IDCG is zero. */
+export function calculateNDCGAtK(
+  rankedList,
+  allCandidates,
+  month,
+  k = 3,
+  labels = groundTruthData
+) {
+  // The shared original scenario pool defines IDCG for every method, including
+  // candidates excluded from a method's eligible recommendation list.
+  if (!rankedList?.length) return null;
+  const dcg = calculateDCG(rankedList, month, k, labels);
+  const idcg = calculateIDCG(allCandidates, month, k, labels);
+  if (dcg === null || idcg === null || idcg === 0) return null;
+  return Number((dcg / idcg).toFixed(4));
+}
+
+/** CCR counts only evidence-backed, current, full-destination closures. */
+export function calculateClosureConflictRate(
+  rankedList,
+  month,
+  k = 3,
+  disruptions = disruptionsData,
+  asOfDate = DISRUPTION_POLICY.asOfDate,
+  allCandidates = null
+) {
+  const universe = allCandidates ?? [
+    ...(rankedList ?? []),
+    ...(rankedList?._allScored ?? []),
+    ...(rankedList?._ineligible ?? []),
+  ];
+  return calculateClosureConflictMetric(rankedList, month, k, disruptions, asOfDate, universe).value;
+}
+
+export function calculateClosureConflictMetric(
+  rankedList,
+  month,
+  k = 3,
+  disruptions = disruptionsData,
+  asOfDate = DISRUPTION_POLICY.asOfDate,
+  allCandidates = null
+) {
+  const universe = allCandidates ?? [
+    ...(rankedList ?? []), ...(rankedList?._allScored ?? []), ...(rankedList?._ineligible ?? []),
+  ];
+  const candidateIds = new Set(universe.map((item) => item.id));
+  const suppliedClosures = disruptions.filter((record) =>
+    candidateIds.has(record.destinationId) && record.applicableMonths?.includes(Number(month)) &&
+    record.isAbsoluteClosure === true && record.restrictionScope === DISRUPTION_POLICY.fullClosureScope
+  );
+  const qualifyingClosures = suppliedClosures.filter((record) => isVerifiedFullClosure(record, asOfDate));
+  const effectiveK = Math.min(k, rankedList?.length ?? 0);
+  const reasonCode = !effectiveK ? "NO_ELIGIBLE_RECOMMENDATIONS"
+    : !suppliedClosures.length ? "NO_QUALIFYING_CLOSURE_RECORD"
+    : !qualifyingClosures.length ? "INSUFFICIENT_EVIDENCE" : null;
+  if (reasonCode) return {
+    value: null, status: "NOT_ESTIMABLE", reasonCode,
+    numerator: null, denominator: effectiveK,
+    qualifyingClosureRecordCount: qualifyingClosures.length,
+    insufficientEvidenceRecordCount: suppliedClosures.length - qualifyingClosures.length,
+  };
+  const conflicts = rankedList
+    .slice(0, effectiveK)
+    .filter((item) => qualifyingClosures.some((record) => record.destinationId === item.id)).length;
+  return {
+    value: Number((conflicts / effectiveK).toFixed(4)), status: "ESTIMABLE", reasonCode: null,
+    numerator: conflicts, denominator: effectiveK,
+    qualifyingClosureRecordCount: qualifyingClosures.length,
+    insufficientEvidenceRecordCount: suppliedClosures.length - qualifyingClosures.length,
+  };
+}
+
+export function calculatePartialRestrictionRate(
+  rankedList,
+  month,
+  k = 3,
+  disruptions = disruptionsData,
+  asOfDate = DISRUPTION_POLICY.asOfDate,
+  allCandidates = null
+) {
+  const universe = allCandidates ?? [
+    ...(rankedList ?? []),
+    ...(rankedList?._allScored ?? []),
+    ...(rankedList?._ineligible ?? []),
+  ];
+  const candidateIds = new Set(universe.map((item) => item.id));
+  const partialRecords = disruptions.filter((record) => record.isAbsoluteClosure !== true);
+  const appliesToCandidate = (record, item) =>
+    record.destinationId === item.id &&
+    getApplicableVerifiedDisruptions(item.id, month, [record], asOfDate, item.category).length > 0;
+  const hasPartialEvidenceForMonth = partialRecords.some((record) =>
+    candidateIds.has(record.destinationId) && universe.some((item) => appliesToCandidate(record, item))
+  );
+  if (!hasPartialEvidenceForMonth) return null;
+  const effectiveK = Math.min(k, rankedList?.length ?? 0);
+  if (effectiveK === 0) return null;
+  const restricted = rankedList.slice(0, effectiveK).filter((item) =>
+    partialRecords.some((record) => appliesToCandidate(record, item))
+  ).length;
+  return Number((restricted / effectiveK).toFixed(4));
+}
+
+export function calculateScenarioCoverage(
+  candidates,
+  month,
+  { labels = groundTruthData, disruptions = disruptionsData, asOfDate = DISRUPTION_POLICY.asOfDate } = {}
+) {
+  const seasonalComplete = candidates.filter((destination) => {
+    const monthly = destination.monthlyData?.[String(month)];
+    return (
+      Number.isFinite(destination.popularityScore) &&
+      Number.isFinite(monthly?.avgTempC) &&
+      Number.isFinite(monthly?.rainfallMm) &&
+      Number.isFinite(monthly?.scenicIndex) &&
+      monthly.scenicIndex >= 0 &&
+      monthly.scenicIndex <= 1 &&
+      ["trekking", "waterfalls"].includes(destination.category)
+    );
+  }).length;
+  const labeledCount = candidates.filter(
+    (destination) => getGroundTruthGrade(destination.id, month, labels) !== null
+  ).length;
+  const candidateIds = new Set(candidates.map((destination) => destination.id));
+  const activeRecords = disruptions.filter((record) =>
+    candidateIds.has(record.destinationId) &&
+    record.applicableMonths?.includes(Number(month))
+  );
+  const scopedRecords = activeRecords.flatMap((record) => {
+    const destination = candidates.find((item) => item.id === record.destinationId);
+    const applicability = getActivityApplicability(record, destination?.category);
+    return applicability.known && applicability.applies ? [record] :
+      applicability.known ? [] : [{ ...record, _unknownActivityScope: true }];
+  });
+  const verifiedActiveRecords = scopedRecords.filter((record) => {
+    if (record._unknownActivityScope) return false;
+    const destination = candidates.find((item) => item.id === record.destinationId);
+    return destination && getApplicableVerifiedDisruptions(
+      destination.id, month, [record], asOfDate, destination.category
+    ).length > 0;
   }).length;
 
-  return parseFloat((relevantCount / effectiveK).toFixed(4));
+  return {
+    seasonalDataCoverage: candidates.length ? seasonalComplete / candidates.length : null,
+    popularityDataCoverage: candidates.length
+      ? candidates.filter((destination) => Number.isFinite(destination.popularityScore)).length / candidates.length
+      : null,
+    relevanceLabelCoverage: candidates.length ? labeledCount / candidates.length : null,
+    labeledCandidateCount: labeledCount,
+    unlabeledCandidateCount: candidates.length - labeledCount,
+    activeDisruptionRecordCount: scopedRecords.length,
+    evidenceBackedDisruptionRecordCount: verifiedActiveRecords,
+    unknownActivityScopeRecordCount: scopedRecords.filter((record) => record._unknownActivityScope).length,
+    disruptionEvidenceCoverage: scopedRecords.length
+      ? verifiedActiveRecords / scopedRecords.length
+      : null,
+  };
 }
 
-/**
- * Computes DCG@K using standard exponential relevance formulation
- * DCG@K = sum_{i=1}^K (2^{rel_i} - 1) / log2(i + 1)
- */
-export function calculateDCG(rankedList, month, k = 5) {
-  if (!rankedList || rankedList.length === 0) return 0;
-  const effectiveK = Math.min(k, rankedList.length);
-  let dcg = 0;
-
-  for (let i = 0; i < effectiveK; i++) {
-    const grade = getGroundTruthGrade(rankedList[i].id, month);
-    const gain = Math.pow(2, grade) - 1;
-    const discount = Math.log2(i + 2); // i=0 -> log2(2) = 1
-    dcg += gain / discount;
-  }
-
-  return dcg;
-}
-
-/**
- * Computes Ideal DCG@K by sorting candidates by true relevance grade
- */
-export function calculateIDCG(candidates, month, k = 5) {
-  if (!candidates || candidates.length === 0) return 0;
-  const sortedByTrueGrade = [...candidates].sort((a, b) => {
-    const gradeA = getGroundTruthGrade(a.id, month);
-    const gradeB = getGroundTruthGrade(b.id, month);
-    return gradeB - gradeA;
-  });
-
-  return calculateDCG(sortedByTrueGrade, month, k);
-}
-
-/**
- * Computes Normalized Discounted Cumulative Gain (NDCG@K)
- * NDCG@K = DCG@K / IDCG@K
- */
-export function calculateNDCGAtK(rankedList, allCandidates, month, k = 5) {
-  const dcg = calculateDCG(rankedList, month, k);
-  const idcg = calculateIDCG(allCandidates, month, k);
-
-  if (idcg === 0) return 1.0;
-  return parseFloat((dcg / idcg).toFixed(4));
-}
-
-/**
- * Computes Closure-Conflict Rate (CCR@K)
- * CCR@K = (Number of recommended items in top-K with verified closures) / K
- */
-export function calculateClosureConflictRate(rankedList, month, k = 5) {
-  if (!rankedList || rankedList.length === 0) return 0;
-  const effectiveK = Math.min(k, rankedList.length);
-  const topK = rankedList.slice(0, effectiveK);
-
-  const conflictCount = topK.filter((item) =>
-    hasVerifiedClosure(item.id, month)
+export function evaluateRanking(
+  rankedList,
+  allCandidates,
+  month,
+  k = 3,
+  options = {}
+) {
+  const {
+    labels = groundTruthData,
+    disruptions = disruptionsData,
+    asOfDate = DISRUPTION_POLICY.asOfDate,
+  } = options;
+  const effectiveK = Math.min(k, rankedList?.length ?? 0);
+  const topK = rankedList?.slice(0, effectiveK) ?? [];
+  const labeledTopK = topK.filter(
+    (item) => getGroundTruthGrade(item.id, month, labels) !== null
   ).length;
-
-  return parseFloat((conflictCount / effectiveK).toFixed(4));
-}
-
-/**
- * Evaluates all metrics for a given ranked list
- */
-export function evaluateRanking(rankedList, allCandidates, month, k = 5) {
-  const precision = calculatePrecisionAtK(rankedList, month, k);
-  const ndcg = calculateNDCGAtK(rankedList, allCandidates, month, k);
-  const ccr = calculateClosureConflictRate(rankedList, month, k);
+  const ndcg = calculateNDCGAtK(rankedList, allCandidates, month, k, labels);
+  const closureMetric = calculateClosureConflictMetric(rankedList, month, k, disruptions, asOfDate, allCandidates);
+  const candidateGrades = (allCandidates ?? []).map((item) => getGroundTruthGrade(item.id, month, labels));
+  const missingCandidateLabels = candidateGrades.filter((grade) => grade === null).length;
+  const idcg = calculateIDCG(allCandidates, month, k, labels);
+  const precision = calculatePrecisionAtK(rankedList, month, k, 2, labels, allCandidates);
+  const partialRestrictionRate = calculatePartialRestrictionRate(
+    rankedList,
+    month,
+    k,
+    disruptions,
+    asOfDate,
+    allCandidates
+  );
 
   return {
-    k: Math.min(k, rankedList.length),
+    requestedK: k,
+    k: effectiveK,
+    eligiblePoolCount: rankedList?.length ?? 0,
+    candidateCount: allCandidates?.length ?? 0,
     precisionAtK: precision,
+    precisionAtKStatus: precision === null ? "NOT_ESTIMABLE" : "ESTIMABLE",
+    precisionAtKReasonCode: precision !== null ? null : effectiveK === 0
+      ? "NO_ELIGIBLE_RECOMMENDATIONS" : missingCandidateLabels ? "MISSING_RELEVANCE_LABELS" : "NO_VALID_DENOMINATOR",
+    precisionDenominator: effectiveK,
     ndcgAtK: ndcg,
-    closureConflictRate: ccr,
-    closureConflictPercent: parseFloat((ccr * 100).toFixed(1)),
+    ndcgExcluded: ndcg === null,
+    ndcgAtKStatus: ndcg === null ? "NOT_ESTIMABLE" : "ESTIMABLE",
+    ndcgAtKReasonCode: ndcg !== null ? null : effectiveK === 0 ? "NO_ELIGIBLE_RECOMMENDATIONS"
+      : missingCandidateLabels ? "MISSING_RELEVANCE_LABELS" : idcg === 0 ? "ZERO_IDCG" : "UNDEFINED_NDCG",
+    ndcgDenominator: idcg,
+    ndcgIdealPoolCount: allCandidates?.length ?? 0,
+    closureConflictRate: closureMetric.value,
+    closureConflictStatus: closureMetric.status,
+    closureConflictReasonCode: closureMetric.reasonCode,
+    closureConflictNumerator: closureMetric.numerator,
+    closureConflictDenominator: closureMetric.denominator,
+    qualifyingClosureRecordCount: closureMetric.qualifyingClosureRecordCount,
+    insufficientEvidenceClosureRecordCount: closureMetric.insufficientEvidenceRecordCount,
+    partialRestrictionRate,
+    labeledTopKCount: labeledTopK,
+    unlabeledTopKCount: effectiveK - labeledTopK,
+    labeledCandidateCount: candidateGrades.length - missingCandidateLabels,
+    unlabeledCandidateCount: missingCandidateLabels,
+    candidateLabelCoverage: allCandidates?.length
+      ? allCandidates.filter((item) => getGroundTruthGrade(item.id, month, labels) !== null).length /
+        allCandidates.length
+      : null,
   };
 }
