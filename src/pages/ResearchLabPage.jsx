@@ -237,7 +237,7 @@ export default function ResearchLabPage() {
           <div className="mt-8 flex flex-wrap gap-2 border-b border-charcoal-800 pb-3">
             {[
               { id: "lab", label: "Experimental Comparison Lab", icon: FlaskConical },
-              { id: "consumer", label: "Seasonal Discovery (Live Engine)", icon: Compass },
+              { id: "consumer", label: "Seasonal Discovery", icon: Compass },
               { id: "benchmark", label: "36-Scenario Matrix", icon: BarChart3 },
               { id: "paper", label: "Research Paper Specifications", icon: BookOpen },
             ].map((tab) => {
@@ -854,6 +854,18 @@ export default function ResearchLabPage() {
                             </div>
                           </div>
                         </div>
+
+                        {dest.detailsUrl && (
+                          <a
+                            href={dest.detailsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-forest-700 hover:text-forest-900"
+                          >
+                            View destination details
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
+                        )}
 
                         {/* Condition Note */}
                         <div className="text-xs">

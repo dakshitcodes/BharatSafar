@@ -11,7 +11,7 @@ export const destinationsData = [
     popularityRankOverall: 2,
     reviewCount: 18450,
     averageRating: 4.6,
-    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLLWUVINGf8zKwKwTEZs1C4S36NaR0_IzYU2bzvJdRGQ&s=10",
     regulatoryAuthority: "Goa Forest Dept / South Western Railway",
     primaryAttraction: "Four-tiered majestic cascade across railway viaduct",
     provenance: {
@@ -50,7 +50,8 @@ export const destinationsData = [
     popularityRankOverall: 3,
     reviewCount: 16200,
     averageRating: 4.5,
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    image: "https://theroamingguide.com/wp-content/uploads/2026/03/Jog-Falls-Karnataka-Timings-Best-Time-Gokarna-to-Jog-Falls-Guide-1.jpg",
+    detailsUrl: "https://theroamingguide.com/best-time-to-visit-jog-falls-guide/",
     regulatoryAuthority: "Karnataka Tourism / Jog Management Authority",
     primaryAttraction: "Second-highest plunge waterfall in India (Raja, Roarer, Rocket, Rani)",
     provenance: {
@@ -89,7 +90,7 @@ export const destinationsData = [
     popularityRankOverall: 6,
     reviewCount: 10900,
     averageRating: 4.6,
-    image: "https://images.unsplash.com/photo-1546587348-d12660c30c50?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9qbq3ngN1rdKI0hGIbEqmp7yfxMO_805HBzegVz7HJQ&s=10",
     regulatoryAuthority: "Vashisht Gram Panchayat & Manali Tourism Development Authority / Kullu District Admin",
     primaryAttraction: "Sacred multi-tiered cascade spilling down vertical granite cliffs above Vashisht village",
     provenance: {
@@ -128,7 +129,7 @@ export const destinationsData = [
     popularityRankOverall: 7,
     reviewCount: 11900,
     averageRating: 4.6,
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGlkcjkogCND8zGmILWN2S875DCgFJcxnxX7YR-Wjpfw&s=10",
     regulatoryAuthority: "Meghalaya Tourism / Sohra Civil Sub-Division",
     primaryAttraction: "India's tallest plunge waterfall (340m) into emerald turquoise pool",
     provenance: {
@@ -167,7 +168,7 @@ export const destinationsData = [
     popularityRankOverall: 9,
     reviewCount: 10500,
     averageRating: 4.3,
-    image: "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=800&q=80",
+    image: "https://static.toiimg.com/thumb/38796069.cms?resizemode=75&width=1200&height=900",
     regulatoryAuthority: "Dharmapuri District Administration",
     primaryAttraction: "Smoking rocks, carbonatite canyons, circular coracle boat rides",
     provenance: {
@@ -206,7 +207,7 @@ export const destinationsData = [
     popularityRankOverall: 5,
     reviewCount: 15300,
     averageRating: 4.8,
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09yzT_c2VLjmiZ_1FuVF88A38NxSuVIX9xJBHvS901Q&s=10",
     regulatoryAuthority: "Uttarakhand Forest Dept / SDRF",
     primaryAttraction: "Summit ridge with 360-degree snow peaks (Swargarohini, Bandarpoonch)",
     provenance: {
@@ -245,7 +246,7 @@ export const destinationsData = [
     popularityRankOverall: 1,
     reviewCount: 21400,
     averageRating: 4.9,
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI5GvWvSQv26ws8HPAQ9nLvCuLLp2qi8gQ2D7dIXGBlQ&s=10",
     regulatoryAuthority: "Uttarakhand Forest Dept (Nanda Devi National Park)",
     primaryAttraction: "UNESCO World Heritage alpine valley carpeted with 500+ endemic wildflowers",
     provenance: {
@@ -284,7 +285,7 @@ export const destinationsData = [
     popularityRankOverall: 2,
     reviewCount: 19200,
     averageRating: 4.9,
-    image: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReswBZvK7FbqjI-4Ss6dX4yd-ZuvRbVi0eaDCKSoLcxQ&s=10",
     regulatoryAuthority: "J&K Forest Dept, Ganderbal District Administration & Indian Army (15 Corps)",
     primaryAttraction: "Seven high-altitude glacial alpine lakes (Vishansar, Gadsar, Satsar, Gangabal) across dramatic Himalayan passes",
     provenance: {
@@ -323,7 +324,7 @@ export const destinationsData = [
     popularityRankOverall: 8,
     reviewCount: 12400,
     averageRating: 4.5,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0YV_3KQS0xejrrokXP_tE_AAMCLnz4PmsV4ATKzK17A&s=10",
     regulatoryAuthority: "South Wayanad Forest Development Agency (VSS)",
     primaryAttraction: "Heart-shaped perennial high-altitude lake (Hridaya Saras)",
     provenance: {
