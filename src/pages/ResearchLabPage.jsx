@@ -151,6 +151,10 @@ export default function ResearchLabPage() {
   const topC = rankedC.slice(0, effectiveK);
   const quarantinedC = rankedC._quarantined ?? [];
   const ineligibleC = rankedC._ineligible ?? [];
+  const consumerCards = useMemo(
+    () => [...rankedC, ...quarantinedC],
+    [rankedC, quarantinedC]
+  );
   const ignoredDisruptionsC = Array.from(new Map(
     rankedC.flatMap((destination) => destination.ignoredDisruptions ?? [])
       .map((record) => [record.id, record])
@@ -731,37 +735,67 @@ export default function ResearchLabPage() {
 
               {/* Destination Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                {rankedC.map((dest, idx) => {
+                {consumerCards.map((dest, idx) => {
                   const mData = dest.monthlyData[String(selectedMonth)] || {};
-                  const isWarning = dest.status === "WARNING";
+                  const isClosed = dest.hasClosure === true || dest.status === "CLOSED" || hasVerifiedClosure(dest.id, selectedMonth);
+                  const isWarning = !isClosed && dest.status === "WARNING";
                   return (
                     <div
                       key={dest.id}
                       className={`bg-white rounded-2xl overflow-hidden border shadow-sm transition hover:shadow-md flex flex-col justify-between ${
-                        isWarning
-                          ? "border-amber-300"
-                          : "border-ivory-300 hover:border-gold-400"
+                        isClosed
+                          ? "border-2 border-red-500 bg-red-50/15 ring-2 ring-red-400/25"
+                          : isWarning
+                            ? "border-amber-300"
+                            : "border-ivory-300 hover:border-gold-400"
                       }`}
                     >
+                      {/* Top Warning Signal for Confirmed Closed Destinations */}
+                      {isClosed && (
+                        <div className="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white px-4 py-2 text-xs font-black flex items-center justify-between tracking-wide uppercase shadow-sm border-b border-red-800">
+                          <div className="flex items-center gap-1.5">
+                            <ShieldAlert className="w-4 h-4 shrink-0 text-white animate-pulse" />
+                            <span>⚠️ WARNING: CONFIRMED CLOSED</span>
+                          </div>
+                          <span className="text-[10px] bg-black/40 px-2 py-0.5 rounded font-mono font-bold tracking-normal border border-white/20">
+                            DO NOT VISIT
+                          </span>
+                        </div>
+                      )}
+
                       {/* Image & Header */}
                       <div className="relative h-48 w-full overflow-hidden bg-charcoal-800">
                         <img
                           src={dest.image}
                           alt={dest.name}
                           className={`w-full h-full object-cover transition duration-300 ${
-                            "hover:scale-105"
+                            isClosed ? "brightness-50 grayscale-[35%]" : "hover:scale-105"
                           }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent" />
 
-                        {/* Rank Badge */}
-                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-charcoal-900/80 backdrop-blur-md text-ivory-50 text-xs font-bold border border-white/20">
-                          #{idx + 1} Ranked
+                        {/* Rank / Exclusion Badge */}
+                        <div className="absolute top-3 left-3">
+                          {isClosed ? (
+                            <span className="px-2.5 py-1 rounded-full bg-red-700 text-white text-xs font-bold border border-red-400 shadow-md flex items-center gap-1">
+                              <XCircle className="w-3.5 h-3.5 text-white" />
+                              Excluded (Closed)
+                            </span>
+                          ) : (
+                            <span className="px-2.5 py-1 rounded-full bg-charcoal-900/80 backdrop-blur-md text-ivory-50 text-xs font-bold border border-white/20">
+                              #{idx + 1} Ranked
+                            </span>
+                          )}
                         </div>
 
                         {/* Disruption Status Pill */}
                         <div className="absolute top-3 right-3">
-                          {isWarning ? (
+                          {isClosed ? (
+                            <span className="px-2.5 py-1 rounded-full bg-red-600 text-white text-xs font-black shadow-lg flex items-center gap-1 border border-white/40 ring-2 ring-red-400/50 animate-pulse">
+                              <AlertTriangle className="w-3.5 h-3.5 text-white" />
+                              CONFIRMED CLOSED
+                            </span>
+                          ) : isWarning ? (
                             <span className="px-2.5 py-1 rounded-full bg-amber-500 text-charcoal-950 text-xs font-bold shadow-md flex items-center gap-1">
                               <AlertTriangle className="w-3.5 h-3.5" />
                               Seasonal Advisory
@@ -777,6 +811,19 @@ export default function ResearchLabPage() {
                             </span>
                           )}
                         </div>
+
+                        {/* Closed Overlay Alert */}
+                        {isClosed && (
+                          <div className="absolute inset-0 bg-red-950/50 backdrop-blur-[1px] flex flex-col items-center justify-center p-3 text-center">
+                            <div className="px-3 py-1.5 rounded-xl bg-red-600/90 border border-red-400 text-white text-xs font-black tracking-wider uppercase flex items-center gap-1.5 shadow-xl">
+                              <ShieldAlert className="w-4 h-4 text-white animate-bounce" />
+                              <span>Official Closure in Effect</span>
+                            </div>
+                            <p className="text-[11px] text-red-100 mt-1.5 font-medium max-w-[210px] leading-tight">
+                              Civilian access prohibited by government order.
+                            </p>
+                          </div>
+                        )}
 
                         {/* Title overlay */}
                         <div className="absolute bottom-3 left-3 right-3 text-white">
@@ -811,23 +858,36 @@ export default function ResearchLabPage() {
                         {/* Condition Note */}
                         <div className="text-xs">
                           <span className="font-semibold text-charcoal-700 block">Trail / Flow Status:</span>
-                          <span className="text-charcoal-600">{mData.trailCondition || "No condition note recorded"}</span>
+                          <span className={isClosed ? "text-red-700 font-bold" : "text-charcoal-600"}>
+                            {mData.trailCondition || (isClosed ? "CLOSED / INACCESSIBLE" : "No condition note recorded")}
+                          </span>
                         </div>
 
                         {/* Verified Disruption Banner */}
                         {dest.activeDisruptions && dest.activeDisruptions.length > 0 && (
                           <div className={`p-3 rounded-xl text-xs ${
-                            "bg-amber-50 border border-amber-200 text-amber-900"
+                            isClosed
+                              ? "bg-red-50 border border-red-300 text-red-950"
+                              : "bg-amber-50 border border-amber-200 text-amber-900"
                           }`}>
-                            <strong className="block font-bold mb-1">
-                              {dest.activeDisruptions[0].title}
-                            </strong>
-                            <p className="text-[11px] leading-relaxed">
-                              {dest.activeDisruptions[0].description}
-                            </p>
-                            <span className="block mt-1 text-[10px] font-mono opacity-80">
-                              Order: {dest.activeDisruptions[0].officialOrderReference}
-                            </span>
+                            <div className="flex items-start gap-1.5">
+                              {isClosed ? (
+                                <XCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                              ) : (
+                                <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                              )}
+                              <div className="flex-1">
+                                <strong className="block font-bold mb-0.5">
+                                  {dest.activeDisruptions[0].title}
+                                </strong>
+                                <p className="text-[11px] leading-relaxed">
+                                  {dest.activeDisruptions[0].description}
+                                </p>
+                                <span className="block mt-1 text-[10px] font-mono opacity-80">
+                                  Order: {dest.activeDisruptions[0].officialOrderReference}
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         )}
 
@@ -835,20 +895,39 @@ export default function ResearchLabPage() {
                         <div>
                           <div className="flex justify-between items-center text-xs mb-1">
                             <span className="font-semibold text-charcoal-600">Seasonal Suitability Score</span>
-                            <span className="font-bold font-mono text-charcoal-900">
-                              {Number.isFinite(dest.finalScore) ? `${Math.round(dest.finalScore * 100)}%` : "N/A"}
+                            <span className={`font-bold font-mono ${isClosed ? "text-red-600" : "text-charcoal-900"}`}>
+                              {isClosed
+                                ? "0% (QUARANTINED)"
+                                : Number.isFinite(dest.finalScore)
+                                  ? `${Math.round(dest.finalScore * 100)}%`
+                                  : "N/A"}
                             </span>
                           </div>
                           <div className="w-full bg-ivory-200 h-2 rounded-full overflow-hidden">
                             <div
                               className={`h-full rounded-full transition-all duration-500 ${
-                                dest.finalScore > 0.7
-                                  ? "bg-forest-500"
-                                  : "bg-amber-500"
+                                isClosed
+                                  ? "bg-red-500"
+                                  : dest.finalScore > 0.7
+                                    ? "bg-forest-500"
+                                    : "bg-amber-500"
                               }`}
-                              style={{ width: `${Number.isFinite(dest.finalScore) ? Math.round(dest.finalScore * 100) : 0}%` }}
+                              style={{
+                                width: `${
+                                  isClosed
+                                    ? 0
+                                    : Number.isFinite(dest.finalScore)
+                                      ? Math.round(dest.finalScore * 100)
+                                      : 0
+                                }%`,
+                              }}
                             />
                           </div>
+                          {isClosed && (
+                            <span className="block mt-1 text-[10px] text-red-600 font-medium">
+                              *Excluded by Method C Safety Invariant to prevent hazardous tourism.
+                            </span>
+                          )}
                         </div>
 
                         {/* Action Bar */}
@@ -1129,14 +1208,7 @@ export default function ResearchLabPage() {
                   ? selectedDestForModal.regulatoryAuthority : "Not recorded"}</span>
               </div>
 
-              <div className="mt-6 flex justify-end">
-                <button
-                  onClick={() => setSelectedDestForModal(null)}
-                  className="px-5 py-2 rounded-xl bg-charcoal-900 text-ivory-50 text-xs font-semibold hover:bg-charcoal-800 transition"
-                >
-                  Close Inspector
-                </button>
-              </div>
+
             </motion.div>
           </div>
         )}

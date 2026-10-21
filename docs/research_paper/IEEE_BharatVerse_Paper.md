@@ -74,12 +74,12 @@ Destinations were selected based on three criteria:
 |---|---|---|---|---|---|---|
 | `dest-wf-01` | Dudhsagar Falls | Waterfalls | Goa / Western Ghats | 310 m | 0.94 (18.4k reviews) | Goa Forest Dept / SWR |
 | `dest-wf-02` | Jog Falls | Waterfalls | Karnataka (Shivamogga) | 464 m | 0.92 (16.2k reviews) | Jog Management Authority |
-| `dest-wf-03` | Athirappilly Falls | Waterfalls | Kerala (Thrissur) | 120 m | 0.88 (14.1k reviews) | Kerala Forest Dept / KSDMA |
+| `dest-wf-03` | Jogini Waterfall | Waterfalls | Himachal (Manali) | 2050 m | 0.88 (10.9k reviews) | Vashisht Gram Panchayat / Kullu Admin |
 | `dest-wf-04` | Nohkalikai Falls | Waterfalls | Meghalaya (Cherrapunji) | 1250 m | 0.86 (11.9k reviews) | Meghalaya Tourism / MTDC |
 | `dest-wf-05` | Hogenakkal Falls | Waterfalls | Tamil Nadu (Dharmapuri) | 230 m | 0.82 (10.5k reviews) | Dharmapuri District Admin |
 | `dest-trk-01` | Kedarkantha Trek | Trekking | Uttarakhand (Sankri) | 3810 m | 0.90 (15.3k reviews) | Uttarakhand Forest Dept / SDRF |
 | `dest-trk-02` | Valley of Flowers | Trekking | Uttarakhand (Chamoli) | 3658 m | 0.95 (21.4k reviews) | Nanda Devi Biosphere Directorate |
-| `dest-trk-03` | Triund Trek | Trekking | Himachal (Dharamshala) | 2828 m | 0.91 (17.8k reviews) | Kangra Police / HP Forest Dept |
+| `dest-trk-03` | Kashmir Great Lakes (KGL) | Trekking | Jammu and Kashmir (Sonamarg) | 4190 m | 0.95 (19.2k reviews) | J&K Forest Dept / Indian Army (15 Corps) |
 | `dest-trk-04` | Chembra Peak | Trekking | Kerala (Wayanad) | 2100 m | 0.85 (12.4k reviews) | South Wayanad FDA (VSS) |
 
 ### B. Monthly Environmental & Operational Data

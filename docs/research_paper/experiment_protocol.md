@@ -24,13 +24,13 @@ The evaluation set contains 9 destinations across 2 activity categories. Destina
 - **Waterfalls (5)**:
   1. *Dudhsagar Falls* (`dest-wf-01`, Goa / Western Ghats)
   2. *Jog Falls* (`dest-wf-02`, Karnataka / Shivamogga)
-  3. *Athirappilly Falls* (`dest-wf-03`, Kerala / Thrissur)
+  3. *Jogini Waterfall* (`dest-wf-03`, Himachal Pradesh / Manali)
   4. *Nohkalikai Falls* (`dest-wf-04`, Meghalaya / Cherrapunji)
   5. *Hogenakkal Falls* (`dest-wf-05`, Tamil Nadu / Dharmapuri)
 - **Trekking (4)**:
   6. *Kedarkantha Trek* (`dest-trk-01`, Uttarakhand / Sankri)
   7. *Valley of Flowers Trek* (`dest-trk-02`, Uttarakhand / Chamoli)
-  8. *Triund Trek* (`dest-trk-03`, Himachal Pradesh / Dharamshala)
+  8. *Kashmir Great Lakes (KGL) Trek* (`dest-trk-03`, Jammu and Kashmir / Sonamarg)
   9. *Chembra Peak Trek* (`dest-trk-04`, Kerala / Wayanad)
 
 ### 2.2 Data provenance status

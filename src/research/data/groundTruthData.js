@@ -78,21 +78,21 @@ export const groundTruthData = {
       }
     },
     "dest-wf-03": {
-      name: "Athirappilly Falls",
+      name: "Jogini Waterfall",
       activity: "waterfalls",
       monthlyGrades: {
-        "1": { grade: 2, rationale: "Pleasant weather; steady wide curtain flow." },
-        "2": { grade: 2, rationale: "Moderate flow; pleasant morning mist." },
-        "3": { grade: 1, rationale: "Warm 32°C; water volume reduced." },
-        "4": { grade: 1, rationale: "Warm and humid; lower river level." },
-        "5": { grade: 2, rationale: "Pre-monsoon showers recharge Chalakudy river." },
-        "6": { grade: 3, rationale: "Monsoon surge; impressive broad curtain of water." },
-        "7": { grade: 3, rationale: "Massive water volume; thunderous tropical rainforest cascade." },
-        "8": { grade: 3, rationale: "Enormous water curtain; lush Western Ghats forest." },
-        "9": { grade: 3, rationale: "Post-monsoon emerald forest; massive scenic waterfall." },
-        "10": { grade: 3, rationale: "Optimal water volume; comfortable breeze; green canopy." },
-        "11": { grade: 3, rationale: "Clear sunny days; robust river flow." },
-        "12": { grade: 2, rationale: "Comfortable weather; steady scenic flow." }
+        "1": { grade: 0, rationale: "PERMANENTLY CLOSED by Vashisht Gram Panchayat & HP Tourism Authority. Year-round civilian access prohibited due to cliff safety hazards and ecological degradation." },
+        "2": { grade: 0, rationale: "PERMANENTLY CLOSED. Year-round civilian access prohibited by Gram Panchayat order." },
+        "3": { grade: 0, rationale: "PERMANENTLY CLOSED. Gram Panchayat permanent shutdown in effect despite spring conditions." },
+        "4": { grade: 0, rationale: "PERMANENTLY CLOSED. Civilian access prohibited year-round — site listed as Closed on Google Maps." },
+        "5": { grade: 0, rationale: "PERMANENTLY CLOSED. No civilian access permitted regardless of seasonal conditions." },
+        "6": { grade: 0, rationale: "PERMANENTLY CLOSED by Gram Panchayat & Kullu District Tourism Authority." },
+        "7": { grade: 0, rationale: "PERMANENTLY CLOSED. Monsoon amplifies existing cliff hazards; full-destination ban in effect." },
+        "8": { grade: 0, rationale: "PERMANENTLY CLOSED. Monsoon conditions worsen already prohibited cliff path; ban in effect." },
+        "9": { grade: 0, rationale: "PERMANENTLY CLOSED. Post-monsoon conditions do not lift the Gram Panchayat shutdown order." },
+        "10": { grade: 0, rationale: "PERMANENTLY CLOSED. Permanent Gram Panchayat & tourism authority shutdown overrides seasonal suitability." },
+        "11": { grade: 0, rationale: "PERMANENTLY CLOSED. Year-round ban in effect; civilian access not permitted." },
+        "12": { grade: 0, rationale: "PERMANENTLY CLOSED. Sub-zero winter conditions alongside permanent shutdown by local authorities." }
       }
     },
     "dest-wf-04": {
@@ -168,21 +168,21 @@ export const groundTruthData = {
       }
     },
     "dest-trk-03": {
-      name: "Triund Trek",
+      name: "Kashmir Great Lakes (KGL) Trek",
       activity: "trekking",
       monthlyGrades: {
-        "1": { grade: 2, rationale: "Winter snow hike; sub-zero temperatures requiring warm gear." },
-        "2": { grade: 2, rationale: "Melting snow; clear afternoon views." },
-        "3": { grade: 3, rationale: "Blooming red rhododendrons, pleasant weather, open ridge." },
-        "4": { grade: 3, rationale: "Mild temperatures, clear panoramic skies." },
-        "5": { grade: 3, rationale: "Cool mountain refuge; dry trails." },
-        "6": { grade: 2, rationale: "Warm, pre-monsoon cloudiness." },
-        "7": { grade: 1, rationale: "Heavy rains; slippery rocky path; misty views." },
-        "8": { grade: 1, rationale: "Monsoon showers; slippery boulders." },
-        "9": { grade: 2, rationale: "Rains receding; crisp air returning." },
-        "10": { grade: 3, rationale: "Crystal clear Dhauladhar snow wall visibility; pleasant crisp days." },
-        "11": { grade: 3, rationale: "Clear sunny autumn hiking." },
-        "12": { grade: 2, rationale: "Cold winter trek; fresh snow at ridge." }
+        "1": { grade: 0, rationale: "Impassable winter snowpack; alpine passes buried under 15-20ft snow; sub-zero freeze." },
+        "2": { grade: 0, rationale: "Extreme winter snowpack; high avalanche danger across all high passes." },
+        "3": { grade: 0, rationale: "Frozen alpine lakes; snowbound mountain passes impassable." },
+        "4": { grade: 0, rationale: "Early spring thaw; dangerous snow cornices and avalanche chutes." },
+        "5": { grade: 0, rationale: "Passes blocked by heavy snow; military and forest clearances not issued." },
+        "6": { grade: 0, rationale: "OFFICIALLY NON-OPERATIONAL: Blanket security prohibition & administrative clearance suspension." },
+        "7": { grade: 0, rationale: "OFFICIALLY NON-OPERATIONAL: Security crackdown halts civilian access to Vishansar and Gadsar circuits." },
+        "8": { grade: 0, rationale: "OFFICIALLY NON-OPERATIONAL: Military checkpoints enforce trail closure pending security clearances." },
+        "9": { grade: 0, rationale: "OFFICIALLY NON-OPERATIONAL: Operations suspended; legal and administrative dispute ongoing." },
+        "10": { grade: 0, rationale: "Early high-altitude winter freeze; permits barred under blanket security restrictions." },
+        "11": { grade: 0, rationale: "Severe Himalayan winter snows; lakes refreezing; trail impassable." },
+        "12": { grade: 0, rationale: "Deep winter freeze; 20ft snowpack across entire circuit." }
       }
     },
     "dest-trk-04": {
