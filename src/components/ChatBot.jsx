@@ -25,8 +25,9 @@ const ChatBot = ({ isOpen, onClose }) => {
   }, [messages]);
 
   const callGeminiAPI = async (message) => {
-    const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
+    const API_KEY =
+      import.meta.env.VITE_GEMINI_API_KEY ||
+      import.meta.env.VITE_GEMINI_TRAVEL_API_KEY;
 
     const prompt = `You are BharatSafar AI Guide, an expert on Indian culture, heritage, monuments, festivals, arts, history, and traditions. 
 
@@ -36,36 +37,52 @@ Please provide a comprehensive, accurate, and engaging response about Indian her
 
 If the question is not related to Indian heritage, politely redirect to Indian cultural topics.`;
 
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
+    const candidateModels = [
+      "gemini-3.5-flash",
+      "gemini-3.5-flash-lite",
+      "gemini-3.1-flash-lite",
+      "gemini-flash-latest",
+    ];
+
+    for (const model of candidateModels) {
+      try {
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            contents: [
               {
-                text: prompt,
+                parts: [
+                  {
+                    text: prompt,
+                  },
+                ],
               },
             ],
-          },
-        ],
-        generationConfig: {
-          temperature: 0.7,
-          topK: 40,
-          topP: 0.95,
-          maxOutputTokens: 512,
-        },
-      }),
-    });
+            generationConfig: {
+              temperature: 0.7,
+              topK: 40,
+              topP: 0.95,
+              maxOutputTokens: 512,
+            },
+          }),
+        });
 
-    if (!response.ok) {
-      throw new Error("Gemini API request failed");
+        if (response.ok) {
+          const data = await response.json();
+          if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+            return data.candidates[0].content.parts[0].text;
+          }
+        }
+      } catch (err) {
+        console.warn(`Model ${model} request failed:`, err);
+      }
     }
 
-    const data = await response.json();
-    return data.candidates[0].content.parts[0].text;
+    throw new Error("Gemini API request failed across all models");
   };
 
   const sendMessage = async () => {

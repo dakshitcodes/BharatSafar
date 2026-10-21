@@ -60,7 +60,7 @@ const imageMap = {
   charminarMosque,
 };
 
-const HeritagePage = () => {
+const HeritagePage = ({ onPageChange }) => {
   const [sites, setSites] = useState([]);
   const [filteredSites, setFilteredSites] = useState([]);
   const [stateFilter, setStateFilter] = useState("All");
@@ -167,7 +167,8 @@ const HeritagePage = () => {
             filteredSites.map((site) => (
               <article
                 key={site.id}
-                className="bs-card group overflow-hidden"
+                onClick={() => onPageChange && onPageChange("heritage", site)}
+                className="bs-card group overflow-hidden cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img

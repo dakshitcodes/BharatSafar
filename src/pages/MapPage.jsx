@@ -1134,9 +1134,7 @@ const MapPage = () => {
             center={mapCenter}
             zoom={5}
             style={{ height: "100%", width: "100%" }}
-            whenCreated={(mapInstance) => {
-              mapRef.current = mapInstance;
-            }}
+            ref={mapRef}
           >
             <TileLayer
               url={

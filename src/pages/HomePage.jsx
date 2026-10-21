@@ -42,34 +42,82 @@ const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
       id: 1,
       title: "Taj Mahal",
       state: "Uttar Pradesh",
+      city: "Agra",
       image: tajMahalImg,
+      images: [tajMahalImg],
       rating: 4.9,
+      reviews_count: 15420,
       visitors: "6M+ visitors/year",
       description: "The epitome of Mughal craftsmanship — an ivory-white marble mausoleum that stands as a testament to eternal love.",
-      category: "UNESCO World Heritage",
+      category: "UNESCO World Heritage Site",
       yearBuilt: "1632–1653",
+      architecture: "Mughal Architecture",
+      significance: "Built by Mughal emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal between 1632-1653, the Taj Mahal is a universal symbol of eternal love and India's most celebrated architectural masterpiece.",
+      timeline: [
+        { year: "1632", event: "Construction commences under Emperor Shah Jahan" },
+        { year: "1648", event: "Main mausoleum dome and sanctum completed" },
+        { year: "1653", event: "Entire complex, gardens, and minarets completed" },
+        { year: "1983", event: "Designated as a UNESCO World Heritage Site" },
+      ],
+      nearby_poi: [
+        { name: "Agra Fort", distance: "2.5 km" },
+        { name: "Mehtab Bagh", distance: "1.5 km" },
+        { name: "Itmad-ud-Daulah", distance: "6 km" },
+      ],
     },
     {
       id: 2,
       title: "Red Fort",
       state: "New Delhi",
+      city: "Old Delhi",
       image: redFortImg,
+      images: [redFortImg],
       rating: 4.7,
+      reviews_count: 8930,
       visitors: "3M+ visitors/year",
       description: "The majestic red sandstone fortress that was the seat of Mughal power for over two centuries.",
-      category: "UNESCO World Heritage",
+      category: "UNESCO World Heritage Site",
       yearBuilt: "1639–1648",
+      architecture: "Indo-Islamic Mughal",
+      significance: "The citadel of the Mughal Empire that witnessed India's shift into colonial rule and where the Prime Minister annually unfurls the National Flag on Independence Day.",
+      timeline: [
+        { year: "1639", event: "Foundation laid by Emperor Shah Jahan upon shifting capital to Shahjahanabad" },
+        { year: "1648", event: "Construction completed" },
+        { year: "1947", event: "First Prime Minister Jawaharlal Nehru raised the Indian tricolor" },
+        { year: "2007", event: "Inscribed as a UNESCO World Heritage Site" },
+      ],
+      nearby_poi: [
+        { name: "Jama Masjid", distance: "1.2 km" },
+        { name: "Chandni Chowk", distance: "0.8 km" },
+        { name: "Raj Ghat", distance: "2.5 km" },
+      ],
     },
     {
       id: 3,
       title: "Golden Temple",
       state: "Punjab",
+      city: "Amritsar",
       image: goldenTempleImg,
+      images: [goldenTempleImg],
       rating: 4.9,
+      reviews_count: 12450,
       visitors: "5M+ visitors/year",
       description: "Harmandir Sahib — the holiest shrine of Sikhism, its gilded reflection shimmering in the sacred Amrit Sarovar.",
       category: "Sacred Site",
-      yearBuilt: "1577",
+      yearBuilt: "1577–1604",
+      architecture: "Sikh Architecture",
+      significance: "The spiritual center of Sikhism embodying equality, open to people of all religions with four entrances and the world's largest free community kitchen (Langar).",
+      timeline: [
+        { year: "1577", event: "Guru Ram Das founded the holy city and holy pool (Amrit Sarovar)" },
+        { year: "1588", event: "Sufi Saint Hazrat Mian Mir laid the foundation stone" },
+        { year: "1604", event: "Guru Arjan installed the Adi Granth in Harmandir Sahib" },
+        { year: "1830", event: "Maharaja Ranjit Singh covered the upper sanctum with gold foil" },
+      ],
+      nearby_poi: [
+        { name: "Jallianwala Bagh", distance: "0.5 km" },
+        { name: "Wagah Border", distance: "30 km" },
+        { name: "Partition Museum", distance: "1 km" },
+      ],
     },
   ];
 
@@ -303,6 +351,7 @@ const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
             {featuredSites.map((site, index) => (
               <div
                 key={site.id}
+                onClick={() => onPageChange("heritage", site)}
                 className={`group bs-card cursor-pointer ${index === 0 ? "lg:col-span-2 lg:row-span-1" : ""}`}
                 onMouseEnter={() => setHoveredCard(site.id)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -356,7 +405,13 @@ const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
 
                   <div className="flex items-center justify-between pt-4 border-t border-ivory-200">
                     <span className="font-sans text-xs text-charcoal-400">Built {site.yearBuilt}</span>
-                    <button className="flex items-center gap-1 text-xs font-sans font-semibold text-gold-700 hover:text-gold-800 group/btn transition-colors">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onPageChange("heritage", site);
+                      }}
+                      className="flex items-center gap-1 text-xs font-sans font-semibold text-gold-700 hover:text-gold-800 group/btn transition-colors"
+                    >
                       Explore
                       <ChevronRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
                     </button>
@@ -444,7 +499,13 @@ const HomePage = ({ onPageChange, user, bookmarks, addBookmark }) => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <button className="flex items-center gap-1.5 text-sm font-sans font-semibold text-gold-700 hover:text-gold-800 group/btn transition-colors">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      item.action();
+                    }}
+                    className="flex items-center gap-1.5 text-sm font-sans font-semibold text-gold-700 hover:text-gold-800 group/btn transition-colors"
+                  >
                     Discover More
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>

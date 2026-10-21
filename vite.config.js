@@ -24,6 +24,12 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      "/hf-story-space": {
+        target: "https://bharatverse11-story-audio-backend.hf.space",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/hf-story-space/, ""),
+        secure: false,
+      },
     },
   },
   build: {

@@ -1,16 +1,40 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import toast from "react-hot-toast";
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+const apiKey =
+  import.meta.env.VITE_GEMINI_API_KEY ||
+  import.meta.env.VITE_GEMINI_TRAVEL_API_KEY;
 
-const model = genAI.getGenerativeModel({
-  model: "gemini-2.5-flash",
-  generationConfig: {
-    temperature: 0.9, // Higher temperature = more random/diverse state choices
-    topP: 0.95,
-    topK: 40,
-  },
-});
+const genAI = new GoogleGenerativeAI(apiKey);
+
+const CANDIDATE_MODELS = [
+  "gemini-3.5-flash",
+  "gemini-3.5-flash-lite",
+  "gemini-3.1-flash-lite",
+  "gemini-flash-latest",
+];
+
+async function callGeminiWithFallback(prompt) {
+  let lastError = null;
+  for (const modelName of CANDIDATE_MODELS) {
+    try {
+      const model = genAI.getGenerativeModel({
+        model: modelName,
+        generationConfig: {
+          temperature: 0.9,
+          topP: 0.95,
+          topK: 40,
+        },
+      });
+      const result = await model.generateContent(prompt);
+      return result.response.text();
+    } catch (err) {
+      console.warn(`Model ${modelName} encountered an error:`, err.message);
+      lastError = err;
+    }
+  }
+  throw lastError || new Error("All Gemini models failed to respond");
+}
 
 export async function generateItinerary(params) {
   const { state, startDate, endDate, startTime, endTime } = params;
@@ -139,8 +163,7 @@ Generate NOW:
   try {
     toast.loading("🚀 Planning your itinerary with AI...");
 
-    const result = await model.generateContent(prompt);
-    const text = result.response.text();
+    const text = await callGeminiWithFallback(prompt);
 
     let itinerary;
     try {

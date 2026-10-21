@@ -160,9 +160,9 @@ const ChatPage = ({ user }) => {
   };
 
   const callGeminiAPI = async (message) => {
-    console.log(import.meta.env.VITE_GEMINI_API_KEY);
-    const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+    const API_KEY =
+      import.meta.env.VITE_GEMINI_API_KEY ||
+      import.meta.env.VITE_GEMINI_TRAVEL_API_KEY;
 
     const prompt = `You are BharatSafar AI Guide, an expert on Indian culture, heritage, monuments, festivals, arts, history, and traditions. 
 
@@ -172,46 +172,52 @@ Please provide a comprehensive, accurate, and engaging response about Indian her
 
 If the question is not related to Indian heritage, politely redirect the conversation back to Indian cultural topics.`;
 
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
+    const candidateModels = [
+      "gemini-3.5-flash",
+      "gemini-3.5-flash-lite",
+      "gemini-3.1-flash-lite",
+      "gemini-flash-latest",
+    ];
+
+    for (const model of candidateModels) {
+      try {
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            contents: [
               {
-                text: prompt,
+                parts: [
+                  {
+                    text: prompt,
+                  },
+                ],
               },
             ],
-          },
-        ],
-        generationConfig: {
-          temperature: 0.7,
-          topK: 40,
-          topP: 0.95,
-          maxOutputTokens: 1024,
-        },
-        safetySettings: [
-          {
-            category: "HARM_CATEGORY_HARASSMENT",
-            threshold: "BLOCK_MEDIUM_AND_ABOVE",
-          },
-          {
-            category: "HARM_CATEGORY_HATE_SPEECH",
-            threshold: "BLOCK_MEDIUM_AND_ABOVE",
-          },
-        ],
-      }),
-    });
+            generationConfig: {
+              temperature: 0.7,
+              topK: 40,
+              topP: 0.95,
+              maxOutputTokens: 1024,
+            },
+          }),
+        });
 
-    if (!response.ok) {
-      throw new Error("Gemini API request failed");
+        if (response.ok) {
+          const data = await response.json();
+          if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+            return data.candidates[0].content.parts[0].text;
+          }
+        }
+      } catch (err) {
+        console.warn(`Model ${model} request failed:`, err);
+      }
     }
 
-    const data = await response.json();
-    return data.candidates[0].content.parts[0].text;
+    throw new Error("Gemini API request failed across all models");
   };
 
   const generateFallbackResponse = (message) => {
@@ -335,31 +341,42 @@ If the question is not related to Indian heritage, politely redirect the convers
   };
 
   return (
-    <div className="min-h-screen ">
-      {/* Header */}
-      <div className="relative h-[600px] w-full flex items-start justify-start overflow-hidden">
+    <div className="min-h-screen bg-ivory">
+      {/* Hero Header */}
+      <div className="relative h-[500px] w-full flex items-center justify-start overflow-hidden">
         <video
           autoPlay
           muted
           loop
+          playsInline
           className="absolute inset-0 w-full h-full object-cover"
           src="https://res.cloudinary.com/bharatverse/video/upload/v1766498836/zqbrec6oay46vvkmtfxq.mp4"
         />
-        <div className="relative z-10 flex flex-col items-start justify-start pl-8 md:pl-16 pt-12">
-          <div className="bg-black/40 rounded-2xl px-8 py-8 shadow-2xl backdrop-blur-md space-y-4 w-fit max-w-3xl text-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="relative z-10 flex flex-col items-start justify-center pl-8 md:pl-16">
+          <div className="space-y-4 max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bs-label text-gold-light tracking-widest"
+            >
+              AI Heritage Guide
+            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-6xl md:text-7xl font-display font-extrabold tracking-wider bg-gradient-to-r from-orange-400 via-yellow-300 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] mb-2 select-none"
+              className="text-5xl md:text-7xl font-display font-bold tracking-tight text-white"
+              style={{ textShadow: "0 4px 24px rgba(0,0,0,0.5)" }}
             >
               Namaste
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.12, duration: 0.6 }}
-              className="text-2xl md:text-3xl font-light text-white/90 max-w-xl drop-shadow-lg tracking-tight"
+              transition={{ delay: 0.15, duration: 0.6 }}
+              className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed"
             >
               Your AI-powered gateway to India's timeless heritage, culture, and
               traditions
@@ -368,12 +385,12 @@ If the question is not related to Indian heritage, politely redirect the convers
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Quick Questions */}
-        <div className="mb-8">
-          <div className="flex items-center justify-center mb-4">
-            <Lightbulb className="mr-2 text-gold-700" size={24} />
-            <h2 className="text-xl font-semibold text-charcoal-800">
+        <div className="mb-12">
+          <div className="flex items-center justify-center mb-6">
+            <Lightbulb className="mr-2" size={22} style={{ color: "var(--bs-gold)" }} />
+            <h2 className="text-xl font-display font-semibold" style={{ color: "var(--bs-charcoal)" }}>
               Quick Questions to Get Started
             </h2>
           </div>
@@ -385,24 +402,34 @@ If the question is not related to Indian heritage, politely redirect the convers
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ scale: 1.03, y: -4 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.08 }}
                   onClick={() => handleQuickQuestion(question.text)}
-                  className="relative group p-6 rounded-2xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl hover:shadow-2xl hover:border-orange-300 transition-all duration-300 overflow-hidden"
+                  className="relative group p-5 rounded-2xl border shadow-sm hover:shadow-xl transition-all duration-300 text-left"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.97), rgba(250,247,242,0.97))",
+                    borderColor: "rgba(212,199,175,0.3)",
+                  }}
                 >
-                  {/* Animated gradient border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity"></div>
-
-                  <div className="relative z-10 flex items-start space-x-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all">
-                      <IconComponent className="text-white" size={26} />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ background: "linear-gradient(90deg, var(--bs-gold), var(--bs-terracotta), var(--bs-gold-dark))" }}
+                  />
+                  <div className="flex items-start space-x-4">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+                      style={{ background: "linear-gradient(135deg, var(--bs-gold-light), var(--bs-gold-dark))" }}
+                    >
+                      <IconComponent className="text-white" size={22} />
                     </div>
-                    <div className="text-left">
-                      <p className="font-bold text-lg text-charcoal-900 group-hover:text-gold-700 transition-colors mb-1">
+                    <div>
+                      <p className="font-semibold text-base mb-1 transition-colors" style={{ color: "var(--bs-charcoal)" }}>
                         {question.text}
                       </p>
-                      <span className="text-xs font-medium text-gray-600 bg-gray-100 px-2 py-1 rounded-full">
+                      <span
+                        className="text-xs font-medium px-2 py-0.5 rounded-full"
+                        style={{ background: "var(--bs-cream)", color: "var(--bs-charcoal-soft)" }}
+                      >
                         {question.category}
                       </span>
                     </div>
@@ -414,155 +441,126 @@ If the question is not related to Indian heritage, politely redirect the convers
         </div>
 
         {/* Chat Container */}
-        <div className="bs-card max-w-4xl mx-auto h-[600px] flex flex-col relative overflow-hidden">
-          {/* OM SYMBOL WATERMARK - VISIBLE VERSION */}
+        <div
+          className="max-w-4xl mx-auto rounded-2xl flex flex-col relative overflow-hidden shadow-xl"
+          style={{
+            height: "650px",
+            background: "var(--bs-white)",
+            border: "1px solid rgba(212,199,175,0.3)",
+          }}
+        >
+          {/* Chat Header Bar */}
+          <div
+            className="px-6 py-4 flex items-center space-x-3 border-b"
+            style={{
+              background: "linear-gradient(135deg, var(--bs-charcoal), var(--bs-charcoal-mid))",
+              borderColor: "rgba(255,255,255,0.06)",
+            }}
+          >
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg, var(--bs-gold-light), var(--bs-gold))" }}
+            >
+              <Bot size={20} style={{ color: "var(--bs-charcoal)" }} />
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white">BharatSafar AI Guide</h3>
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Powered by Gemini</p>
+            </div>
+            <div className="flex-1" />
+            <button
+              onClick={() => setVoiceEnabled(!voiceEnabled)}
+              className="p-2 rounded-full transition-colors"
+              style={{
+                background: voiceEnabled ? "rgba(201,168,76,0.2)" : "rgba(255,255,255,0.1)",
+                color: voiceEnabled ? "var(--bs-gold-light)" : "rgba(255,255,255,0.5)",
+              }}
+              title={voiceEnabled ? "Disable voice output" : "Enable voice output"}
+            >
+              {voiceEnabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
+            </button>
+          </div>
 
+          {/* Floating particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-            {[...Array(30)].map((_, i) => (
+            {[...Array(15)].map((_, i) => (
               <motion.div
                 key={i}
                 initial={{
-                  x: Math.random() * 1200,
-                  y: Math.random() * 1600,
+                  x: Math.random() * 800,
+                  y: Math.random() * 700,
                   opacity: 0,
                 }}
                 animate={{
-                  x: Math.random() * 1200,
-                  y: Math.random() * 1600,
-                  opacity: [0, 1, 0],
+                  x: Math.random() * 800,
+                  y: Math.random() * 700,
+                  opacity: [0, 0.4, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 4 + 3,
+                  duration: Math.random() * 5 + 4,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-red-400"
+                className="absolute w-1.5 h-1.5 rounded-full"
                 style={{
-                  boxShadow: `0 0 ${
-                    Math.random() * 10 + 5
-                  }px rgba(255, 152, 0, 0.6)`,
-                  filter: "blur(0.5px)",
+                  background: "var(--bs-gold)",
+                  boxShadow: `0 0 ${Math.random() * 8 + 4}px rgba(201, 168, 76, 0.4)`,
                 }}
               />
             ))}
           </div>
 
-          {/* Messages Container - FIXED */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-6 relative z-20">
-            {/* SVG PATTERN - NOW VISIBLE */}
-            <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none">
-              <svg
-                className="w-full h-full"
-                viewBox="0 0 1200 1600"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="xMidYMid slice"
-              >
-                <defs>
-                  <pattern
-                    id="archPattern"
-                    x="0"
-                    y="0"
-                    width="250"
-                    height="250"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <path
-                      d="M30,100 Q125,30 220,100"
-                      stroke="#FF9800"
-                      fill="none"
-                      strokeWidth="2"
-                    />
-                    <line
-                      x1="50"
-                      y1="100"
-                      x2="50"
-                      y2="220"
-                      stroke="#FF9800"
-                      strokeWidth="1.5"
-                    />
-                    <line
-                      x1="125"
-                      y1="100"
-                      x2="125"
-                      y2="220"
-                      stroke="#FF9800"
-                      strokeWidth="1.5"
-                    />
-                    <line
-                      x1="200"
-                      y1="100"
-                      x2="200"
-                      y2="220"
-                      stroke="#FF9800"
-                      strokeWidth="1.5"
-                    />
-                    <circle
-                      cx="125"
-                      cy="60"
-                      r="8"
-                      fill="none"
-                      stroke="#FF9800"
-                      strokeWidth="1"
-                    />
-                  </pattern>
-                </defs>
-                <rect width="1200" height="1600" fill="url(#archPattern)" />
-              </svg>
-            </div>
+          {/* Messages Container */}
+          <div className="flex-1 overflow-y-auto p-6 space-y-5 relative z-10">
             <AnimatePresence>
               {messages.map((message) => (
                 <motion.div
                   key={message.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`flex  ${
+                  transition={{ duration: 0.3 }}
+                  className={`flex ${
                     message.sender === "user" ? "justify-end" : "justify-start"
-                  } relative z-30`}
+                  }`}
                 >
                   <div
-                    className={`flex items-start space-x-3 max-w-[80%] ${
+                    className={`flex items-end gap-3 max-w-[80%] ${
                       message.sender === "user"
-                        ? "flex-row-reverse space-x-reverse"
+                        ? "flex-row-reverse"
                         : "flex-row"
                     }`}
                   >
-                    <div
-                      className={`px-6 py-4 max-w-md rounded-3xl shadow-lg ${
-                        message.sender === "user"
-                          ? "bg-gradient-to-r from-saffron-500 to-orange-500 text-white rounded-tr-none"
-                          : "bg-white/90 backdrop-blur-md text-charcoal-800 border border-gray-200 rounded-tl-none"
-                      }`}
+                    {/* Avatar */}
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                      className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-md"
+                      style={{
+                        background: message.sender === "user"
+                          ? "linear-gradient(135deg, var(--bs-terracotta), var(--bs-gold-dark))"
+                          : "linear-gradient(135deg, var(--bs-gold-light), var(--bs-gold))",
+                      }}
                     >
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        whileHover={{ rotate: 360 }}
-                        transition={{ type: "spring" }}
-                        className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg ${
-                          message.sender === "user"
-                            ? "bg-gradient-to-br from-orange-500 to-pink-500"
-                            : "bg-gradient-to-br from-blue-500 to-purple-600"
-                        }`}
-                      >
-                        {message.sender === "user" ? (
-                          <User size={20} className="text-white" />
-                        ) : (
-                          <Bot size={20} className="text-white" />
-                        )}
-                      </motion.div>
-                    </div>
+                      {message.sender === "user" ? (
+                        <User size={16} className="text-white" />
+                      ) : (
+                        <Bot size={16} style={{ color: "var(--bs-charcoal)" }} />
+                      )}
+                    </motion.div>
 
+                    {/* Message Bubble */}
                     <div className={`chat-bubble ${message.sender}`}>
                       <p className="text-sm leading-relaxed whitespace-pre-wrap">
                         {message.text}
                       </p>
 
                       {/* Suggestions */}
-                      {message.suggestions && (
-                        <div className="mt-4 space-y-2">
-                          <div className="flex items-center space-x-2">
-                            <Sparkles className="text-gold-600" size={14} />
-                            <p className="text-xs text-gray-500">
+                      {message.suggestions && message.suggestions.length > 0 && (
+                        <div className="mt-3 space-y-1.5">
+                          <div className="flex items-center space-x-1.5">
+                            <Sparkles size={12} style={{ color: "var(--bs-gold)" }} />
+                            <p className="text-xs" style={{ color: "var(--bs-charcoal-soft)" }}>
                               You might also ask:
                             </p>
                           </div>
@@ -570,7 +568,17 @@ If the question is not related to Indian heritage, politely redirect the convers
                             <button
                               key={index}
                               onClick={() => handleQuickQuestion(suggestion)}
-                              className="block w-full text-left text-xs bg-blue-50 text-blue-700 px-3 py-2 rounded-lg hover:bg-blue-100 transition-colors"
+                              className="block w-full text-left text-xs px-3 py-1.5 rounded-lg transition-colors"
+                              style={{
+                                background: "var(--bs-cream)",
+                                color: "var(--bs-charcoal-soft)",
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.background = "var(--bs-cream-dark)";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.background = "var(--bs-cream)";
+                              }}
                             >
                               {suggestion}
                             </button>
@@ -578,7 +586,7 @@ If the question is not related to Indian heritage, politely redirect the convers
                         </div>
                       )}
 
-                      <p className="text-xs opacity-60 mt-2">
+                      <p className="text-xs opacity-50 mt-2">
                         {new Date(message.timestamp).toLocaleTimeString()}
                       </p>
                     </div>
@@ -593,18 +601,25 @@ If the question is not related to Indian heritage, politely redirect the convers
                 animate={{ opacity: 1 }}
                 className="flex justify-start"
               >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center">
-                    <Bot size={18} className="text-white" />
+                <div className="flex items-end gap-3">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-md"
+                    style={{ background: "linear-gradient(135deg, var(--bs-gold-light), var(--bs-gold))" }}
+                  >
+                    <Bot size={16} style={{ color: "var(--bs-charcoal)" }} />
                   </div>
-                  <div className="bg-white rounded-2xl px-4 py-3 shadow-md">
+                  <div
+                    className="rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm"
+                    style={{ background: "var(--bs-white)", border: "1px solid #E2D5BF" }}
+                  >
                     <div className="flex items-center space-x-2">
                       <Loader
-                        className="animate-spin text-indigo-500"
-                        size={16}
+                        className="animate-spin"
+                        size={15}
+                        style={{ color: "var(--bs-gold)" }}
                       />
-                      <span className="text-sm text-gray-600">
-                        AI is thinking...
+                      <span className="text-sm" style={{ color: "var(--bs-charcoal-soft)" }}>
+                        Thinking...
                       </span>
                     </div>
                   </div>
@@ -616,20 +631,25 @@ If the question is not related to Indian heritage, politely redirect the convers
           </div>
 
           {/* Input Area */}
-          <div className="p-6 border-t border-gray-200">
+          <div className="p-5 border-t" style={{ borderColor: "rgba(212,199,175,0.3)", background: "var(--bs-ivory)" }}>
             {/* Conversation Starters */}
             {messages.length === 1 && (
               <div className="mb-4">
                 <div className="flex items-center space-x-2 mb-2">
-                  <MessageCircle className="text-gold-600" size={16} />
-                  <p className="text-sm text-gray-600">Try starting with:</p>
+                  <MessageCircle size={14} style={{ color: "var(--bs-gold)" }} />
+                  <p className="text-xs" style={{ color: "var(--bs-charcoal-soft)" }}>Try starting with:</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {conversationStarters.map((starter, index) => (
                     <button
                       key={index}
                       onClick={() => setInputMessage(starter)}
-                      className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors"
+                      className="text-xs px-3 py-1 rounded-full transition-all hover:shadow-sm"
+                      style={{
+                        background: "var(--bs-cream)",
+                        color: "var(--bs-charcoal-soft)",
+                        border: "1px solid rgba(212,199,175,0.3)",
+                      }}
                     >
                       {starter}
                     </button>
@@ -638,19 +658,19 @@ If the question is not related to Indian heritage, politely redirect the convers
               </div>
             )}
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center gap-3">
               {/* Voice Input Button */}
               <button
                 onClick={isListening ? stopVoiceInput : startVoiceInput}
                 disabled={isLoading}
-                className={`p-3 rounded-full transition-colors ${
-                  isListening
-                    ? "bg-red-500 text-white hover:bg-red-600"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                } disabled:opacity-50`}
+                className="p-3 rounded-full transition-all disabled:opacity-50"
+                style={{
+                  background: isListening ? "#dc2626" : "var(--bs-cream)",
+                  color: isListening ? "white" : "var(--bs-charcoal-soft)",
+                }}
                 title={isListening ? "Stop listening" : "Start voice input"}
               >
-                {isListening ? <MicOff size={20} /> : <Mic size={20} />}
+                {isListening ? <MicOff size={18} /> : <Mic size={18} />}
               </button>
 
               {/* Text Input */}
@@ -659,17 +679,28 @@ If the question is not related to Indian heritage, politely redirect the convers
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask me about Indian heritage, monuments, festivals, arts, or traditions..."
-                  className="w-full resize-none px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none max-h-32"
+                  placeholder="Ask about Indian heritage, monuments, festivals..."
+                  className="w-full resize-none px-4 py-3 pr-14 rounded-xl outline-none text-sm"
                   rows="1"
                   style={{
                     height: "auto",
                     minHeight: "48px",
                     maxHeight: "128px",
+                    background: "var(--bs-white)",
+                    border: "1.5px solid rgba(212,199,175,0.4)",
+                    color: "var(--bs-charcoal)",
+                    fontFamily: "var(--font-body)",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "var(--bs-gold)";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(201,168,76,0.15)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(212,199,175,0.4)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 />
-
-                <div className="absolute bottom-2 right-2 text-xs text-gray-400">
+                <div className="absolute bottom-2 right-3 text-xs" style={{ color: "rgba(74,67,64,0.4)" }}>
                   {inputMessage.length}/1000
                 </div>
               </div>
@@ -678,168 +709,110 @@ If the question is not related to Indian heritage, politely redirect the convers
               <button
                 onClick={() => sendMessage()}
                 disabled={!inputMessage.trim() || isLoading}
-                className="btn-heritage p-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-3 rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
+                style={{
+                  background: "linear-gradient(135deg, var(--bs-gold-light), var(--bs-gold))",
+                  color: "var(--bs-charcoal)",
+                }}
                 title="Send message"
               >
-                <Send size={20} />
+                <Send size={18} />
               </button>
             </div>
 
-            <div className="flex items-center justify-between mt-3 text-xs text-gray-500">
+            <div className="flex items-center justify-between mt-3 text-xs" style={{ color: "var(--bs-charcoal-soft)" }}>
               <div className="flex items-center space-x-4">
                 {isListening && (
                   <span className="text-red-500 animate-pulse flex items-center">
-                    <Mic className="mr-1" size={14} />
+                    <Mic className="mr-1" size={12} />
                     Listening...
                   </span>
                 )}
                 {isSpeaking && (
-                  <span className="text-blue-500 animate-pulse flex items-center">
-                    <Volume2 className="mr-1" size={14} />
+                  <span className="animate-pulse flex items-center" style={{ color: "var(--bs-gold)" }}>
+                    <Volume2 className="mr-1" size={12} />
                     Speaking...
                   </span>
                 )}
               </div>
-
-              <div>Press Enter to send • Voice input available</div>
+              <div style={{ opacity: 0.5 }}>Press Enter to send • Voice input available</div>
             </div>
           </div>
         </div>
 
-        {/* Features Section - PREMIUM VERSION */}
-        <div className="mt-16 mb-12 px-4">
+        {/* Features Section */}
+        <div className="mt-20 mb-16 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 bg-gradient-to-r from-orange-600 via-red-500 to-pink-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 bs-text-gradient">
               Why Choose BharatSafar AI?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Experience India's heritage like never before with our intelligent
-              guide
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--bs-charcoal-soft)" }}>
+              Experience India's heritage like never before with our intelligent guide
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Card 1 - Smart Suggestions */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{
-                y: -15,
-                boxShadow: "0 30px 60px rgba(59, 130, 246, 0.2)",
-              }}
-              transition={{ duration: 0.5 }}
-              className="relative group p-8 rounded-3xl bg-white/80 backdrop-blur-md border-2 border-blue-100 shadow-xl hover:border-blue-300 overflow-hidden"
-            >
-              {/* Gradient background on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="relative z-10">
-                {/* Icon with animation */}
+            {[
+              {
+                icon: Lightbulb,
+                title: "Smart Suggestions",
+                desc: "Get personalized follow-up questions and topic suggestions based on your interests",
+                gradient: "linear-gradient(135deg, var(--bs-gold-light), var(--bs-gold-dark))",
+              },
+              {
+                icon: MapPin,
+                title: "Location Aware",
+                desc: "Discover heritage sites near you with real-time location-based recommendations",
+                gradient: "linear-gradient(135deg, var(--bs-terracotta), var(--bs-gold-dark))",
+              },
+              {
+                icon: Book,
+                title: "Expert Knowledge",
+                desc: "Trained on authentic heritage content and verified expert sources from across India",
+                gradient: "linear-gradient(135deg, var(--bs-gold), var(--bs-terracotta))",
+              },
+            ].map((card, index) => {
+              const CardIcon = card.icon;
+              return (
                 <motion.div
-                  whileHover={{ rotate: 360, scale: 1.2 }}
-                  transition={{ duration: 0.6 }}
-                  className="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -10, boxShadow: "0 20px 50px rgba(28,25,23,0.12)" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative group p-8 rounded-2xl overflow-hidden text-center"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.97), rgba(250,247,242,0.97))",
+                    border: "1px solid rgba(212,199,175,0.3)",
+                    boxShadow: "0 4px 20px rgba(28,25,23,0.06)",
+                  }}
                 >
-                  <Lightbulb className="text-white" size={32} />
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ background: "linear-gradient(90deg, var(--bs-gold), var(--bs-terracotta), var(--bs-gold-dark))" }}
+                  />
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg"
+                    style={{ background: card.gradient }}
+                  >
+                    <CardIcon className="text-white" size={28} />
+                  </motion.div>
+                  <h3 className="text-xl font-display font-bold mb-3" style={{ color: "var(--bs-charcoal)" }}>
+                    {card.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--bs-charcoal-soft)" }}>
+                    {card.desc}
+                  </p>
                 </motion.div>
-
-                <h3 className="text-2xl font-bold text-charcoal-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  Smart Suggestions
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Get personalized follow-up questions and topic suggestions
-                  based on your interests
-                </p>
-
-                {/* Arrow icon that animates on hover */}
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="flex items-center space-x-2 text-blue-600 font-semibold"
-                ></motion.div>
-              </div>
-            </motion.div>
-
-            {/* Card 2 - Location Aware */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{
-                y: -15,
-                boxShadow: "0 30px 60px rgba(34, 197, 94, 0.2)",
-              }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative group p-8 rounded-3xl bg-white/80 backdrop-blur-md border-2 border-green-100 shadow-xl hover:border-green-300 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="relative z-10">
-                <motion.div
-                  whileHover={{ rotate: 360, scale: 1.2 }}
-                  transition={{ duration: 0.6 }}
-                  className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"
-                >
-                  <MapPin className="text-white" size={32} />
-                </motion.div>
-
-                <h3 className="text-2xl font-bold text-charcoal-900 mb-3 group-hover:text-green-600 transition-colors">
-                  Location Aware
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Discover heritage sites near you with real-time location-based
-                  recommendations
-                </p>
-
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="flex items-center space-x-2 text-green-600 font-semibold"
-                ></motion.div>
-              </div>
-            </motion.div>
-
-            {/* Card 3 - Expert Knowledge */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{
-                y: -15,
-                boxShadow: "0 30px 60px rgba(147, 51, 234, 0.2)",
-              }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative group p-8 rounded-3xl bg-white/80 backdrop-blur-md border-2 border-purple-100 shadow-xl hover:border-purple-300 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="relative z-10">
-                <motion.div
-                  whileHover={{ rotate: 360, scale: 1.2 }}
-                  transition={{ duration: 0.6 }}
-                  className="w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"
-                >
-                  <Book className="text-white" size={32} />
-                </motion.div>
-
-                <h3 className="text-2xl font-bold text-charcoal-900 mb-3 group-hover:text-purple-600 transition-colors">
-                  Expert Knowledge
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Trained on authentic heritage content and verified expert
-                  sources from across India
-                </p>
-
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="flex items-center space-x-2 text-purple-600 font-semibold"
-                ></motion.div>
-              </div>
-            </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

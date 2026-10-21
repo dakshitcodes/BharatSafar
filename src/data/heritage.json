@@ -5,7 +5,30 @@
     "description": "Rock-cut Buddhist cave monuments famous for their paintings and sculptures.",
     "state": "Maharashtra",
     "rating": 4.8,
-    "imageKey": "ajanta"
+    "imageKey": "ajanta",
+    "category": "UNESCO World Heritage Site",
+    "era": "2nd Century BCE – 5th Century CE",
+    "architecture": "Rock-cut Buddhist Architecture",
+    "significance": "A masterpiece of ancient Buddhist religious art featuring 30 rock-cut cave monuments celebrated for their expressive murals and sculptures that defined classical Indian artistic style.",
+    "history": "Carved into a horseshoe-shaped cliff along the Waghur River in Aurangabad, the Ajanta Caves were excavated in two distinct phases spanning over six centuries. The first phase (2nd century BCE) was patronized by the Satavahana dynasty, followed by a golden revival under Emperor Harishena of the Vakataka dynasty (5th century CE). The caves served as serene monastic sanctuaries (Viharas) and prayer halls (Chaityas) for Buddhist monks before being abandoned as Buddhism declined in India. They remained hidden beneath dense jungle vegetation until April 1819, when a British cavalry officer named John Smith stumbled upon Cave 10 while hunting tigers.",
+    "timeline": [
+      { "year": "2nd Century BCE", "event": "First phase of cave excavations begins under royal patronage of the Satavahana Dynasty." },
+      { "year": "5th Century CE", "event": "Second surge of monumental painting and sculpture flourished under Vakataka Emperor Harishena." },
+      { "year": "7th Century CE", "event": "Chinese Buddhist pilgrim Xuanzang documents the legendary monasteries of Ajanta." },
+      { "year": "1819", "event": "Rediscovered accidentally by British officer John Smith after centuries forgotten in the jungle." },
+      { "year": "1983", "event": "Officially designated as a UNESCO World Heritage Site for its universal artistic value." }
+    ],
+    "nearby_poi": [
+      { "name": "Ellora Caves", "distance": "100 km" },
+      { "name": "Bibi Ka Maqbara", "distance": "105 km" },
+      { "name": "Daulatabad Fort", "distance": "115 km" }
+    ],
+    "visiting_info": {
+      "hours": "9:00 AM – 5:00 PM (Closed on Mondays)",
+      "best_time": "October to March",
+      "entry_fee": "₹40 for Indians, ₹600 for foreigners",
+      "connectivity": "Nearest airport and railway station is Aurangabad (Chhatrapati Sambhajinagar), 100 km away."
+    }
   },
   {
     "id": 2,
@@ -13,7 +36,30 @@
     "description": "Buddhist heritage site in Andhra Pradesh with ancient stupas and archaeological remains showcasing Mauryan period.",
     "state": "Andhra Pradesh",
     "rating": 4.5,
-    "imageKey": "nagarjunakonda"
+    "imageKey": "nagarjunakonda",
+    "category": "Ancient Archaeological Site",
+    "era": "3rd – 4th Century CE (Ikshvaku Dynasty)",
+    "architecture": "Buddhist Stupa & Monastic Architecture",
+    "significance": "One of India's richest early Buddhist learning centers, named after the Mahayana Buddhist philosopher Acharya Nagarjuna, featuring stupas, viharas, and an island museum.",
+    "history": "Nagarjunakonda, originally known as Vijayapuri, was the flourishing capital of the Ikshvaku dynasty following the decline of the Satavahanas in the 3rd and 4th centuries CE. It became a renowned international hub for Mahayana Buddhist theology and scholarship attracted by the fame of philosopher Acharya Nagarjuna. When the monumental Nagarjuna Sagar dam project threatened to submerge the entire valley in the late 1950s, the Archaeological Survey of India undertook an unprecedented engineering feat: painstakingly relocating the ancient stupas, monasteries, and university ruins piece by piece onto a high hill that is now an island surrounded by the reservoir.",
+    "timeline": [
+      { "year": "2nd Century CE", "event": "Acharya Nagarjuna establishes a major center of Buddhist theology on the banks of Krishna River." },
+      { "year": "3rd Century CE", "event": "Ikshvaku kings establish their capital Vijayapuri, building magnificent stupas and monasteries." },
+      { "year": "1926", "event": "Ancient ruins discovered and identified by archaeologist A.R. Saraswathi." },
+      { "year": "1960", "event": "Major historical monuments relocated to higher ground before the valley was flooded by the dam." },
+      { "year": "1966", "event": "India's first island museum opened to public displaying salvaged sculptures and relics." }
+    ],
+    "nearby_poi": [
+      { "name": "Nagarjuna Sagar Dam", "distance": "14 km (by boat)" },
+      { "name": "Ethipothala Waterfalls", "distance": "22 km" },
+      { "name": "Anupu Buddhist Site", "distance": "18 km" }
+    ],
+    "visiting_info": {
+      "hours": "9:30 AM – 5:30 PM (Closed on Fridays; accessed by ferry)",
+      "best_time": "October to March",
+      "entry_fee": "₹20 for Indians, ₹250 for foreigners (boat ticket separate)",
+      "connectivity": "Accessible via scenic ferry from Nagarjuna Sagar boat jetty, connected by road to Hyderabad (150 km)."
+    }
   },
   {
     "id": 3,
@@ -21,7 +67,30 @@
     "description": "Historic Andhra Pradesh fort with 16th-century architecture offering panoramic views of the surrounding region.",
     "state": "Andhra Pradesh",
     "rating": 4.5,
-    "imageKey": "chandragiri"
+    "imageKey": "chandragiri",
+    "category": "Historical Royal Fort",
+    "era": "11th – 17th Century CE",
+    "architecture": "Indo-Saracenic & Vijayanagara Military",
+    "significance": "The fourth and final capital of the great Vijayanagara Empire where Emperor Venkatapati Raya II ruled, and where the historic grant for Madras (Fort St. George) was signed in 1639.",
+    "history": "Built originally in the 11th century by the Yadava Naidu rulers, Chandragiri rose to immense geopolitical prominence in 1565. Following the catastrophic defeat of the Vijayanagara Empire at the Battle of Talikota and the sacking of Hampi, the Aravidu dynasty retreated south, making Chandragiri their imperial seat. The majestic Raja Mahal and Rani Mahal showcase early Indo-Saracenic stone construction built entirely with stone, brick, lime mortar, and without timber. In August 1639, British representative Francis Day negotiated with local Nayaka rulers under king Venkatapati Raya inside Chandragiri Palace to grant a strip of coastal land that later founded modern Chennai.",
+    "timeline": [
+      { "year": "1000 CE", "event": "Initial fort foundation built by Immadi Narasimha Yadavaraya." },
+      { "year": "1367", "event": "Incorporated into the expanding Vijayanagara Empire by Saluva Mangu." },
+      { "year": "1565", "event": "Becomes the royal capital of Vijayanagara kings after the fall of Hampi." },
+      { "year": "1639", "event": "Historic agreement granting land for Madras (Chennai) ratified within the Raja Mahal." },
+      { "year": "1646", "event": "Fort annexed by the Golconda Sultanate, later passing to the Kingdom of Mysore." }
+    ],
+    "nearby_poi": [
+      { "name": "Tirupati Balaji Temple", "distance": "14 km" },
+      { "name": "Srikalahasti Temple", "distance": "45 km" },
+      { "name": "Kanipakam Temple", "distance": "65 km" }
+    ],
+    "visiting_info": {
+      "hours": "8:00 AM – 6:00 PM (Daily; Sound & Light show in evening)",
+      "best_time": "September to March",
+      "entry_fee": "₹25 for Indians, ₹300 for foreigners",
+      "connectivity": "Located 14 km from Tirupati city and airport, easily reached by local taxis and buses."
+    }
   },
   {
     "id": 4,
@@ -29,7 +98,31 @@
     "description": "A symbol of India's sovereignty, built in red sandstone by Emperor Shah Jahan.",
     "state": "Delhi",
     "rating": 4.7,
-    "imageKey": "redFort"
+    "imageKey": "redFort",
+    "category": "UNESCO World Heritage Site",
+    "era": "1639 – 1648 CE (Mughal Empire)",
+    "architecture": "Indo-Islamic Mughal Architecture",
+    "significance": "The primary seat of Mughal imperial power for two centuries and the sovereign symbol where India's Prime Minister hoists the national tricolor on Independence Day.",
+    "history": "Commissioned in 1638 by Emperor Shah Jahan when he decided to shift his imperial capital from Agra to Delhi (naming it Shahjahanabad), the Red Fort (Lal Qila) took nearly a decade to complete. Designed by master architect Ustad Ahmad Lahori, the fort's massive red sandstone octagonal ramparts house legendary royal pavilions including the Diwan-i-Aam, the Diwan-i-Khas (home of the Peacock Throne), and the Rang Mahal. It stood as the political heart of the subcontinent through the reign of Aurangzeb, endured Nadir Shah's sacking in 1739, and witnessed the 1857 Indian War of Independence where the last Mughal emperor Bahadur Shah Zafar was tried.",
+    "timeline": [
+      { "year": "1639", "event": "Construction inaugurated by Emperor Shah Jahan on the banks of Yamuna River." },
+      { "year": "1648", "event": "Fort completed and formally occupied as the grand Mughal imperial palace." },
+      { "year": "1739", "event": "Persian conqueror Nadir Shah plunders the fort, carrying off the Koh-i-Noor and Peacock Throne." },
+      { "year": "1857", "event": "Center of the Indian Rebellion; last Mughal emperor Bahadur Shah Zafar exiled to Burma." },
+      { "year": "1947", "event": "Jawaharlal Nehru hoists the Indian tricolor from Lahore Gate, establishing an annual national tradition." },
+      { "year": "2007", "event": "Inscribed as a UNESCO World Heritage Site." }
+    ],
+    "nearby_poi": [
+      { "name": "Jama Masjid", "distance": "1 km" },
+      { "name": "Chandni Chowk", "distance": "800 m" },
+      { "name": "Raj Ghat", "distance": "2.5 km" }
+    ],
+    "visiting_info": {
+      "hours": "9:30 AM – 4:30 PM (Closed on Mondays)",
+      "best_time": "October to March",
+      "entry_fee": "₹35 for Indians, ₹500 for foreigners",
+      "connectivity": "Directly accessible via Delhi Metro (Lal Qila Metro Station on Violet Line)."
+    }
   },
   {
     "id": 5,
@@ -37,7 +130,30 @@
     "description": "Ancient Hindu temple in Madurai known for its towering gopurams and intricate architectural details.",
     "state": "Tamil Nadu",
     "rating": 4.8,
-    "imageKey": "meenakshi"
+    "imageKey": "meenakshi",
+    "category": "Living Ancient Pilgrimage",
+    "era": "6th Century BCE Foundation / 16th–17th Century CE Nayak Expansion",
+    "architecture": "Dravidian Temple Architecture",
+    "significance": "A crowning glory of Dravidian temple craftsmanship featuring 14 monumental gopurams, the thousand-pillar hall, and sacred shrine to Goddess Meenakshi and Lord Sundareswarar.",
+    "history": "Situated at the historic heart of the ancient city of Madurai on the Vaigai River, the Meenakshi Sundareswarar Temple finds mention in early Tamil Sangam literature dating back to the 6th century BCE. The temple was sacked by Malik Kafur in 1310 CE, but underwent an extraordinary renaissance in the 16th and 17th centuries under the Madurai Nayak dynasty, particularly King Tirumala Nayak. Today, the complex covers 14 acres with 14 monumental gateway towers (gopurams) adorned with thousands of stucco figures, the sacred Golden Lotus tank (Porthamarai Kulam), and the world-renowned Hall of Thousand Pillars.",
+    "timeline": [
+      { "year": "6th Century BCE", "event": "Earliest references found in classical Tamil Sangam poetry attributing origins to King Kulasekara Pandya." },
+      { "year": "1310 CE", "event": "Ancient temple complex sacked by Delhi Sultanate general Malik Kafur." },
+      { "year": "1559", "event": "Nayak dynasty of Madurai initiates sweeping rebuilding and expansion of the complex." },
+      { "year": "1623–1659", "event": "King Tirumala Nayak completes the monumental Hall of Thousand Pillars and towering gopurams." },
+      { "year": "2009", "event": "Grand Mahakumbhabhishekam ceremony celebrated following extensive restoration." }
+    ],
+    "nearby_poi": [
+      { "name": "Thirumalai Nayakkar Mahal", "distance": "1.5 km" },
+      { "name": "Gandhi Memorial Museum", "distance": "4 km" },
+      { "name": "Alagar Koyil", "distance": "21 km" }
+    ],
+    "visiting_info": {
+      "hours": "5:00 AM – 12:30 PM, 4:00 PM – 10:00 PM (Daily)",
+      "best_time": "October to March (Chithirai Festival in April)",
+      "entry_fee": "Free general entry (special darshan tickets available)",
+      "connectivity": "Madurai Airport is 12 km away; Madurai Junction railway station is just 2 km away."
+    }
   },
   {
     "id": 6,
@@ -45,7 +161,30 @@
     "description": "The tallest brick minaret in the world, representing Indo-Islamic architecture.",
     "state": "Delhi",
     "rating": 4.8,
-    "imageKey": "qutubMinar"
+    "imageKey": "qutubMinar",
+    "category": "UNESCO World Heritage Site",
+    "era": "1199 – 1368 CE (Delhi Sultanate)",
+    "architecture": "Early Indo-Islamic Architecture",
+    "significance": "A 72.5-meter fluted red sandstone minaret marking the inception of Muslim rule in northern India, featuring the mysterious rust-resistant 1,600-year-old Iron Pillar of Chandragupta II.",
+    "history": "Rising 72.5 meters into the Delhi sky, Qutub Minar was initiated in 1199 by Qutb-ud-din Aibak, the founder of the Delhi Sultanate, to commemorate victory and serve as a minaret for the adjacent Quwwat-ul-Islam mosque. His successor Shams-ud-din Iltutmish added three more storeys of red sandstone, while Firoz Shah Tughlaq rebuilt the damaged top storeys in 1368 using white marble and sandstone. The surrounding complex houses the ancient 4th-century Gupta Iron Pillar that has stood exposed to weathering for over 1,600 years without rusting, demonstrating ancient India's supreme metallurgical mastery.",
+    "timeline": [
+      { "year": "1199", "event": "Qutb-ud-din Aibak begins construction of the first base storey as a victory tower." },
+      { "year": "1220", "event": "Sultan Iltutmish completes the next three storeys with intricate projecting balconies." },
+      { "year": "1368", "event": "Firoz Shah Tughlaq repairs lightning damage and adds the marble top storeys." },
+      { "year": "1503", "event": "Sikandar Lodi carries out major renovations to the upper tiers." },
+      { "year": "1993", "event": "Designated as a UNESCO World Heritage Site." }
+    ],
+    "nearby_poi": [
+      { "name": "Mehrauli Archaeological Park", "distance": "500 m" },
+      { "name": "Hauz Khas Village", "distance": "6 km" },
+      { "name": "Lotus Temple", "distance": "10 km" }
+    ],
+    "visiting_info": {
+      "hours": "7:00 AM – 5:00 PM (Daily)",
+      "best_time": "October to March",
+      "entry_fee": "₹35 for Indians, ₹550 for foreigners",
+      "connectivity": "Accessible via Qutab Minar Metro Station on the Yellow Line of Delhi Metro."
+    }
   },
   {
     "id": 7,
@@ -53,7 +192,30 @@
     "description": "Historic mosque adjoining Charminar monument, showcasing Indo-Islamic religious architecture.",
     "state": "Telangana",
     "rating": 4.5,
-    "imageKey": "charminarMosque"
+    "imageKey": "charminarMosque",
+    "category": "Historic Islamic Monument",
+    "era": "1617 – 1694 CE (Qutb Shahi to Mughal)",
+    "architecture": "Qutb Shahi & Mughal Islamic Architecture",
+    "significance": "One of the largest and oldest mosques in India, whose central arch bricks were baked from soil brought directly from the holy city of Mecca.",
+    "history": "Commissioned in 1617 by Muhammad Quli Qutb Shah, the fifth ruler of the Golconda Sultanate, Mecca Masjid stands just steps south of the Charminar. The sultan ordered soil to be brought from Mecca to bake the bricks for the central arch of the prayer hall, lending the mosque its sacred name. Over 8,000 masons labored on the grand hall carved from single slabs of dark granite. The monument took 77 years to complete, with Mughal Emperor Aurangzeb finally crowning the edifice in 1694 after conquering Hyderabad.",
+    "timeline": [
+      { "year": "1617", "event": "Foundation stone laid by Sultan Muhammad Quli Qutb Shah with bricks from Mecca." },
+      { "year": "1687", "event": "Mughal Emperor Aurangzeb captures Golconda and orders completion of the mosque." },
+      { "year": "1694", "event": "Mosque construction officially concluded after 77 years of continuous masonry." },
+      { "year": "1914", "event": "Nizams of Hyderabad build the marble pavilion tombs for the royal Asaf Jahi dynasty." },
+      { "year": "2020", "event": "Comprehensive structural restoration completed by Telangana State Heritage Department." }
+    ],
+    "nearby_poi": [
+      { "name": "Charminar", "distance": "100 m" },
+      { "name": "Chowmahalla Palace", "distance": "1 km" },
+      { "name": "Salar Jung Museum", "distance": "2 km" }
+    ],
+    "visiting_info": {
+      "hours": "4:00 AM – 9:30 PM (Daily; non-Muslims restricted during prayers)",
+      "best_time": "November to February",
+      "entry_fee": "Free",
+      "connectivity": "Located in the heart of Old City Hyderabad, easily reached by bus, auto, or MGBS metro."
+    }
   },
   {
     "id": 8,
@@ -61,7 +223,30 @@
     "description": "Ancient fortress near Hyderabad with remarkable architecture and historical significance spanning centuries.",
     "state": "Telangana",
     "rating": 4.8,
-    "imageKey": "golconda"
+    "imageKey": "golconda",
+    "category": "Medieval Citadel",
+    "era": "13th – 17th Century CE",
+    "architecture": "Kakatiya & Qutb Shahi Military Architecture",
+    "significance": "A legendary citadel renowned for its acoustic marvels, diamond trade (origin of Koh-i-Noor, Hope, and Daria-i-Noor diamonds), and impenetrable fortifications.",
+    "history": "Originally constructed as a mud fort in the 13th century by the Hindu Kakatiya dynasty, Golconda was dramatically expanded and fortified into a colossal stone citadel by the Qutb Shahi sultans between 1512 and 1687. Perched atop a 120-meter granite hill, the fort features an ingenious acoustic warning system: a handclap at the Fateh Darwaza entry pavilion can be clearly heard at the Bala Hissar pavilion a kilometer away at the citadel's summit. For centuries, Golconda operated the world's most lucrative diamond market, yielding legendary gems that adorned the crowns of world empires.",
+    "timeline": [
+      { "year": "1143", "event": "Mud fort founded on a shepherd's hill ('Golla Konda') by Kakatiya King Prataparudra." },
+      { "year": "1512", "event": "Sultan Quli Qutb Shah declares independence and establishes Golconda as his imperial capital." },
+      { "year": "1591", "event": "Capital transferred to nearby Hyderabad due to overcrowding and water scarcity." },
+      { "year": "1687", "event": "Falls to Mughal Emperor Aurangzeb after an agonizing eight-month siege through treachery." },
+      { "year": "1958", "event": "Declared a national monument of archaeological importance by the Government of India." }
+    ],
+    "nearby_poi": [
+      { "name": "Qutb Shahi Tombs", "distance": "1.5 km" },
+      { "name": "Taramati Baradari", "distance": "4 km" },
+      { "name": "Charminar", "distance": "11 km" }
+    ],
+    "visiting_info": {
+      "hours": "9:00 AM – 5:30 PM (Daily; Evening Sound & Light show)",
+      "best_time": "October to March",
+      "entry_fee": "₹25 for Indians, ₹300 for foreigners",
+      "connectivity": "Located 11 km west of Hyderabad center, accessible by taxi and city bus."
+    }
   },
   {
     "id": 9,
@@ -69,7 +254,30 @@
     "description": "A Buddhist complex famous for its Great Stupa commissioned by Emperor Ashoka.",
     "state": "Madhya Pradesh",
     "rating": 4.5,
-    "imageKey": "sanchi"
+    "imageKey": "sanchi",
+    "category": "UNESCO World Heritage Site",
+    "era": "3rd Century BCE – 12th Century CE",
+    "architecture": "Classical Buddhist Architecture (Mauryan to Sunga)",
+    "significance": "The oldest stone structure in India commissioned by Emperor Ashoka, renowned for its exquisitely carved ornamental Torana gateways depicting Jataka tales.",
+    "history": "Commissioned in the 3rd century BCE by Mauryan Emperor Ashoka over the relics of the Buddha, the Great Stupa at Sanchi stands atop a tranquil sandstone hill. Ashoka's queen Devi was a native of nearby Vidisha, making Sanchi a personal and spiritual sanctuary for the emperor. In the 2nd century BCE, the Sunga dynasty doubled the stupa's diameter and encased it in stone. Later, in the 1st century BCE, the Satavahanas erected four magnificent ceremonial gateways (Toranas) carved with breathtaking detail showing the life of Buddha, celestial beings, and historic folk motifs.",
+    "timeline": [
+      { "year": "3rd Century BCE", "event": "Emperor Ashoka erects the original brick stupa and an inscribed monolithic pillar." },
+      { "year": "2nd Century BCE", "event": "Sunga rulers encase the stupa in sandstone, constructing the circumambulatory path." },
+      { "year": "1st Century BCE", "event": "Satavahana craftsmen sculpt the four world-famous ornamental Torana gateways." },
+      { "year": "1818", "event": "Rediscovered by General Henry Taylor of the British Army after centuries in dormancy." },
+      { "year": "1989", "event": "Inscribed as a UNESCO World Heritage Site." }
+    ],
+    "nearby_poi": [
+      { "name": "Udayagiri Caves", "distance": "10 km" },
+      { "name": "Vidisha Heritage Site", "distance": "9 km" },
+      { "name": "Bhimbetka Rock Shelters", "distance": "90 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:30 AM – 6:30 PM (Daily, sunrise to sunset)",
+      "best_time": "October to March",
+      "entry_fee": "₹40 for Indians, ₹600 for foreigners",
+      "connectivity": "Sanchi railway station connects directly to Bhopal (46 km away, which has a major airport)."
+    }
   },
   {
     "id": 10,
@@ -77,7 +285,30 @@
     "description": "13th-century fort in Andhra Pradesh situated on the Pennar River with stunning ravine views.",
     "state": "Andhra Pradesh",
     "rating": 4.7,
-    "imageKey": "gandikota"
+    "imageKey": "gandikota",
+    "category": "Canyon Fortress",
+    "era": "1123 – 16th Century CE",
+    "architecture": "Vijayanagara & Islamic Military Architecture",
+    "significance": "Known as the 'Grand Canyon of India', featuring red granite canyon cliffs plunging 300 feet to the Pennar River, guarded by massive medieval stone ramparts.",
+    "history": "Perched dramatically above a breathtaking 300-foot gorge carved by the Pennar River into the Erramala hills, Gandikota derives its name from 'Gandi' (Telugu for gorge). Founded in 1123 CE by Kapa Raja of the Kalyani Chalukyas, it grew into an impenetrable mountain redoubt ruled by the Pemmasani Nayaks for over 200 years under the Vijayanagara Empire. The fort compound holds the grand Raghunatha and Madhavaraya temples with intricate Vijayanagara carvings, an expansive Jamia Masjid, and massive royal granaries, all overlooking India's most dramatic natural canyon.",
+    "timeline": [
+      { "year": "1123 CE", "event": "Initial fort foundation established by Kapa Raja of nearby Bommanapalle." },
+      { "year": "1375", "event": "Pemmasani Nayaks take command, heavily fortifying the gorge with 101 bastions." },
+      { "year": "1565", "event": "Fort heroically defended by Pemmasani Chinna Timmanayudu during Deccan wars." },
+      { "year": "1650", "event": "Captured by Mir Jumla for the Sultanate of Golconda; French traveler Tavernier visits and praises it." },
+      { "year": "2015", "event": "Named an official national heritage canyon and major adventure tourism landmark." }
+    ],
+    "nearby_poi": [
+      { "name": "Belum Caves", "distance": "60 km" },
+      { "name": "Yaganti Temple", "distance": "85 km" },
+      { "name": "Mylavaram Dam", "distance": "12 km" }
+    ],
+    "visiting_info": {
+      "hours": "Open 24 hours (Daylight recommended for canyon views)",
+      "best_time": "September to February",
+      "entry_fee": "Free",
+      "connectivity": "Nearest rail junction is Jammalamadugu (15 km) and Kadapa (75 km), accessible by road from Bangalore (280 km)."
+    }
   },
   {
     "id": 11,
@@ -85,7 +316,30 @@
     "description": "Ancient temple at Hampi ruins dedicated to Lord Shiva, showcasing Dravidian architecture.",
     "state": "Karnataka",
     "rating": 4.8,
-    "imageKey": "virupaksha"
+    "imageKey": "virupaksha",
+    "category": "UNESCO World Heritage Site / Living Temple",
+    "era": "7th Century CE Foundation / 1510 CE Royal Vijayanagara Gopuram",
+    "architecture": "Vijayanagara Dravidian Architecture",
+    "significance": "The spiritual crown of Hampi and one of India's oldest continuously functioning temples, featuring a 50-meter tiered gopuram and an ancient pinhole camera optical effect.",
+    "history": "Standing majestically on the southern bank of the Tungabhadra River, Virupaksha Temple is dedicated to Lord Shiva (known locally as Virupaksha or Pampapathi). Worship at this sacred site has continued unbroken since the 7th century CE, long before Hampi became the glittering capital of the Vijayanagara Empire. In 1510 CE, the greatest Vijayanagara monarch, Emperor Krishnadevaraya, celebrated his coronation by gifting the temple its monumental 50-meter eastern gopuram, the pillared central ranga mandapa, and richly painted ceilings depicting episodes from the Mahabharata and Ramayana.",
+    "timeline": [
+      { "year": "7th Century CE", "event": "Earliest rock shrines erected on Hemakuta hill worshipping Lord Virupaksha." },
+      { "year": "1336", "event": "Founders Harihara and Bukka choose the sanctuary of Virupaksha to establish the Vijayanagara Empire." },
+      { "year": "1510", "event": "Emperor Krishnadevaraya crowns his accession by erecting the grand 50-meter Rajagopuram." },
+      { "year": "1565", "event": "Miraculously spared destruction when invaders leveled the rest of Hampi city." },
+      { "year": "1986", "event": "Included within the UNESCO World Heritage listing for the Monuments of Hampi." }
+    ],
+    "nearby_poi": [
+      { "name": "Vittala Temple & Stone Chariot", "distance": "3 km" },
+      { "name": "Hemakuta Hill", "distance": "200 m" },
+      { "name": "Achyutaraya Temple", "distance": "1.5 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 1:00 PM, 5:00 PM – 9:00 PM (Daily)",
+      "best_time": "October to March",
+      "entry_fee": "₹25 (camera fee separate)",
+      "connectivity": "Hospet railway station is 13 km away; Jindal Vijayanagar Airport (Toranagallu) is 40 km away."
+    }
   },
   {
     "id": 12,
@@ -93,7 +347,30 @@
     "description": "One of the world's most visited religious sites, dedicated to Lord Venkateswara with stunning architecture.",
     "state": "Andhra Pradesh",
     "rating": 4.9,
-    "imageKey": "tirupati"
+    "imageKey": "tirupati",
+    "category": "Sacred Holy Shrine",
+    "era": "300 CE Earliest Mentions / 12th–16th Century Royal Endowments",
+    "architecture": "Dravidian Temple Architecture",
+    "significance": "The supreme pilgrimage sanctuary of Kali Yuga, world-renowned for its Ananda Nilayam gilded golden dome and profound cultural devotion attracting over 50,000 pilgrims daily.",
+    "history": "Situated atop the seventh peak (Venkatadri) of the Seshachalam Hills, the temple of Lord Venkateswara (Balaji) is steeped in timeless legend. The sacred shrine was patronized successively by every major South Indian ruling power including the Pallavas of Kanchipuram (9th century), the Cholas of Thanjavur (10th-12th centuries), the Pandyas of Madurai, and especially the Vijayanagara emperors. Emperor Krishnadevaraya visited the shrine seven times between 1513 and 1521, gifting his own weight in gold and jewels to plate the Ananda Nilayam vimana dome in brilliant pure gold.",
+    "timeline": [
+      { "year": "300 CE", "event": "Sanctity of Venkata hill celebrated in early Tamil Sangam literature as Vengadam." },
+      { "year": "966 CE", "event": "Pallava queen Samavai donates silver idol of Manavalaperumal and royal lands." },
+      { "year": "12th Century", "event": "Great Vaishnavite philosopher Sri Ramanujacharya formalizes worship rituals and temple administration." },
+      { "year": "1517", "event": "Emperor Krishnadevaraya gifts massive quantities of gold to gild the sacred Ananda Nilayam tower." },
+      { "year": "1932", "event": "Tirumala Tirupati Devasthanams (TTD) established to manage the sacred pilgrimage." }
+    ],
+    "nearby_poi": [
+      { "name": "Silathoranam Natural Rock Arch", "distance": "2 km" },
+      { "name": "Kapila Theertham", "distance": "22 km" },
+      { "name": "Chandragiri Fort", "distance": "32 km" }
+    ],
+    "visiting_info": {
+      "hours": "Open 24 hours (Sarva Darshan and Special Entry available via TTD portal)",
+      "best_time": "September to February (Vaikunta Ekadasi is most auspicious)",
+      "entry_fee": "Free for general Sarva Darshan; ₹300 for Special Entry Darshan",
+      "connectivity": "Tirupati has its own international airport (TIR) and major railway junction at the foot of the hills."
+    }
   },
   {
     "id": 13,
@@ -101,7 +378,31 @@
     "description": "One of the oldest and largest temples in South India, dedicated to Lord Ranganatha with intricate carvings.",
     "state": "Tamil Nadu",
     "rating": 4.7,
-    "imageKey": "srirangam"
+    "imageKey": "srirangam",
+    "category": "Living Mega Temple / UNESCO Awardee",
+    "era": "3rd Century BCE Origins / 10th–17th Century Imperial Expansions",
+    "architecture": "Dravidian Temple City Architecture",
+    "significance": "The foremost of the 108 Divya Desams and the world's largest functioning Hindu temple complex, covering 156 acres with 7 concentric rectangular enclosures (prakarams) and 21 gopurams.",
+    "history": "Occupying a serene island formed by the Kaveri and Kollidam rivers near Tiruchirappalli, Sri Ranganathaswamy Temple is often hailed as a living temple city. Spanning an astonishing 156 acres (63 hectares) enclosed by seven concentric perimeter walls with an overall perimeter of over 4 kilometers, it represents the epitome of Tamil Dravidian architecture. It was lavishly patronized by the Cholas, Pandyas, Hoysalas, and Vijayanagara monarchs. The majestic Rajagopuram at the southern entrance rises 73 meters (239 feet) as one of the tallest religious towers in Asia.",
+    "timeline": [
+      { "year": "3rd Century BCE", "event": "Earliest origins recorded in classical Sangam literature (Silappadikaram)." },
+      { "year": "11th Century CE", "event": "Great philosopher Sri Ramanuja resides here, reorganizing temple liturgy and administration." },
+      { "year": "1310–1323", "event": "Temple invaded by Malik Kafur; deity idol secretly sheltered across South India for decades." },
+      { "year": "1371", "event": "Vijayanagara Prince Kumara Kampana restores the deity with grand pomp and ceremonies." },
+      { "year": "1987", "event": "The colossal 73-meter southern Rajagopuram completed under Ahobila Mutt leadership." },
+      { "year": "2017", "event": "Wins prestigious UNESCO Asia-Pacific Award of Merit for Cultural Heritage Conservation." }
+    ],
+    "nearby_poi": [
+      { "name": "Rockfort Temple", "distance": "5 km" },
+      { "name": "Jambukeswarar Temple", "distance": "2 km" },
+      { "name": "Kallanai Grand Anicut", "distance": "15 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 1:00 PM, 3:30 PM – 9:00 PM (Daily)",
+      "best_time": "November to March (Vaikunta Ekadasi festival in December)",
+      "entry_fee": "Free general entry (special darshan tickets ₹100 – ₹250)",
+      "connectivity": "Located 9 km from Tiruchirappalli (Trichy) Airport and 3 km from Srirangam railway station."
+    }
   },
   {
     "id": 14,
@@ -109,7 +410,30 @@
     "description": "Group of Hindu and Jain temples famous for their intricate erotic sculptures.",
     "state": "Madhya Pradesh",
     "rating": 4.6,
-    "imageKey": "khajuraho"
+    "imageKey": "khajuraho",
+    "category": "UNESCO World Heritage Site",
+    "era": "950 – 1050 CE (Chandela Dynasty)",
+    "architecture": "Nagara Style Sandstone Architecture",
+    "significance": "Celebrated worldwide for their exquisite stone carvings depicting celestial nymphs, spiritual devotion, and passionate celebrations of human life and sensuality.",
+    "history": "Built during the zenith of the Chandela dynasty between 950 and 1050 CE in the forested plains of Bundelkhand, the Khajuraho Group of Monuments originally comprised 85 temples, of which 25 survive today. Reflecting the profound harmony between Hinduism and Jainism, the temples are built of fine-grained buff sandstone without mortar, using mortise-and-tenon joints. The soaring spire of the Kandariya Mahadeva Temple mimics the sacred mountain peaks of Mount Kailash, while the outer friezes depict daily medieval life, war, music, and celebrated amorous couples (mithunas) celebrating the four goals of Hindu life: Dharma, Artha, Kama, and Moksha.",
+    "timeline": [
+      { "year": "950 CE", "event": "Chandela King Yashovarman commissions the monumental Lakshmana Temple." },
+      { "year": "1030", "event": "King Vidyadhara builds the crowning masterpiece, Kandariya Mahadeva Temple." },
+      { "year": "13th Century", "event": "Chandela power wanes; dense forests envelop and protect the temples from destruction." },
+      { "year": "1838", "event": "British surveyor T.S. Burt guided through the jungle by local villagers, reintroducing Khajuraho to the world." },
+      { "year": "1986", "event": "Designated as a UNESCO World Heritage Site." }
+    ],
+    "nearby_poi": [
+      { "name": "Raneh Falls & Canyon", "distance": "20 km" },
+      { "name": "Panna National Park", "distance": "40 km" },
+      { "name": "Pandav Falls", "distance": "32 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 6:00 PM (Daily, sunrise to sunset)",
+      "best_time": "October to March (Khajuraho Dance Festival in February)",
+      "entry_fee": "₹40 for Indians, ₹600 for foreigners",
+      "connectivity": "Khajuraho has its own domestic airport (HJR) and dedicated rail connectivity."
+    }
   },
   {
     "id": 15,
@@ -117,7 +441,30 @@
     "description": "Historic fort in Telangana with 12th-century architecture and ornate stone carved gates.",
     "state": "Telangana",
     "rating": 4.6,
-    "imageKey": "warangal"
+    "imageKey": "warangal",
+    "category": "Medieval Capital Fort",
+    "era": "12th – 14th Century CE (Kakatiya Dynasty)",
+    "architecture": "Kakatiya Stone Sculpture & Fort Architecture",
+    "significance": "The historic capital of the Kakatiya kingdom featuring the iconic four monolithic Kakatiya Kala Thoranams (gateways) adopted as the official emblem of Telangana state.",
+    "history": "Warangal Fort, known in ancient times as Orugallu (meaning 'single stone'), was established by Kakatiya ruler Prola II in the 12th century and dramatically expanded by King Ganapatideva and his daughter, the legendary warrior queen Rudrama Devi. The fortress consisted of three concentric defensive rings: an outer earthen rampart, a second granite perimeter, and an inner royal citadel. In the center stood the grand Shiva temple with four magnificent freestanding ceremonial arches (Kala Thoranam) carved with intricate lions, swans, and lotus buds that exemplify the peak of Deccan medieval stonework.",
+    "timeline": [
+      { "year": "1162 CE", "event": "Construction of Orugallu city initiated under Kakatiya king Rudradeva I." },
+      { "year": "1262–1289", "event": "Queen Rudrama Devi completes the massive stone ramparts and deep defensive moats." },
+      { "year": "1323", "event": "Fort besieged and conquered by Ulugh Khan (Muhammad bin Tughluq) after protracted battles." },
+      { "year": "1951", "event": "The monumental Kala Thoranams protected under the Ancient Monuments Act." },
+      { "year": "2014", "event": "The Kakatiya Kala Thoranam arch chosen as the central emblem of the newly created State of Telangana." }
+    ],
+    "nearby_poi": [
+      { "name": "Thousand Pillar Temple", "distance": "6 km" },
+      { "name": "Bhadrakali Temple", "distance": "7 km" },
+      { "name": "Ramappa Temple (UNESCO)", "distance": "65 km" }
+    ],
+    "visiting_info": {
+      "hours": "9:00 AM – 6:00 PM (Daily)",
+      "best_time": "October to March",
+      "entry_fee": "₹25 for Indians, ₹300 for foreigners",
+      "connectivity": "Warangal is a major railway junction, located 145 km northeast of Hyderabad via NH163."
+    }
   },
   {
     "id": 16,
@@ -125,7 +472,30 @@
     "description": "34 rock-cut temples and monasteries dedicated to Buddhism, Hinduism, and Jainism.",
     "state": "Maharashtra",
     "rating": 4.9,
-    "imageKey": "ellora"
+    "imageKey": "ellora",
+    "category": "UNESCO World Heritage Site",
+    "era": "6th – 10th Century CE",
+    "architecture": "Monolithic Rock-Cut Architecture",
+    "significance": "A monumental rock-cut complex of 34 monasteries and temples representing Buddhist, Hindu, and Jain harmony, crowned by the Kailash Temple—the largest monolithic rock excavation on Earth.",
+    "history": "Carved into the volcanic basalt cliff of the Charanandri hills, Ellora (ancient Elapura) exemplifies the spirit of religious coexistence in classical India with 12 Buddhist, 17 Hindu, and 5 Jain caves created between 600 and 1000 CE. Its peerless masterpiece is Cave 16: the Kailash Temple. Commissioned in the 8th century by Rashtrakuta King Krishna I, the temple was not built from blocks, but carved entirely top-down from a single living mountain cliff. Over 200,000 tonnes of basalt rock were painstakingly removed with hand chisels over decades to reveal a multi-storey temple twice the footprint of the Parthenon in Athens.",
+    "timeline": [
+      { "year": "600 CE", "event": "Initial excavation of the early Buddhist viharas and chaityas begins." },
+      { "year": "757–773", "event": "Rashtrakuta King Krishna I commissions the miraculous excavation of the monolithic Kailash Temple." },
+      { "year": "9th Century", "event": "Digambara Jain community excavates the exquisitely carved northern caves (Indra Sabha)." },
+      { "year": "1983", "event": "Inscribed on the UNESCO World Heritage List alongside nearby Ajanta Caves." },
+      { "year": "2023", "event": "Global archaeological studies confirm Ellora's advanced ancient civil engineering methods." }
+    ],
+    "nearby_poi": [
+      { "name": "Grishneshwar Jyotirlinga", "distance": "1 km" },
+      { "name": "Daulatabad Fort", "distance": "13 km" },
+      { "name": "Ajanta Caves", "distance": "100 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 6:00 PM (Closed on Tuesdays)",
+      "best_time": "October to March",
+      "entry_fee": "₹40 for Indians, ₹600 for foreigners",
+      "connectivity": "Located 30 km from Aurangabad city and airport, with frequent bus and taxi services."
+    }
   },
   {
     "id": 17,
@@ -133,7 +503,30 @@
     "description": "Iconic mosque and monument of Hyderabad, built in 1591 with Indo-Islamic architecture.",
     "state": "Telangana",
     "rating": 4.6,
-    "imageKey": "charminar"
+    "imageKey": "charminar",
+    "category": "Iconic Historical Landmark",
+    "era": "1591 CE (Qutb Shahi Dynasty)",
+    "architecture": "Indo-Islamic with Persian Influences",
+    "significance": "The defining symbol of Hyderabad, erected at the crossroads of historic trading routes to celebrate the eradication of a devastating plague, featuring four 56-meter minarets.",
+    "history": "Standing at the historic epicenter of Hyderabad, the Charminar ('Four Minarets') was commissioned in 1591 by Muhammad Quli Qutb Shah, the fifth Sultan of the Qutb Shahi dynasty. Legend holds that the sultan vowed to build a mosque at the center of his new city if a deadly cholera plague that was ravaging his people ceased. When the epidemic ended, he laid the foundation at the junction where four royal trade highways converged. Built of granite, limestone, and pulverized marble, its square layout features four grand 11-meter wide arches and soaring four-storey minarets that house Hyderabad's oldest operational rooftop mosque.",
+    "timeline": [
+      { "year": "1591", "event": "Sultan Muhammad Quli Qutb Shah founds Charminar to commemorate the end of a deadly plague." },
+      { "year": "1687", "event": "Miraculously spared destruction during the Mughal conquest of Golconda." },
+      { "year": "1889", "event": "Four grand clocks added to the four cardinal arches by the 6th Nizam of Hyderabad." },
+      { "year": "2010", "event": "Major pedestrianization project initiated to preserve the fragile limestone façade." },
+      { "year": "2021", "event": "Celebrated 430 years as the timeless cultural heart and emblem of the Deccan." }
+    ],
+    "nearby_poi": [
+      { "name": "Laad Bazaar", "distance": "100 m" },
+      { "name": "Mecca Masjid", "distance": "150 m" },
+      { "name": "Chowmahalla Palace", "distance": "1.2 km" }
+    ],
+    "visiting_info": {
+      "hours": "9:30 AM – 5:30 PM (Daily)",
+      "best_time": "October to March",
+      "entry_fee": "₹25 for Indians, ₹300 for foreigners",
+      "connectivity": "Located in Old City Hyderabad, easily accessible by city buses, autos, and local transport."
+    }
   },
   {
     "id": 18,
@@ -141,7 +534,30 @@
     "description": "16th-century Hindu temple in Andhra Pradesh renowned for intricate stone carvings and artistic murals.",
     "state": "Andhra Pradesh",
     "rating": 4.6,
-    "imageKey": "lepakshi"
+    "imageKey": "lepakshi",
+    "category": "Architectural Wonder",
+    "era": "1530 – 1545 CE (Vijayanagara Empire)",
+    "architecture": "Vijayanagara Temple Architecture",
+    "significance": "Famed for its engineering wonder 'Hanging Pillar' that does not touch the floor, India's largest monolithic Nandi bull, and breathtaking 16th-century ceiling frescoes.",
+    "history": "Built during the reign of Vijayanagara Emperor Achyuta Deva Raya by the royal treasurer Virupanna and his brother Veeranna, the Veerabhadra Temple in Lepakshi is an extraordinary architectural marvel. Constructed on a low rocky tortoise-shaped hill (Kurmasaila), the temple features 70 stone pillars including the world-famous Hanging Pillar, which rests entirely suspended with a slight gap beneath it through which a cloth can be passed. The ceiling of the ardhamandapa preserves the largest single fresco painting in India, measuring 24 by 14 feet, depicting 14 manifestations of Lord Shiva with natural vegetable dyes that remain vivid half a millennium later.",
+    "timeline": [
+      { "year": "1530 CE", "event": "Construction commenced by Virupanna and Veeranna, royal governors of Penukonda." },
+      { "year": "1538", "event": "Massive monolithic Nandi bull carved from a single granite boulder 200 meters from the temple." },
+      { "year": "1545", "event": "Temple sanctum completed; Virupanna blinds himself in legend following palace intrigue." },
+      { "year": "1910", "event": "British engineer Hamilton attempts to dislodge the hanging pillar, discovering it supports the ceiling." },
+      { "year": "2022", "event": "Submitted to UNESCO's Tentative List of World Heritage Sites." }
+    ],
+    "nearby_poi": [
+      { "name": "Monolithic Nandi Bull", "distance": "200 m" },
+      { "name": "Penukonda Fort", "distance": "40 km" },
+      { "name": "Nandi Hills", "distance": "90 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 6:00 PM (Daily)",
+      "best_time": "September to February",
+      "entry_fee": "Free",
+      "connectivity": "Located 120 km north of Bangalore Airport (BLR) along NH44, making it an ideal day excursion."
+    }
   },
   {
     "id": 19,
@@ -149,7 +565,30 @@
     "description": "Ancient rock-cut granite temple in Mahabalipuram built during Pallava dynasty overlooking the Bay of Bengal.",
     "state": "Tamil Nadu",
     "rating": 4.7,
-    "imageKey": "shoretemple"
+    "imageKey": "shoretemple",
+    "category": "UNESCO World Heritage Site",
+    "era": "700 – 728 CE (Pallava Dynasty)",
+    "architecture": "Early Dravidian Structural Stone Architecture",
+    "significance": "One of the oldest structural stone temples in Southern India, built directly on the shore of the Bay of Bengal and surviving the catastrophic 2004 Indian Ocean tsunami.",
+    "history": "Standing on a rocky promontory overlooking the roaring waves of the Bay of Bengal, the Shore Temple was commissioned by Pallava King Narasimhavarman II (Rajasimha) in the early 8th century. Unlike the earlier rock-cut cave temples of Mahabalipuram, the Shore Temple is a structural temple built from finely carved blocks of local granite. It functioned as both an active pilgrimage shrine to Lord Shiva and Lord Vishnu and a luminous maritime beacon for ancient merchant ships arriving from Southeast Asia, China, and the Roman Empire. Its durable construction famously withstood the full force of the 2004 tsunami waves.",
+    "timeline": [
+      { "year": "700 CE", "event": "Construction initiated by Pallava King Rajasimha to anchor the prosperous port of Mamallapuram." },
+      { "year": "728", "event": "Twin pyramidal spires and monolithic Nandi courtyards completed." },
+      { "year": "13th Century", "event": "European mariners describe the coastal horizon as the 'Seven Pagodas of Mahabalipuram'." },
+      { "year": "1984", "event": "Inscribed as a UNESCO World Heritage Site with the Mahabalipuram monument complex." },
+      { "year": "2004", "event": "Survives the massive December 26 tsunami waves, revealing long-submerged ancient shore ruins." }
+    ],
+    "nearby_poi": [
+      { "name": "Pancha Rathas", "distance": "1.5 km" },
+      { "name": "Arjuna's Penance", "distance": "1 km" },
+      { "name": "Krishna's Butterball", "distance": "1.2 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 6:00 PM (Daily, sunrise to sunset)",
+      "best_time": "November to February",
+      "entry_fee": "₹40 for Indians, ₹600 for foreigners (covers all Mahabalipuram sites)",
+      "connectivity": "Located 55 km south of Chennai along the scenic East Coast Road (ECR)."
+    }
   },
   {
     "id": 20,
@@ -157,15 +596,62 @@
     "description": "Ruins of the Vijayanagara Empire with magnificent temples, markets, and palaces.",
     "state": "Karnataka",
     "rating": 4.9,
-    "imageKey": "hampi"
+    "imageKey": "hampi",
+    "category": "UNESCO World Heritage Site",
+    "era": "1336 – 1565 CE (Vijayanagara Empire)",
+    "architecture": "Imperial Vijayanagara Architecture",
+    "significance": "The open-air museum capital of one of India's richest empires, spread across 4,100 hectares of surreal boulder-strewn landscapes with over 1,600 surviving monuments.",
+    "history": "Nestled along the banks of the Tungabhadra River amidst surreal granite boulder-strewn hills, Hampi was the capital of the Vijayanagara Empire from 1336 until its tragic sacking in 1565. At its zenith in the early 16th century under Emperor Krishnadevaraya, Hampi (Vijayanagara, the 'City of Victory') was one of the largest and wealthiest metropolises in the medieval world, home to half a million inhabitants. Portuguese, Persian, and Italian travelers marveled at its bazaar streets where diamonds, rubies, and pearls were sold openly by the cup. Today, its ruins feature the iconic stone chariot of Vittala Temple, the royal enclosures, and the Lotus Mahal.",
+    "timeline": [
+      { "year": "1336", "event": "Brothers Harihara and Bukka establish the Vijayanagara Empire with Hampi as capital." },
+      { "year": "1509–1529", "event": "Golden reign of Emperor Krishnadevaraya transforms Hampi into a world architectural wonder." },
+      { "year": "1565", "event": "Battle of Talikota leads to the defeat, prolonged sacking, and abandonment of the imperial city." },
+      { "year": "1986", "event": "Inscribed as a UNESCO World Heritage Site." },
+      { "year": "2019", "event": "Vittala Temple Stone Chariot immortalized on the official Indian ₹50 banknote." }
+    ],
+    "nearby_poi": [
+      { "name": "Vittala Temple", "distance": "2 km" },
+      { "name": "Virupaksha Temple", "distance": "1 km" },
+      { "name": "Matanga Hill", "distance": "1.5 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 6:00 PM (Daily)",
+      "best_time": "October to March (Hampi Utsav festival in November/January)",
+      "entry_fee": "₹40 for Indians, ₹600 for foreigners",
+      "connectivity": "Hospet railway station is 13 km away; Jindal Vidyanagar Airport is 35 km away."
+    }
   },
   {
     "id": 21,
     "title": "Taj Mahal",
     "description": "An ivory-white marble mausoleum built by Mughal emperor Shah Jahan, symbolizing eternal love.",
     "state": "Uttar Pradesh",
-    "rating": 5,
-    "imageKey": "tajMahal"
+    "rating": 5.0,
+    "imageKey": "tajMahal",
+    "category": "UNESCO World Heritage Site / New 7 Wonders",
+    "era": "1632 – 1653 CE (Mughal Empire)",
+    "architecture": "Mughal Architecture (Indo-Islamic-Persian)",
+    "significance": "A universally recognized jewel of Muslim art in India and one of the most celebrated architectural masterpieces in world history, erected as a monument to eternal love.",
+    "history": "Standing on the southern bank of the Yamuna River in Agra, the Taj Mahal was commissioned in 1632 by the fifth Mughal Emperor Shah Jahan to enshrine the tomb of his favorite wife, Mumtaz Mahal. Employing over 20,000 artisans, sculptors, and calligraphers from across India, Persia, Central Asia, and the Ottoman Empire under chief architect Ustad Ahmad Lahori, the complex took over 20 years to build. Constructed from brilliant white Makrana marble that changes its hue from pale pink at sunrise to milky white at noon and shimmering gold under moonlight, its exterior and interior are adorned with Pietra Dura inlays of lapis lazuli, jade, crystal, and turquoise.",
+    "timeline": [
+      { "year": "1631", "event": "Empress Mumtaz Mahal passes away in Burhanpur; grieving Emperor Shah Jahan vows a tomb without equal." },
+      { "year": "1632", "event": "Construction commences along the Yamuna River bank in Agra." },
+      { "year": "1648", "event": "The central marble mausoleum and grand dome are successfully completed." },
+      { "year": "1653", "event": "The full complex, including Charbagh gardens, red sandstone mosque, and guest pavilion, is completed." },
+      { "year": "1983", "event": "Declared a UNESCO World Heritage Site as 'the jewel of Muslim art in India'." },
+      { "year": "2007", "event": "Elected as one of the New Seven Wonders of the World." }
+    ],
+    "nearby_poi": [
+      { "name": "Agra Fort", "distance": "2.5 km" },
+      { "name": "Mehtab Bagh", "distance": "1.5 km across the river" },
+      { "name": "Fatehpur Sikri", "distance": "38 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 6:30 PM (Closed on Fridays; night viewing on full moon nights)",
+      "best_time": "October to March",
+      "entry_fee": "₹50 for Indians, ₹1,100 for foreigners (+ ₹200 for main mausoleum)",
+      "connectivity": "Agra has direct express trains from Delhi (1.5 hrs via Gatimaan/Vande Bharat) and Yamuna Expressway."
+    }
   },
   {
     "id": 22,
@@ -173,7 +659,30 @@
     "description": "Royal palace with Indo-Saracenic architecture, showcasing the grandeur of the Wadiyar dynasty.",
     "state": "Karnataka",
     "rating": 4.8,
-    "imageKey": "mysore"
+    "imageKey": "mysore",
+    "category": "Royal Palace Landmark",
+    "era": "1897 – 1912 CE (Wadiyar Dynasty)",
+    "architecture": "Indo-Saracenic Revival Architecture",
+    "significance": "The official seat of the Maharajas of Mysore, second only to the Taj Mahal in annual visitors, renowned for its golden throne, Durbar Hall, and 100,000 illumination lights.",
+    "history": "Known also as the Amba Vilas Palace, Mysore Palace was commissioned in 1897 by the royal regent Maharani Kempananjammanni Vani Vilasa Sannidhana after the original wooden palace was gutted in a fire during a royal wedding. The Wadiyar monarchs engaged legendary British architect Henry Irwin to design a magnificent palace blending Hindu, Mughal, Rajput, and Gothic architectural styles. Constructed of fine grey granite with deep pink marble domes, the three-storey palace houses the Durbar Hall with sculpted pillars, the Kalyana Mantapa (marriage pavilion) with Belgian stained-glass ceilings, and the legendary Golden Howdah.",
+    "timeline": [
+      { "year": "1399 CE", "event": "First wooden palace constructed by Yaduraya Wodeyar upon founding the kingdom." },
+      { "year": "1897", "event": "Tragic fire destroys the old wooden palace during the wedding of Princess Jayalakshammanni." },
+      { "year": "1912", "event": "Current grand stone palace inaugurated at a cost of over ₹41 lakh under Maharaja Krishnaraja Wadiyar IV." },
+      { "year": "1940", "event": "Public Durbar hall expanded by Maharaja Jayachamarajendra Wadiyar." },
+      { "year": "2020", "event": "State-of-the-art heritage conservation and laser light-and-sound spectacles introduced." }
+    ],
+    "nearby_poi": [
+      { "name": "Chamundi Hill & Temple", "distance": "12 km" },
+      { "name": "Brindavan Gardens", "distance": "18 km" },
+      { "name": "St. Philomena's Cathedral", "distance": "3 km" }
+    ],
+    "visiting_info": {
+      "hours": "10:00 AM – 5:30 PM (Illumination on Sundays and public holidays 7:00 – 7:45 PM)",
+      "best_time": "October to March (Grand Mysore Dasara festival in October)",
+      "entry_fee": "₹100 for adults, ₹50 for children, ₹200 for foreigners",
+      "connectivity": "Mysore railway station is just 2 km away; connected by expressway and high-speed rail to Bangalore (140 km)."
+    }
   },
   {
     "id": 23,
@@ -181,7 +690,30 @@
     "description": "UNESCO World Heritage site in Tamil Nadu with magnificent granite tower and Chola architecture.",
     "state": "Tamil Nadu",
     "rating": 4.9,
-    "imageKey": "brihadeeswarar"
+    "imageKey": "brihadeeswarar",
+    "category": "UNESCO World Heritage Site",
+    "era": "1003 – 1010 CE (Chola Dynasty)",
+    "architecture": "Chola Dravidian Architecture",
+    "significance": "Known as the 'Big Temple' (Periya Kovil), an extraordinary civil engineering marvel with a 66-meter high granite Vimana crowned by an 81-tonne single granite capstone.",
+    "history": "Built by the visionary Chola Emperor Raja Raja Chola I between 1003 and 1010 CE in Thanjavur, the Brihadeeswarar Temple (dedicated to Lord Shiva as Rajarajeshwaram) represents the zenith of South Indian Dravidian stone engineering. The temple tower (Vimana) rises 66 meters (216 feet) into the sky, constructed entirely from interlocking granite blocks without mortar in an area with no natural granite quarries for 60 kilometers. The apex is crowned by the Kumbam—an 81-tonne single carved block of granite that was hauled up a 6-kilometer earthen ramp using elephants. Inside the inner sanctum rests one of the largest monolithic Shiva Lingas in India.",
+    "timeline": [
+      { "year": "1003 CE", "event": "Emperor Raja Raja Chola I commissions construction following sweeping naval conquests across Asia." },
+      { "year": "1010", "event": "Consecration ceremony (Mahakumbhabhishekam) performed on the 275th day of the king's 25th regnal year." },
+      { "year": "15th–17th Century", "event": "Nayaka and Maratha kings build the monumental outer defensive walls and the giant Nandi pavilion." },
+      { "year": "1987", "event": "Inscribed as a UNESCO World Heritage Site as the premier monument of the 'Great Living Chola Temples'." },
+      { "year": "2010", "event": "The millennium anniversary (1,000 years of consecration) celebrated with 1,000 Bharatanatyam dancers." }
+    ],
+    "nearby_poi": [
+      { "name": "Thanjavur Maratha Palace", "distance": "2 km" },
+      { "name": "Saraswathi Mahal Library", "distance": "2 km" },
+      { "name": "Airavatesvara Temple (Darasuram)", "distance": "35 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 12:30 PM, 4:00 PM – 8:30 PM (Daily)",
+      "best_time": "October to March",
+      "entry_fee": "Free",
+      "connectivity": "Thanjavur is 55 km from Tiruchirappalli (Trichy) Airport and has a major railway station."
+    }
   },
   {
     "id": 24,
@@ -189,7 +721,30 @@
     "description": "13th-century temple shaped like a colossal chariot dedicated to the Sun God.",
     "state": "Odisha",
     "rating": 4.7,
-    "imageKey": "konark"
+    "imageKey": "konark",
+    "category": "UNESCO World Heritage Site",
+    "era": "1250 CE (Eastern Ganga Dynasty)",
+    "architecture": "Kalinga Style Architecture",
+    "significance": "A monumental stone chariot conceived for the Sun God Surya, featuring 24 intricately carved stone wheels that function as accurate sundials, pulled by seven galloping horses.",
+    "history": "Constructed around 1250 CE by King Narasimhadeva I of the Eastern Ganga dynasty on the coastline of Odisha, the Sun Temple at Konark ('Kona' meaning corner, 'Arka' meaning the sun) is designed in the shape of an immense celestial chariot. The temple rests on 24 gigantic carved stone wheels (nearly 10 feet in diameter), symbolizing the 24 hours of a day, pulled by seven spirited stone horses representing the days of the week. The wheels are precision sundials where the shadow cast by the spoke pinpoints the exact time of day down to the minute. European sailors referred to the temple as the 'Black Pagoda' because its dark iron-rich stone served as an unmistakable navigation landmark.",
+    "timeline": [
+      { "year": "1250 CE", "event": "Commissioned by King Narasimhadeva I using 12 years of state revenues to honor Surya." },
+      { "year": "1568", "event": "Temple damaged during military incursions and seismic changes along the shifting coastline." },
+      { "year": "1627", "event": "Sun deity idol relocated to the Jagannath Temple in Puri for protection." },
+      { "year": "1901", "event": "British Lieutenant Governor John Woodburn orders the collapsing interior filled with sand to preserve the structure." },
+      { "year": "1984", "event": "Recognized as a UNESCO World Heritage Site." }
+    ],
+    "nearby_poi": [
+      { "name": "Chandrabhaga Beach", "distance": "3 km" },
+      { "name": "Puri Jagannath Temple", "distance": "35 km" },
+      { "name": "Chilika Lake", "distance": "70 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 8:00 PM (Daily, light & sound show in evening)",
+      "best_time": "October to March (Konark Dance Festival in December)",
+      "entry_fee": "₹40 for Indians, ₹600 for foreigners",
+      "connectivity": "Located 65 km from Bhubaneswar (BBI airport) and 35 km from Puri railway station via marine drive."
+    }
   },
   {
     "id": 25,
@@ -197,6 +752,29 @@
     "description": "Ancient temple in Andhra Pradesh featuring a monolithic Narasimha idol carved from granite rock.",
     "state": "Andhra Pradesh",
     "rating": 4.4,
-    "imageKey": "penusila"
+    "imageKey": "penusila",
+    "category": "Sacred Forest Shrine",
+    "era": "10th – 14th Century CE",
+    "architecture": "Rock-Cut Hill Shrine & Dravidian Architecture",
+    "significance": "A sacred Swayambhu (self-manifested) rock shrine of Lord Narasimha nestled in the pristine forested valleys of the Eastern Ghats, where natural rock formations embody the deity.",
+    "history": "Located in the tranquil Penchalakona valley in the Nellore district of Andhra Pradesh, the Penusila Lakshmi Narasimha Swamy Temple is venerated as one of the most sacred forest shrines of Andhra. The temple is set at the base of the picturesque Velligonda hill range of the Eastern Ghats. According to regional sthala purana, after slaying the demon king Hiranyakashipu, Lord Narasimha assumed a calm, tranquil form (Sowmya Murthi) and sat on a massive rock slab ('Penusila' in Telugu) where goddess Chenchu Lakshmi embraced him. The primary deity is self-manifested from natural granite rock, drawing seekers into the serene forest wilderness for centuries.",
+    "timeline": [
+      { "year": "10th Century CE", "event": "First recorded worship of the self-manifested granite rock formation by forest hermits." },
+      { "year": "13th Century", "event": "Telugu Choda and Kakatiya kings construct stone mandapas surrounding the natural sanctum." },
+      { "year": "16th Century", "event": "Vijayanagara kings renovate the temple steps, tank, and festival pavilions." },
+      { "year": "1980", "event": "Modern temple complex and cottages built under the Andhra Pradesh Endowments Department." },
+      { "year": "2021", "event": "Comprehensive eco-tourism development along the scenic mountain waterfall streams." }
+    ],
+    "nearby_poi": [
+      { "name": "Penchalakona Waterfalls", "distance": "1 km" },
+      { "name": "Udayagiri Fort", "distance": "70 km" },
+      { "name": "Jonnavada Mallikarjuna Temple", "distance": "75 km" }
+    ],
+    "visiting_info": {
+      "hours": "6:00 AM – 1:00 PM, 3:00 PM – 8:00 PM (Daily)",
+      "best_time": "September to February (Narasimha Jayanti in April/May)",
+      "entry_fee": "Free general entry",
+      "connectivity": "Located 75 km from Nellore city and railway station, connected by well-paved ghat roads."
+    }
   }
 ]

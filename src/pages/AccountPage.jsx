@@ -14,7 +14,7 @@ import {
   Camera,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useUser } from "@clerk/clerk-react";
+import { useUser, SignInButton } from "@clerk/clerk-react";
 import {
   getUserData,
   updateUserProfile,
@@ -175,15 +175,23 @@ const AccountPage = () => {
   // Not signed in
   if (!isLoaded || !isSignedIn) {
     return (
-      <div className="min-h-screen bg-ivory-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-6xl mb-4">🔐</div>
-          <h2 className="text-3xl font-bold text-charcoal-900 mb-4">
-            Please Log In
+      <div className="min-h-screen bg-ivory flex items-center justify-center p-6">
+        <div className="bs-card max-w-md w-full text-center p-8">
+          <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center"
+            style={{ background: "linear-gradient(135deg, var(--bs-gold-light), var(--bs-gold))" }}>
+            <User size={30} style={{ color: "var(--bs-charcoal)" }} />
+          </div>
+          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: "var(--bs-charcoal)" }}>
+            Welcome to BharatSafar
           </h2>
-          <p className="text-charcoal-500 mb-8">
-            You need to be logged in to view your account.
+          <p className="text-sm mb-6" style={{ color: "var(--bs-charcoal-soft)" }}>
+            Sign in to access your saved heritage gems, quiz statistics, badges, and travel history.
           </p>
+          <SignInButton mode="modal">
+            <button className="bs-btn-primary w-full py-3">
+              Sign In to Your Account
+            </button>
+          </SignInButton>
         </div>
       </div>
     );

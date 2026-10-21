@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Client } from "@gradio/client";
 
 // --- Imports ---
 // Video moved to public/storytelling_bg.mp4 to avoid bundle size issues
@@ -744,6 +743,88 @@ const StoryTellingPage = ({ onBack }) => {
     },
   ];
 
+  // Direct Gradio API caller (bypasses browser CORS & third-party cookie restrictions)
+  const requestStoryGeneration = async (title, description, language, token) => {
+    const isDev = import.meta.env.DEV;
+    const directBase = "https://bharatverse11-story-audio-backend.hf.space";
+    const proxyBase = "/hf-story-space";
+    const baseUrl = isDev ? proxyBase : directBase;
+
+    const tryCall = async (base) => {
+      const postUrl = `${base}/gradio_api/call/predict`;
+      const response = await fetch(postUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: [title, description, language || "English", token || ""],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to initialize story request (status: ${response.status})`);
+      }
+
+      const { event_id } = await response.json();
+      if (!event_id) {
+        throw new Error("No event ID returned from story backend");
+      }
+
+      const streamUrl = `${base}/gradio_api/call/predict/${event_id}`;
+
+      return new Promise((resolve, reject) => {
+        const eventSource = new EventSource(streamUrl);
+        const timeout = setTimeout(() => {
+          eventSource.close();
+          reject(new Error("Story generation timed out. Please try again."));
+        }, 150000);
+
+        eventSource.addEventListener("complete", (event) => {
+          clearTimeout(timeout);
+          eventSource.close();
+          try {
+            const rawData = JSON.parse(event.data);
+            const storyText = rawData[0];
+            let audioData = rawData[1];
+
+            let finalAudioUrl = null;
+            if (audioData && audioData.url) {
+              finalAudioUrl = audioData.url;
+            } else if (typeof audioData === "string") {
+              finalAudioUrl = audioData.startsWith("http")
+                ? audioData
+                : `${directBase}${audioData}`;
+            }
+
+            resolve({
+              story: storyText,
+              audioUrl: finalAudioUrl,
+            });
+          } catch (err) {
+            reject(new Error("Failed to parse backend story response"));
+          }
+        });
+
+        eventSource.addEventListener("error", () => {
+          clearTimeout(timeout);
+          eventSource.close();
+          reject(new Error("Stream connection to story generator failed"));
+        });
+      });
+    };
+
+    try {
+      return await tryCall(baseUrl);
+    } catch (err) {
+      if (isDev && baseUrl !== directBase) {
+        console.warn("Proxy call failed, falling back to direct URL:", err);
+        return await tryCall(directBase);
+      }
+      throw err;
+    }
+  };
+
   // Backend Interaction
   const generateStory = async (prompt, language) => {
     setLoading(true);
@@ -751,27 +832,35 @@ const StoryTellingPage = ({ onBack }) => {
     setStory(null);
     setAudioUrl(null);
     setTypedLength(0);
-    const hfToken = ""; // Configured in Secrets
+    const hfToken = import.meta.env.VITE_HF_TOKEN || "";
 
     try {
-      const client = await Client.connect("bharatverse11/story_audio_backend");
-      const result = await client.predict("/predict", [
+      const result = await requestStoryGeneration(
         prompt.title,
         prompt.description,
         language || "English",
-        hfToken,
-      ]);
+        hfToken
+      );
 
       console.log("Backend Response:", result);
 
-      if (result.data) {
-        setStory(result.data[0]);
-        setTypedLength(1);
-        const generatedAudio = result.data[1];
-        if (generatedAudio && generatedAudio.url) {
-          setAudioUrl(generatedAudio.url);
-        } else if (typeof generatedAudio === "string") {
-          setAudioUrl(generatedAudio);
+      if (result) {
+        const storyText = result.story;
+        if (
+          typeof storyText === "string" &&
+          storyText.toLowerCase().startsWith("story generation failed:")
+        ) {
+          throw new Error(storyText.replace(/^story generation failed:\s*/i, ""));
+        }
+
+        setStory(storyText);
+
+        if (result.audioUrl) {
+          setAudioUrl(result.audioUrl);
+          setTypedLength(1);
+        } else {
+          // If audio is not generated, immediately reveal the full story text
+          setTypedLength(storyText?.length || 9999);
         }
       }
     } catch (error) {

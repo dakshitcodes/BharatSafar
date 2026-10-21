@@ -196,12 +196,12 @@ const Header = ({ currentPage, onPageChange }) => {
               ) : (
                 isLoaded && (
                   <div className="hidden sm:flex items-center gap-2">
-                    <SignInButton>
+                    <SignInButton mode="modal">
                       <button className="px-4 py-2 text-sm font-sans font-semibold text-charcoal-700 hover:text-charcoal-900 rounded-lg hover:bg-ivory-200 transition-all duration-200">
                         Sign In
                       </button>
                     </SignInButton>
-                    <SignUpButton>
+                    <SignUpButton mode="modal">
                       <button className="bs-btn-primary text-sm px-4 py-2">
                         Get Started
                       </button>
@@ -279,12 +279,12 @@ const Header = ({ currentPage, onPageChange }) => {
                 ) : (
                   isLoaded && (
                     <div className="flex flex-col gap-2">
-                      <SignInButton>
+                      <SignInButton mode="modal">
                         <button className="w-full py-3 text-center text-sm font-sans font-semibold text-charcoal-700 border border-ivory-300 rounded-xl hover:bg-ivory-100 transition-all">
                           Sign In
                         </button>
                       </SignInButton>
-                      <SignUpButton>
+                      <SignUpButton mode="modal">
                         <button className="w-full bs-btn-primary py-3">
                           Get Started — It's Free
                         </button>

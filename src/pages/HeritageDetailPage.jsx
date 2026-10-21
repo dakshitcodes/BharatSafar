@@ -33,9 +33,11 @@ const HeritageDetailPage = ({
   const [isBookmarkedLocal, setIsBookmarkedLocal] = useState(false);
 
   useEffect(() => {
-    setIsBookmarkedLocal(isBookmarked(item.id, "heritage"));
+    if (typeof isBookmarked === "function" && item?.id) {
+      setIsBookmarkedLocal(isBookmarked(item.id, "heritage"));
+    }
     loadReviews();
-  }, [item.id, isBookmarked]);
+  }, [item?.id, isBookmarked]);
 
   // Simulated reviews fetching - consider replacing with real API call
   const loadReviews = () => {
@@ -70,11 +72,15 @@ const HeritageDetailPage = ({
 
   const handleBookmark = () => {
     if (isBookmarkedLocal) {
-      removeBookmark(item.id, "heritage");
+      if (typeof removeBookmark === "function") {
+        removeBookmark(item.id, "heritage");
+      }
       setIsBookmarkedLocal(false);
       toast.success("Removed from bookmarks");
     } else {
-      addBookmark({ ...item, type: "heritage" });
+      if (typeof addBookmark === "function") {
+        addBookmark({ ...item, type: "heritage" });
+      }
       setIsBookmarkedLocal(true);
       toast.success("Added to bookmarks");
     }
@@ -116,7 +122,7 @@ const HeritageDetailPage = ({
       <div className="relative h-screen">
         <div className="absolute inset-0">
           <img
-            src={item.images?.[0]}
+            src={item.images?.[0] || item.image}
             alt={item.title}
             className="w-full h-full object-cover"
             loading="lazy"
@@ -312,61 +318,59 @@ const HeritageDetailPage = ({
       {/* Tab Content */}
       <section className="max-w-7xl mx-auto px-6 py-12" aria-live="polite">
         {activeTab === "overview" && (
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="max-w-4xl mx-auto space-y-10">
             {/* Quick Facts */}
             <div className="bs-card p-8">
-              <h3 className="text-2xl font-display font-bold mb-6">
+              <h3 className="text-2xl font-display font-bold mb-6 text-charcoal-900">
                 Quick Facts
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
+                <div className="text-center p-4 rounded-xl bg-ivory-50">
                   <Calendar
-                    className="w-12 h-12 text-gold-700 mx-auto mb-3"
+                    className="w-10 h-10 text-gold-700 mx-auto mb-3"
                     aria-hidden="true"
                   />
-                  <h4 className="font-semibold mb-2">Era</h4>
-                  <p className="text-gray-600">Mughal Period</p>
+                  <h4 className="font-semibold text-charcoal-900 mb-1">Era</h4>
+                  <p className="text-charcoal-600 text-sm font-medium">{item.era || "Ancient & Medieval Era"}</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-4 rounded-xl bg-ivory-50">
                   <Award
-                    className="w-12 h-12 text-gold-700 mx-auto mb-3"
+                    className="w-10 h-10 text-gold-700 mx-auto mb-3"
                     aria-hidden="true"
                   />
-                  <h4 className="font-semibold mb-2">Architecture</h4>
-                  <p className="text-gray-600">{item.architecture}</p>
+                  <h4 className="font-semibold text-charcoal-900 mb-1">Architecture</h4>
+                  <p className="text-charcoal-600 text-sm font-medium">{item.architecture || "Classical Indian"}</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-4 rounded-xl bg-ivory-50">
                   <Users
-                    className="w-12 h-12 text-gold-700 mx-auto mb-3"
+                    className="w-10 h-10 text-gold-700 mx-auto mb-3"
                     aria-hidden="true"
                   />
-                  <h4 className="font-semibold mb-2">Annual Visitors</h4>
-                  <p className="text-gray-600">6+ Million</p>
+                  <h4 className="font-semibold text-charcoal-900 mb-1">Annual Visitors</h4>
+                  <p className="text-charcoal-600 text-sm font-medium">{item.visitors || "1M+ Visitors"}</p>
                 </div>
               </div>
             </div>
 
             {/* Significance */}
-            {item.significance && (
-              <div className="bs-card p-8">
-                <h3 className="text-2xl font-display font-bold mb-6">
-                  Cultural Significance
-                </h3>
-                <p className="text-charcoal-700 text-lg leading-relaxed">
-                  {item.significance}
-                </p>
-              </div>
-            )}
+            <div className="bs-card p-8">
+              <h3 className="text-2xl font-display font-bold mb-4 text-charcoal-900">
+                Cultural &amp; Historical Significance
+              </h3>
+              <p className="text-charcoal-700 text-base md:text-lg leading-relaxed">
+                {item.significance || item.description}
+              </p>
+            </div>
 
             {/* Audio Story */}
             {item.audiobook && (
               <div className="bs-card p-8">
-                <h3 className="text-2xl font-display font-bold mb-6">
+                <h3 className="text-2xl font-display font-bold mb-6 text-charcoal-900">
                   Audio Story
                 </h3>
                 <AudioPlayer
                   src="/audio/taj-mahal-story.mp3"
-                  title="The Story of Taj Mahal"
+                  title={`The Story of ${item.title}`}
                   description={item.audiobook}
                 />
               </div>
@@ -375,87 +379,101 @@ const HeritageDetailPage = ({
         )}
 
         {activeTab === "history" && (
-          <div className="max-w-4xl mx-auto">
-            {item.timeline && (
-              <div className="bs-card p-8">
-                <h3 className="text-2xl font-display font-bold mb-8">
-                  Historical Timeline
-                </h3>
-                <div className="space-y-6">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Historical Narrative */}
+            <div className="bs-card p-8">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-ivory-200">
+                <div>
+                  <h3 className="text-2xl font-display font-bold text-charcoal-900">
+                    Historical Chronicle &amp; Origins
+                  </h3>
+                  <p className="text-sm text-charcoal-500 mt-1">The origins, royal patronage, and legacy of {item.title}</p>
+                </div>
+                {item.era && (
+                  <span className="bs-badge-gold text-xs self-start sm:self-auto">
+                    {item.era}
+                  </span>
+                )}
+              </div>
+              <div className="prose prose-stone max-w-none">
+                <p className="text-charcoal-700 text-base md:text-lg leading-relaxed whitespace-pre-line">
+                  {item.history || item.description}
+                </p>
+              </div>
+            </div>
+
+            {/* Historical Timeline */}
+            <div className="bs-card p-8">
+              <h3 className="text-2xl font-display font-bold mb-6 text-charcoal-900">
+                Key Historical Milestones
+              </h3>
+              {item.timeline && item.timeline.length > 0 ? (
+                <div className="space-y-6 relative before:absolute before:left-5 before:top-3 before:bottom-3 before:w-0.5 before:bg-gold-200">
                   {item.timeline.map((event, index) => (
-                    <div key={index} className="flex items-start space-x-4">
-                      <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-gold-700 font-bold">
-                          {event.year}
-                        </span>
+                    <div key={index} className="flex items-start space-x-4 relative">
+                      <div className="w-10 h-10 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-md ring-4 ring-white">
+                        {index + 1}
                       </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-lg mb-2">
-                          {event.year}
-                        </h4>
-                        <p className="text-charcoal-700">{event.event}</p>
+                      <div className="flex-1 bg-ivory-50 p-4 rounded-xl border border-ivory-200">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-bold text-sm text-gold-800 font-sans tracking-wide">
+                            {event.year}
+                          </span>
+                        </div>
+                        <p className="text-charcoal-700 text-sm leading-relaxed">{event.event}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-charcoal-500">Historical records for {item.title} span centuries of regional heritage and tradition.</p>
+                </div>
+              )}
+            </div>
           </div>
         )}
 
         {activeTab === "architecture" && (
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-8">
             <div className="bs-card p-8">
-              <h3 className="text-2xl font-display font-bold mb-8">
-                Architectural Features
+              <h3 className="text-2xl font-display font-bold mb-4 text-charcoal-900">
+                Architectural Style &amp; Craftsmanship
               </h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-xl font-semibold mb-4">
-                    Design Elements
+              <p className="text-charcoal-700 text-base md:text-lg leading-relaxed mb-6">
+                {item.title} represents a magnificent example of {item.architecture || "classical Indian architecture"}, built with indigenous engineering mastery and artistic vision.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-ivory-50 p-6 rounded-xl border border-ivory-200">
+                  <h4 className="text-lg font-bold text-charcoal-900 mb-3 flex items-center gap-2">
+                    <Award size={18} className="text-gold-700" />
+                    Key Architectural Style
                   </h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>Central dome with finial</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>Four minarets at corners</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>Intricate marble inlay work</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>Charbagh garden layout</span>
-                    </li>
-                  </ul>
+                  <p className="text-charcoal-700 text-sm leading-relaxed">
+                    {item.architecture || "Traditional stone masonry reflecting indigenous cultural styles"}
+                  </p>
                 </div>
 
-                <div>
-                  <h4 className="text-xl font-semibold mb-4">Materials Used</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>White Makrana marble</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>Red sandstone from Fatehpur Sikri</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>Semi-precious stones for inlay</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                      <span>Jade, crystal, lapis lazuli</span>
-                    </li>
-                  </ul>
+                <div className="bg-ivory-50 p-6 rounded-xl border border-ivory-200">
+                  <h4 className="text-lg font-bold text-charcoal-900 mb-3 flex items-center gap-2">
+                    <Calendar size={18} className="text-gold-700" />
+                    Period of Construction
+                  </h4>
+                  <p className="text-charcoal-700 text-sm leading-relaxed">
+                    {item.era || "Constructed across key historical dynasties"}
+                  </p>
                 </div>
               </div>
+
+              {item.significance && (
+                <div className="mt-6 p-6 rounded-xl bg-amber-50/60 border border-amber-200/50">
+                  <h4 className="font-bold text-amber-900 mb-2">Structural Mastery</h4>
+                  <p className="text-charcoal-700 text-sm leading-relaxed">
+                    {item.significance}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -464,52 +482,46 @@ const HeritageDetailPage = ({
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bs-card p-8">
-                <h3 className="text-2xl font-display font-bold mb-6">
+                <h3 className="text-2xl font-display font-bold mb-6 text-charcoal-900">
                   Visiting Information
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2">Opening Hours</h4>
-                    <p className="text-charcoal-700">
-                      6:00 AM - 7:00 PM (Closed on Fridays)
+                    <h4 className="font-semibold text-charcoal-900 mb-1">Opening Hours</h4>
+                    <p className="text-charcoal-600 text-sm">
+                      {item.visiting_info?.hours || "6:00 AM – 6:00 PM (Daily)"}
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Best Time to Visit</h4>
-                    <p className="text-charcoal-700">
-                      Early morning or late afternoon for best lighting
+                    <h4 className="font-semibold text-charcoal-900 mb-1">Best Time to Visit</h4>
+                    <p className="text-charcoal-600 text-sm">
+                      {item.visiting_info?.best_time || "October to March (pleasant weather)"}
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Entry Fee</h4>
-                    <p className="text-charcoal-700">
-                      ₹50 for Indians, ₹1300 for foreigners
+                    <h4 className="font-semibold text-charcoal-900 mb-1">Entry Fee</h4>
+                    <p className="text-charcoal-600 text-sm">
+                      {item.visiting_info?.entry_fee || "Standard ASI / State Heritage entry"}
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="bs-card p-8">
-                <h3 className="text-2xl font-display font-bold mb-6">
-                  How to Reach
+                <h3 className="text-2xl font-display font-bold mb-6 text-charcoal-900">
+                  Connectivity &amp; Location
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2">By Air</h4>
-                    <p className="text-charcoal-700">
-                      Agra Airport (6 km) or Delhi (200 km)
+                    <h4 className="font-semibold text-charcoal-900 mb-1">Location</h4>
+                    <p className="text-charcoal-600 text-sm">
+                      {item.title}, {item.state}, India
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">By Train</h4>
-                    <p className="text-charcoal-700">
-                      Agra Cantt or Agra Fort railway stations
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">By Road</h4>
-                    <p className="text-charcoal-700">
-                      NH2 from Delhi (200 km, 3 hours drive)
+                    <h4 className="font-semibold text-charcoal-900 mb-1">How to Reach</h4>
+                    <p className="text-charcoal-600 text-sm leading-relaxed">
+                      {item.visiting_info?.connectivity || `Accessible by rail and road networks across ${item.state}.`}
                     </p>
                   </div>
                 </div>
@@ -517,16 +529,16 @@ const HeritageDetailPage = ({
             </div>
 
             {/* Nearby Attractions */}
-            {item.nearby_poi && (
+            {item.nearby_poi && item.nearby_poi.length > 0 && (
               <div className="bs-card p-8">
-                <h3 className="text-2xl font-display font-bold mb-6">
+                <h3 className="text-2xl font-display font-bold mb-6 text-charcoal-900">
                   Nearby Attractions
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {item.nearby_poi.map((poi, index) => (
-                    <div key={index} className="text-center">
-                      <h4 className="font-semibold mb-2">{poi.name}</h4>
-                      <p className="text-gray-600 text-sm">{poi.distance}</p>
+                    <div key={index} className="p-4 rounded-xl bg-ivory-50 border border-ivory-200 text-center">
+                      <h4 className="font-semibold text-charcoal-900 mb-1">{poi.name}</h4>
+                      <p className="text-gold-700 text-xs font-medium">{poi.distance}</p>
                     </div>
                   ))}
                 </div>
